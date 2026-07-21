@@ -14,9 +14,9 @@ const featuredApis = [
 
 const featuredWorkflows = workflows.filter((w) => w.gumroadUrl).slice(0, 6);
 
-const title = 'Precision Solutions Tech | Developer APIs & n8n Workflow Automations';
+const title = 'Precision Solutions Tech | Developer APIs & Automation Workflows';
 const description =
-  'Production-grade REST APIs for data normalization, validation, and document processing, plus ready-to-run n8n workflow automations by senior engineers.';
+  'Production-grade REST APIs for data normalization, validation, and document processing, plus ready-to-run automation workflows for n8n by senior engineers.';
 ---
 
 <Base title={title} description={description} path="/" active="home">
@@ -24,18 +24,18 @@ const description =
     <div class="wrap">
       <h1>Developer APIs and automations,<br />built by engineers who ship.</h1>
       <p class="hero-sub">
-        Precision Solutions Tech publishes production-grade REST APIs and ready-to-run n8n
+        Precision Solutions Tech publishes production-grade REST APIs and ready-to-run automation
         workflows — data normalization, document processing, validation, and AI-powered
         automation. Every product lives on the marketplace where it works best.
       </p>
       <div class="cta-row hero-ctas">
         <a class="btn btn-primary" href="/apis/">Browse APIs</a>
-        <a class="btn btn-secondary" href="/workflows/">Browse n8n Workflows</a>
+        <a class="btn btn-secondary" href="/workflows/">Browse Automation Workflows</a>
       </div>
       <div class="trust-strip">
         <span class="pill pill-success">Verified n8n creator</span>
         <span class="pill">20 APIs on RapidAPI</span>
-        <span class="pill">12 n8n workflow templates</span>
+        <span class="pill">12 automation workflow templates</span>
         <span class="pill">Stateless &amp; privacy-first</span>
       </div>
     </div>
@@ -68,14 +68,14 @@ const description =
   <section class="section section-alt" id="workflows">
     <div class="wrap">
       <div class="section-head">
-        <span class="eyebrow">Automated Workflows</span>
-        <h2>Ready-to-run n8n workflow templates</h2>
+        <span class="eyebrow">Automation Workflows</span>
+        <h2>Ready-to-run automation workflow templates</h2>
         <p>
-          Import, connect your accounts, and go. AI-powered inbox assistants, lead routers,
-          expense trackers, and Slack alerting — sold on Gumroad and published on the n8n
-          creator marketplace.
+          Import into n8n, connect your accounts, and go. AI-powered inbox assistants, lead
+          routers, expense trackers, and Slack alerting — sold on Gumroad and published on the
+          n8n creator marketplace.
         </p>
-        <a class="section-link" href="/workflows/">View all {workflows.length} workflows &rarr;</a>
+        <a class="section-link" href="/workflows/">View all {workflows.length} automation workflows &rarr;</a>
       </div>
       <div class="card-grid">
         {featuredWorkflows.map((w) => (

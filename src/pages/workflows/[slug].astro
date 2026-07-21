@@ -12,7 +12,7 @@ const pagePath = `/workflows/${w.slug}/`;
 
 const related = workflows.filter((r) => r.slug !== w.slug).slice(0, 4);
 
-const title = `${w.name} | n8n Workflow Template`;
+const title = `${w.name} | Automation Workflow Template`;
 const description = w.shortDescription.length > 158
   ? w.shortDescription.slice(0, 155).replace(/\s+\S*$/, '') + '…'
   : w.shortDescription;
@@ -35,7 +35,7 @@ const jsonLd = [
     name: w.name,
     description: w.shortDescription,
     url: `${SITE}${pagePath}`,
-    category: 'n8n workflow template',
+    category: 'Automation workflow template',
     brand: { '@type': 'Organization', name: 'Precision Solutions Tech' },
     ...(w.gumroadUrl && priceNumber
       ? {
@@ -72,7 +72,7 @@ const jsonLd = [
     <article>
       <header class="product-hero">
         <div class="hero-pills">
-          <span class="pill pill-accent">n8n workflow template</span>
+          <span class="pill pill-accent">Automation workflow</span>
           {w.categories.map((c: string) => <span class="pill">{c}</span>)}
           {w.comingSoon && <span class="pill">Coming soon</span>}
         </div>
@@ -133,7 +133,7 @@ const jsonLd = [
       </section>
 
       <section class="product-body related-apis" style="margin-top: 40px;">
-        <h2>More n8n workflow templates</h2>
+        <h2>More automation workflows</h2>
         <ul>
           {related.map((r) => (
             <li>
@@ -141,7 +141,7 @@ const jsonLd = [
             </li>
           ))}
         </ul>
-        <p><a class="browse-all" href="/workflows/">Browse all workflow templates &rarr;</a></p>
+        <p><a class="browse-all" href="/workflows/">Browse all automation workflows &rarr;</a></p>
       </section>
     </article>
   </div>

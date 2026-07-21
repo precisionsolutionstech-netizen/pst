@@ -8,15 +8,15 @@ const paid = workflows.filter((w) => w.gumroadUrl);
 const free = workflows.filter((w) => !w.gumroadUrl && w.n8nListed);
 const upcoming = workflows.filter((w) => !w.gumroadUrl && !w.n8nListed);
 
-const title = 'n8n Workflow Templates | Automated Workflows by Precision Solutions Tech';
+const title = 'Automation Workflow Templates | Ready-to-Run Automations | Precision Solutions Tech';
 const description =
-  'Ready-to-run n8n workflow templates: AI inbox assistants, Gmail receipt expense trackers, lead routers, and Slack alerting. From verified n8n creators.';
+  'Ready-to-run automation workflow templates for n8n: AI inbox assistants, Gmail receipt expense trackers, lead routers, and Slack alerting. From verified n8n creators.';
 
 const jsonLd = [
   {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
-    name: 'n8n Workflow Templates',
+    name: 'Automation Workflow Templates',
     numberOfItems: workflows.length,
     itemListElement: workflows.map((w, i) => ({
       '@type': 'ListItem',
@@ -46,11 +46,11 @@ const jsonLd = [
     </nav>
 
     <header class="prose" style="margin-bottom: 8px;">
-      <h1>n8n Workflow Templates</h1>
+      <h1>Automation Workflow Templates</h1>
       <p class="lead">
-        Automation templates for <a href="https://n8n.io/" rel="noopener">n8n</a> that you can
-        import and run today: AI-powered email triage, expense tracking, lead scoring, and
-        Slack alerting. Built and maintained by
+        Ready-to-run automation workflows built for <a href="https://n8n.io/" rel="noopener">n8n</a>:
+        AI-powered email triage, expense tracking, lead scoring, and Slack alerting. Built and
+        maintained by
         <a href="https://n8n.io/creators/precision-tech/" rel="noopener">verified n8n creators</a>.
         Paid templates are sold on Gumroad; several have free versions on the n8n marketplace.
       </p>
@@ -79,8 +79,8 @@ const jsonLd = [
     {free.length > 0 && (
       <section class="section" style="padding: 32px 0;">
         <div class="section-head" style="margin-bottom: 20px;">
-          <h2>Free templates on n8n</h2>
-          <p>Published on our n8n creator profile — import them directly from n8n.</p>
+          <h2>Free templates</h2>
+          <p>Published on our n8n creator profile — import them directly into n8n.</p>
         </div>
         <div class="card-grid">
           {free.map((w) => (
