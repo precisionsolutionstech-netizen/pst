@@ -1,0 +1,88 @@
+---
+import Base from '../../layouts/Base.astro';
+import apis from '../../data/apis.json';
+
+const SITE = 'https://precisionsolutionstech.com';
+
+const categoryOrder = [
+  'Data Normalization APIs',
+  'Validation & Developer Utilities',
+  'Document & Processing APIs',
+  'Infrastructure & Engineering',
+];
+const categoryIds: Record<string, string> = {
+  'Data Normalization APIs': 'normalization',
+  'Validation & Developer Utilities': 'validation',
+  'Document & Processing APIs': 'documents',
+  'Infrastructure & Engineering': 'infrastructure',
+};
+const byCategory = categoryOrder.map((cat) => ({
+  cat,
+  id: categoryIds[cat],
+  items: apis.filter((a) => a.category === cat),
+}));
+
+const title = 'API Catalog | Developer APIs for Data, Automation & Processing';
+const description =
+  'Catalog of 20 developer APIs: data normalization, JSON validation, format conversion, PDF processing, PII redaction. Live on RapidAPI with free tiers.';
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'Developer API Catalog',
+    numberOfItems: apis.length,
+    itemListElement: apis.map((a, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      url: `${SITE}/apis/${a.slug}/`,
+      name: a.name,
+    })),
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` },
+      { '@type': 'ListItem', position: 2, name: 'APIs', item: `${SITE}/apis/` },
+    ],
+  },
+];
+---
+
+<Base title={title} description={description} path="/apis/" active="apis" jsonLd={jsonLd}>
+  <div class="wrap">
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li>APIs</li>
+      </ol>
+    </nav>
+
+    <header class="prose" style="margin-bottom: 8px;">
+      <h1>Developer API Catalog</h1>
+      <p class="lead">
+        {apis.length} production-grade REST APIs for data normalization, transformation,
+        validation, and document processing — built for scalable systems and clean
+        integrations. Every API is stateless, has a free tier, and is available on RapidAPI.
+      </p>
+    </header>
+
+    {byCategory.map(({ cat, id, items }) => (
+      <section class="section" id={id} style="padding: 32px 0;">
+        <div class="section-head" style="margin-bottom: 20px;">
+          <h2>{cat}</h2>
+        </div>
+        <div class="card-grid">
+          {items.map((api) => (
+            <a class="card" href={`/apis/${api.slug}/`}>
+              <h3>{api.name}</h3>
+              <p>{api.blurb}</p>
+              <span class="card-meta"><span class="pill">RapidAPI</span></span>
+            </a>
+          ))}
+        </div>
+      </section>
+    ))}
+  </div>
+</Base>

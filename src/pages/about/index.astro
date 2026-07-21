@@ -1,0 +1,82 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const SITE = 'https://precisionsolutionstech.com';
+const title = 'About Us | Precision Solutions Tech';
+const description =
+  'Senior software engineer contractors who productize proven solutions from real client work into developer APIs and n8n workflows. Verified n8n creators.';
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` },
+      { '@type': 'ListItem', position: 2, name: 'About', item: `${SITE}/about/` },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'AboutPage',
+    name: 'About Precision Solutions Tech',
+    url: `${SITE}/about/`,
+    description,
+  },
+];
+---
+
+<Base title={title} description={description} path="/about/" active="about" jsonLd={jsonLd}>
+  <div class="wrap">
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li>About</li>
+      </ol>
+    </nav>
+
+    <article class="prose">
+      <h1>Who we are</h1>
+      <p class="lead">
+        Precision Solutions Tech is a group of senior software engineers working as
+        contractors across data platforms, integrations, and automation-heavy systems.
+      </p>
+      <p>
+        We spend our days inside real production systems — normalizing messy vendor data,
+        wiring up integrations, processing documents, and automating the workflows that keep
+        businesses running. Whenever we build something on that work that solves a general
+        problem, we do not let it die in a private repo: we harden it, document it, and make
+        it available on the marketplace where it is most useful.
+      </p>
+
+      <h2>Where our products live</h2>
+      <p>
+        <strong>Developer APIs</strong> are published on
+        <a href="https://rapidapi.com/user/precisionsolutionstech" rel="noopener">RapidAPI</a> —
+        stateless, documented REST services for data normalization, validation, format
+        conversion, and document processing. Every one has a free tier so you can evaluate it
+        before subscribing. Browse the full <a href="/apis/">API catalog</a>.
+      </p>
+      <p>
+        <strong>Automated workflows</strong> are built for
+        <a href="https://n8n.io/" rel="noopener">n8n</a>. We are
+        <a href="https://n8n.io/creators/precision-tech/" rel="noopener">verified n8n creators</a>,
+        with free templates published on our creator profile and full-featured premium
+        templates — with setup guides and support materials — sold on our
+        <a href="https://solutionsprecision.gumroad.com/" rel="noopener">Gumroad store</a>.
+        Browse all <a href="/workflows/">workflow templates</a>.
+      </p>
+
+      <h2>How we build</h2>
+      <p>
+        Everything we ship follows the same rules we hold to in client work: stateless and
+        privacy-first processing (your data is never stored), clear documentation with real
+        request and response examples, honest pricing, and graceful failure modes — one bad
+        input should never take down the batch.
+      </p>
+      <p>
+        If a product page leaves a question unanswered, the marketplace listing is always the
+        source of truth for pricing and quotas — and every page here links straight to it.
+      </p>
+    </article>
+  </div>
+</Base>

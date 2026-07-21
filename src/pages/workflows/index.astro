@@ -1,0 +1,115 @@
+---
+import Base from '../../layouts/Base.astro';
+import workflows from '../../data/workflows.json';
+
+const SITE = 'https://precisionsolutionstech.com';
+
+const paid = workflows.filter((w) => w.gumroadUrl);
+const free = workflows.filter((w) => !w.gumroadUrl && w.n8nListed);
+const upcoming = workflows.filter((w) => !w.gumroadUrl && !w.n8nListed);
+
+const title = 'n8n Workflow Templates | Automated Workflows by Precision Solutions Tech';
+const description =
+  'Ready-to-run n8n workflow templates: AI inbox assistants, Gmail receipt expense trackers, lead routers, and Slack alerting. From verified n8n creators.';
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'n8n Workflow Templates',
+    numberOfItems: workflows.length,
+    itemListElement: workflows.map((w, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      url: `${SITE}/workflows/${w.slug}/`,
+      name: w.name,
+    })),
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` },
+      { '@type': 'ListItem', position: 2, name: 'Workflows', item: `${SITE}/workflows/` },
+    ],
+  },
+];
+---
+
+<Base title={title} description={description} path="/workflows/" active="workflows" jsonLd={jsonLd}>
+  <div class="wrap">
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li>Workflows</li>
+      </ol>
+    </nav>
+
+    <header class="prose" style="margin-bottom: 8px;">
+      <h1>n8n Workflow Templates</h1>
+      <p class="lead">
+        Automation templates for <a href="https://n8n.io/" rel="noopener">n8n</a> that you can
+        import and run today: AI-powered email triage, expense tracking, lead scoring, and
+        Slack alerting. Built and maintained by
+        <a href="https://n8n.io/creators/precision-tech/" rel="noopener">verified n8n creators</a>.
+        Paid templates are sold on Gumroad; several have free versions on the n8n marketplace.
+      </p>
+    </header>
+
+    <section class="section" style="padding: 32px 0;">
+      <div class="section-head" style="margin-bottom: 20px;">
+        <h2>Premium templates</h2>
+        <p>Full-featured workflows with setup guides, sold on Gumroad.</p>
+      </div>
+      <div class="card-grid">
+        {paid.map((w) => (
+          <a class="card" href={`/workflows/${w.slug}/`}>
+            <h3>{w.name}</h3>
+            <p>{w.shortDescription}</p>
+            <span class="card-meta">
+              <span class="card-price">{w.price}</span>
+              <span class="pill">Gumroad</span>
+              {w.n8nListed && <span class="pill pill-success">Free version on n8n</span>}
+            </span>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    {free.length > 0 && (
+      <section class="section" style="padding: 32px 0;">
+        <div class="section-head" style="margin-bottom: 20px;">
+          <h2>Free templates on n8n</h2>
+          <p>Published on our n8n creator profile — import them directly from n8n.</p>
+        </div>
+        <div class="card-grid">
+          {free.map((w) => (
+            <a class="card" href={`/workflows/${w.slug}/`}>
+              <h3>{w.name}</h3>
+              <p>{w.shortDescription}</p>
+              <span class="card-meta"><span class="pill pill-success">Free on n8n</span></span>
+            </a>
+          ))}
+        </div>
+      </section>
+    )}
+
+    {upcoming.length > 0 && (
+      <section class="section" style="padding: 32px 0;">
+        <div class="section-head" style="margin-bottom: 20px;">
+          <h2>Coming soon</h2>
+          <p>In final packaging — watch our <a href="https://solutionsprecision.gumroad.com/" rel="noopener">Gumroad store</a> for release.</p>
+        </div>
+        <div class="card-grid">
+          {upcoming.map((w) => (
+            <a class="card" href={`/workflows/${w.slug}/`}>
+              <h3>{w.name}</h3>
+              <p>{w.shortDescription}</p>
+              <span class="card-meta"><span class="pill">Coming soon</span></span>
+            </a>
+          ))}
+        </div>
+      </section>
+    )}
+  </div>
+</Base>

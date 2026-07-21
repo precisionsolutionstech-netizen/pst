@@ -1,0 +1,130 @@
+---
+import Base from '../layouts/Base.astro';
+import apis from '../data/apis.json';
+import workflows from '../data/workflows.json';
+
+const featuredApis = [
+  'universal-data-format-converter',
+  'financial-invoice-normalization',
+  'pdf-table-extraction',
+  'json-schema-validator',
+  'pii-detection-redaction',
+  'calendar-event-normalization',
+].map((slug) => apis.find((a) => a.slug === slug)).filter(Boolean);
+
+const featuredWorkflows = workflows.filter((w) => w.gumroadUrl).slice(0, 6);
+
+const title = 'Precision Solutions Tech | Developer APIs & n8n Workflow Automations';
+const description =
+  'Production-grade REST APIs for data normalization, validation, and document processing, plus ready-to-run n8n workflow automations by senior engineers.';
+---
+
+<Base title={title} description={description} path="/" active="home">
+  <section class="hero-home">
+    <div class="wrap">
+      <h1>Developer APIs and automations,<br />built by engineers who ship.</h1>
+      <p class="hero-sub">
+        Precision Solutions Tech publishes production-grade REST APIs and ready-to-run n8n
+        workflows — data normalization, document processing, validation, and AI-powered
+        automation. Every product lives on the marketplace where it works best.
+      </p>
+      <div class="cta-row hero-ctas">
+        <a class="btn btn-primary" href="/apis/">Browse APIs</a>
+        <a class="btn btn-secondary" href="/workflows/">Browse n8n Workflows</a>
+      </div>
+      <div class="trust-strip">
+        <span class="pill pill-success">Verified n8n creator</span>
+        <span class="pill">20 APIs on RapidAPI</span>
+        <span class="pill">12 n8n workflow templates</span>
+        <span class="pill">Stateless &amp; privacy-first</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="apis">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Developer APIs</span>
+        <h2>Data, documents, and infrastructure APIs</h2>
+        <p>
+          Normalize messy real-world data, validate JSON, extract tables from PDFs, redact
+          PII, and more. Every API is stateless, documented, and live on RapidAPI with a free
+          tier.
+        </p>
+        <a class="section-link" href="/apis/">View all {apis.length} APIs &rarr;</a>
+      </div>
+      <div class="card-grid">
+        {featuredApis.map((api) => (
+          <a class="card" href={`/apis/${api.slug}/`}>
+            <h3>{api.name}</h3>
+            <p>{api.blurb}</p>
+            <span class="card-meta"><span class="pill pill-accent">{api.category}</span></span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="workflows">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Automated Workflows</span>
+        <h2>Ready-to-run n8n workflow templates</h2>
+        <p>
+          Import, connect your accounts, and go. AI-powered inbox assistants, lead routers,
+          expense trackers, and Slack alerting — sold on Gumroad and published on the n8n
+          creator marketplace.
+        </p>
+        <a class="section-link" href="/workflows/">View all {workflows.length} workflows &rarr;</a>
+      </div>
+      <div class="card-grid">
+        {featuredWorkflows.map((w) => (
+          <a class="card" href={`/workflows/${w.slug}/`}>
+            <h3>{w.name}</h3>
+            <p>{w.shortDescription}</p>
+            <span class="card-meta">
+              {w.price && <span class="card-price">{w.price}</span>}
+              {w.n8nListed && <span class="pill pill-success">Free version on n8n</span>}
+            </span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="who">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Who we are</span>
+        <h2>Senior engineers, productizing what works</h2>
+        <p>
+          We are a group of senior software engineer contractors. When we build something on a
+          client project that solves a general problem, we productize it and publish it on the
+          right marketplace — APIs on RapidAPI, automations on n8n and Gumroad. We are
+          <a href="https://n8n.io/creators/precision-tech/" rel="noopener"> verified n8n creators</a>.
+        </p>
+        <a class="section-link" href="/about/">More about us &rarr;</a>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .hero-home {
+    padding: 88px 0 56px;
+    text-align: left;
+  }
+  .hero-home h1 {
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    margin: 0 0 20px;
+    max-width: 800px;
+  }
+  .hero-sub {
+    font-size: 1.15rem;
+    color: var(--muted);
+    max-width: 640px;
+    margin: 0 0 28px;
+  }
+  .hero-ctas { margin-bottom: 28px; }
+  .trust-strip { display: flex; gap: 10px; flex-wrap: wrap; }
+</style>

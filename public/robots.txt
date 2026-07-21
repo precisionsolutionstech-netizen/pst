@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://precisionsolutionstech.com/sitemap-index.xml

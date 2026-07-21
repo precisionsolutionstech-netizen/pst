@@ -1,0 +1,119 @@
+---
+import Base from '../../layouts/Base.astro';
+import apis from '../../data/apis.json';
+
+export function getStaticPaths() {
+  return apis.map((api) => ({ params: { slug: api.slug }, props: { api } }));
+}
+
+const { api } = Astro.props;
+const SITE = 'https://precisionsolutionstech.com';
+const pagePath = `/apis/${api.slug}/`;
+
+const related = apis.filter((a) => a.category === api.category && a.slug !== api.slug).slice(0, 4);
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` },
+      { '@type': 'ListItem', position: 2, name: 'APIs', item: `${SITE}/apis/` },
+      { '@type': 'ListItem', position: 3, name: api.name, item: `${SITE}${pagePath}` },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'TechArticle',
+    headline: api.h1,
+    name: api.name,
+    description: api.metaDescription,
+    author: { '@type': 'Organization', name: 'Precision Solutions Tech' },
+    url: `${SITE}${pagePath}`,
+    ...(api.datePublished ? { datePublished: api.datePublished } : {}),
+    ...(api.dateModified ? { dateModified: api.dateModified } : {}),
+  },
+  ...api.jsonLd,
+];
+---
+
+<Base
+  title={api.metaTitle}
+  description={api.metaDescription}
+  path={pagePath}
+  ogType="article"
+  active="apis"
+  jsonLd={jsonLd}
+>
+  <div class="wrap">
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li><a href="/apis/">APIs</a></li>
+        <li>{api.name}</li>
+      </ol>
+    </nav>
+
+    <article>
+      <header class="product-hero">
+        <div class="hero-pills">
+          <span class="pill pill-accent">{api.category}</span>
+          <span class="pill">Live on RapidAPI</span>
+        </div>
+        <h1>{api.h1}</h1>
+        <div set:html={api.heroHtml} class="product-body" />
+      </header>
+
+      <div class="product-body" set:html={api.contentHtml} />
+
+      <section class="product-body" style="margin-top: 48px;">
+        <div class="cta-row">
+          <a class="btn btn-accent" href={api.rapidapiUrl} rel="noopener">
+            Get {api.name} on RapidAPI
+          </a>
+          <span class="cta-sub">Free tier available — subscribe and get your API key in minutes.</span>
+        </div>
+      </section>
+
+      {related.length > 0 && (
+        <section class="product-body related-apis" style="margin-top: 40px;">
+          <h2>More {api.category.replace(/ APIs$/, '')} APIs</h2>
+          <ul>
+            {related.map((r) => (
+              <li>
+                <a href={`/apis/${r.slug}/`}>{r.name}</a> — {r.blurb}
+              </li>
+            ))}
+          </ul>
+          <p><a class="browse-all" href="/apis/">Browse the full API catalog &rarr;</a></p>
+        </section>
+      )}
+    </article>
+  </div>
+
+  <script>
+    // FAQ accordion + schema show/hide toggles for migrated content.
+    document.querySelectorAll('.faq-q').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const expanded = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', String(!expanded));
+        const target = btn.getAttribute('aria-controls');
+        const panel = target
+          ? document.getElementById(target)
+          : btn.parentElement?.querySelector('.faq-a');
+        if (panel) panel.classList.toggle('open', !expanded);
+      });
+    });
+    document.querySelectorAll('.schema-toggle').forEach((el) => {
+      el.addEventListener('click', (e) => {
+        e.preventDefault();
+        const href = el.getAttribute('href') || '';
+        const target = href.startsWith('#') ? document.getElementById(href.slice(1)) : null;
+        const panel = target?.classList.contains('schema-content')
+          ? target
+          : el.closest('.schema-section, section')?.querySelector('.schema-content');
+        if (panel) panel.classList.toggle('show');
+      });
+    });
+  </script>
+</Base>

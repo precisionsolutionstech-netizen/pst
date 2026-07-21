@@ -1,0 +1,132 @@
+---
+import '../styles/global.css';
+
+export interface Props {
+  title: string;
+  description: string;
+  /** Path beginning and ending with "/", e.g. "/apis/pdf-compression/" */
+  path: string;
+  ogType?: string;
+  /** Extra JSON-LD objects to inject (already-built plain objects). */
+  jsonLd?: object[];
+  /** Which top nav item is active: "apis" | "workflows" | "about" | "home" */
+  active?: string;
+}
+
+const SITE = 'https://precisionsolutionstech.com';
+const { title, description, path, ogType = 'website', jsonLd = [], active = '' } = Astro.props;
+const canonical = `${SITE}${path}`;
+
+const globalLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'Precision Solutions Tech',
+    url: `${SITE}/`,
+    logo: `${SITE}/favicon.png`,
+    description:
+      'Senior software engineers publishing production-grade developer APIs and n8n workflow automations.',
+    sameAs: [
+      'https://n8n.io/creators/precision-tech/',
+      'https://solutionsprecision.gumroad.com/',
+      'https://rapidapi.com/user/precisionsolutionstech',
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'Precision Solutions Tech',
+    url: `${SITE}/`,
+  },
+];
+
+const allLd = [...globalLd, ...jsonLd];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="author" content="Precision Solutions Tech" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon.png" type="image/png" sizes="32x32" />
+    <link rel="sitemap" type="application/xml" href="/sitemap-index.xml" />
+
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:site_name" content="Precision Solutions Tech" />
+    <meta property="og:image" content={`${SITE}/og-default.png`} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={`${SITE}/og-default.png`} />
+
+    {allLd.map((ld) => <script type="application/ld+json" set:html={JSON.stringify(ld)} />)}
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="wrap">
+        <a class="brand" href="/">
+          <img src="/favicon.svg" alt="" width="26" height="26" />
+          Precision Solutions Tech
+        </a>
+        <nav class="site-nav" aria-label="Main">
+          <a href="/" aria-current={active === 'home' ? 'page' : undefined}>Home</a>
+          <a href="/apis/" aria-current={active === 'apis' ? 'page' : undefined}>APIs</a>
+          <a href="/workflows/" aria-current={active === 'workflows' ? 'page' : undefined}>Workflows</a>
+          <a href="/about/" aria-current={active === 'about' ? 'page' : undefined}>About</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <slot />
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <div class="footer-cols">
+          <div>
+            <p class="footer-brand">Precision Solutions Tech</p>
+            <p>
+              Production-grade developer APIs and n8n workflow automations, built by senior
+              software engineers.
+            </p>
+          </div>
+          <div>
+            <h3>Products</h3>
+            <ul>
+              <li><a href="/apis/">Developer APIs</a></li>
+              <li><a href="/workflows/">n8n Workflows</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3>Company</h3>
+            <ul>
+              <li><a href="/about/">About us</a></li>
+              <li><a href="https://n8n.io/creators/precision-tech/" rel="noopener">n8n creator profile</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3>Marketplaces</h3>
+            <ul>
+              <li><a href="https://rapidapi.com/user/precisionsolutionstech" rel="noopener">RapidAPI</a></li>
+              <li><a href="https://solutionsprecision.gumroad.com/" rel="noopener">Gumroad</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; {new Date().getFullYear()} Precision Solutions Tech. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
