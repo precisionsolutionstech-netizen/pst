@@ -37,7 +37,8 @@ Pages live in `src/pages/`; the shared layout (nav, footer, meta, Open Graph, JS
 - `sitemap-index.xml` is generated at build time by `@astrojs/sitemap`; `public/robots.txt`
   references it.
 - The legacy GitHub Pages catalog pages carry `rel=canonical` pointing at this domain so
-  existing rankings transfer.
+  existing rankings transfer, plus a meta refresh / JS redirect per page. Re-apply with
+  `node scripts/canonicalize-old-site.mjs` after editing `~/apps/apis/api-catalog`.
 
 ## Deploy (Cloudflare Pages)
 
