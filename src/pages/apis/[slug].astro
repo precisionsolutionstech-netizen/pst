@@ -91,6 +91,12 @@ const jsonLd = [
     </article>
   </div>
 
+  {/* Per-API playground scripts (unique hosts/samples/endpoints). Load after DOM. */}
+  {(api.playgroundDeps || []).map((src) => (
+    <script is:inline src={src} />
+  ))}
+  {api.playgroundScript && <script is:inline src={api.playgroundScript} />}
+
   <script>
     // FAQ accordion + schema show/hide toggles for migrated content.
     document.querySelectorAll('.faq-q').forEach((btn) => {
