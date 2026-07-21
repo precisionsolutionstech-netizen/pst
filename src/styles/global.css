@@ -105,13 +105,19 @@ h1, h2, h3, h4 { line-height: 1.25; letter-spacing: -0.015em; font-weight: 700; 
   align-items: center;
   gap: 10px;
   font-weight: 700;
-  font-size: 1.02rem;
+  font-size: 1.05rem;
   color: var(--ink);
-  letter-spacing: -0.01em;
+  letter-spacing: -0.02em;
   white-space: nowrap;
 }
 .brand:hover { text-decoration: none; }
-.brand img { width: 26px; height: 26px; }
+.brand-mark {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+  color: #0ea5e9;
+}
+.brand-name { line-height: 1; }
 
 .site-nav { display: flex; align-items: center; gap: 4px; flex-wrap: wrap; }
 
@@ -241,7 +247,20 @@ a.card:hover {
 .site-footer li { margin-bottom: 8px; }
 .site-footer a { color: var(--muted); }
 .site-footer a:hover { color: var(--accent); }
-.site-footer .footer-brand { font-weight: 700; color: var(--ink); font-size: 1rem; margin-bottom: 8px; }
+.site-footer .footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  color: var(--ink);
+  font-size: 1rem;
+  margin-bottom: 8px;
+}
+.site-footer .footer-brand .brand-mark {
+  width: 22px;
+  height: 22px;
+  color: #0ea5e9;
+}
 .site-footer .footer-bottom { border-top: 1px solid var(--border-soft); padding-top: 20px; font-size: 0.85rem; }
 
 /* ----------------------------- Breadcrumbs ------------------------------ */

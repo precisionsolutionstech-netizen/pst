@@ -23,7 +23,7 @@ const globalLd = [
     '@type': 'Organization',
     name: 'Precision Solutions Tech',
     url: `${SITE}/`,
-    logo: `${SITE}/favicon.png`,
+    logo: `${SITE}/logo.png`,
     description:
       'Senior software engineers publishing production-grade developer APIs and automation workflows.',
     sameAs: [
@@ -55,6 +55,7 @@ const allLd = [...globalLd, ...jsonLd];
     <link rel="canonical" href={canonical} />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="icon" href="/favicon.png" type="image/png" sizes="32x32" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="sitemap" type="application/xml" href="/sitemap-index.xml" />
 
     <meta property="og:title" content={title} />
@@ -75,8 +76,12 @@ const allLd = [...globalLd, ...jsonLd];
     <header class="site-header">
       <div class="wrap">
         <a class="brand" href="/">
-          <img src="/favicon.svg" alt="" width="26" height="26" />
-          Precision Solutions Tech
+          <svg class="brand-mark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none" width="28" height="28" aria-hidden="true">
+            <path d="M2 10.5c3.2-3.6 6.6-3.6 9.8 0s6.6 3.6 9.8 0 6.6-3.6 9.8 0" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+            <path d="M2 16c3.2-3.6 6.6-3.6 9.8 0s6.6 3.6 9.8 0 6.6-3.6 9.8 0" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+            <path d="M2 21.5c3.2-3.6 6.6-3.6 9.8 0s6.6 3.6 9.8 0 6.6-3.6 9.8 0" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+          <span class="brand-name">Precision Solutions Tech</span>
         </a>
         <nav class="site-nav" aria-label="Main">
           <a href="/" aria-current={active === 'home' ? 'page' : undefined}>Home</a>
@@ -95,7 +100,14 @@ const allLd = [...globalLd, ...jsonLd];
       <div class="wrap">
         <div class="footer-cols">
           <div>
-            <p class="footer-brand">Precision Solutions Tech</p>
+            <p class="footer-brand">
+              <svg class="brand-mark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none" width="22" height="22" aria-hidden="true">
+                <path d="M2 10.5c3.2-3.6 6.6-3.6 9.8 0s6.6 3.6 9.8 0 6.6-3.6 9.8 0" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+                <path d="M2 16c3.2-3.6 6.6-3.6 9.8 0s6.6 3.6 9.8 0 6.6-3.6 9.8 0" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+                <path d="M2 21.5c3.2-3.6 6.6-3.6 9.8 0s6.6 3.6 9.8 0 6.6-3.6 9.8 0" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+              </svg>
+              Precision Solutions Tech
+            </p>
             <p>
               Production-grade developer APIs and automation workflows, built by senior
               software engineers.
