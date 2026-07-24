@@ -9,7 +9,7 @@ export interface Props {
   ogType?: string;
   /** Extra JSON-LD objects to inject (already-built plain objects). */
   jsonLd?: object[];
-  /** Which top nav item is active: "apis" | "workflows" | "about" | "home" */
+  /** Which top nav item is active: "apis" | "workflows" | "blog" | "about" | "home" */
   active?: string;
 }
 
@@ -87,6 +87,7 @@ const allLd = [...globalLd, ...jsonLd];
           <a href="/" aria-current={active === 'home' ? 'page' : undefined}>Home</a>
           <a href="/apis/" aria-current={active === 'apis' ? 'page' : undefined}>APIs</a>
           <a href="/workflows/" aria-current={active === 'workflows' ? 'page' : undefined}>Workflows</a>
+          <a href="/blog/" aria-current={active === 'blog' ? 'page' : undefined}>Blog</a>
           <a href="/about/" aria-current={active === 'about' ? 'page' : undefined}>About</a>
         </nav>
       </div>
@@ -123,6 +124,7 @@ const allLd = [...globalLd, ...jsonLd];
           <div>
             <h3>Company</h3>
             <ul>
+              <li><a href="/blog/">Blog</a></li>
               <li><a href="/about/">About us</a></li>
               <li><a href="https://n8n.io/creators/precision-tech/" rel="noopener">n8n creator profile</a></li>
             </ul>

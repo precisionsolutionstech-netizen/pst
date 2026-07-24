@@ -19,6 +19,7 @@ npm run preview    # serve the built dist/ locally
 |---|---|---|
 | `src/data/apis.json` (20 APIs) | Legacy GitHub Pages repo `~/apps/apis/api-catalog` | `node scripts/extract-apis.mjs` |
 | `src/data/workflows.json` (12 workflows) | n8n repo `~/apps/n8n/templates/*/SUBMISSION.txt` | `node scripts/extract-workflows.mjs` |
+| `src/data/blog.json` (5 posts + Medium links) | Legacy `~/apps/apis/api-catalog/blog` | `node scripts/extract-blog.mjs` |
 
 Both JSON files are committed, so the site builds standalone (CI never needs the other repos).
 To add a product, add an entry to the JSON (or re-run the script) — the page, sitemap entry,
@@ -36,8 +37,9 @@ Pages live in `src/pages/`; the shared layout (nav, footer, meta, Open Graph, JS
   workflow pages.
 - `sitemap-index.xml` is generated at build time by `@astrojs/sitemap`; `public/robots.txt`
   references it.
-- The legacy GitHub Pages catalog pages carry `rel=canonical` pointing at this domain so
-  existing rankings transfer, plus a meta refresh / JS redirect per page. Re-apply with
+- The legacy GitHub Pages catalog and blog pages carry `rel=canonical` pointing at this
+  domain so existing rankings transfer, plus a meta refresh / JS redirect per page
+  (GitHub Pages cannot emit true HTTP 301/302). Re-apply with
   `node scripts/canonicalize-old-site.mjs` after editing `~/apps/apis/api-catalog`.
 
 ## Deploy (Cloudflare Pages)

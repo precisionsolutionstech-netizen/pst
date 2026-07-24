@@ -1,0 +1,87 @@
+---
+import Base from '../../layouts/Base.astro';
+import blog from '../../data/blog.json';
+
+const { posts, medium } = blog;
+const SITE = 'https://precisionsolutionstech.com';
+
+const title = 'Blog | Precision Solutions Tech';
+const description =
+  'Articles on data normalization, API design, vibe coding, and building reliable integrations — on our blog and on Medium.';
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Blog',
+    name: 'Precision Solutions Tech Blog',
+    url: `${SITE}/blog/`,
+    description,
+    blogPost: posts.map((p) => ({
+      '@type': 'BlogPosting',
+      headline: p.h1,
+      url: `${SITE}/blog/${p.slug}/`,
+      description: p.blurb,
+      ...(p.datePublished ? { datePublished: p.datePublished } : {}),
+    })),
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` },
+      { '@type': 'ListItem', position: 2, name: 'Blog', item: `${SITE}/blog/` },
+    ],
+  },
+];
+---
+
+<Base title={title} description={description} path="/blog/" active="blog" jsonLd={jsonLd}>
+  <div class="wrap">
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li>Blog</li>
+      </ol>
+    </nav>
+
+    <header class="prose" style="margin-bottom: 8px;">
+      <h1>Blog</h1>
+      <p class="lead">
+        Articles on data normalization, API design, vibe coding, and building reliable
+        integrations.
+      </p>
+    </header>
+
+    <section class="section" style="padding: 32px 0 8px;">
+      <div class="section-head" style="margin-bottom: 20px;">
+        <h2>On our blog</h2>
+      </div>
+      <ul class="post-list">
+        {posts.map((p) => (
+          <li>
+            <a href={`/blog/${p.slug}/`}>{p.title}</a>
+            <p>{p.blurb}</p>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    {medium.length > 0 && (
+      <section class="section" style="padding: 24px 0 40px;">
+        <div class="section-head" style="margin-bottom: 20px;">
+          <h2>On Medium</h2>
+        </div>
+        <ul class="post-list">
+          {medium.map((m) => (
+            <li>
+              <a href={m.url} target="_blank" rel="noopener noreferrer">
+                {m.title} <span class="external">→ Medium</span>
+              </a>
+              <p set:html={m.blurb} />
+            </li>
+          ))}
+        </ul>
+      </section>
+    )}
+  </div>
+</Base>

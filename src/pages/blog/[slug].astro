@@ -1,0 +1,84 @@
+---
+import Base from '../../layouts/Base.astro';
+import blog from '../../data/blog.json';
+
+export function getStaticPaths() {
+  return blog.posts.map((post) => ({ params: { slug: post.slug }, props: { post } }));
+}
+
+const { post } = Astro.props;
+const SITE = 'https://precisionsolutionstech.com';
+const pagePath = `/blog/${post.slug}/`;
+
+const related = blog.posts.filter((p) => p.slug !== post.slug).slice(0, 3);
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` },
+      { '@type': 'ListItem', position: 2, name: 'Blog', item: `${SITE}/blog/` },
+      { '@type': 'ListItem', position: 3, name: post.h1, item: `${SITE}${pagePath}` },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: post.h1,
+    description: post.metaDescription,
+    author: { '@type': 'Organization', name: 'Precision Solutions Tech' },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Precision Solutions Tech',
+      logo: { '@type': 'ImageObject', url: `${SITE}/logo.png` },
+    },
+    url: `${SITE}${pagePath}`,
+    mainEntityOfPage: `${SITE}${pagePath}`,
+    ...(post.datePublished ? { datePublished: post.datePublished } : {}),
+    ...(post.dateModified ? { dateModified: post.dateModified } : {}),
+  },
+];
+---
+
+<Base
+  title={post.metaTitle}
+  description={post.metaDescription}
+  path={pagePath}
+  ogType="article"
+  active="blog"
+  jsonLd={jsonLd}
+>
+  <div class="wrap">
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li>{post.title}</li>
+      </ol>
+    </nav>
+
+    <article class="prose blog-article">
+      <header>
+        <h1>{post.h1}</h1>
+        {post.metaLine && <p class="meta" set:html={post.metaLine} />}
+      </header>
+      <div set:html={post.contentHtml} />
+    </article>
+
+    {related.length > 0 && (
+      <section class="prose" style="margin-top: 48px; padding-top: 28px; border-top: 1px solid var(--border);">
+        <h2>More from the blog</h2>
+        <ul class="post-list">
+          {related.map((r) => (
+            <li>
+              <a href={`/blog/${r.slug}/`}>{r.title}</a>
+              <p>{r.blurb}</p>
+            </li>
+          ))}
+        </ul>
+        <p><a href="/blog/">Browse all posts &rarr;</a></p>
+      </section>
+    )}
+  </div>
+</Base>

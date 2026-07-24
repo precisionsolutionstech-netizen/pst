@@ -50,7 +50,10 @@ function rewriteLinks(html) {
     .replace(/href="\.\.\/index\.html(#[^"]*)?"/g, (_, hash) => `href="/apis/${hash || ''}"`)
     // legacy-only pages stay on the old site
     .replace(/href="\.\.\/(faq|pages)\.html"/g, `href="${OLD_BASE}/$1.html"`)
-    .replace(/href="\.\.\/blog\/([^"]*)"/g, `href="${OLD_BASE}/blog/$1"`)
+    // blog posts live on this site under /blog/
+    .replace(/href="\.\.\/blog\/index\.html"/g, 'href="/blog/"')
+    .replace(/href="\.\.\/blog\/([a-z0-9-]+)\.html(#[^"]*)?"/g, 'href="/blog/$1/$2"')
+    .replace(/href="\.\.\/blog\/"/g, 'href="/blog/"')
     .replace(/href="\.\.\/sitemap\.xml"/g, `href="/sitemap-index.xml"`)
     // sibling static assets hosted under /apis/ on this site
     .replace(/href="([a-z0-9-]+\.(?:json|js))"/g, 'href="/apis/$1"')
@@ -140,7 +143,9 @@ for (const file of files.sort()) {
   }
 
   let playgroundScript = null;
-  const inlineScripts = [...html.matchAll(/<script(?![^>]*\btype="application\/ld\+json")(?![^>]*\bsrc=)[^>]*>([\s\S]*?)<\/script>/g)]
+  const inlineScripts = [...html.matchAll(
+    /<script(?![^>]*\btype="application\/ld\+json")(?![^>]*\bsrc=)(?![^>]*\bdata-pst-redirect)[^>]*>([\s\S]*?)<\/script>/g,
+  )]
     .map((m) => m[1].trim())
     .filter(Boolean);
   if (inlineScripts.length > 1) {
