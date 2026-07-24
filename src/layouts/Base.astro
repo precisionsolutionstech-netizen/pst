@@ -70,6 +70,7 @@ const allLd = [...globalLd, ...jsonLd];
     <meta name="twitter:image" content={`${SITE}/og-default.png`} />
 
     {allLd.map((ld) => <script type="application/ld+json" set:html={JSON.stringify(ld)} />)}
+    <slot name="head" />
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>

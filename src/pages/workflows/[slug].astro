@@ -9,6 +9,7 @@ export function getStaticPaths() {
 const { workflow: w } = Astro.props;
 const SITE = 'https://precisionsolutionstech.com';
 const pagePath = `/workflows/${w.slug}/`;
+const isCredentialSetupCoach = w.slug === 'n8n-credential-setup-coach';
 
 const related = workflows.filter((r) => r.slug !== w.slug).slice(0, 4);
 
@@ -60,6 +61,19 @@ const jsonLd = [
   active="workflows"
   jsonLd={jsonLd}
 >
+  {isCredentialSetupCoach && (
+    <Fragment slot="head">
+      <!-- Google tag (gtag.js) -->
+      <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=AW-18346809200"></script>
+      <script is:inline>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'AW-18346809200');
+      </script>
+    </Fragment>
+  )}
+
   <div class="wrap">
     <nav class="breadcrumbs" aria-label="Breadcrumb">
       <ol>
