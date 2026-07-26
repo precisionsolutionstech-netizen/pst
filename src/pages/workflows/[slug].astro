@@ -70,6 +70,23 @@ const jsonLd = [
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
         gtag('config', 'AW-18346809200');
+
+        // Purchase conversion: fire on Gumroad buy clicks (fallback when checkout is off-site)
+        window.gtagReportPurchase = function gtagReportPurchase(url) {
+          var callback = function () {
+            if (typeof url !== 'undefined') {
+              window.location = url;
+            }
+          };
+          gtag('event', 'conversion', {
+            send_to: 'AW-18346809200/rFIjCODU9tUcEPCuuKxE',
+            value: 5.0,
+            currency: 'USD',
+            event_callback: callback,
+            event_timeout: 2000,
+          });
+          return false;
+        };
       </script>
     </Fragment>
   )}
@@ -95,7 +112,14 @@ const jsonLd = [
 
         <div class="cta-row">
           {w.gumroadUrl ? (
-            <a class="btn btn-accent" href={w.gumroadUrl} rel="noopener">
+            <a
+              class="btn btn-accent"
+              href={w.gumroadUrl}
+              rel="noopener"
+              {...(isCredentialSetupCoach
+                ? { onclick: 'return gtagReportPurchase(this.href);' }
+                : {})}
+            >
               Buy on Gumroad — {w.price}
             </a>
           ) : w.n8nListed ? (
@@ -126,7 +150,14 @@ const jsonLd = [
       <section class="product-body" style="margin-top: 48px;">
         <div class="cta-row">
           {w.gumroadUrl ? (
-            <a class="btn btn-accent" href={w.gumroadUrl} rel="noopener">
+            <a
+              class="btn btn-accent"
+              href={w.gumroadUrl}
+              rel="noopener"
+              {...(isCredentialSetupCoach
+                ? { onclick: 'return gtagReportPurchase(this.href);' }
+                : {})}
+            >
               Get {w.name} — {w.price} on Gumroad
             </a>
           ) : w.n8nListed ? (
