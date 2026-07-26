@@ -70,6 +70,14 @@ const allLd = [...globalLd, ...jsonLd];
     <meta name="twitter:image" content={`${SITE}/og-default.png`} />
 
     {allLd.map((ld) => <script type="application/ld+json" set:html={JSON.stringify(ld)} />)}
+    <!-- Google tag (gtag.js) -->
+    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=AW-18346809200"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18346809200');
+    </script>
     <slot name="head" />
   </head>
   <body>

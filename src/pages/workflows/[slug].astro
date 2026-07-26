@@ -63,15 +63,8 @@ const jsonLd = [
 >
   {isCredentialSetupCoach && (
     <Fragment slot="head">
-      <!-- Google tag (gtag.js) -->
-      <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=AW-18346809200"></script>
+      <!-- Purchase conversion: fire on Gumroad buy clicks (checkout is off-site) -->
       <script is:inline>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'AW-18346809200');
-
-        // Purchase conversion: fire on Gumroad buy clicks (fallback when checkout is off-site)
         window.gtagReportPurchase = function gtagReportPurchase(url) {
           var callback = function () {
             if (typeof url !== 'undefined') {
