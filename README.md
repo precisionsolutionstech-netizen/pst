@@ -11,6 +11,7 @@ npm install
 npm run dev        # http://localhost:4321
 npm run build      # outputs static site to dist/
 npm run preview    # serve the built dist/ locally
+npm run indexnow   # notify Bing/IndexNow of URL changes (after deploy)
 ```
 
 ## Content model
@@ -37,6 +38,13 @@ Pages live in `src/pages/`; the shared layout (nav, footer, meta, Open Graph, JS
   workflow pages.
 - `sitemap-index.xml` is generated at build time by `@astrojs/sitemap`; `public/robots.txt`
   references it.
+- [IndexNow](https://www.bing.com/indexnow/getstarted) notifies Bing (and other
+  participating engines) when URLs are added or updated. The key file lives at
+  `public/7d2bed5630ab4c21adbf32797b64a578.txt` (served from the site root). After
+  deploying changed pages, run `npm run indexnow` (homepage + sitemap index by
+  default), pass specific URLs / paths, or submit every page from the live
+  sitemap with `npm run indexnow -- --sitemap`. Prefer submitting only URLs that
+  changed; use `--sitemap` for a one-time full push.
 - The legacy GitHub Pages catalog and blog pages carry `rel=canonical` pointing at this
   domain so existing rankings transfer, plus a meta refresh / JS redirect per page
   (GitHub Pages cannot emit true HTTP 301/302). Re-apply with

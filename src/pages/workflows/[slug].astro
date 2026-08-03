@@ -19,6 +19,50 @@ const description = w.shortDescription.length > 158
   : w.shortDescription;
 
 const priceNumber = w.price ? w.price.replace('$', '') : null;
+const isPaidProduct = Boolean(w.gumroadUrl && priceNumber);
+const imageUrl = `${SITE}/og-default.png`;
+
+/** Paid templates keep Product+offers for Shopping rich results.
+ *  Free / coming-soon must not emit bare Product (GSC: needs offers|review|aggregateRating). */
+const workflowEntity = isPaidProduct
+  ? {
+      '@context': 'https://schema.org',
+      '@type': 'Product',
+      name: w.name,
+      description: w.shortDescription,
+      url: `${SITE}${pagePath}`,
+      image: imageUrl,
+      category: 'Automation workflow template',
+      brand: { '@type': 'Organization', name: 'Precision Solutions Tech' },
+      offers: {
+        '@type': 'Offer',
+        price: priceNumber,
+        priceCurrency: 'USD',
+        url: w.gumroadUrl,
+        availability: 'https://schema.org/InStock',
+      },
+    }
+  : {
+      '@context': 'https://schema.org',
+      '@type': w.comingSoon ? 'CreativeWork' : 'SoftwareApplication',
+      name: w.name,
+      description: w.shortDescription,
+      url: `${SITE}${pagePath}`,
+      image: imageUrl,
+      ...(w.comingSoon
+        ? { creativeWorkStatus: 'Incomplete' }
+        : {
+            applicationCategory: 'BusinessApplication',
+            operatingSystem: 'n8n',
+            offers: {
+              '@type': 'Offer',
+              price: '0',
+              priceCurrency: 'USD',
+              url: w.n8nCreatorUrl || `${SITE}${pagePath}`,
+              availability: 'https://schema.org/InStock',
+            },
+          }),
+    };
 
 const jsonLd = [
   {
@@ -30,26 +74,7 @@ const jsonLd = [
       { '@type': 'ListItem', position: 3, name: w.name, item: `${SITE}${pagePath}` },
     ],
   },
-  {
-    '@context': 'https://schema.org',
-    '@type': 'Product',
-    name: w.name,
-    description: w.shortDescription,
-    url: `${SITE}${pagePath}`,
-    category: 'Automation workflow template',
-    brand: { '@type': 'Organization', name: 'Precision Solutions Tech' },
-    ...(w.gumroadUrl && priceNumber
-      ? {
-          offers: {
-            '@type': 'Offer',
-            price: priceNumber,
-            priceCurrency: 'USD',
-            url: w.gumroadUrl,
-            availability: 'https://schema.org/InStock',
-          },
-        }
-      : {}),
-  },
+  workflowEntity,
 ];
 ---
 
