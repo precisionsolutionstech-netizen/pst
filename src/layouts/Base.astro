@@ -22,10 +22,12 @@ const globalLd = [
     '@context': 'https://schema.org',
     '@type': 'Organization',
     name: 'Precision Solutions Tech',
+    legalName: 'SG TECHNOLOGY LLC',
     url: `${SITE}/`,
     logo: `${SITE}/logo.png`,
     description:
       'Senior software engineers publishing production-grade developer APIs and automation workflows.',
+    email: 'hello@precisionsolutionstech.com',
     sameAs: [
       'https://n8n.io/creators/precision-tech/',
       'https://solutionsprecision.gumroad.com/',
@@ -122,6 +124,10 @@ const allLd = [...globalLd, ...jsonLd];
               Production-grade developer APIs and automation workflows, built by senior
               software engineers.
             </p>
+            <p>
+              Contact:
+              <a href="mailto:hello@precisionsolutionstech.com">hello@precisionsolutionstech.com</a>
+            </p>
           </div>
           <div>
             <h3>Products</h3>
@@ -147,7 +153,10 @@ const allLd = [...globalLd, ...jsonLd];
           </div>
         </div>
         <div class="footer-bottom">
-          <p>&copy; {new Date().getFullYear()} Precision Solutions Tech. All rights reserved.</p>
+          <p>
+            &copy; {new Date().getFullYear()} Precision Solutions Tech. Operated by
+            SG TECHNOLOGY LLC. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>
