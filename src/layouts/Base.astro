@@ -9,7 +9,7 @@ export interface Props {
   ogType?: string;
   /** Extra JSON-LD objects to inject (already-built plain objects). */
   jsonLd?: object[];
-  /** Which top nav item is active: "apis" | "workflows" | "blog" | "about" | "home" */
+  /** Which top nav item is active: "apis" | "workflows" | "apps" | "blog" | "about" | "home" */
   active?: string;
 }
 
@@ -26,7 +26,7 @@ const globalLd = [
     url: `${SITE}/`,
     logo: `${SITE}/logo.png`,
     description:
-      'Senior software engineers publishing production-grade developer APIs and automation workflows.',
+      'Senior software engineers publishing production-grade developer APIs, automation workflows, and macOS apps.',
     email: 'hello@precisionsolutionstech.com',
     sameAs: [
       'https://n8n.io/creators/precision-tech/',
@@ -98,6 +98,7 @@ const allLd = [...globalLd, ...jsonLd];
           <a href="/" aria-current={active === 'home' ? 'page' : undefined}>Home</a>
           <a href="/apis/" aria-current={active === 'apis' ? 'page' : undefined}>APIs</a>
           <a href="/workflows/" aria-current={active === 'workflows' ? 'page' : undefined}>Workflows</a>
+          <a href="/apps/" aria-current={active === 'apps' ? 'page' : undefined}>Apps</a>
           <a href="/blog/" aria-current={active === 'blog' ? 'page' : undefined}>Blog</a>
           <a href="/about/" aria-current={active === 'about' ? 'page' : undefined}>About</a>
         </nav>
@@ -121,8 +122,8 @@ const allLd = [...globalLd, ...jsonLd];
               Precision Solutions Tech
             </p>
             <p>
-              Production-grade developer APIs and automation workflows, built by senior
-              software engineers.
+              Production-grade developer APIs, automation workflows, and macOS apps — built by
+              senior software engineers.
             </p>
             <p>
               Contact:
@@ -134,6 +135,7 @@ const allLd = [...globalLd, ...jsonLd];
             <ul>
               <li><a href="/apis/">Developer APIs</a></li>
               <li><a href="/workflows/">Automation Workflows</a></li>
+              <li><a href="/apps/">macOS Apps</a></li>
             </ul>
           </div>
           <div>

@@ -1,0 +1,156 @@
+---
+import Base from '../../layouts/Base.astro';
+import apps from '../../data/apps.json';
+
+export function getStaticPaths() {
+  return apps.map((a) => ({ params: { slug: a.slug }, props: { app: a } }));
+}
+
+const { app: a } = Astro.props;
+const SITE = 'https://precisionsolutionstech.com';
+const pagePath = `/apps/${a.slug}/`;
+
+const related = apps.filter((r) => r.slug !== a.slug);
+
+const title = `${a.name} | macOS App | Precision Solutions Tech`;
+const description = a.shortDescription.length > 158
+  ? a.shortDescription.slice(0, 155).replace(/\s+\S*$/, '') + '…'
+  : a.shortDescription;
+
+const imageUrl = `${SITE}/og-default.png`;
+
+const appEntity = a.comingSoon
+  ? {
+      '@context': 'https://schema.org',
+      '@type': 'CreativeWork',
+      name: a.name,
+      description: a.shortDescription,
+      url: `${SITE}${pagePath}`,
+      image: imageUrl,
+      creativeWorkStatus: 'Incomplete',
+      author: { '@type': 'Organization', name: 'Precision Solutions Tech' },
+    }
+  : {
+      '@context': 'https://schema.org',
+      '@type': 'SoftwareApplication',
+      name: a.name,
+      description: a.shortDescription,
+      url: `${SITE}${pagePath}`,
+      image: imageUrl,
+      applicationCategory: 'UtilitiesApplication',
+      operatingSystem: 'macOS',
+      offers: a.purchaseUrl
+        ? {
+            '@type': 'Offer',
+            priceCurrency: 'USD',
+            url: a.purchaseUrl,
+            availability: 'https://schema.org/InStock',
+          }
+        : undefined,
+    };
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` },
+      { '@type': 'ListItem', position: 2, name: 'Apps', item: `${SITE}/apps/` },
+      { '@type': 'ListItem', position: 3, name: a.name, item: `${SITE}${pagePath}` },
+    ],
+  },
+  appEntity,
+];
+---
+
+<Base
+  title={title}
+  description={description}
+  path={pagePath}
+  ogType="article"
+  active="apps"
+  jsonLd={jsonLd}
+>
+  <div class="wrap">
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li><a href="/apps/">Apps</a></li>
+        <li>{a.name}</li>
+      </ol>
+    </nav>
+
+    <article>
+      <header class="product-hero">
+        <div class="hero-pills">
+          <span class="pill pill-accent">macOS app</span>
+          {a.categories.map((c: string) => <span class="pill">{c}</span>)}
+          {a.comingSoon && <span class="pill">Coming soon</span>}
+        </div>
+        <h1>{a.name}</h1>
+        {a.tagline && <p class="lead" style="margin-bottom: 8px; font-weight: 500; color: var(--ink);">{a.tagline}</p>}
+        <p class="lead">{a.shortDescription}</p>
+
+        <div class="cta-row">
+          {a.purchaseUrl ? (
+            <a class="btn btn-accent" href={a.purchaseUrl} rel="noopener">
+              Get {a.name}{a.price ? ` — ${a.price}` : ''}
+            </a>
+          ) : (
+            <a class="btn btn-secondary" href="https://solutionsprecision.gumroad.com/" rel="noopener">
+              Coming soon — visit our Gumroad store
+            </a>
+          )}
+        </div>
+        {a.os && <p class="cta-sub" style="margin-top: 6px;">Requires {a.os}</p>}
+      </header>
+
+      <div class="product-body app-body" set:html={a.contentHtml} />
+
+      <section class="product-body" style="margin-top: 48px;">
+        <div class="cta-row">
+          {a.purchaseUrl ? (
+            <a class="btn btn-accent" href={a.purchaseUrl} rel="noopener">
+              Get {a.name}{a.price ? ` — ${a.price}` : ''}
+            </a>
+          ) : (
+            <a class="btn btn-secondary" href="https://solutionsprecision.gumroad.com/" rel="noopener">
+              Follow our Gumroad store for the release
+            </a>
+          )}
+        </div>
+      </section>
+
+      {related.length > 0 && (
+        <section class="product-body related-apis" style="margin-top: 40px;">
+          <h2>More macOS apps</h2>
+          <ul>
+            {related.map((r) => (
+              <li>
+                <a href={`/apps/${r.slug}/`}>{r.name}</a> — {r.shortDescription.slice(0, 110)}{r.shortDescription.length > 110 ? '…' : ''}
+              </li>
+            ))}
+          </ul>
+          <p><a class="browse-all" href="/apps/">Browse all macOS apps &rarr;</a></p>
+        </section>
+      )}
+    </article>
+  </div>
+</Base>
+
+<style>
+  .app-body :global(h2) {
+    font-size: 1.4rem;
+    margin: 36px 0 14px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+  }
+  .app-body :global(blockquote) {
+    margin: 1em 0;
+    padding: 10px 18px;
+    border-left: 3px solid var(--accent);
+    background: var(--bg-soft);
+    border-radius: 0 8px 8px 0;
+  }
+  .app-body :global(blockquote p) { margin: 0; }
+</style>

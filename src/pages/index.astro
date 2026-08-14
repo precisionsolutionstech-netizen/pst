@@ -2,6 +2,7 @@
 import Base from '../layouts/Base.astro';
 import apis from '../data/apis.json';
 import workflows from '../data/workflows.json';
+import apps from '../data/apps.json';
 
 const featuredApis = [
   'universal-data-format-converter',
@@ -14,9 +15,9 @@ const featuredApis = [
 
 const featuredWorkflows = workflows.filter((w) => w.gumroadUrl).slice(0, 6);
 
-const title = 'Precision Solutions Tech | Developer APIs & Automation Workflows';
+const title = 'Precision Solutions Tech | Developer APIs, Automations & macOS Apps';
 const description =
-  'Production-grade REST APIs for data normalization, validation, and document processing, plus ready-to-run automation workflows for n8n by senior engineers.';
+  'Production-grade REST APIs for data normalization, validation, and document processing, ready-to-run n8n automation workflows, and native macOS apps by senior engineers.';
 ---
 
 <Base title={title} description={description} path="/" active="home">
@@ -26,11 +27,12 @@ const description =
       <p class="hero-sub">
         Precision Solutions Tech publishes production-grade REST APIs and ready-to-run automation
         workflows — data normalization, document processing, validation, and AI-powered
-        automation. Every product lives on the marketplace where it works best.
+        automation — plus native macOS apps. Every product lives on the marketplace where it works best.
       </p>
       <div class="cta-row hero-ctas">
         <a class="btn btn-primary" href="/apis/">Browse APIs</a>
         <a class="btn btn-secondary" href="/workflows/">Browse Automation Workflows</a>
+        <a class="btn btn-secondary" href="/apps/">macOS Apps</a>
       </div>
       <div class="trust-strip">
         <span class="pill pill-success">Verified n8n creator</span>
@@ -92,7 +94,33 @@ const description =
     </div>
   </section>
 
-  <section class="section" id="who">
+  <section class="section" id="apps">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">macOS Apps</span>
+        <h2>Native Mac utilities — coming soon</h2>
+        <p>
+          Local-first Mac apps for duplicate media cleanup, screenshots, window layouts, and
+          AirPrint — the same engineering bar as our APIs and workflows.
+        </p>
+        <a class="section-link" href="/apps/">View all {apps.length} macOS apps &rarr;</a>
+      </div>
+      <div class="card-grid">
+        {apps.map((a) => (
+          <a class="card" href={`/apps/${a.slug}/`}>
+            <h3>{a.name}</h3>
+            <p>{a.shortDescription}</p>
+            <span class="card-meta">
+              <span class="pill pill-accent">{a.os}</span>
+              <span class="pill">Coming soon</span>
+            </span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="who">
     <div class="wrap">
       <div class="section-head">
         <span class="eyebrow">Who we are</span>
@@ -100,7 +128,8 @@ const description =
         <p>
           We are a group of senior software engineer contractors. When we build something on a
           client project that solves a general problem, we productize it and publish it on the
-          right marketplace — APIs on RapidAPI, automations on n8n and Gumroad. We are
+          right marketplace — APIs on RapidAPI, automations on n8n and Gumroad, apps for Mac.
+          We are
           <a href="https://n8n.io/creators/precision-tech/" rel="noopener"> verified n8n creators</a>.
         </p>
         <a class="section-link" href="/about/">More about us &rarr;</a>
