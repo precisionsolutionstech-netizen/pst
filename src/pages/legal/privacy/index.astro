@@ -1,0 +1,191 @@
+---
+import Base from '../../../layouts/Base.astro';
+
+const SITE = 'https://precisionsolutionstech.com';
+const title = 'Privacy Policy | Precision Solutions Tech';
+const description =
+  'How Precision Solutions Tech (SG TECHNOLOGY LLC) handles privacy for our website, developer APIs, automation workflows, and macOS apps including Twinkeep.';
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` },
+      { '@type': 'ListItem', position: 2, name: 'Privacy Policy', item: `${SITE}/legal/privacy/` },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: 'Privacy Policy',
+    url: `${SITE}/legal/privacy/`,
+    description,
+    dateModified: '2026-08-25',
+    isPartOf: { '@type': 'WebSite', name: 'Precision Solutions Tech', url: `${SITE}/` },
+  },
+];
+---
+
+<Base title={title} description={description} path="/legal/privacy/" jsonLd={jsonLd}>
+  <div class="wrap">
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li>Privacy Policy</li>
+      </ol>
+    </nav>
+
+    <article class="prose">
+      <h1>Privacy Policy</h1>
+      <p class="meta">Last updated: August 25, 2026</p>
+      <p class="lead">
+        This Privacy Policy explains how <strong>Precision Solutions Tech</strong>, operated by
+        <strong>SG TECHNOLOGY LLC</strong> (“we”, “us”, “our”), handles information when you use
+        our website, developer APIs, automation workflows, and macOS apps (including
+        <a href="/apps/twinkeep/">Twinkeep</a>).
+      </p>
+      <p>
+        You can also use this page as our <strong>privacy choices</strong> notice: we do not sell
+        personal information, and we do not share it for cross-context behavioral advertising.
+      </p>
+
+      <h2 id="summary">Short version</h2>
+      <ul>
+        <li>
+          <strong>macOS apps</strong> such as Twinkeep are designed to process files
+          <em>on your Mac</em>. Core features do not require uploading your media to our servers.
+        </li>
+        <li>
+          <strong>APIs and workflows</strong> are built to be stateless where practical: request
+          data is processed to fulfill the call and is not retained as a customer media library.
+        </li>
+        <li>
+          <strong>This website</strong> may use standard hosting, analytics, or advertising tags
+          as described below.
+        </li>
+        <li>We do <strong>not sell</strong> your personal information.</li>
+      </ul>
+
+      <h2 id="who">Who we are</h2>
+      <p>
+        Precision Solutions Tech is the public brand of <strong>SG TECHNOLOGY LLC</strong>.
+        Website: <a href="https://precisionsolutionstech.com/">precisionsolutionstech.com</a>.
+        Contact: <a href="mailto:hello@precisionsolutionstech.com">hello@precisionsolutionstech.com</a>
+        or <a href="mailto:support@precisionsolutionstech.com">support@precisionsolutionstech.com</a>.
+      </p>
+
+      <h2 id="apps">macOS apps (Twinkeep and similar)</h2>
+      <p>
+        Our Mac apps process content you choose on your device. For Twinkeep specifically, that may
+        include:
+      </p>
+      <ul>
+        <li>Paths and metadata of files in folders you select (name, size, dates, media type)</li>
+        <li>Content fingerprints (hashes) computed locally to detect duplicates</li>
+        <li>Thumbnails or previews generated locally for display</li>
+        <li>Settings stored in local preferences</li>
+        <li>Quarantine / File Rules records stored under your user Application Support folder</li>
+        <li>
+          Optional Stability monitor samples (approximate per-app CPU and memory, thermal state,
+          timestamps) stored only on your Mac for a limited period while that monitor is running
+        </li>
+        <li>
+          Paths and timestamps of local macOS DiagnosticReports that a Stability utility may list —
+          read on-device, not uploaded by the app for that purpose
+        </li>
+      </ul>
+      <p>
+        This processing stays on your device unless you independently copy, share, or sync files
+        (for example via your own cloud storage).
+      </p>
+      <h3>Purchases and support</h3>
+      <p>
+        If you buy through the Mac App Store, Apple’s terms and privacy policy govern payment. If
+        you buy through Gumroad, our website checkout, or another storefront, that storefront’s
+        privacy policy governs payment card data (we do not receive your full card number). We may
+        receive your name, email, purchase status, and support message content as needed to fulfill
+        the purchase, deliver a license, or reply.
+      </p>
+      <h3>Analytics and ads in the apps</h3>
+      <p>
+        Current Twinkeep builds do not include third-party advertising SDKs and do not sell personal
+        information. If that changes, we will update this policy before shipping the change.
+      </p>
+
+      <h2 id="website">Website</h2>
+      <p>
+        When you visit precisionsolutionstech.com, our hosts and tools may process standard
+        technical data such as IP address, browser type, pages viewed, and approximate location
+        derived from IP, plus cookies or similar technologies used for security, preferences, or
+        measurement. We may use advertising or analytics tags (for example Google tags) on the site;
+        those providers process data under their own policies.
+      </p>
+
+      <h2 id="apis">Developer APIs and automation workflows</h2>
+      <p>
+        API and workflow products are generally designed for privacy-first, short-lived processing:
+        you send a request, we return a result, and we do not keep your payload as a long-term
+        content archive. Marketplace partners (such as RapidAPI or Gumroad) and your own automation
+        credentials are governed by those parties’ policies and your configuration. Server logs may
+        briefly include technical metadata needed to operate and secure the service.
+      </p>
+
+      <h2 id="choices">Your privacy choices</h2>
+      <p>
+        This section is our notice for “user privacy choices” / “do not sell or share” style
+        requests (including California and similar laws, where they apply):
+      </p>
+      <ul>
+        <li>We do <strong>not sell</strong> personal information.</li>
+        <li>
+          We do <strong>not share</strong> personal information for cross-context behavioral
+          advertising in our Mac apps.
+        </li>
+        <li>
+          For Twinkeep: only select folders you intend to scan; disable auto-quarantine if you
+          prefer; restore or delete quarantined items; leave optional monitors off; uninstall the
+          app to stop local processing.
+        </li>
+        <li>
+          To request access, correction, or deletion of purchase/support records we hold, email
+          <a href="mailto:support@precisionsolutionstech.com">support@precisionsolutionstech.com</a>
+          with enough detail for us to locate your request. We may need to verify your identity.
+        </li>
+      </ul>
+
+      <h2 id="children">Children’s privacy</h2>
+      <p>
+        Our products are not directed to children under 13 (or the minimum age in your
+        jurisdiction).
+      </p>
+
+      <h2 id="retention">Retention</h2>
+      <p>
+        Local app data remains on your Mac until you remove it or uninstall. Purchase and support
+        records are retained as needed for accounting, fraud prevention, legal obligations, and
+        customer support. Website/server logs are retained for a limited operational period.
+      </p>
+
+      <h2 id="changes">Changes</h2>
+      <p>
+        We may update this policy. The “Last updated” date will change when we do. Continued use
+        after an update means you accept the revised policy for subsequent use.
+      </p>
+
+      <h2 id="contact">Contact</h2>
+      <p>
+        Privacy questions:
+        <a href="mailto:support@precisionsolutionstech.com">support@precisionsolutionstech.com</a>
+        ·
+        <a href="mailto:hello@precisionsolutionstech.com">hello@precisionsolutionstech.com</a>
+      </p>
+      <p>
+        Product page:
+        <a href="/apps/twinkeep/">Twinkeep</a>
+        · Company:
+        <a href="/about/">About us</a>
+      </p>
+    </article>
+  </div>
+</Base>
