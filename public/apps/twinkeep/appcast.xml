@@ -15,9 +15,9 @@
       <description><![CDATA[<p>Initial Twinkeep 1.0.0 release.</p><p>Build 1.</p>]]></description>
       <enclosure
         url="https://precisionsolutionstech.com/apps/twinkeep/releases/Twinkeep-1.0.0.zip"
-        length="4021208"
+        length="4026609"
         type="application/octet-stream"
-        sparkle:edSignature="Z/VErtunWL6VWC0HW97D64l58l015RpKQkeMy9a+kbLDjWSY13yiGhsHRzImDY8ttJ87nVoAtBevBH/kO6t6BQ=="
+        sparkle:edSignature="wh92jRf6JAB7eYNmuTCJwyqFaQDl1CyQhAmYS013e19lVIf6zazClX3XZRLgOU8r6uwbnjKJ+ZazS9rjaTisDg=="
       />
     </item>
   </channel>
