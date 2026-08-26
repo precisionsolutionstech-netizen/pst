@@ -11,13 +11,16 @@ const SITE = 'https://precisionsolutionstech.com';
 const pagePath = `/apps/${a.slug}/`;
 
 const related = apps.filter((r) => r.slug !== a.slug);
+const screenshots = (a as { screenshots?: { src: string; alt: string; caption?: string }[] }).screenshots ?? [];
 
 const title = `${a.name} | macOS App | Precision Solutions Tech`;
 const description = a.shortDescription.length > 158
   ? a.shortDescription.slice(0, 155).replace(/\s+\S*$/, '') + '…'
   : a.shortDescription;
 
-const imageUrl = `${SITE}/og-default.png`;
+const imageUrl = screenshots[0]
+  ? `${SITE}${screenshots[0].src}`
+  : `${SITE}/og-default.png`;
 
 const appEntity = a.comingSoon
   ? {
@@ -118,16 +121,42 @@ const jsonLd = [
         {a.os && <p class="cta-sub" style="margin-top: 6px;">Requires {a.os} · Apple Silicon or Intel · notarized .dmg</p>}
       </header>
 
-      {a.screenshots?.length > 0 && (
-        <section class="shot-ribbon" aria-label={`${a.name} screenshots`}>
-          <div class="shot-ribbon-track">
-            {a.screenshots.map((s: { src: string; alt: string; caption?: string }) => (
-              <figure class="shot-card">
-                <img src={s.src} alt={s.alt} width="1280" height="800" loading="lazy" decoding="async" />
-                {s.caption && <figcaption>{s.caption}</figcaption>}
-              </figure>
+      {screenshots.length > 0 && (
+        <section class="shot-gallery" aria-label={`${a.name} screenshots`} data-shot-gallery>
+          <div class="shot-frame">
+            <figure class="shot-main">
+              <img
+                src={screenshots[0].src}
+                alt={screenshots[0].alt}
+                width="1280"
+                height="800"
+                decoding="async"
+                data-shot-main
+              />
+            </figure>
+            <button type="button" class="shot-nav shot-nav-prev" aria-label="Previous screenshot" data-shot-prev>
+              ‹
+            </button>
+            <button type="button" class="shot-nav shot-nav-next" aria-label="Next screenshot" data-shot-next>
+              ›
+            </button>
+          </div>
+          <div class="shot-dots" role="tablist" aria-label="Screenshot slides">
+            {screenshots.map((s, i) => (
+              <button
+                type="button"
+                class:list={['shot-dot', { active: i === 0 }]}
+                role="tab"
+                aria-label={s.caption || `Screenshot ${i + 1}`}
+                aria-selected={i === 0 ? 'true' : 'false'}
+                data-shot-index={i}
+                data-shot-src={s.src}
+                data-shot-alt={s.alt}
+                data-shot-caption={s.caption || ''}
+              />
             ))}
           </div>
+          <p class="shot-caption" data-shot-caption>{screenshots[0].caption || ''}</p>
         </section>
       )}
 
@@ -171,53 +200,107 @@ const jsonLd = [
   </div>
 </Base>
 
+{screenshots.length > 0 && (
+  <script is:inline>
+    (() => {
+      const root = document.querySelector('[data-shot-gallery]');
+      if (!root) return;
+      const main = root.querySelector('[data-shot-main]');
+      const caption = root.querySelector('[data-shot-caption]');
+      const dots = [...root.querySelectorAll('[data-shot-index]')];
+      if (!main || !dots.length) return;
+      let index = 0;
+      const show = (next) => {
+        index = (next + dots.length) % dots.length;
+        const dot = dots[index];
+        main.src = dot.getAttribute('data-shot-src');
+        main.alt = dot.getAttribute('data-shot-alt') || '';
+        if (caption) caption.textContent = dot.getAttribute('data-shot-caption') || '';
+        dots.forEach((d, i) => {
+          const on = i === index;
+          d.classList.toggle('active', on);
+          d.setAttribute('aria-selected', on ? 'true' : 'false');
+        });
+      };
+      root.querySelector('[data-shot-prev]')?.addEventListener('click', () => show(index - 1));
+      root.querySelector('[data-shot-next]')?.addEventListener('click', () => show(index + 1));
+      dots.forEach((d) => d.addEventListener('click', () => show(Number(d.getAttribute('data-shot-index')))));
+    })();
+  </script>
+)}
+
 <style>
-  .shot-ribbon {
+  .shot-gallery {
     margin: 28px 0 8px;
-    /* bleed slightly past wrap for a ribbon feel */
-    margin-left: calc(50% - 50vw);
-    margin-right: calc(50% - 50vw);
-    padding: 14px 0 10px;
-    background: linear-gradient(180deg, var(--bg-soft) 0%, transparent 100%);
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
+    max-width: 920px;
   }
-  .shot-ribbon-track {
-    display: flex;
-    gap: 12px;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    padding: 0 max(16px, calc(50vw - 360px)) 6px;
-    scrollbar-width: thin;
+  .shot-frame {
+    position: relative;
+    border-radius: 4px;
+    overflow: hidden;
+    border: 1px solid #e5e7eb;
+    background: #fff;
   }
-  .shot-card {
-    flex: 0 0 auto;
-    width: min(280px, 72vw);
+  .shot-main {
     margin: 0;
-    scroll-snap-align: start;
   }
-  .shot-card img {
+  .shot-main img {
     display: block;
     width: 100%;
     height: auto;
     aspect-ratio: 16 / 10;
     object-fit: cover;
     object-position: top center;
-    border-radius: 10px;
-    border: 1px solid var(--border);
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
-    background: var(--bg);
   }
-  .shot-card figcaption {
-    margin-top: 6px;
-    font-size: 0.78rem;
-    color: var(--muted);
+  .shot-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    width: 36px;
+    height: 36px;
+    border-radius: 999px;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    background: rgba(255, 255, 255, 0.95);
+    color: #111;
+    font-size: 1.4rem;
+    line-height: 1;
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+    padding: 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  }
+  .shot-nav:hover {
+    background: #fff;
+  }
+  .shot-nav-prev { left: 12px; }
+  .shot-nav-next { right: 12px; }
+  .shot-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 9px;
+    margin-top: 14px;
+  }
+  .shot-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 999px;
+    border: 1.5px solid #111;
+    background: transparent;
+    padding: 0;
+    cursor: pointer;
+  }
+  .shot-dot.active {
+    background: #111;
+    border-color: #111;
+  }
+  .shot-caption {
+    margin: 10px 0 0;
     text-align: center;
-    letter-spacing: 0.01em;
-  }
-  @media (min-width: 900px) {
-    .shot-card { width: 240px; }
+    color: var(--muted);
+    font-size: 0.88rem;
   }
 
   .app-body :global(h2) {

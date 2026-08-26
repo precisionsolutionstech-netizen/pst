@@ -16,9 +16,9 @@
     "os": "macOS 13+",
     "screenshots": [
       {
-        "src": "/apps/twinkeep/gallery/01-library-after-scan.png",
-        "alt": "Twinkeep library after a scan",
-        "caption": "Library"
+        "src": "/apps/twinkeep/gallery/04-quarantine-restore.png",
+        "alt": "Twinkeep Quarantine with restore and preview",
+        "caption": "Quarantine"
       },
       {
         "src": "/apps/twinkeep/gallery/02-exact-duplicates.png",
@@ -26,23 +26,13 @@
         "caption": "Exact"
       },
       {
-        "src": "/apps/twinkeep/gallery/03-review-lookalikes.png",
-        "alt": "Review lookalike photos",
-        "caption": "Review"
-      },
-      {
-        "src": "/apps/twinkeep/gallery/04-quarantine-restore.png",
-        "alt": "Quarantine with restore",
-        "caption": "Quarantine"
-      },
-      {
         "src": "/apps/twinkeep/gallery/05-utilities-maintain.png",
-        "alt": "Maintain utilities",
+        "alt": "Maintain utilities — Junk Sweep",
         "caption": "Utilities"
       },
       {
         "src": "/apps/twinkeep/gallery/06-disk-analysis.png",
-        "alt": "Disk analysis",
+        "alt": "Disk Analysis utility",
         "caption": "Disk"
       }
     ],
