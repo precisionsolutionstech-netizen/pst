@@ -147,16 +147,14 @@ const jsonLd = [
                 type="button"
                 class:list={['shot-dot', { active: i === 0 }]}
                 role="tab"
-                aria-label={s.caption || `Screenshot ${i + 1}`}
+                aria-label={s.caption ? `${s.caption} screenshot` : `Screenshot ${i + 1}`}
                 aria-selected={i === 0 ? 'true' : 'false'}
                 data-shot-index={i}
                 data-shot-src={s.src}
                 data-shot-alt={s.alt}
-                data-shot-caption={s.caption || ''}
               />
             ))}
           </div>
-          <p class="shot-caption" data-shot-caption>{screenshots[0].caption || ''}</p>
         </section>
       )}
 
@@ -206,7 +204,6 @@ const jsonLd = [
       const root = document.querySelector('[data-shot-gallery]');
       if (!root) return;
       const main = root.querySelector('[data-shot-main]');
-      const caption = root.querySelector('[data-shot-caption]');
       const dots = [...root.querySelectorAll('[data-shot-index]')];
       if (!main || !dots.length) return;
       let index = 0;
@@ -215,7 +212,6 @@ const jsonLd = [
         const dot = dots[index];
         main.src = dot.getAttribute('data-shot-src');
         main.alt = dot.getAttribute('data-shot-alt') || '';
-        if (caption) caption.textContent = dot.getAttribute('data-shot-caption') || '';
         dots.forEach((d, i) => {
           const on = i === index;
           d.classList.toggle('active', on);
@@ -295,12 +291,6 @@ const jsonLd = [
   .shot-dot.active {
     background: #111;
     border-color: #111;
-  }
-  .shot-caption {
-    margin: 10px 0 0;
-    text-align: center;
-    color: var(--muted);
-    font-size: 0.88rem;
   }
 
   .app-body :global(h2) {
