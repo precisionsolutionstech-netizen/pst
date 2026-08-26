@@ -118,6 +118,19 @@ const jsonLd = [
         {a.os && <p class="cta-sub" style="margin-top: 6px;">Requires {a.os} · Apple Silicon or Intel · notarized .dmg</p>}
       </header>
 
+      {a.screenshots?.length > 0 && (
+        <section class="shot-ribbon" aria-label={`${a.name} screenshots`}>
+          <div class="shot-ribbon-track">
+            {a.screenshots.map((s: { src: string; alt: string; caption?: string }) => (
+              <figure class="shot-card">
+                <img src={s.src} alt={s.alt} width="1280" height="800" loading="lazy" decoding="async" />
+                {s.caption && <figcaption>{s.caption}</figcaption>}
+              </figure>
+            ))}
+          </div>
+        </section>
+      )}
+
       <div class="product-body app-body" set:html={a.contentHtml} />
 
       <section class="product-body" style="margin-top: 48px;">
@@ -159,6 +172,54 @@ const jsonLd = [
 </Base>
 
 <style>
+  .shot-ribbon {
+    margin: 28px 0 8px;
+    /* bleed slightly past wrap for a ribbon feel */
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    padding: 14px 0 10px;
+    background: linear-gradient(180deg, var(--bg-soft) 0%, transparent 100%);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  .shot-ribbon-track {
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding: 0 max(16px, calc(50vw - 360px)) 6px;
+    scrollbar-width: thin;
+  }
+  .shot-card {
+    flex: 0 0 auto;
+    width: min(280px, 72vw);
+    margin: 0;
+    scroll-snap-align: start;
+  }
+  .shot-card img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    object-position: top center;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+    background: var(--bg);
+  }
+  .shot-card figcaption {
+    margin-top: 6px;
+    font-size: 0.78rem;
+    color: var(--muted);
+    text-align: center;
+    letter-spacing: 0.01em;
+  }
+  @media (min-width: 900px) {
+    .shot-card { width: 240px; }
+  }
+
   .app-body :global(h2) {
     font-size: 1.4rem;
     margin: 36px 0 14px;
