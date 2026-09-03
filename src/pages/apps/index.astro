@@ -3,10 +3,12 @@ import Base from '../../layouts/Base.astro';
 import apps from '../../data/apps.json';
 
 const SITE = 'https://precisionsolutionstech.com';
+const live = apps.filter((a) => !a.comingSoon);
+const soon = apps.filter((a) => a.comingSoon);
 
-const title = 'macOS Apps | Coming Soon | Precision Solutions Tech';
+const title = 'macOS Apps | Precision Solutions Tech';
 const description =
-  'Native macOS apps from Precision Solutions Tech — Twinkeep for duplicate media cleanup and PrecisDesk for capture, window layouts, and AirPrint. Coming soon.';
+  'Native macOS apps from Precision Solutions Tech — Twinkeep for duplicate media cleanup (live on the Mac App Store), and PrecisDesk for capture, window layouts, and AirPrint.';
 
 const jsonLd = [
   {
@@ -45,34 +47,59 @@ const jsonLd = [
       <h1>macOS Apps</h1>
       <p class="lead">
         Native Mac utilities from Precision Solutions Tech — local-first tools for media cleanup,
-        screenshots, window layouts, and printing. Both apps below are in final packaging.
-      </p>
-      <p>
-        <span class="pill">Coming soon</span>
+        screenshots, window layouts, and printing. Twinkeep is available now; PrecisDesk is coming soon.
       </p>
     </header>
 
-    <section class="section" style="padding: 32px 0;">
-      <div class="section-head" style="margin-bottom: 20px;">
-        <h2>Coming soon</h2>
-        <p>
-          Watch our
-          <a href="https://solutionsprecision.gumroad.com/" rel="noopener">Gumroad store</a>
-          for release — or browse each app for the full feature list.
-        </p>
-      </div>
-      <div class="card-grid">
-        {apps.map((a) => (
-          <a class="card" href={`/apps/${a.slug}/`}>
-            <h3>{a.name}</h3>
-            <p>{a.shortDescription}</p>
-            <span class="card-meta">
-              <span class="pill pill-accent">{a.os}</span>
-              <span class="pill">Coming soon</span>
-            </span>
-          </a>
-        ))}
-      </div>
-    </section>
+    {live.length > 0 && (
+      <section class="section" style="padding: 32px 0 8px;">
+        <div class="section-head" style="margin-bottom: 20px;">
+          <h2>Available now</h2>
+          <p>
+            Buy on the
+            <a href="https://apps.apple.com/us/app/twinkeep/id6804921120?mt=12" rel="noopener">Mac App Store</a>
+            or download a trial and license via Gumroad.
+          </p>
+        </div>
+        <div class="card-grid">
+          {live.map((a) => (
+            <a class="card" href={`/apps/${a.slug}/`}>
+              <h3>{a.name}</h3>
+              <p>{a.shortDescription}</p>
+              <span class="card-meta">
+                <span class="pill pill-accent">{a.os}</span>
+                {a.price && <span class="pill pill-success">{a.price}</span>}
+                <span class="pill pill-success">Live</span>
+              </span>
+            </a>
+          ))}
+        </div>
+      </section>
+    )}
+
+    {soon.length > 0 && (
+      <section class="section" style="padding: 24px 0 32px;">
+        <div class="section-head" style="margin-bottom: 20px;">
+          <h2>Coming soon</h2>
+          <p>
+            Watch our
+            <a href="https://solutionsprecision.gumroad.com/" rel="noopener">Gumroad store</a>
+            for release — or browse each app for the full feature list.
+          </p>
+        </div>
+        <div class="card-grid">
+          {soon.map((a) => (
+            <a class="card" href={`/apps/${a.slug}/`}>
+              <h3>{a.name}</h3>
+              <p>{a.shortDescription}</p>
+              <span class="card-meta">
+                <span class="pill pill-accent">{a.os}</span>
+                <span class="pill">Coming soon</span>
+              </span>
+            </a>
+          ))}
+        </div>
+      </section>
+    )}
   </div>
 </Base>

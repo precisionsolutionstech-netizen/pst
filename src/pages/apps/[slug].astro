@@ -95,17 +95,22 @@ const jsonLd = [
         <p class="lead">{a.shortDescription}</p>
 
         <div class="cta-row">
+          {(a as { appStoreUrl?: string }).appStoreUrl && (
+            <a class="btn btn-accent" href={(a as { appStoreUrl?: string }).appStoreUrl} rel="noopener">
+              Get on the Mac App Store{a.price ? ` — ${a.price}` : ''}
+            </a>
+          )}
           {a.trialDownloadUrl && (
-            <a class="btn btn-accent" href={a.trialDownloadUrl} download>
+            <a class={`btn ${(a as { appStoreUrl?: string }).appStoreUrl ? 'btn-secondary' : 'btn-accent'}`} href={a.trialDownloadUrl} download>
               Download free 7-day trial
             </a>
           )}
           {a.purchaseUrl ? (
-            <a class={`btn ${a.trialDownloadUrl ? 'btn-secondary' : 'btn-accent'}`} href={a.purchaseUrl} rel="noopener">
-              Buy license{a.price ? ` — ${a.price}` : ''}
+            <a class="btn btn-secondary" href={a.purchaseUrl} rel="noopener">
+              Buy on Gumroad{a.price ? ` — ${a.price}` : ''}
             </a>
           ) : (
-            !a.trialDownloadUrl && (
+            !a.trialDownloadUrl && !(a as { appStoreUrl?: string }).appStoreUrl && (
               <a class="btn btn-secondary" href="https://solutionsprecision.gumroad.com/" rel="noopener">
                 Coming soon — visit our Gumroad store
               </a>
@@ -114,11 +119,28 @@ const jsonLd = [
         </div>
         {a.trialDownloadUrl && (
           <p class="cta-sub" style="margin-top: 6px;">
-            Free trial runs in the app for 7 days. Buy a license anytime to unlock permanently
-            {a.purchaseUrl ? <> (<a href={a.purchaseUrl} rel="noopener">Gumroad</a>)</> : null}.
+            Direct trial runs in the app for 7 days.
+            {(a as { appStoreUrl?: string }).appStoreUrl ? (
+              <>
+                {' '}
+                Prefer Apple?{' '}
+                <a href={(a as { appStoreUrl?: string }).appStoreUrl} rel="noopener">Mac App Store</a>
+                {' · '}
+              </>
+            ) : null}
+            {a.purchaseUrl ? (
+              <>
+                License via <a href={a.purchaseUrl} rel="noopener">Gumroad</a>.
+              </>
+            ) : null}
           </p>
         )}
-        {a.os && <p class="cta-sub" style="margin-top: 6px;">Requires {a.os} · Apple Silicon or Intel · notarized .dmg</p>}
+        {a.os && (
+          <p class="cta-sub" style="margin-top: 6px;">
+            Requires {a.os} · Apple Silicon or Intel
+            {(a as { appStoreUrl?: string }).appStoreUrl ? ' · Mac App Store or notarized direct build' : ' · notarized direct build'}
+          </p>
+        )}
       </header>
 
       {screenshots.length > 0 && (
@@ -162,17 +184,22 @@ const jsonLd = [
 
       <section class="product-body" style="margin-top: 48px;">
         <div class="cta-row">
+          {(a as { appStoreUrl?: string }).appStoreUrl && (
+            <a class="btn btn-accent" href={(a as { appStoreUrl?: string }).appStoreUrl} rel="noopener">
+              Get on the Mac App Store{a.price ? ` — ${a.price}` : ''}
+            </a>
+          )}
           {a.trialDownloadUrl && (
-            <a class="btn btn-accent" href={a.trialDownloadUrl} download>
+            <a class={`btn ${(a as { appStoreUrl?: string }).appStoreUrl ? 'btn-secondary' : 'btn-accent'}`} href={a.trialDownloadUrl} download>
               Download free 7-day trial
             </a>
           )}
           {a.purchaseUrl ? (
-            <a class={`btn ${a.trialDownloadUrl ? 'btn-secondary' : 'btn-accent'}`} href={a.purchaseUrl} rel="noopener">
-              Buy license{a.price ? ` — ${a.price}` : ''}
+            <a class="btn btn-secondary" href={a.purchaseUrl} rel="noopener">
+              Buy on Gumroad{a.price ? ` — ${a.price}` : ''}
             </a>
           ) : (
-            !a.trialDownloadUrl && (
+            !a.trialDownloadUrl && !(a as { appStoreUrl?: string }).appStoreUrl && (
               <a class="btn btn-secondary" href="https://solutionsprecision.gumroad.com/" rel="noopener">
                 Follow our Gumroad store for the release
               </a>

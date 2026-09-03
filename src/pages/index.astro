@@ -98,10 +98,11 @@ const description =
     <div class="wrap">
       <div class="section-head">
         <span class="eyebrow">macOS Apps</span>
-        <h2>Native Mac utilities — coming soon</h2>
+        <h2>Native Mac utilities</h2>
         <p>
           Local-first Mac apps for duplicate media cleanup, screenshots, window layouts, and
-          AirPrint — the same engineering bar as our APIs and workflows.
+          AirPrint — the same engineering bar as our APIs and workflows. Twinkeep is live on the
+          Mac App Store; PrecisDesk is coming soon.
         </p>
         <a class="section-link" href="/apps/">View all {apps.length} macOS apps &rarr;</a>
       </div>
@@ -112,7 +113,11 @@ const description =
             <p>{a.shortDescription}</p>
             <span class="card-meta">
               <span class="pill pill-accent">{a.os}</span>
-              <span class="pill">Coming soon</span>
+              {a.comingSoon ? (
+                <span class="pill">Coming soon</span>
+              ) : (
+                <span class="pill pill-success">Live</span>
+              )}
             </span>
           </a>
         ))}
