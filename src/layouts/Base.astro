@@ -7,6 +7,8 @@ export interface Props {
   /** Path beginning and ending with "/", e.g. "/apis/pdf-compression/" */
   path: string;
   ogType?: string;
+  /** Absolute path on this site, e.g. "/apps/twinkeep/og-1200x630.jpg" */
+  ogImage?: string;
   /** Extra JSON-LD objects to inject (already-built plain objects). */
   jsonLd?: object[];
   /** Which top nav item is active: "apis" | "workflows" | "apps" | "blog" | "about" | "home" */
@@ -14,8 +16,17 @@ export interface Props {
 }
 
 const SITE = 'https://precisionsolutionstech.com';
-const { title, description, path, ogType = 'website', jsonLd = [], active = '' } = Astro.props;
+const {
+  title,
+  description,
+  path,
+  ogType = 'website',
+  ogImage = '/og-default.png',
+  jsonLd = [],
+  active = '',
+} = Astro.props;
 const canonical = `${SITE}${path}`;
+const ogImageUrl = ogImage.startsWith('http') ? ogImage : `${SITE}${ogImage}`;
 
 const globalLd = [
   {
@@ -65,11 +76,11 @@ const allLd = [...globalLd, ...jsonLd];
     <meta property="og:url" content={canonical} />
     <meta property="og:type" content={ogType} />
     <meta property="og:site_name" content="Precision Solutions Tech" />
-    <meta property="og:image" content={`${SITE}/og-default.png`} />
+    <meta property="og:image" content={ogImageUrl} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={`${SITE}/og-default.png`} />
+    <meta name="twitter:image" content={ogImageUrl} />
 
     {allLd.map((ld) => <script type="application/ld+json" set:html={JSON.stringify(ld)} />)}
     <!-- Google tag (gtag.js) -->

@@ -62,17 +62,23 @@ const jsonLd = [
           </p>
         </div>
         <div class="card-grid">
-          {live.map((a) => (
-            <a class="card" href={`/apps/${a.slug}/`}>
-              <h3>{a.name}</h3>
-              <p>{a.shortDescription}</p>
-              <span class="card-meta">
-                <span class="pill pill-accent">{a.os}</span>
-                {a.price && <span class="pill pill-success">{a.price}</span>}
-                <span class="pill pill-success">Live</span>
-              </span>
-            </a>
-          ))}
+          {live.map((a) => {
+            const icon = (a as { icon?: string }).icon;
+            return (
+              <a class="card app-card" href={`/apps/${a.slug}/`}>
+                {icon && (
+                  <img class="app-card-icon" src={icon} alt="" width="48" height="48" decoding="async" />
+                )}
+                <h3>{a.name}</h3>
+                <p>{(a as { tagline?: string }).tagline || a.shortDescription}</p>
+                <span class="card-meta">
+                  <span class="pill pill-accent">{a.os}</span>
+                  {a.price && <span class="pill pill-success">{a.price}</span>}
+                  <span class="pill pill-success">Live</span>
+                </span>
+              </a>
+            );
+          })}
         </div>
       </section>
     )}
@@ -103,3 +109,12 @@ const jsonLd = [
     )}
   </div>
 </Base>
+
+<style>
+  .app-card-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 11px;
+    box-shadow: 0 6px 16px rgba(15, 23, 42, 0.12);
+  }
+</style>
