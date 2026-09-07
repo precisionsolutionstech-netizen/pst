@@ -1,0 +1,106 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "API Error & Status Normalization",
+    "summary": "Normalize diverse API error responses into a consistent taxonomy.",
+    "description": "Normalize any API error into one canonical type — RATE_LIMIT_EXCEEDED, AUTH_INVALID, VALIDATION_FAILED and more — with retry guidance and severity.",
+    "version": "1.0.0",
+    "contact": {
+      "name": "Precision Solutions Tech",
+      "url": "https://precisionsolutionstech.com/apis/api-error-status-normalization/"
+    }
+  },
+  "externalDocs": {
+    "description": "API Error & Status Normalization documentation",
+    "url": "https://precisionsolutionstech.com/apis/api-error-status-normalization/"
+  },
+  "servers": [
+    {
+      "url": "https://api-error-status-normalization.p.rapidapi.com"
+    }
+  ],
+  "security": [
+    {
+      "rapidApiKey": []
+    }
+  ],
+  "components": {
+    "securitySchemes": {
+      "rapidApiKey": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "x-rapidapi-key"
+      }
+    }
+  },
+  "paths": {
+    "/normalize": {
+      "post": {
+        "operationId": "apiErrorStatusNormalization",
+        "summary": "Normalize diverse API error responses into a consistent taxonomy.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "httpStatusCode": {
+                    "type": "integer"
+                  },
+                  "responseBody": {
+                    "type": "object",
+                    "properties": {
+                      "error": {
+                        "type": "string"
+                      },
+                      "message": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "headers": {
+                    "type": "object",
+                    "properties": {
+                      "Retry-After": {
+                        "type": "string"
+                      },
+                      "X-RateLimit-Remaining": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              },
+              "example": {
+                "httpStatusCode": 429,
+                "responseBody": {
+                  "error": "rate_limit_exceeded",
+                  "message": "Too many requests. Retry after 60 seconds."
+                },
+                "headers": {
+                  "Retry-After": "60",
+                  "X-RateLimit-Remaining": "0"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          }
+        }
+      }
+    }
+  }
+}

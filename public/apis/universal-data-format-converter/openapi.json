@@ -1,0 +1,77 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Universal Data Format Converter",
+    "summary": "JSON, XML, CSV, Excel, YAML, Markdown, HTML, PDF & 15+ formats. Structured data and documents — one endpoint, file upload.",
+    "description": "Universal format converter API: JSON, XML, CSV, Excel, YAML, Markdown, HTML, PDF and 15+ formats.",
+    "version": "1.0.0",
+    "contact": {
+      "name": "Precision Solutions Tech",
+      "url": "https://precisionsolutionstech.com/apis/universal-data-format-converter/"
+    }
+  },
+  "externalDocs": {
+    "description": "Universal Data Format Converter documentation",
+    "url": "https://precisionsolutionstech.com/apis/universal-data-format-converter/"
+  },
+  "servers": [
+    {
+      "url": "https://universal-data-format-converter.p.rapidapi.com"
+    }
+  ],
+  "security": [
+    {
+      "rapidApiKey": []
+    }
+  ],
+  "components": {
+    "securitySchemes": {
+      "rapidApiKey": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "x-rapidapi-key"
+      }
+    }
+  },
+  "paths": {
+    "/convert": {
+      "post": {
+        "operationId": "universalDataFormatConverter",
+        "summary": "JSON, XML, CSV, Excel, YAML, Markdown, HTML, PDF & 15+ formats. Structured data and documents — one endpoint, file upload.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "file": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                },
+                "required": [
+                  "file"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          }
+        }
+      }
+    }
+  }
+}

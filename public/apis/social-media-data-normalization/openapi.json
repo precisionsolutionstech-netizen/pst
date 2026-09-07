@@ -1,0 +1,106 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Social Media Data Normalization",
+    "summary": "Unify social media content payloads into a structured format.",
+    "description": "Normalize posts and reviews from Twitter, Facebook, YouTube, TikTok, Reddit, Yelp and 40+ platforms into one canonical schema. No social API calls.",
+    "version": "1.0.0",
+    "contact": {
+      "name": "Precision Solutions Tech",
+      "url": "https://precisionsolutionstech.com/apis/social-media-data-normalization/"
+    }
+  },
+  "externalDocs": {
+    "description": "Social Media Data Normalization documentation",
+    "url": "https://precisionsolutionstech.com/apis/social-media-data-normalization/"
+  },
+  "servers": [
+    {
+      "url": "https://social-media-data-normalization-interpretation.p.rapidapi.com"
+    }
+  ],
+  "security": [
+    {
+      "rapidApiKey": []
+    }
+  ],
+  "components": {
+    "securitySchemes": {
+      "rapidApiKey": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "x-rapidapi-key"
+      }
+    }
+  },
+  "paths": {
+    "/normalize": {
+      "post": {
+        "operationId": "socialMediaDataNormalization",
+        "summary": "Unify social media content payloads into a structured format.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "body": {
+                    "type": "object",
+                    "properties": {
+                      "platform": {
+                        "type": "string"
+                      },
+                      "data": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "text": {
+                            "type": "string"
+                          },
+                          "author_id": {
+                            "type": "string"
+                          },
+                          "created_at": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "example": {
+                "body": {
+                  "platform": "twitter",
+                  "data": {
+                    "id": "123",
+                    "text": "Example tweet.",
+                    "author_id": "42",
+                    "created_at": "2024-01-01T12:00:00Z"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          }
+        }
+      }
+    }
+  }
+}

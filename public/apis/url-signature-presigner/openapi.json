@@ -1,0 +1,116 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "URL Signature Presigner",
+    "summary": "Generate secure, signed URLs for controlled resource access.",
+    "description": "Presign and verify URLs with HMAC-SHA256/SHA512: expiration, HTTP method, IP allowlists, headers, payload size. POST /sign and POST /verify.",
+    "version": "1.0.0",
+    "contact": {
+      "name": "Precision Solutions Tech",
+      "url": "https://precisionsolutionstech.com/apis/url-signature-presigner/"
+    }
+  },
+  "externalDocs": {
+    "description": "URL Signature Presigner documentation",
+    "url": "https://precisionsolutionstech.com/apis/url-signature-presigner/"
+  },
+  "servers": [
+    {
+      "url": "https://url-signature-presigner-api.p.rapidapi.com"
+    }
+  ],
+  "security": [
+    {
+      "rapidApiKey": []
+    }
+  ],
+  "components": {
+    "securitySchemes": {
+      "rapidApiKey": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "x-rapidapi-key"
+      }
+    }
+  },
+  "paths": {
+    "/sign": {
+      "post": {
+        "operationId": "urlSignaturePresigner",
+        "summary": "Generate secure, signed URLs for controlled resource access.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "path": {
+                    "type": "string"
+                  },
+                  "body": {
+                    "type": "object",
+                    "properties": {
+                      "url": {
+                        "type": "string"
+                      },
+                      "expiration": {
+                        "type": "integer"
+                      },
+                      "secret": {
+                        "type": "string"
+                      },
+                      "method": {
+                        "type": "string"
+                      },
+                      "allowedIps": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      },
+                      "maxPayloadSize": {
+                        "type": "integer"
+                      }
+                    }
+                  },
+                  "label": {
+                    "type": "string"
+                  }
+                }
+              },
+              "example": {
+                "path": "/sign",
+                "body": {
+                  "url": "https://example.com/files/report.pdf",
+                  "expiration": 1893456000,
+                  "secret": "your-secret-key",
+                  "method": "GET",
+                  "allowedIps": [
+                    "192.168.1.100"
+                  ],
+                  "maxPayloadSize": 10485760
+                },
+                "label": "POST /sign — absolute expiration"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,119 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "QR Code Generator",
+    "summary": "Create advanced QR codes for applications and automation.",
+    "description": "Generate QR codes via REST API: custom logos, brand colors, error correction L–H, PNG, SVG, or WEBP. Scan-verified output with quality score.",
+    "version": "1.0.0",
+    "contact": {
+      "name": "Precision Solutions Tech",
+      "url": "https://precisionsolutionstech.com/apis/qr-code-generator/"
+    }
+  },
+  "externalDocs": {
+    "description": "QR Code Generator documentation",
+    "url": "https://precisionsolutionstech.com/apis/qr-code-generator/"
+  },
+  "servers": [
+    {
+      "url": "https://advanced-qr-code-generator-api1.p.rapidapi.com"
+    }
+  ],
+  "security": [
+    {
+      "rapidApiKey": []
+    }
+  ],
+  "components": {
+    "securitySchemes": {
+      "rapidApiKey": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "x-rapidapi-key"
+      }
+    }
+  },
+  "paths": {
+    "/generate": {
+      "post": {
+        "operationId": "qrCodeGenerator",
+        "summary": "Create advanced QR codes for applications and automation.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "type": "string"
+                  },
+                  "size": {
+                    "type": "integer"
+                  },
+                  "errorCorrectionLevel": {
+                    "type": "string"
+                  },
+                  "foregroundColor": {
+                    "type": "string"
+                  },
+                  "backgroundColor": {
+                    "type": "string"
+                  },
+                  "quietZone": {
+                    "type": "integer"
+                  },
+                  "format": {
+                    "type": "string"
+                  },
+                  "logo": {
+                    "type": "object",
+                    "properties": {
+                      "base64": {
+                        "type": "string"
+                      },
+                      "scale": {
+                        "type": "number"
+                      },
+                      "padding": {
+                        "type": "integer"
+                      }
+                    }
+                  }
+                }
+              },
+              "example": {
+                "data": "https://precisionsolutionstech-netizen.github.io/api-catalog",
+                "size": 400,
+                "errorCorrectionLevel": "H",
+                "foregroundColor": "#1a1a2e",
+                "backgroundColor": "#eaeaea",
+                "quietZone": 4,
+                "format": "png",
+                "logo": {
+                  "base64": "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==",
+                  "scale": 0.2,
+                  "padding": 8
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          }
+        }
+      }
+    }
+  }
+}

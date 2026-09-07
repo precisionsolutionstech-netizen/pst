@@ -1,0 +1,97 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "JSON Payload Consistency Checker",
+    "summary": "Analyze JSON structure consistency across datasets.",
+    "description": "Detect missing fields, type drift, nullability issues, bad dates, numeric strings and key casing drift across a JSON object or array. POST /analyze.",
+    "version": "1.0.0",
+    "contact": {
+      "name": "Precision Solutions Tech",
+      "url": "https://precisionsolutionstech.com/apis/json-payload-consistency-checker/"
+    }
+  },
+  "externalDocs": {
+    "description": "JSON Payload Consistency Checker documentation",
+    "url": "https://precisionsolutionstech.com/apis/json-payload-consistency-checker/"
+  },
+  "servers": [
+    {
+      "url": "https://json-payload-consistency-checker.p.rapidapi.com"
+    }
+  ],
+  "security": [
+    {
+      "rapidApiKey": []
+    }
+  ],
+  "components": {
+    "securitySchemes": {
+      "rapidApiKey": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "x-rapidapi-key"
+      }
+    }
+  },
+  "paths": {
+    "/analyze": {
+      "post": {
+        "operationId": "jsonPayloadConsistencyChecker",
+        "summary": "Analyze JSON structure consistency across datasets.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string"
+                    },
+                    "email": {
+                      "type": "string"
+                    },
+                    "age": {
+                      "type": "integer"
+                    }
+                  }
+                }
+              },
+              "example": [
+                {
+                  "name": "John",
+                  "email": "john@example.com",
+                  "age": 30
+                },
+                {
+                  "name": "Jane",
+                  "email": "jane@example.com",
+                  "age": "25"
+                },
+                {
+                  "name": "Bob"
+                }
+              ]
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          }
+        }
+      }
+    }
+  }
+}

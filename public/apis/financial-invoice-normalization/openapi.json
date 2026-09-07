@@ -1,0 +1,130 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Financial Invoice & Receipt Normalization",
+    "summary": "Normalize invoice and receipt data from QuickBooks, Stripe, Xero, Shopify, and 40+ vendors into one canonical schema.",
+    "description": "Normalize invoice and receipt JSON from QuickBooks, Stripe, Xero, Shopify, PayPal, Adyen, and 40+ vendors into one schema.",
+    "version": "1.0.0",
+    "contact": {
+      "name": "Precision Solutions Tech",
+      "url": "https://precisionsolutionstech.com/apis/financial-invoice-normalization/"
+    }
+  },
+  "externalDocs": {
+    "description": "Financial Invoice & Receipt Normalization documentation",
+    "url": "https://precisionsolutionstech.com/apis/financial-invoice-normalization/"
+  },
+  "servers": [
+    {
+      "url": "https://financial-invoice-normalization.p.rapidapi.com"
+    }
+  ],
+  "security": [
+    {
+      "rapidApiKey": []
+    }
+  ],
+  "components": {
+    "securitySchemes": {
+      "rapidApiKey": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "x-rapidapi-key"
+      }
+    }
+  },
+  "paths": {
+    "/normalize": {
+      "post": {
+        "operationId": "financialInvoiceNormalization",
+        "summary": "Normalize invoice and receipt data from QuickBooks, Stripe, Xero, Shopify, and 40+ vendors into one canonical schema.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "source": {
+                    "type": "string"
+                  },
+                  "payload": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string"
+                      },
+                      "currency": {
+                        "type": "string"
+                      },
+                      "amount_due": {
+                        "type": "integer"
+                      },
+                      "lines": {
+                        "type": "object",
+                        "properties": {
+                          "data": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "id": {
+                                  "type": "string"
+                                },
+                                "amount": {
+                                  "type": "integer"
+                                },
+                                "quantity": {
+                                  "type": "integer"
+                                },
+                                "description": {
+                                  "type": "string"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "example": {
+                "source": "stripe",
+                "payload": {
+                  "id": "in_abc123",
+                  "currency": "usd",
+                  "amount_due": 10000,
+                  "lines": {
+                    "data": [
+                      {
+                        "id": "il_1",
+                        "amount": 10000,
+                        "quantity": 1,
+                        "description": "Subscription"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          }
+        }
+      }
+    }
+  }
+}

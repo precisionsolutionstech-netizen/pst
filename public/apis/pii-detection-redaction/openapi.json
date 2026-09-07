@@ -1,0 +1,91 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "PII Detection & Redaction",
+    "summary": "Detect and redact sensitive information in text data.",
+    "description": "PII detector, redactor, and log sanitizer API. Find and mask sensitive data (emails, SSN, credentials, secrets) in JSON and text. Detect, redact, or both.",
+    "version": "1.0.0",
+    "contact": {
+      "name": "Precision Solutions Tech",
+      "url": "https://precisionsolutionstech.com/apis/pii-detection-redaction/"
+    }
+  },
+  "externalDocs": {
+    "description": "PII Detection & Redaction documentation",
+    "url": "https://precisionsolutionstech.com/apis/pii-detection-redaction/"
+  },
+  "servers": [
+    {
+      "url": "https://sensitive-data-detection-redaction-api.p.rapidapi.com"
+    }
+  ],
+  "security": [
+    {
+      "rapidApiKey": []
+    }
+  ],
+  "components": {
+    "securitySchemes": {
+      "rapidApiKey": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "x-rapidapi-key"
+      }
+    }
+  },
+  "paths": {
+    "/scan": {
+      "post": {
+        "operationId": "piiDetectionRedaction",
+        "summary": "Detect and redact sensitive information in text data.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "payload": {
+                    "type": "object",
+                    "properties": {
+                      "user": {
+                        "type": "string"
+                      },
+                      "email": {
+                        "type": "string"
+                      },
+                      "ssn": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              },
+              "example": {
+                "payload": {
+                  "user": "alice",
+                  "email": "alice@example.com",
+                  "ssn": "123-45-6789"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          }
+        }
+      }
+    }
+  }
+}

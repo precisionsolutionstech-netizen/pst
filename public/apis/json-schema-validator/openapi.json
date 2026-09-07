@@ -1,0 +1,152 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "JSON Schema Validator",
+    "summary": "Validate JSON payloads against schema definitions.",
+    "description": "POST /validate with schema or schemaUrl plus payload. Strict types, required fields, nullability, arrays, nesting (up to 100 levels). Extra fields rejected.",
+    "version": "1.0.0",
+    "contact": {
+      "name": "Precision Solutions Tech",
+      "url": "https://precisionsolutionstech.com/apis/json-schema-validator/"
+    }
+  },
+  "externalDocs": {
+    "description": "JSON Schema Validator documentation",
+    "url": "https://precisionsolutionstech.com/apis/json-schema-validator/"
+  },
+  "servers": [
+    {
+      "url": "https://json-schema-validator-api.p.rapidapi.com"
+    }
+  ],
+  "security": [
+    {
+      "rapidApiKey": []
+    }
+  ],
+  "components": {
+    "securitySchemes": {
+      "rapidApiKey": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "x-rapidapi-key"
+      }
+    }
+  },
+  "paths": {
+    "/validate": {
+      "post": {
+        "operationId": "jsonSchemaValidator",
+        "summary": "Validate JSON payloads against schema definitions.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "type": {
+                        "type": "string"
+                      },
+                      "required": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      },
+                      "properties": {
+                        "type": "object",
+                        "properties": {
+                          "email": {
+                            "type": "object",
+                            "properties": {
+                              "type": {
+                                "type": "string"
+                              }
+                            }
+                          },
+                          "age": {
+                            "type": "object",
+                            "properties": {
+                              "type": {
+                                "type": "string"
+                              }
+                            }
+                          },
+                          "name": {
+                            "type": "object",
+                            "properties": {
+                              "type": {
+                                "type": "string"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "payload": {
+                    "type": "object",
+                    "properties": {
+                      "email": {
+                        "type": "string"
+                      },
+                      "age": {
+                        "type": "integer"
+                      },
+                      "name": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              },
+              "example": {
+                "schema": {
+                  "type": "object",
+                  "required": [
+                    "email",
+                    "age"
+                  ],
+                  "properties": {
+                    "email": {
+                      "type": "string"
+                    },
+                    "age": {
+                      "type": "number"
+                    },
+                    "name": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "payload": {
+                  "email": "user@example.com",
+                  "age": 30,
+                  "name": "John Doe"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          }
+        }
+      }
+    }
+  }
+}

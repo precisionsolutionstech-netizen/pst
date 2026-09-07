@@ -6,7 +6,7 @@
 //
 // Run: npm run gen:code-samples   (wired into `npm run build`)
 
-import { readFileSync, writeFileSync } from 'node:fs';
+import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -181,7 +181,9 @@ const PATH_OVERRIDES = {
   'html-to-markdown': '/convert',
 };
 
+const SITE = 'https://precisionsolutionstech.com';
 const out = {};
+const exampleBodies = {};
 const notes = [];
 
 for (const api of apis) {
@@ -199,10 +201,96 @@ for (const api of apis) {
   const body = method === 'POST' && !upload ? sampleBody(src, api.contentHtml) : null;
   if (method === 'POST' && !upload && !body) notes.push(`${api.slug}: no example body recovered`);
 
+  if (body) exampleBodies[api.slug] = body;
   out[api.slug] = { host, path, method, upload, ...snippets({ host, path, method, body, upload }) };
 }
 
 writeFileSync(join(root, 'src', 'data', 'api-code-samples.json'), JSON.stringify(out, null, 2) + '\n');
+
+// A machine-readable spec per API, served alongside the page. This is what
+// lets an agent or a codegen tool actually call the API rather than just read
+// about it. Deliberately minimal: only what we can derive with certainty —
+// server, path, method, auth and a worked request example.
+function toSchema(v) {
+  if (Array.isArray(v)) {
+    return { type: 'array', ...(v.length ? { items: toSchema(v[0]) } : {}) };
+  }
+  if (v && typeof v === 'object') {
+    return {
+      type: 'object',
+      properties: Object.fromEntries(Object.entries(v).map(([k, x]) => [k, toSchema(x)])),
+    };
+  }
+  if (typeof v === 'number') return { type: Number.isInteger(v) ? 'integer' : 'number' };
+  if (typeof v === 'boolean') return { type: 'boolean' };
+  return { type: 'string' };
+}
+
+let specs = 0;
+for (const api of apis) {
+  const s = out[api.slug];
+  if (!s) continue;
+
+  const example = exampleBodies[api.slug];
+  const requestBody = s.upload
+    ? {
+        required: true,
+        content: {
+          'multipart/form-data': {
+            schema: { type: 'object', properties: { file: { type: 'string', format: 'binary' } }, required: ['file'] },
+          },
+        },
+      }
+    : s.method === 'POST'
+      ? {
+          required: true,
+          content: {
+            'application/json': {
+              ...(example ? { schema: toSchema(example), example } : { schema: { type: 'object' } }),
+            },
+          },
+        }
+      : undefined;
+
+  const spec = {
+    openapi: '3.1.0',
+    info: {
+      title: api.name,
+      summary: api.blurb,
+      description: api.metaDescription,
+      version: '1.0.0',
+      contact: { name: 'Precision Solutions Tech', url: `${SITE}${'/apis/'}${api.slug}/` },
+    },
+    externalDocs: { description: `${api.name} documentation`, url: `${SITE}/apis/${api.slug}/` },
+    servers: [{ url: `https://${s.host}` }],
+    security: [{ rapidApiKey: [] }],
+    components: {
+      securitySchemes: {
+        rapidApiKey: { type: 'apiKey', in: 'header', name: 'x-rapidapi-key' },
+      },
+    },
+    paths: {
+      [s.path]: {
+        [s.method.toLowerCase()]: {
+          operationId: api.slug.replace(/-([a-z])/g, (_, c) => c.toUpperCase()),
+          summary: api.blurb,
+          ...(requestBody ? { requestBody } : {}),
+          responses: {
+            '200': { description: 'Successful response', content: { 'application/json': {} } },
+            '400': { description: 'Invalid request' },
+            '429': { description: 'Rate limit exceeded' },
+          },
+        },
+      },
+    },
+  };
+
+  const dir = join(root, 'public', 'apis', api.slug);
+  mkdirSync(dir, { recursive: true });
+  writeFileSync(join(dir, 'openapi.json'), JSON.stringify(spec, null, 2) + '\n');
+  specs++;
+}
+console.log(`gen-code-samples: wrote ${specs} OpenAPI specs`);
 
 const real = Object.values(out).filter((o) => o.upload || o.method === 'GET' || !/--data '\{\}'/.test(o.curl)).length;
 console.log(`gen-code-samples: ${Object.keys(out).length}/${apis.length} APIs, ${real} with a concrete request`);

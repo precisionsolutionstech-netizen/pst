@@ -1,0 +1,77 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "PDF Compression",
+    "summary": "Optimize PDF files with lossless compression.",
+    "description": "PDF compressor, optimizer, and shrinker API. Reduce PDF file size while preserving quality. Speed, lossless, or max compression modes. Multipart upload.",
+    "version": "1.0.0",
+    "contact": {
+      "name": "Precision Solutions Tech",
+      "url": "https://precisionsolutionstech.com/apis/pdf-compression/"
+    }
+  },
+  "externalDocs": {
+    "description": "PDF Compression documentation",
+    "url": "https://precisionsolutionstech.com/apis/pdf-compression/"
+  },
+  "servers": [
+    {
+      "url": "https://pdf-compression-api1.p.rapidapi.com"
+    }
+  ],
+  "security": [
+    {
+      "rapidApiKey": []
+    }
+  ],
+  "components": {
+    "securitySchemes": {
+      "rapidApiKey": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "x-rapidapi-key"
+      }
+    }
+  },
+  "paths": {
+    "/optimize": {
+      "post": {
+        "operationId": "pdfCompression",
+        "summary": "Optimize PDF files with lossless compression.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "file": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                },
+                "required": [
+                  "file"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          }
+        }
+      }
+    }
+  }
+}
