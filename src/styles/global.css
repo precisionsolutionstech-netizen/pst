@@ -747,3 +747,28 @@ a.card:hover {
 .quickstart details[open] > summary::before { transform: rotate(90deg); }
 .quickstart details .code-wrap { margin: 0 14px 14px; }
 .quickstart > p code { word-break: break-all; }
+
+/* App page FAQ — visible content backing the FAQPage structured data. */
+.app-faq-item {
+  border-bottom: 1px solid var(--border);
+  padding: 2px 0;
+}
+.app-faq-item > summary {
+  cursor: pointer;
+  padding: 14px 0;
+  font-weight: 600;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+.app-faq-item > summary::-webkit-details-marker { display: none; }
+.app-faq-item > summary::after {
+  content: '+';
+  font-weight: 400;
+  font-size: 1.3rem;
+  line-height: 1;
+  flex: none;
+}
+.app-faq-item[open] > summary::after { content: '−'; }
+.app-faq-item > p { margin: 0 0 16px; max-width: 68ch; }
