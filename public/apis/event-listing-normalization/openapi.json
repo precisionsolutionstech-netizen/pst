@@ -1,0 +1,148 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Event Listing Normalization",
+    "summary": "Normalize event data from multiple platforms into a canonical schema.",
+    "description": "Normalize event payloads from Eventbrite, Meetup, Ticketmaster and 50+ sources into one canonical schema in a single call. No platform API keys needed.",
+    "version": "1.0.0",
+    "contact": {
+      "name": "Precision Solutions Tech",
+      "url": "https://precisionsolutionstech.com/apis/event-listing-normalization/"
+    }
+  },
+  "externalDocs": {
+    "description": "Event Listing Normalization documentation",
+    "url": "https://precisionsolutionstech.com/apis/event-listing-normalization/"
+  },
+  "servers": [
+    {
+      "url": "https://event-listing-data-normalization.p.rapidapi.com"
+    }
+  ],
+  "security": [
+    {
+      "rapidApiKey": []
+    }
+  ],
+  "components": {
+    "securitySchemes": {
+      "rapidApiKey": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "x-rapidapi-key"
+      }
+    }
+  },
+  "paths": {
+    "/normalize": {
+      "post": {
+        "operationId": "eventListingNormalization",
+        "summary": "Normalize event data from multiple platforms into a canonical schema.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "platform": {
+                    "type": "string"
+                  },
+                  "payload": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "start_utc": {
+                        "type": "string"
+                      },
+                      "end_utc": {
+                        "type": "string"
+                      },
+                      "venue": {
+                        "type": "object",
+                        "properties": {
+                          "name": {
+                            "type": "string"
+                          },
+                          "address": {
+                            "type": "object",
+                            "properties": {
+                              "city": {
+                                "type": "string"
+                              },
+                              "region": {
+                                "type": "string"
+                              },
+                              "country": {
+                                "type": "string"
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "is_free": {
+                        "type": "boolean"
+                      },
+                      "cost": {
+                        "type": "object",
+                        "properties": {
+                          "value": {
+                            "type": "integer"
+                          },
+                          "currency": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "example": {
+                "platform": "eventbrite",
+                "payload": {
+                  "id": "eb-123",
+                  "name": "Dev Conference 2024",
+                  "start_utc": "2024-07-15T09:00:00Z",
+                  "end_utc": "2024-07-15T17:00:00Z",
+                  "venue": {
+                    "name": "Convention Center",
+                    "address": {
+                      "city": "Austin",
+                      "region": "TX",
+                      "country": "US"
+                    }
+                  },
+                  "is_free": false,
+                  "cost": {
+                    "value": 99,
+                    "currency": "USD"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          }
+        }
+      }
+    }
+  }
+}

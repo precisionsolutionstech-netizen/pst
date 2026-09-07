@@ -1,0 +1,84 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "HTML to Markdown Converter",
+    "summary": "Convert HTML content into GitHub Flavored Markdown.",
+    "description": "Convert HTML to clean, deterministic Markdown. Strips scripts, styles, layout noise. Preserves structure (headings, lists, tables, links, code).",
+    "version": "1.0.0",
+    "contact": {
+      "name": "Precision Solutions Tech",
+      "url": "https://precisionsolutionstech.com/apis/html-to-markdown/"
+    }
+  },
+  "externalDocs": {
+    "description": "HTML to Markdown Converter documentation",
+    "url": "https://precisionsolutionstech.com/apis/html-to-markdown/"
+  },
+  "servers": [
+    {
+      "url": "https://html-to-markdown-converter1.p.rapidapi.com"
+    }
+  ],
+  "security": [
+    {
+      "rapidApiKey": []
+    }
+  ],
+  "components": {
+    "securitySchemes": {
+      "rapidApiKey": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "x-rapidapi-key"
+      }
+    }
+  },
+  "paths": {
+    "/convert": {
+      "post": {
+        "operationId": "htmlToMarkdown",
+        "summary": "Convert HTML content into GitHub Flavored Markdown.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "html": {
+                    "type": "string"
+                  },
+                  "mode": {
+                    "type": "string"
+                  },
+                  "includeMetadata": {
+                    "type": "boolean"
+                  }
+                }
+              },
+              "example": {
+                "html": "<h1>Hello</h1><p>World <strong>bold</strong></p>",
+                "mode": "readable",
+                "includeMetadata": false
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          }
+        }
+      }
+    }
+  }
+}

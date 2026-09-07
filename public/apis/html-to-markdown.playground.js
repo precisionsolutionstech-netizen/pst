@@ -1,5 +1,5 @@
 (function(){
-    var host='html-to-markdown-converter1.p.rapidapi.com',path='/health',body="{\n  \"html\": \"<h1>Hello</h1><p>World <strong>bold</strong></p>\",\n  \"mode\": \"readable\",\n  \"includeMetadata\": false\n}",fileUpload=false,rapidUrl="https://rapidapi.com/precisionsolutionstech/api/html-to-markdown-converter1";
+    var host='html-to-markdown-converter1.p.rapidapi.com',path='/convert',body="{\n  \"html\": \"<h1>Hello</h1><p>World <strong>bold</strong></p>\",\n  \"mode\": \"readable\",\n  \"includeMetadata\": false\n}",fileUpload=false,rapidUrl="https://rapidapi.com/precisionsolutionstech/api/html-to-markdown-converter1";
     document.querySelectorAll('[data-rapid-docs]').forEach(function(a){ a.href = rapidUrl; });
     document.getElementById('toggle-req').addEventListener('click',function(e){ e.preventDefault(); var d=document.getElementById('request-schema'); d.classList.toggle('show'); this.setAttribute('aria-expanded',d.classList.contains('show')); });
     document.getElementById('toggle-res').addEventListener('click',function(e){ e.preventDefault(); var d=document.getElementById('response-schema'); d.classList.toggle('show'); this.setAttribute('aria-expanded',d.classList.contains('show')); });

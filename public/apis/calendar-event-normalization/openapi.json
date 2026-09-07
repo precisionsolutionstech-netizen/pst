@@ -1,0 +1,137 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Calendar Event Normalization",
+    "summary": "Unify calendar event payloads across providers into a consistent structure.",
+    "description": "Normalize calendar JSON or raw iCal (.ics) into one canonical event schema. Multi-source inputs: Google, Outlook, Apple, Calendly, EWS, generic.",
+    "version": "1.0.0",
+    "contact": {
+      "name": "Precision Solutions Tech",
+      "url": "https://precisionsolutionstech.com/apis/calendar-event-normalization/"
+    }
+  },
+  "externalDocs": {
+    "description": "Calendar Event Normalization documentation",
+    "url": "https://precisionsolutionstech.com/apis/calendar-event-normalization/"
+  },
+  "servers": [
+    {
+      "url": "https://calendar-event-normalization.p.rapidapi.com"
+    }
+  ],
+  "security": [
+    {
+      "rapidApiKey": []
+    }
+  ],
+  "components": {
+    "securitySchemes": {
+      "rapidApiKey": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "x-rapidapi-key"
+      }
+    }
+  },
+  "paths": {
+    "/": {
+      "post": {
+        "operationId": "calendarEventNormalization",
+        "summary": "Unify calendar event payloads across providers into a consistent structure.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "inputs": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "calendarId": {
+                          "type": "string"
+                        },
+                        "payload": {
+                          "type": "object",
+                          "properties": {
+                            "items": {
+                              "type": "array",
+                              "items": {
+                                "type": "object",
+                                "properties": {
+                                  "id": {
+                                    "type": "string"
+                                  },
+                                  "summary": {
+                                    "type": "string"
+                                  },
+                                  "start": {
+                                    "type": "object",
+                                    "properties": {
+                                      "dateTime": {
+                                        "type": "string"
+                                      }
+                                    }
+                                  },
+                                  "end": {
+                                    "type": "object",
+                                    "properties": {
+                                      "dateTime": {
+                                        "type": "string"
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "example": {
+                "inputs": [
+                  {
+                    "calendarId": "google",
+                    "payload": {
+                      "items": [
+                        {
+                          "id": "evt1",
+                          "summary": "Team standup",
+                          "start": {
+                            "dateTime": "2025-02-03T10:00:00-05:00"
+                          },
+                          "end": {
+                            "dateTime": "2025-02-03T10:30:00-05:00"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          }
+        }
+      }
+    }
+  }
+}

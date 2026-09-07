@@ -1,0 +1,110 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Job Posting Normalization",
+    "summary": "Transform job listing data from multiple sources into a standard schema.",
+    "description": "Normalize job payloads from LinkedIn, Indeed, Greenhouse, Lever and 25+ sources into one canonical schema — title, company, location, salary, apply URL.",
+    "version": "1.0.0",
+    "contact": {
+      "name": "Precision Solutions Tech",
+      "url": "https://precisionsolutionstech.com/apis/job-posting-normalization/"
+    }
+  },
+  "externalDocs": {
+    "description": "Job Posting Normalization documentation",
+    "url": "https://precisionsolutionstech.com/apis/job-posting-normalization/"
+  },
+  "servers": [
+    {
+      "url": "https://job-posting-normalization-api.p.rapidapi.com"
+    }
+  ],
+  "security": [
+    {
+      "rapidApiKey": []
+    }
+  ],
+  "components": {
+    "securitySchemes": {
+      "rapidApiKey": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "x-rapidapi-key"
+      }
+    }
+  },
+  "paths": {
+    "/normalize": {
+      "post": {
+        "operationId": "jobPostingNormalization",
+        "summary": "Transform job listing data from multiple sources into a standard schema.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "platform": {
+                    "type": "string"
+                  },
+                  "payload": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "integer"
+                      },
+                      "title": {
+                        "type": "string"
+                      },
+                      "content": {
+                        "type": "string"
+                      },
+                      "location": {
+                        "type": "object",
+                        "properties": {
+                          "name": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "absolute_url": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              },
+              "example": {
+                "platform": "greenhouse",
+                "payload": {
+                  "id": 12345,
+                  "title": "Senior Engineer",
+                  "content": "We are looking for a senior engineer.",
+                  "location": {
+                    "name": "New York, NY"
+                  },
+                  "absolute_url": "https://boards.greenhouse.io/company/jobs/12345"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          }
+        }
+      }
+    }
+  }
+}

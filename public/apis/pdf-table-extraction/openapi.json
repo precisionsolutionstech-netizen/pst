@@ -1,0 +1,77 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "PDF Table Extraction",
+    "summary": "Extract structured table data from PDF documents.",
+    "description": "PDF table extractor, parser, and converter API. Pull structured table data from PDFs into JSON, Excel, or CSV. Multipart or base64 upload.",
+    "version": "1.0.0",
+    "contact": {
+      "name": "Precision Solutions Tech",
+      "url": "https://precisionsolutionstech.com/apis/pdf-table-extraction/"
+    }
+  },
+  "externalDocs": {
+    "description": "PDF Table Extraction documentation",
+    "url": "https://precisionsolutionstech.com/apis/pdf-table-extraction/"
+  },
+  "servers": [
+    {
+      "url": "https://pdf-table-extraction-api.p.rapidapi.com"
+    }
+  ],
+  "security": [
+    {
+      "rapidApiKey": []
+    }
+  ],
+  "components": {
+    "securitySchemes": {
+      "rapidApiKey": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "x-rapidapi-key"
+      }
+    }
+  },
+  "paths": {
+    "/extract": {
+      "post": {
+        "operationId": "pdfTableExtraction",
+        "summary": "Extract structured table data from PDF documents.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "file": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                },
+                "required": [
+                  "file"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          }
+        }
+      }
+    }
+  }
+}

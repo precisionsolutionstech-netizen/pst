@@ -20,8 +20,13 @@ const pitch = (a as { pitch?: string }).pitch;
 const icon = (a as { icon?: string }).icon;
 const ogImage = (a as { ogImage?: string }).ogImage;
 const appStoreUrl = (a as { appStoreUrl?: string }).appStoreUrl;
+const version = (a as { version?: string }).version;
+const featureList = (a as { featureList?: string[] }).featureList ?? [];
+const faqs = (a as { faqs?: { q: string; a: string }[] }).faqs ?? [];
+const metaTitle = (a as { metaTitle?: string }).metaTitle;
+const trialUrl = (a as { trialDownloadUrl?: string }).trialDownloadUrl;
 
-const title = `${a.name} | macOS App | Precision Solutions Tech`;
+const title = metaTitle || `${a.name} | macOS App | Precision Solutions Tech`;
 const description = a.shortDescription.length > 158
   ? a.shortDescription.slice(0, 155).replace(/\s+\S*$/, '') + '…'
   : a.shortDescription;
@@ -30,36 +35,60 @@ const imageUrl = ogImage
   ? `${SITE}${ogImage}`
   : screenshots[0]
     ? `${SITE}${screenshots[0].src}`
-    : `${SITE}/og-default.png`;
+    : `${SITE}/og-default.jpg`;
 
-const appEntity = a.comingSoon
-  ? {
-      '@context': 'https://schema.org',
-      '@type': 'CreativeWork',
-      name: a.name,
-      description: a.shortDescription,
-      url: `${SITE}${pagePath}`,
-      image: imageUrl,
-      creativeWorkStatus: 'Incomplete',
-      author: { '@type': 'Organization', name: 'Precision Solutions Tech' },
-    }
-  : {
-      '@context': 'https://schema.org',
-      '@type': 'SoftwareApplication',
-      name: a.name,
-      description: a.shortDescription,
-      url: `${SITE}${pagePath}`,
-      image: imageUrl,
-      applicationCategory: 'UtilitiesApplication',
-      operatingSystem: 'macOS',
-      offers: {
-        '@type': 'Offer',
-        price: a.price ? a.price.replace('$', '') : undefined,
-        priceCurrency: 'USD',
-        url: appStoreUrl || a.purchaseUrl || `${SITE}${pagePath}`,
-        availability: 'https://schema.org/InStock',
-      },
-    };
+const publisher = { '@type': 'Organization', name: 'Precision Solutions Tech', url: `${SITE}/` };
+const priceValue = a.price ? a.price.replace('$', '') : undefined;
+
+// Twinkeep is sold through two channels at the same price; both must be
+// represented or the App Store link is the only purchase path search engines
+// and assistants ever see.
+const offers = [
+  appStoreUrl && {
+    '@type': 'Offer',
+    name: 'Mac App Store',
+    price: priceValue,
+    priceCurrency: 'USD',
+    url: appStoreUrl,
+    availability: 'https://schema.org/InStock',
+    seller: publisher,
+  },
+  a.purchaseUrl && {
+    '@type': 'Offer',
+    name: 'Direct license (Gumroad)',
+    price: priceValue,
+    priceCurrency: 'USD',
+    url: a.purchaseUrl,
+    availability: 'https://schema.org/InStock',
+    seller: publisher,
+  },
+].filter(Boolean);
+
+const appEntity = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: a.name,
+  description: a.shortDescription,
+  url: `${SITE}${pagePath}`,
+  image: imageUrl,
+  applicationCategory: 'UtilitiesApplication',
+  applicationSubCategory: a.categories?.[0],
+  operatingSystem: a.os || 'macOS',
+  ...(a.os ? { softwareRequirements: `${a.os}, Apple Silicon or Intel` } : {}),
+  ...(version ? { softwareVersion: version } : {}),
+  ...(featureList.length ? { featureList } : {}),
+  ...(screenshots.length
+    ? { screenshot: screenshots.map((s) => `${SITE}${s.src}`) }
+    : {}),
+  publisher,
+  author: publisher,
+  ...(a.comingSoon
+    ? { releaseNotes: 'In development — not yet released.' }
+    : {
+        ...(trialUrl ? { downloadUrl: `${SITE}${trialUrl}` } : {}),
+        ...(offers.length ? { offers } : {}),
+      }),
+};
 
 const jsonLd = [
   {
@@ -72,6 +101,17 @@ const jsonLd = [
     ],
   },
   appEntity,
+  ...(faqs.length
+    ? [{
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: faqs.map((f) => ({
+          '@type': 'Question',
+          name: f.q,
+          acceptedAnswer: { '@type': 'Answer', text: f.a },
+        })),
+      }]
+    : []),
 ];
 ---
 
@@ -248,8 +288,20 @@ const jsonLd = [
 
       <div class="product-body app-body" set:html={a.contentHtml} />
 
+      {faqs.length > 0 && (
+        <section class="product-body app-faq" id="faq" style="margin-top: 40px;">
+          <h2 id="faq-heading">Frequently asked questions</h2>
+          {faqs.map((f) => (
+            <details class="app-faq-item">
+              <summary>{f.q}</summary>
+              <p>{f.a}</p>
+            </details>
+          ))}
+        </section>
+      )}
+
       {!a.comingSoon && (
-        <section class="app-bottom-cta" aria-label="Get Twinkeep">
+        <section class="app-bottom-cta" aria-label={`Get ${a.name}`}>
           <div class="app-bottom-cta-inner">
             <div>
               <h2>Ready to reclaim the space?</h2>

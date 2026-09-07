@@ -1,0 +1,115 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "HTTP Error Root Trigger Analyzer",
+    "summary": "Identify underlying causes of API failures and HTTP errors.",
+    "description": "Rule-based, deterministic analysis of HTTP 4xx/5xx events: trigger category, subcategory, confidence, likely layer, next steps, retry hint.",
+    "version": "1.0.0",
+    "contact": {
+      "name": "Precision Solutions Tech",
+      "url": "https://precisionsolutionstech.com/apis/http-error-root-trigger-analyzer/"
+    }
+  },
+  "externalDocs": {
+    "description": "HTTP Error Root Trigger Analyzer documentation",
+    "url": "https://precisionsolutionstech.com/apis/http-error-root-trigger-analyzer/"
+  },
+  "servers": [
+    {
+      "url": "https://api-fault-analysis-engine.p.rapidapi.com"
+    }
+  ],
+  "security": [
+    {
+      "rapidApiKey": []
+    }
+  ],
+  "components": {
+    "securitySchemes": {
+      "rapidApiKey": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "x-rapidapi-key"
+      }
+    }
+  },
+  "paths": {
+    "/analyze/batch": {
+      "post": {
+        "operationId": "httpErrorRootTriggerAnalyzer",
+        "summary": "Identify underlying causes of API failures and HTTP errors.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "integer"
+                    },
+                    "method": {
+                      "type": "string"
+                    },
+                    "duration": {
+                      "type": "integer"
+                    },
+                    "responseHeaders": {
+                      "type": "object",
+                      "properties": {
+                        "x-envoy-upstream-service-time": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "example": [
+                {
+                  "statusCode": 502,
+                  "method": "POST",
+                  "duration": 12,
+                  "responseHeaders": {
+                    "x-envoy-upstream-service-time": "10"
+                  }
+                },
+                {
+                  "statusCode": 429,
+                  "method": "GET",
+                  "responseHeaders": {
+                    "retry-after": "60"
+                  }
+                },
+                {
+                  "statusCode": 504,
+                  "method": "GET",
+                  "duration": 30000,
+                  "responseHeaders": {
+                    "x-envoy-upstream-service-time": "30000"
+                  }
+                }
+              ]
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          }
+        }
+      }
+    }
+  }
+}

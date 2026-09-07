@@ -1,0 +1,96 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Shipping & Tracking Normalization",
+    "summary": "Standardize shipment tracking data across carriers.",
+    "description": "Normalize tracking payloads from UPS, FedEx, USPS, DHL and more into one canonical shipment schema — status taxonomy, event timeline, provenance.",
+    "version": "1.0.0",
+    "contact": {
+      "name": "Precision Solutions Tech",
+      "url": "https://precisionsolutionstech.com/apis/shipping-tracking-normalization/"
+    }
+  },
+  "externalDocs": {
+    "description": "Shipping & Tracking Normalization documentation",
+    "url": "https://precisionsolutionstech.com/apis/shipping-tracking-normalization/"
+  },
+  "servers": [
+    {
+      "url": "https://shipping-tracking-data-normalization.p.rapidapi.com"
+    }
+  ],
+  "security": [
+    {
+      "rapidApiKey": []
+    }
+  ],
+  "components": {
+    "securitySchemes": {
+      "rapidApiKey": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "x-rapidapi-key"
+      }
+    }
+  },
+  "paths": {
+    "/normalize": {
+      "post": {
+        "operationId": "shippingTrackingNormalization",
+        "summary": "Standardize shipment tracking data across carriers.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "inputs": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "trackingNumber": {
+                          "type": "string"
+                        },
+                        "carrier": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "example": {
+                "inputs": [
+                  {
+                    "trackingNumber": "1Z999AA10123456784",
+                    "carrier": "ups"
+                  },
+                  {
+                    "trackingNumber": "9405511899223191234567",
+                    "carrier": "usps"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          }
+        }
+      }
+    }
+  }
+}

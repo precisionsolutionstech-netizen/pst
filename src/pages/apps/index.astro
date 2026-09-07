@@ -1,14 +1,21 @@
 ---
 import Base from '../../layouts/Base.astro';
 import apps from '../../data/apps.json';
+import featureData from '../../data/app-features.json';
 
 const SITE = 'https://precisionsolutionstech.com';
 const live = apps.filter((a) => !a.comingSoon);
 const soon = apps.filter((a) => a.comingSoon);
 
-const title = 'macOS Apps | Precision Solutions Tech';
+// Deep links to the per-feature guides. These pages are reachable from the
+// Twinkeep product page and the sitemap; surfacing them on the apps hub as
+// well gives them a second internal path.
+const twinkeepFeatures = ((featureData as Record<string, { slug: string; name: string; summary?: string }[]>)
+  .twinkeep ?? []);
+
+const title = 'macOS Apps — Native Mac Utilities for Everyday Work';
 const description =
-  'Native macOS apps from Precision Solutions Tech — Twinkeep for duplicate media cleanup (live on the Mac App Store), and PrecisDesk for capture, window layouts, and AirPrint.';
+  'Native macOS apps: Twinkeep, a duplicate photo and file cleaner on the Mac App Store, and PrecisDesk for capture, window layouts and AirPrint.';
 
 const jsonLd = [
   {
@@ -83,6 +90,41 @@ const jsonLd = [
       </section>
     )}
 
+    {twinkeepFeatures.length > 0 && (
+      <section class="section" style="padding: 8px 0 24px;">
+        <div class="section-head" style="margin-bottom: 16px;">
+          <h2>What Twinkeep does, feature by feature</h2>
+          <p>Each tool has its own guide covering what it looks at and what it will not touch.</p>
+        </div>
+        <ul class="feature-links">
+          {twinkeepFeatures.map((f) => (
+            <li><a href={`/apps/twinkeep/${f.slug}/`}>{f.name}</a></li>
+          ))}
+        </ul>
+      </section>
+    )}
+
+    <section class="section prose" style="padding: 8px 0 24px;">
+      <h2>How these apps are built</h2>
+      <p>
+        Every app here is native macOS, written in Swift and SwiftUI rather than wrapped
+        from the web. They run entirely on your Mac: no account to create, no telemetry,
+        and nothing uploaded. Twinkeep runs inside the App Sandbox with access only to the
+        folders you pick, and hashes files locally with CryptoKit.
+      </p>
+      <p>
+        Pricing is a one-time purchase, not a subscription. Twinkeep costs the same
+        <strong>$9.99</strong> whether you buy it on the Mac App Store or take a direct
+        license — the difference is that the direct build comes with a 7-day trial first,
+        while the App Store version is licensed the moment you buy it. Both are the same app.
+      </p>
+      <p>
+        Anything destructive is reversible by default. Twinkeep moves files to Quarantine
+        rather than deleting them, and restoring puts a file back exactly where it came from.
+        Permanently emptying Quarantine is the one action it will not do without asking.
+      </p>
+    </section>
+
     {soon.length > 0 && (
       <section class="section" style="padding: 24px 0 32px;">
         <div class="section-head" style="margin-bottom: 20px;">
@@ -111,6 +153,16 @@ const jsonLd = [
 </Base>
 
 <style>
+  .feature-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 8px 20px;
+  }
+  .feature-links a { text-decoration: none; }
+  .feature-links a:hover { text-decoration: underline; }
   .app-card-icon {
     width: 48px;
     height: 48px;

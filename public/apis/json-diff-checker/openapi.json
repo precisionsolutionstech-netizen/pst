@@ -1,0 +1,110 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "JSON Diff Checker",
+    "summary": "Compare JSON objects and detect structural differences.",
+    "description": "Compare two JSON values with POST /diff: breaking changes (removed fields, type changes, array structure, root type) vs non-breaking (new fields).",
+    "version": "1.0.0",
+    "contact": {
+      "name": "Precision Solutions Tech",
+      "url": "https://precisionsolutionstech.com/apis/json-diff-checker/"
+    }
+  },
+  "externalDocs": {
+    "description": "JSON Diff Checker documentation",
+    "url": "https://precisionsolutionstech.com/apis/json-diff-checker/"
+  },
+  "servers": [
+    {
+      "url": "https://json-diff-checker-api.p.rapidapi.com"
+    }
+  ],
+  "security": [
+    {
+      "rapidApiKey": []
+    }
+  ],
+  "components": {
+    "securitySchemes": {
+      "rapidApiKey": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "x-rapidapi-key"
+      }
+    }
+  },
+  "paths": {
+    "/diff": {
+      "post": {
+        "operationId": "jsonDiffChecker",
+        "summary": "Compare JSON objects and detect structural differences.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "before": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "integer"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "age": {
+                        "type": "integer"
+                      }
+                    }
+                  },
+                  "after": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "email": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              },
+              "example": {
+                "before": {
+                  "id": 1,
+                  "name": "John",
+                  "age": 30
+                },
+                "after": {
+                  "id": "1",
+                  "name": "John Doe",
+                  "email": "john@example.com"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          }
+        }
+      }
+    }
+  }
+}

@@ -722,3 +722,53 @@ a.card:hover {
 .post-list a { font-weight: 600; font-size: 1.05rem; }
 .post-list p { margin: 6px 0 0; color: var(--muted); font-size: 0.95rem; line-height: 1.5; }
 .post-list .external { display: inline-block; margin-left: 6px; font-size: 0.75rem; color: var(--muted); font-weight: 500; }
+
+/* Quick start — server-rendered request snippets on API pages. */
+.quickstart details {
+  margin: 12px 0;
+  border: 1px solid var(--border, #e2e5ea);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.quickstart details > summary {
+  cursor: pointer;
+  padding: 10px 14px;
+  font-weight: 600;
+  font-size: 0.94rem;
+  list-style: none;
+}
+.quickstart details > summary::-webkit-details-marker { display: none; }
+.quickstart details > summary::before {
+  content: '▸';
+  display: inline-block;
+  margin-right: 8px;
+  transition: transform 0.15s ease;
+}
+.quickstart details[open] > summary::before { transform: rotate(90deg); }
+.quickstart details .code-wrap { margin: 0 14px 14px; }
+.quickstart > p code { word-break: break-all; }
+
+/* App page FAQ — visible content backing the FAQPage structured data. */
+.app-faq-item {
+  border-bottom: 1px solid var(--border);
+  padding: 2px 0;
+}
+.app-faq-item > summary {
+  cursor: pointer;
+  padding: 14px 0;
+  font-weight: 600;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+.app-faq-item > summary::-webkit-details-marker { display: none; }
+.app-faq-item > summary::after {
+  content: '+';
+  font-weight: 400;
+  font-size: 1.3rem;
+  line-height: 1;
+  flex: none;
+}
+.app-faq-item[open] > summary::after { content: '−'; }
+.app-faq-item > p { margin: 0 0 16px; max-width: 68ch; }

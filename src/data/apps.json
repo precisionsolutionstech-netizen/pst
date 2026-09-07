@@ -70,6 +70,55 @@
       "No subscription",
       "Quarantine with restore",
       "$9.99 once"
+    ],
+    "version": "1.1.0",
+    "metaTitle": "Twinkeep — Duplicate Photo & File Cleaner for Mac",
+    "appStoreHasTrial": false,
+    "featureList": [
+      "Find exact duplicate photos, video and audio by SHA-256 content hash",
+      "Perceptual matching groups re-cropped, re-exported and resaved photos",
+      "Quarantine every removal first, with restore to the original location",
+      "Side-by-side Review with synced zoom and a difference strip",
+      "File Rules watch folders and file new arrivals automatically",
+      "Junk Sweep for caches, logs and Xcode build junk, sorted by risk",
+      "Downloads Dust, Disk Analysis and Storage Pulse for everyday housekeeping",
+      "Memory Relief reports only the apps that actually quit",
+      "Stability reads crash reports in plain English",
+      "Scan any folders you choose, including external drives"
+    ],
+    "faqs": [
+      {
+        "q": "Is Twinkeep a subscription?",
+        "a": "No. Twinkeep is a one-time $9.99 purchase with no account, no telemetry and no subscription. That price is the same on the Mac App Store and direct."
+      },
+      {
+        "q": "Is there a free trial?",
+        "a": "The direct download from this page includes a 7-day trial that unlocks in the app, after which you enter a license key. The Mac App Store version is a paid app with no trial, so buying there licenses it immediately. Both cost $9.99 once."
+      },
+      {
+        "q": "Does Twinkeep delete my files?",
+        "a": "Not without you asking. Every removal goes to Quarantine first and can be restored at any time to exactly where it came from. Emptying Quarantine permanently is the one action Twinkeep will not do without confirming."
+      },
+      {
+        "q": "Do my photos get uploaded anywhere?",
+        "a": "No. Every scan runs on your Mac. There is no account, no telemetry and no cloud upload of your media. Twinkeep runs in the App Sandbox with access only to folders you select."
+      },
+      {
+        "q": "How does Twinkeep decide what is a duplicate?",
+        "a": "Byte-identical files are matched by SHA-256 content hash regardless of filename, and their extras are quarantined automatically unless you switch that off. Similar photos — the same shot re-cropped, re-exported or resaved — are grouped by perceptual matching and always wait for your decision."
+      },
+      {
+        "q": "Can Twinkeep scan an external drive?",
+        "a": "Yes. You choose which folders to scan, including folders on external drives, and a hash index keeps rescans fast."
+      },
+      {
+        "q": "What does Twinkeep require?",
+        "a": "macOS 13 or later, on Apple Silicon or Intel."
+      },
+      {
+        "q": "What is the difference between the Mac App Store and the direct version?",
+        "a": "The same app at the same $9.99 price. The direct build is notarized and comes with a 7-day trial plus a license key; the Mac App Store build is a paid app that is licensed the moment you buy it."
+      }
     ]
   },
   {
@@ -86,6 +135,17 @@
     "purchaseUrl": null,
     "comingSoon": true,
     "os": "macOS 14+",
-    "contentHtml": "<h2>What PrecisDesk is</h2>\n<p><strong>PrecisDesk</strong> (PREH-sis-desk) is Precision Solutions’ desktop command center for Mac: <strong>screenshots and screen recording</strong>, <strong>window arrangement</strong>, and <strong>printing / AirPrint</strong> — built natively as a menu-bar utility with in-app editors, history, and hotkeys.</p>\n<p>One coherent app for the work you do at the desk every day — capture, arrange, and print — without stitching together separate tools.</p>\n\n<h2>Who it’s for</h2>\n<p>Mac power users, founders, and teams who live in screenshots, demos, multi-monitor layouts, and “print this to my iPhone over Wi‑Fi.”</p>\n\n<h2>Capture — screenshots</h2>\n<ul>\n<li>Capture <strong>area</strong>, <strong>window</strong>, or <strong>fullscreen</strong></li>\n<li><strong>Quick Access Overlay</strong> after capture — preview, annotate, copy, save, or delete</li>\n<li>Configurable save folders and <strong>filename templates</strong></li>\n<li><strong>Capture history</strong> — filter stills vs video, restore, delete</li>\n</ul>\n\n<h2>Image editor</h2>\n<ul>\n<li>Crop, shapes, pencil, text, highlighter, counters / step numbers</li>\n<li>Spotlight / focus, blur, and pixelate for redaction</li>\n<li>Backgrounds (solid / gradient), undo / redo</li>\n<li>On-device <strong>OCR</strong> (Vision) — copy text from the whole image or a selection</li>\n<li><strong>Color picker</strong> (hex / RGB)</li>\n<li>Non-destructive <code>.precisdesk</code> projects and PNG export</li>\n</ul>\n\n<h2>Screen recording &amp; clip editor</h2>\n<ul>\n<li>Record <strong>area</strong>, <strong>window</strong>, or <strong>display</strong></li>\n<li>Pause / resume; export <strong>MP4</strong> (H.264) and GIF paths</li>\n<li>Microphone and system audio options</li>\n<li>Cursor, click highlights, and keystroke overlays</li>\n<li>Webcam picture-in-picture and auto-captions / subtitles (Pro)</li>\n<li>In-app <strong>clip editor</strong> — trim, split, mute, re-encode, export</li>\n</ul>\n\n<h2>Arrange — window management</h2>\n<ul>\n<li>Keyboard snap: halves, thirds, quarters, sixths, maximize, center, fill left / right</li>\n<li>Next / previous display, restore previous size, smaller / larger</li>\n<li>Repeat-shortcut size cycles and grid placement (2×2 / 3×3)</li>\n<li><strong>On-screen snap palette</strong> for mouse-driven layouts</li>\n<li>Drag-to-edge / corner snap zones; Stage Manager gap awareness</li>\n<li>Classic Mac and Windows-style shortcut presets</li>\n<li>Throw / stash windows, pin mode, gaps, ignored apps, cascade &amp; tile</li>\n<li>Saved layouts and per-app window rules</li>\n<li>URL / deeplink API — e.g. <code>precisdesk://snap/left</code>, <code>precisdesk://palette</code></li>\n</ul>\n<p>Full window management uses Accessibility; some advanced snap and AirPrint features may ship on the direct / Gumroad build if the Mac App Store channel needs limits.</p>\n\n<h2>Print — AirPrint &amp; destinations</h2>\n<ul>\n<li>Share Mac printers as <strong>AirPrint</strong> to iPhone, iPad, and other Macs (Bonjour)</li>\n<li>Per-printer sharing toggles; discover local and network printers</li>\n<li>Print to folder (PDF), Dropbox / iCloud / chosen paths, or hand off to an app</li>\n<li>Print job list with pause / resume / cancel and notifications</li>\n<li>Print annotated screenshots straight from the editor or overlay</li>\n<li>Quick presets (photo, document, borderless) and paper / quality options</li>\n</ul>\n\n<h2>App shell</h2>\n<ul>\n<li>Always-available <strong>menu bar</strong> app (optional Dock icon)</li>\n<li>Settings for General, Capture, Windows, Print, Hotkeys, History, and License</li>\n<li>Permissions onboarding for Screen Recording, Accessibility, Microphone, Camera, and Local Network</li>\n<li>First-launch legal gate (EULA, Privacy, Disclaimer)</li>\n</ul>\n\n<h2>Requirements</h2>\n<ul>\n<li>macOS 14 or later (planned)</li>\n<li>Native SwiftUI / AppKit app</li>\n</ul>\n\n<blockquote><p>Capture. Arrange. Print. — one menu-bar suite for the Mac desk.</p></blockquote>"
+    "contentHtml": "<h2>What PrecisDesk is</h2>\n<p><strong>PrecisDesk</strong> (PREH-sis-desk) is Precision Solutions’ desktop command center for Mac: <strong>screenshots and screen recording</strong>, <strong>window arrangement</strong>, and <strong>printing / AirPrint</strong> — built natively as a menu-bar utility with in-app editors, history, and hotkeys.</p>\n<p>One coherent app for the work you do at the desk every day — capture, arrange, and print — without stitching together separate tools.</p>\n\n<h2>Who it’s for</h2>\n<p>Mac power users, founders, and teams who live in screenshots, demos, multi-monitor layouts, and “print this to my iPhone over Wi‑Fi.”</p>\n\n<h2>Capture — screenshots</h2>\n<ul>\n<li>Capture <strong>area</strong>, <strong>window</strong>, or <strong>fullscreen</strong></li>\n<li><strong>Quick Access Overlay</strong> after capture — preview, annotate, copy, save, or delete</li>\n<li>Configurable save folders and <strong>filename templates</strong></li>\n<li><strong>Capture history</strong> — filter stills vs video, restore, delete</li>\n</ul>\n\n<h2>Image editor</h2>\n<ul>\n<li>Crop, shapes, pencil, text, highlighter, counters / step numbers</li>\n<li>Spotlight / focus, blur, and pixelate for redaction</li>\n<li>Backgrounds (solid / gradient), undo / redo</li>\n<li>On-device <strong>OCR</strong> (Vision) — copy text from the whole image or a selection</li>\n<li><strong>Color picker</strong> (hex / RGB)</li>\n<li>Non-destructive <code>.precisdesk</code> projects and PNG export</li>\n</ul>\n\n<h2>Screen recording &amp; clip editor</h2>\n<ul>\n<li>Record <strong>area</strong>, <strong>window</strong>, or <strong>display</strong></li>\n<li>Pause / resume; export <strong>MP4</strong> (H.264) and GIF paths</li>\n<li>Microphone and system audio options</li>\n<li>Cursor, click highlights, and keystroke overlays</li>\n<li>Webcam picture-in-picture and auto-captions / subtitles (Pro)</li>\n<li>In-app <strong>clip editor</strong> — trim, split, mute, re-encode, export</li>\n</ul>\n\n<h2>Arrange — window management</h2>\n<ul>\n<li>Keyboard snap: halves, thirds, quarters, sixths, maximize, center, fill left / right</li>\n<li>Next / previous display, restore previous size, smaller / larger</li>\n<li>Repeat-shortcut size cycles and grid placement (2×2 / 3×3)</li>\n<li><strong>On-screen snap palette</strong> for mouse-driven layouts</li>\n<li>Drag-to-edge / corner snap zones; Stage Manager gap awareness</li>\n<li>Classic Mac and Windows-style shortcut presets</li>\n<li>Throw / stash windows, pin mode, gaps, ignored apps, cascade &amp; tile</li>\n<li>Saved layouts and per-app window rules</li>\n<li>URL / deeplink API — e.g. <code>precisdesk://snap/left</code>, <code>precisdesk://palette</code></li>\n</ul>\n<p>Full window management uses Accessibility; some advanced snap and AirPrint features may ship on the direct / Gumroad build if the Mac App Store channel needs limits.</p>\n\n<h2>Print — AirPrint &amp; destinations</h2>\n<ul>\n<li>Share Mac printers as <strong>AirPrint</strong> to iPhone, iPad, and other Macs (Bonjour)</li>\n<li>Per-printer sharing toggles; discover local and network printers</li>\n<li>Print to folder (PDF), Dropbox / iCloud / chosen paths, or hand off to an app</li>\n<li>Print job list with pause / resume / cancel and notifications</li>\n<li>Print annotated screenshots straight from the editor or overlay</li>\n<li>Quick presets (photo, document, borderless) and paper / quality options</li>\n</ul>\n\n<h2>App shell</h2>\n<ul>\n<li>Always-available <strong>menu bar</strong> app (optional Dock icon)</li>\n<li>Settings for General, Capture, Windows, Print, Hotkeys, History, and License</li>\n<li>Permissions onboarding for Screen Recording, Accessibility, Microphone, Camera, and Local Network</li>\n<li>First-launch legal gate (EULA, Privacy, Disclaimer)</li>\n</ul>\n\n<h2>Requirements</h2>\n<ul>\n<li>macOS 14 or later (planned)</li>\n<li>Native SwiftUI / AppKit app</li>\n</ul>\n\n<blockquote><p>Capture. Arrange. Print. — one menu-bar suite for the Mac desk.</p></blockquote>",
+    "metaTitle": "PrecisDesk — Mac Screenshot, Recording & Window Tool",
+    "featureList": [
+      "Capture an area, a window, or fullscreen",
+      "Image editor with crop, shapes, text, highlighter and step counters",
+      "Blur, pixelate and spotlight for redaction",
+      "On-device OCR to copy text out of any capture",
+      "Screen recording with pause and resume, exporting MP4 and GIF",
+      "In-app clip editor for trim, split, mute and re-encode",
+      "Keyboard window snapping to halves, thirds and quarters",
+      "Printing and AirPrint from the same app"
+    ]
   }
 ]

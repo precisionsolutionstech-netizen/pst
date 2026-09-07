@@ -1,0 +1,200 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Retail Data Normalization",
+    "summary": "Normalize product and retail listing data for comparison and analytics.",
+    "description": "Normalize retailer product JSON from Amazon, Walmart, eBay, Target, Shopify and more into one canonical schema in a single POST. No retailer API calls.",
+    "version": "1.0.0",
+    "contact": {
+      "name": "Precision Solutions Tech",
+      "url": "https://precisionsolutionstech.com/apis/retail-data-normalization/"
+    }
+  },
+  "externalDocs": {
+    "description": "Retail Data Normalization documentation",
+    "url": "https://precisionsolutionstech.com/apis/retail-data-normalization/"
+  },
+  "servers": [
+    {
+      "url": "https://retail-data-normalization-comparison.p.rapidapi.com"
+    }
+  ],
+  "security": [
+    {
+      "rapidApiKey": []
+    }
+  ],
+  "components": {
+    "securitySchemes": {
+      "rapidApiKey": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "x-rapidapi-key"
+      }
+    }
+  },
+  "paths": {
+    "/normalize": {
+      "post": {
+        "operationId": "retailDataNormalization",
+        "summary": "Normalize product and retail listing data for comparison and analytics.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "path": {
+                    "type": "string"
+                  },
+                  "body": {
+                    "type": "object",
+                    "properties": {
+                      "inputs": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "retailerId": {
+                              "type": "string"
+                            },
+                            "payload": {
+                              "type": "object",
+                              "properties": {
+                                "Items": {
+                                  "type": "array",
+                                  "items": {
+                                    "type": "object",
+                                    "properties": {
+                                      "ASIN": {
+                                        "type": "string"
+                                      },
+                                      "ItemInfo": {
+                                        "type": "object",
+                                        "properties": {
+                                          "Title": {
+                                            "type": "object",
+                                            "properties": {
+                                              "DisplayValue": {
+                                                "type": "string"
+                                              }
+                                            }
+                                          },
+                                          "Brand": {
+                                            "type": "object",
+                                            "properties": {
+                                              "DisplayValue": {
+                                                "type": "string"
+                                              }
+                                            }
+                                          }
+                                        }
+                                      },
+                                      "Offers": {
+                                        "type": "object",
+                                        "properties": {
+                                          "Listings": {
+                                            "type": "array",
+                                            "items": {
+                                              "type": "object",
+                                              "properties": {
+                                                "Price": {
+                                                  "type": "object",
+                                                  "properties": {
+                                                    "Amount": {
+                                                      "type": "number"
+                                                    },
+                                                    "CurrencyCode": {
+                                                      "type": "string"
+                                                    },
+                                                    "DisplayAmount": {
+                                                      "type": "string"
+                                                    }
+                                                  }
+                                                },
+                                                "Availability": {
+                                                  "type": "object",
+                                                  "properties": {
+                                                    "Type": {
+                                                      "type": "string"
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "example": {
+                "path": "/normalize",
+                "body": {
+                  "inputs": [
+                    {
+                      "retailerId": "amazon",
+                      "payload": {
+                        "Items": [
+                          {
+                            "ASIN": "B08N5WRWNW",
+                            "ItemInfo": {
+                              "Title": {
+                                "DisplayValue": "Example Product"
+                              },
+                              "Brand": {
+                                "DisplayValue": "Example Brand"
+                              }
+                            },
+                            "Offers": {
+                              "Listings": [
+                                {
+                                  "Price": {
+                                    "Amount": 29.99,
+                                    "CurrencyCode": "USD",
+                                    "DisplayAmount": "$29.99"
+                                  },
+                                  "Availability": {
+                                    "Type": "Now"
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          }
+        }
+      }
+    }
+  }
+}

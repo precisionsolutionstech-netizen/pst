@@ -1,0 +1,160 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Adaptive Rate Limit Response Calculator",
+    "summary": "Analyze API rate limits and calculate adaptive retry strategies.",
+    "description": "Compute HTTP 429 vs 503 vs graceful degradation from signals you send—Retry-After, X-RateLimit-*, retry guidance, tier fairness, retry-storm warnings.",
+    "version": "1.0.0",
+    "contact": {
+      "name": "Precision Solutions Tech",
+      "url": "https://precisionsolutionstech.com/apis/adaptive-rate-limit-calculator/"
+    }
+  },
+  "externalDocs": {
+    "description": "Adaptive Rate Limit Response Calculator documentation",
+    "url": "https://precisionsolutionstech.com/apis/adaptive-rate-limit-calculator/"
+  },
+  "servers": [
+    {
+      "url": "https://adaptive-rate-limit-response-calculator.p.rapidapi.com"
+    }
+  ],
+  "security": [
+    {
+      "rapidApiKey": []
+    }
+  ],
+  "components": {
+    "securitySchemes": {
+      "rapidApiKey": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "x-rapidapi-key"
+      }
+    }
+  },
+  "paths": {
+    "/calculate": {
+      "post": {
+        "operationId": "adaptiveRateLimitCalculator",
+        "summary": "Analyze API rate limits and calculate adaptive retry strategies.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "path": {
+                    "type": "string"
+                  },
+                  "body": {
+                    "type": "object",
+                    "properties": {
+                      "requestContext": {
+                        "type": "object",
+                        "properties": {
+                          "method": {
+                            "type": "string"
+                          },
+                          "endpoint": {
+                            "type": "string"
+                          },
+                          "clientId": {
+                            "type": "string"
+                          },
+                          "clientTier": {
+                            "type": "string"
+                          },
+                          "isIdempotent": {
+                            "type": "boolean"
+                          }
+                        }
+                      },
+                      "rateLimitSignals": {
+                        "type": "object",
+                        "properties": {
+                          "currentRequestRate": {
+                            "type": "integer"
+                          },
+                          "allowedQuota": {
+                            "type": "integer"
+                          },
+                          "windowSize": {
+                            "type": "integer"
+                          },
+                          "remainingAllowance": {
+                            "type": "integer"
+                          },
+                          "retryCount": {
+                            "type": "integer"
+                          },
+                          "limitType": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "systemStateSignals": {
+                        "type": "object",
+                        "properties": {
+                          "systemLoadLevel": {
+                            "type": "string"
+                          },
+                          "dependencyHealth": {
+                            "type": "integer"
+                          },
+                          "trafficClassification": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "example": {
+                "path": "/calculate",
+                "body": {
+                  "requestContext": {
+                    "method": "GET",
+                    "endpoint": "/api/users",
+                    "clientId": "client-123",
+                    "clientTier": "paid",
+                    "isIdempotent": true
+                  },
+                  "rateLimitSignals": {
+                    "currentRequestRate": 150,
+                    "allowedQuota": 100,
+                    "windowSize": 60,
+                    "remainingAllowance": 0,
+                    "retryCount": 0,
+                    "limitType": "hard"
+                  },
+                  "systemStateSignals": {
+                    "systemLoadLevel": "normal",
+                    "dependencyHealth": 1,
+                    "trafficClassification": "legitimate"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          }
+        }
+      }
+    }
+  }
+}
