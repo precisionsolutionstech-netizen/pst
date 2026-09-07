@@ -16,9 +16,14 @@ staging gate. Consequences, treat these as hard rules:
 
 ## Commands
 
-<!-- TODO: run /init here and fill in. -->
-- Dev server: TODO
-- Build: TODO
+- Dev server: `npm run dev`
+- Build: `npm run build` (runs `scripts/gen-code-samples.mjs`, then `astro build`)
+- Regenerate API snippets + OpenAPI specs only: `npm run gen:code-samples`
+
+`gen-code-samples.mjs` parses `public/apis/*.playground.js` for each API's host,
+path, method and example body, then writes `src/data/api-code-samples.json` and
+`public/apis/<slug>/openapi.json`. If you add an API, add its playground script
+first; the script reports any API whose endpoint it could not resolve.
 
 ## Rules
 
