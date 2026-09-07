@@ -11,7 +11,7 @@
             <sparkle:version>8</sparkle:version>
             <sparkle:shortVersionString>1.1.0</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
-            <sparkle:releaseNotesLink>https://precisionsolutionstech.com/apps/twinkeep/Twinkeep-1.1.0.html</sparkle:releaseNotesLink>
+            <sparkle:releaseNotesLink>https://precisionsolutionstech.com/apps/twinkeep/releases/Twinkeep-1.1.0.html</sparkle:releaseNotesLink>
             <enclosure url="https://precisionsolutionstech.com/apps/twinkeep/releases/Twinkeep-1.1.0.zip" length="4487060" type="application/octet-stream" sparkle:edSignature="aXhN6ID051F1yDgWqbOH6KsMFvOhY6Af0nz6SW7RJsCd15qXVUvo2JC0oO5qKpByV28CA/25Qcjtw72eocrJDA=="/>
             <sparkle:deltas>
                 <enclosure url="https://precisionsolutionstech.com/apps/twinkeep/releases/Twinkeep8-6.delta" sparkle:deltaFrom="6" length="960814" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977840" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="0UCqL/JUIMyZ4BulVHiVyQc75V4p1NJJ5KooP8nLLVTCI8UDuiTesAROb1573G2wmEG6CAnkfdNKBpXdyVTHBg=="/>
@@ -23,7 +23,7 @@
             <sparkle:version>6</sparkle:version>
             <sparkle:shortVersionString>1.0.0</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
-            <sparkle:releaseNotesLink>https://precisionsolutionstech.com/apps/twinkeep/Twinkeep-1.0.0.html</sparkle:releaseNotesLink>
+            <sparkle:releaseNotesLink>https://precisionsolutionstech.com/apps/twinkeep/releases/Twinkeep-1.0.0.html</sparkle:releaseNotesLink>
             <enclosure url="https://precisionsolutionstech.com/apps/twinkeep/releases/Twinkeep-1.0.0.zip" length="4120061" type="application/octet-stream" sparkle:edSignature="CzKbw/7Td+kzfTWSD93R0NWL/vEoyb8hJdlmPFSlgzsShB1aRFN+Ua/L4t2jtI+PsMwxGahNIZLcP7cUZ1VXDg=="/>
         </item>
     </channel>
