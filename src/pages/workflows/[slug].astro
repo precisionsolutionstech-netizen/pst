@@ -20,7 +20,7 @@ const description = w.shortDescription.length > 158
 
 const priceNumber = w.price ? w.price.replace('$', '') : null;
 const isPaidProduct = Boolean(w.gumroadUrl && priceNumber);
-const imageUrl = `${SITE}/og-default.png`;
+const imageUrl = `${SITE}/og-default.jpg`;
 
 /** Paid templates keep Product+offers for Shopping rich results.
  *  Free / coming-soon must not emit bare Product (GSC: needs offers|review|aggregateRating). */
