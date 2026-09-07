@@ -722,3 +722,28 @@ a.card:hover {
 .post-list a { font-weight: 600; font-size: 1.05rem; }
 .post-list p { margin: 6px 0 0; color: var(--muted); font-size: 0.95rem; line-height: 1.5; }
 .post-list .external { display: inline-block; margin-left: 6px; font-size: 0.75rem; color: var(--muted); font-weight: 500; }
+
+/* Quick start — server-rendered request snippets on API pages. */
+.quickstart details {
+  margin: 12px 0;
+  border: 1px solid var(--border, #e2e5ea);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.quickstart details > summary {
+  cursor: pointer;
+  padding: 10px 14px;
+  font-weight: 600;
+  font-size: 0.94rem;
+  list-style: none;
+}
+.quickstart details > summary::-webkit-details-marker { display: none; }
+.quickstart details > summary::before {
+  content: '▸';
+  display: inline-block;
+  margin-right: 8px;
+  transition: transform 0.15s ease;
+}
+.quickstart details[open] > summary::before { transform: rotate(90deg); }
+.quickstart details .code-wrap { margin: 0 14px 14px; }
+.quickstart > p code { word-break: break-all; }
