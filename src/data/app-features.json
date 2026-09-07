@@ -1,0 +1,584 @@
+{
+  "twinkeep": [
+    {
+      "slug": "file-rules",
+      "name": "File Rules",
+      "title": "File Rules — Automatically Organize Your Downloads Folder on Mac | Twinkeep",
+      "metaDescription": "Set up automatic file organization on macOS. File Rules watches your Downloads folder and files new arrivals by type, name, size, date, or Finder tag — no subscription, no cloud.",
+      "h1": "File Rules: put your Downloads folder on autopilot",
+      "kicker": "Twinkeep feature guide",
+      "summary": "File Rules is folder automation built into Twinkeep. Point it at Downloads, your Desktop, or any folder you choose, and new files get filed the moment they land — by type, name, size, age, Finder tag, or whether they're a duplicate.",
+      "hero": {
+        "src": "/apps/twinkeep/features/07-file-rules.png",
+        "alt": "Twinkeep File Rules on macOS: watched folders, rule list, and a live preview of which files each rule would move"
+      },
+      "whatFor": "<p>Most Mac cleanup apps tidy once. You run a scan, you delete some things, and three weeks later the Downloads folder looks exactly the same. <strong>File Rules</strong> is the part of Twinkeep that stops the pile coming back.</p><p>It watches folders you choose and applies rules you write, automatically, as files arrive. Screenshots go to a screenshots folder. Invoices go where invoices go. Installers you already ran get quarantined. You set it up once.</p><p>This is the job people usually buy a separate Mac folder-automation app to do. It is included in Twinkeep at no extra cost, alongside the duplicate cleaner.</p>",
+      "steps": [
+        {
+          "title": "Open File Rules and turn watching on",
+          "body": "Twinkeep ships with File Rules <strong>switched off</strong>, so nothing moves on your Mac until you ask it to. Open <em>File</em> in the sidebar and turn on watching. Downloads is watched by default; add any other folder you want covered."
+        },
+        {
+          "title": "Review the six rules that come with it",
+          "body": "Twinkeep includes six working rules on day one: screenshots, invoices, insurance documents, other PDFs, old installers, and images. They file into <code>~/Downloads/Twinkeep/</code> so they work immediately, without asking you for access to folders elsewhere on your Mac."
+        },
+        {
+          "title": "Point a rule somewhere else, if you want",
+          "body": "Open any rule and click <em>Choose…</em> next to the destination to send files to Pictures, Documents, or an external drive instead. Choosing the folder is what grants Twinkeep permission to write there — there is no separate permissions dance."
+        },
+        {
+          "title": "Write your own rule",
+          "body": "Add a rule, pick your conditions, then pick what happens. Match on <strong>all</strong> conditions or <strong>any</strong> of them. A rule like <em>“extension is .dmg AND older than 30 days → Quarantine”</em> takes about fifteen seconds to build."
+        },
+        {
+          "title": "Preview before you trust it",
+          "body": "Every rule shows a live preview of the files it would act on right now, so you can confirm the match is right before anything moves. Turn on notifications if you want to be told each time something is filed."
+        }
+      ],
+      "reference": "<h2>What File Rules can match on</h2><p>Sixteen conditions, combined with <em>all</em> or <em>any</em> logic:</p><ul><li><strong>Media kind</strong> — photo, video, audio, document, code</li><li><strong>Extension</strong> — one or many, like <code>pdf</code>, <code>dmg</code>, <code>zip</code></li><li><strong>Name</strong> — contains, starts with, or matches a pattern</li><li><strong>Size</strong> — greater than or less than a threshold</li><li><strong>Finder tag</strong> — act on files you have already tagged</li><li><strong>Age</strong> — by created, modified, or added date</li><li><strong>Duplicate status</strong> — is an exact duplicate, is a near duplicate, or is unique</li></ul><p>That last one is worth calling out. Because Twinkeep is also a duplicate scanner, your automation can act on what the scanner found — a rule can quarantine anything that is already an exact copy of a file you keep elsewhere.</p><h2>What File Rules can do</h2><p>Nine actions:</p><ul><li><strong>Move</strong> or <strong>copy</strong> to a folder</li><li><strong>Sort into folders</strong> by a pattern you define</li><li><strong>Sort into year and month</strong> — a dated archive, automatically</li><li><strong>Rename</strong> by pattern</li><li><strong>Add</strong> or <strong>remove Finder tags</strong></li><li><strong>Quarantine</strong> — Twinkeep's recoverable holding area, not the Trash</li><li><strong>Send to Review</strong> — hold it for your decision instead of acting</li></ul><h2>Emptying the Trash automatically</h2><p>File Rules can also empty your Trash on a schedule, by age or by size. It is off by default and requires an explicit confirmation before it will ever run, because it is the one action in Twinkeep that is not recoverable.</p>",
+      "faq": [
+        {
+          "q": "Does File Rules move my files without asking?",
+          "a": "No. It ships switched off. Nothing is watched or filed until you turn it on, and every rule shows you a preview of what it would act on before you enable it."
+        },
+        {
+          "q": "Can it organize folders other than Downloads?",
+          "a": "Yes. Downloads is watched by default because it is the folder that fills up fastest, but you can add your Desktop, an external drive, or any folder you choose."
+        },
+        {
+          "q": "What happens to files it files away — can I undo it?",
+          "a": "Moves are ordinary file moves, so you can drag anything back. Rules that quarantine put files in Twinkeep's Quarantine, where you can restore them to their original location with one click."
+        },
+        {
+          "q": "Do I still need a separate folder automation app?",
+          "a": "File Rules covers the same job — watch a folder, match files, act on them automatically — with sixteen match conditions and nine actions. The difference is that Twinkeep is also a duplicate cleaner, so a rule can match on whether a file is already a duplicate of something you keep. It is included in the one $9.99 purchase."
+        },
+        {
+          "q": "Does it need internet access or an account?",
+          "a": "No. File Rules runs entirely on your Mac. Twinkeep has no account, no telemetry, and never uploads your files."
+        }
+      ],
+      "related": [
+        "review"
+      ]
+    },
+    {
+      "slug": "review",
+      "name": "Review",
+      "title": "Compare Similar Photos Side by Side on Mac | Twinkeep Review",
+      "metaDescription": "Find near-duplicate photos on your Mac and compare them full size, side by side. Synced zoom to 100%, a difference strip showing dimensions, size, camera and date, and one-key marking.",
+      "h1": "Review: see both photos full size, side by side",
+      "kicker": "Twinkeep feature guide",
+      "summary": "Review is where Twinkeep sends the photos it will not decide for you — the same shot re-cropped, re-exported, or resaved. It puts two copies on screen at full size, with synced zoom and a strip showing exactly what differs, so you can pick a keeper in about a second.",
+      "hero": {
+        "src": "/apps/twinkeep/gallery/03-review-lookalikes.png",
+        "alt": "Twinkeep Review screen comparing two near-duplicate photos side by side with a difference strip"
+      },
+      "whatFor": "<p>Exact duplicates are easy: identical bytes, nothing to decide, and Twinkeep quarantines the extras for you automatically. <strong>Near-duplicates are the hard ones.</strong> The same photo saved at two qualities. A crop you made for Instagram. An export that stripped the metadata.</p><p>Those are not identical files, so no hashing tool can safely pick a winner. They come to Review, where you decide — and Review is built so that deciding takes a second rather than a minute.</p><p>Because exact copies are handled automatically, Review only ever shows you the genuine judgment calls. A library with a thousand duplicates does not mean a thousand decisions.</p>",
+      "steps": [
+        {
+          "title": "Scan a folder",
+          "body": "Click <em>Scan folders</em> and pick any folder with photos in it — your Pictures library, an old backup drive, a camera dump. Twinkeep hashes contents to find exact copies and uses perceptual matching to group lookalikes."
+        },
+        {
+          "title": "Open Review",
+          "body": "Review opens face to face by default: the photo Twinkeep suggests keeping on the left as <strong>A</strong>, the candidate on the right as <strong>B</strong>. Both are full size, not thumbnails. Prefer the old stacked list? The <em>List</em> switch at the top right brings it back."
+        },
+        {
+          "title": "Zoom in on the difference",
+          "body": "Zoom and pan move together across both panes, so you are always looking at the same corner of the same shot. Press <kbd>Z</kbd> to toggle between fit and 100%. Past 1.5× it switches to nearest-neighbour rendering so real pixel differences are visible instead of smoothed away."
+        },
+        {
+          "title": "Read the difference strip",
+          "body": "Between the two panes, Twinkeep lists what actually differs: dimensions and megapixels, file size, format, camera, capture date, GPS, and whether the filename looks like a copy. The stronger file is highlighted using the same keep policy Twinkeep applies everywhere else."
+        },
+        {
+          "title": "Mark it with one key",
+          "body": "<kbd>1</kbd> keeps the left, <kbd>2</kbd> keeps the right, <kbd>S</kbd> skips, and <kbd>Q</kbd> quarantines the rest of the group. Arrow keys move between candidates, <kbd>⌥</kbd> plus arrows move between groups. A group of any size becomes a short run of A-versus-B decisions until one file is left."
+        }
+      ],
+      "reference": "<h2>How Twinkeep decides which photo to suggest</h2><p>The A pane is Twinkeep's suggestion, not a verdict. The keep policy prefers, in order:</p><ul><li><strong>Live Photo and HEIC originals</strong> over re-exports</li><li><strong>Names that do not look like copies</strong> — <code>IMG_4021.heic</code> beats <code>IMG_4021 copy 2.jpg</code></li><li><strong>The older file</strong>, which is usually the original</li><li><strong>The shorter path</strong>, which is usually the library rather than a scratch folder</li></ul><p>You can always override it. Nothing moves until you press a key.</p><h2>Exact matches versus lookalikes</h2><p>Twinkeep separates the two deliberately:</p><ul><li><strong>Exact duplicates</strong> are found by SHA-256 content hashing. Byte-identical, whatever the filename. These are quarantined for you automatically — switch that off in Settings if you would rather approve each one.</li><li><strong>Near-duplicate photos</strong> are found by perceptual hashing, which compares what the image looks like rather than its bytes. Similarity is a judgment, so these always wait for you in Review.</li></ul><h2>Nothing is deleted from Review</h2><p>Marking a photo sends the loser to <strong>Quarantine</strong>, not the Trash and never straight to deletion. You can restore anything from Quarantine to exactly where it came from, browse it as a list, icons, gallery, or filmstrip, and empty it permanently only when you are sure.</p>",
+      "faq": [
+        {
+          "q": "How does Twinkeep find similar photos that are not identical?",
+          "a": "It uses perceptual hashing, which describes what an image looks like rather than what bytes it contains. Two exports of the same shot produce similar perceptual hashes even though their files are completely different, so they get grouped as lookalikes."
+        },
+        {
+          "q": "Do I have to review every duplicate on my Mac?",
+          "a": "No. Byte-identical copies are matched by content and quarantined automatically — a thousand of them take no more of your time than one. Review is kept for genuine near-duplicates, where only you can say which version to keep."
+        },
+        {
+          "q": "Can I compare photos at full resolution?",
+          "a": "Yes. Press Z to toggle between fit and 100%. Zoom and pan are synced across both panes, and above 1.5x Twinkeep switches to nearest-neighbour rendering so you see actual pixels rather than a smoothed approximation."
+        },
+        {
+          "q": "What happens to the photo I do not keep?",
+          "a": "It moves to Quarantine, where it stays until you restore it or empty Quarantine yourself. Twinkeep never deletes a photo straight from Review."
+        },
+        {
+          "q": "Does it work with video and audio too?",
+          "a": "Exact duplicate detection covers photos, video, and audio. Perceptual lookalike matching is photo-only, because similarity for video and audio is a different problem and Twinkeep would rather not guess."
+        }
+      ],
+      "related": [
+        "file-rules"
+      ]
+    },
+    {
+      "slug": "exact",
+      "name": "Exact duplicates",
+      "title": "Find Exact Duplicate Files on Mac — Photos, Video & Audio | Twinkeep",
+      "metaDescription": "Find byte-identical duplicate files on your Mac using SHA-256 content hashing. Extras are quarantined automatically, whatever they are named, and nothing is deleted outright.",
+      "h1": "Exact duplicates: identical files, found by content",
+      "kicker": "Twinkeep feature guide",
+      "summary": "Exact duplicates are files whose contents are byte-for-byte identical, no matter what they are called or where they live. Twinkeep finds them by hashing content rather than comparing names, keeps the best copy, and quarantines the rest for you.",
+      "hero": {
+        "src": "/apps/twinkeep/gallery/02-exact-duplicates.png",
+        "alt": "Twinkeep Exact duplicates screen on macOS showing a group of identical photos with one marked as the keeper"
+      },
+      "whatFor": "<p>The same photo arrives on your Mac three times: once from your camera, once because you AirDropped it to yourself, once because a message thread saved a copy. The filenames differ. The bytes do not.</p><p><strong>Exact matching</strong> catches these with certainty. Twinkeep reads the contents of every file it scans and computes a SHA-256 hash. Two files with the same hash are the same file, full stop — there is no judgment involved and no risk of a false match.</p><p>Because it is certain, Twinkeep handles it for you. Extras are quarantined automatically so a library with a thousand duplicates does not become a thousand decisions.</p>",
+      "steps": [
+        {
+          "title": "Scan the folders you want covered",
+          "body": "Click <em>Scan folders</em> and choose one or more folders — a Pictures library, an old backup drive, a camera dump. Twinkeep only ever looks where you point it."
+        },
+        {
+          "title": "Let the hash pass run",
+          "body": "Twinkeep hashes file contents as it scans. A hash index caches results by path, size, and modification date, so a second scan of the same folders is dramatically faster."
+        },
+        {
+          "title": "Open Exact",
+          "body": "Groups are listed largest first, with the reclaimable total at the top. Each group shows the keeper Twinkeep chose and the extras it would quarantine."
+        },
+        {
+          "title": "Override the keeper if you disagree",
+          "body": "Every file in a group has a <em>Keep this</em> button. Choosing a different keeper re-points the group immediately — the others become the extras."
+        },
+        {
+          "title": "Let it clean, or do it yourself",
+          "body": "Auto-quarantine is on by default, so exact extras are already moved by the time you look. Prefer to approve each group? Switch it off in Settings and use <em>Quarantine duplicates</em> per group instead."
+        }
+      ],
+      "reference": "<h2>How the keeper is chosen</h2><p>When several files are identical, Twinkeep still has to pick one to keep. In order of preference:</p><ul><li><strong>Live Photo and HEIC originals</strong> over re-exports</li><li><strong>Names that do not look like copies</strong> — <code>IMG_4021.heic</code> beats <code>IMG_4021 copy 2.heic</code></li><li><strong>The older file</strong>, usually the original</li><li><strong>The shorter path</strong>, usually your library rather than a scratch folder</li></ul><h2>What counts as exact</h2><p>Only byte-identical contents. Two exports of the same photo at different quality settings are <em>not</em> exact duplicates, and neither are two encodings of the same song or video — those are different files that happen to look or sound alike. Similar photos go to <a href=\"/apps/twinkeep/review/\">Review</a> instead, where you decide.</p><h2>Photos, video, and audio</h2><p>Exact matching covers all three, in one scan. It is content hashing, so the file type does not matter — a duplicate PDF or ZIP is found the same way a duplicate photo is.</p>",
+      "faq": [
+        {
+          "q": "Can exact matching delete the wrong file?",
+          "a": "It cannot pick the wrong file in the sense of a false match — identical SHA-256 hashes mean identical contents. And nothing is deleted: extras move to Quarantine, where you can restore them to their original location."
+        },
+        {
+          "q": "Does it find duplicates with different filenames?",
+          "a": "Yes. Names are irrelevant to exact matching. Twinkeep compares what is inside the file, so a renamed copy in a different folder is still caught."
+        },
+        {
+          "q": "Why did it not group two photos that look the same?",
+          "a": "They are probably not byte-identical — different quality, a crop, or a re-export. Those are near-duplicates and go to Review, where you compare them side by side and choose."
+        },
+        {
+          "q": "Is scanning again slow?",
+          "a": "No. Twinkeep caches hashes by path, size, and modification date, so unchanged files are skipped on subsequent scans."
+        }
+      ],
+      "related": [
+        "review",
+        "quarantine"
+      ]
+    },
+    {
+      "slug": "quarantine",
+      "name": "Quarantine",
+      "title": "Quarantine — Undo Duplicate Cleanup on Mac | Twinkeep",
+      "metaDescription": "Twinkeep never deletes files outright. Removals go to Quarantine, where you can restore anything to where it came from, browse in four views, and empty permanently only when you are sure.",
+      "h1": "Quarantine: nothing is gone until you say so",
+      "kicker": "Twinkeep feature guide",
+      "summary": "Quarantine is the holding area every removal passes through. Nothing Twinkeep touches goes straight to deletion — it lands here first, with its original location recorded, so you can put it back at any point.",
+      "hero": {
+        "src": "/apps/twinkeep/features/08-quarantine-filmstrip.png",
+        "alt": "Twinkeep Quarantine on macOS in filmstrip view: a large preview above a scrolling ribbon of quarantined photos"
+      },
+      "whatFor": "<p>The reason people hesitate over duplicate cleaners is simple: what if it is wrong? A tool that deletes is a tool you have to trust completely before you have any reason to.</p><p><strong>Quarantine removes that problem.</strong> Every file Twinkeep acts on — an exact duplicate it cleared for you, a photo you rejected in Review, a file a rule filed away — moves here, keeping a record of exactly where it came from. Restoring puts it back in that exact place.</p><p>Nothing leaves your Mac, and nothing is permanently deleted until you choose to empty it.</p>",
+      "steps": [
+        {
+          "title": "Open Quarantine",
+          "body": "The sidebar badge shows how many files are being held and how much space they represent. Filter by <em>All</em>, <em>Duplicates</em>, or <em>Rules</em> to see what put each file here."
+        },
+        {
+          "title": "Pick a view that suits the job",
+          "body": "Four views: <strong>List</strong> for detail and paths, <strong>Icons</strong> for scanning quickly, <strong>Gallery</strong> for a large preview beside the list, and <strong>Filmstrip</strong> for one big preview above a scrolling ribbon of everything else. Drag the ribbon divider to resize it."
+        },
+        {
+          "title": "Check before you decide",
+          "body": "Selecting a file shows its full metadata: type, size, when it was quarantined, why, and which file was kept instead. Rotate previews if a photo came in sideways, or press <em>Open</em> to view it in Preview."
+        },
+        {
+          "title": "Restore anything you want back",
+          "body": "<em>Restore</em> returns a file to its original path. <em>Keep this instead</em> goes further — it restores this file and quarantines the one Twinkeep kept, swapping the decision."
+        },
+        {
+          "title": "Empty when you are sure",
+          "body": "<em>Empty permanently</em> is the only action in Twinkeep that cannot be undone, so it always asks first. Until then, quarantined files stay on your disk."
+        }
+      ],
+      "reference": "<h2>What ends up here</h2><ul><li><strong>Exact duplicates</strong> cleared automatically after a scan</li><li><strong>Photos you rejected</strong> in Review</li><li><strong>Files a rule quarantined</strong> — for example old installers</li></ul><p>The <em>Source</em> column tells you which, so a file filed by automation is never confused with one you chose yourself.</p><h2>Restore is exact, not approximate</h2><p>Twinkeep records each file's original path when it quarantines it. Restoring recreates that location, including the folder, rather than dropping the file somewhere generic. If the original folder is gone, Twinkeep recreates it.</p><h2>It is not a backup</h2><p>Quarantine protects you from Twinkeep's decisions, not from disk failure. It lives on the same drive as your files. Keep a real backup — Time Machine or otherwise — before any cleanup tool touches anything.</p>",
+      "faq": [
+        {
+          "q": "Where do quarantined files actually live?",
+          "a": "Inside Twinkeep's own application container on your Mac. They are not in the Trash, so emptying the Trash does not touch them, and they never leave your machine."
+        },
+        {
+          "q": "Does quarantine free up disk space?",
+          "a": "Not until you empty it. Quarantined files still occupy space — that is the trade for being able to undo. Empty permanently once you have confirmed you do not need them."
+        },
+        {
+          "q": "What does \\u201cKeep this instead\\u201d do?",
+          "a": "It swaps the decision: the quarantined file is restored to its original location and the file Twinkeep had kept is quarantined in its place. Useful when you disagree with the keeper it chose."
+        },
+        {
+          "q": "Can I get a file back after emptying Quarantine?",
+          "a": "No. Emptying permanently deletes, which is why it is the one action that always asks for confirmation. Restore anything you are unsure about before emptying."
+        }
+      ],
+      "related": [
+        "exact",
+        "review"
+      ]
+    },
+    {
+      "slug": "junk-sweep",
+      "name": "Junk Sweep",
+      "title": "Clear Caches, Logs and Xcode Junk on Mac | Twinkeep Junk Sweep",
+      "metaDescription": "Free space on macOS by clearing app caches, logs, Xcode DerivedData, iOS device support files and simulator caches. Everything is sorted by risk and moved to the Trash, never deleted outright.",
+      "h1": "Junk Sweep: caches, logs and Xcode leftovers",
+      "kicker": "Twinkeep feature guide",
+      "summary": "Junk Sweep finds regenerable files that pile up in your Library — app caches, logs, Xcode build products, iOS device support, simulator caches — and sorts them by how safe they are to remove.",
+      "hero": {
+        "src": "/apps/twinkeep/features/05-utilities-maintain.png",
+        "alt": "Twinkeep Junk Sweep on macOS listing cleanable caches and logs grouped by risk"
+      },
+      "whatFor": "<p>A Mac accumulates files that exist purely so something can be faster next time. App caches. Log files. Xcode's build products, which for an active developer can run to tens of gigabytes.</p><p>None of it is your data, and all of it regenerates. But \\u201cjunk cleaner\\u201d apps have a poor reputation for good reason: many sweep folders they do not understand and take things you needed.</p><p><strong>Junk Sweep is deliberately narrow.</strong> It looks only in known locations, sorts everything it finds into three risk tiers, and pre-selects only the tier that is genuinely safe. Everything goes to the Trash, so even a mistake is recoverable from Finder.</p>",
+      "steps": [
+        {
+          "title": "Open Utilities and choose Junk Sweep",
+          "body": "On the App Store build Twinkeep will ask for access to your Library folder first — the sandbox does not permit reading it otherwise. Grant it once and the scan proceeds."
+        },
+        {
+          "title": "Scan",
+          "body": "Twinkeep walks only its known list of locations: caches, logs, Xcode DerivedData, iOS device support, simulator caches, and iOS backups. It never walks other apps' container data."
+        },
+        {
+          "title": "Read the three tiers",
+          "body": "<strong>Safe to clean</strong> is selected for you — caches and logs that apps recreate on demand. <strong>Suggested</strong> is shown but unselected, because clearing it costs you a rebuild or a re-download. <strong>iOS backups</strong> are listed separately with a strong warning."
+        },
+        {
+          "title": "Adjust the selection",
+          "body": "Sort and filter by size, name, or date to find the large items. <em>Select safe</em> re-selects just the safe tier if you have been experimenting."
+        },
+        {
+          "title": "Clean",
+          "body": "Selected items move to the Trash. Nothing is deleted outright, so anything you regret is one Finder window away until you empty it."
+        }
+      ],
+      "reference": "<h2>What each tier means</h2><ul><li><strong>Safe</strong> — app caches, log files, and Xcode's shared compiler and module caches. Regenerated automatically. Nothing is lost.</li><li><strong>Suggested</strong> — per-project Xcode build folders and iOS device support. Removing these is safe but costs time: a full rebuild, or re-downloading device support the next time you debug that iPhone.</li><li><strong>iOS backups</strong> — device backups under MobileSync. These are irreplaceable. Twinkeep will never pre-select them and warns clearly.</li></ul><h2>What it will never touch</h2><p>Some paths are blocked outright regardless of tier: Keychains, Mail, Accounts, Cookies, Messages, Calendars, Reminders, Address Book, the Trash — and <strong>your crash reports</strong>. Twinkeep also never walks other apps' Containers.</p><h2>Sizes include hidden files</h2><p>Folder totals count hidden files, because cleaning removes them too. The figure Junk Sweep reports is what you actually reclaim, not an underestimate that ignores dotfiles.</p>",
+      "faq": [
+        {
+          "q": "Is it safe to delete cache files on a Mac?",
+          "a": "For the items Twinkeep marks Safe, yes — they are regenerable by design and apps recreate them on demand. That is why only that tier is pre-selected, and why everything goes to the Trash rather than being deleted."
+        },
+        {
+          "q": "Will it delete my Xcode projects?",
+          "a": "No. It removes build products under DerivedData, not source code. Shared compiler and module caches are treated as safe; per-project build folders are listed as suggested, because clearing them means a full rebuild."
+        },
+        {
+          "q": "Why does it ask for access to my Library folder?",
+          "a": "The App Store build runs in a sandbox that cannot read ~/Library without your permission. Granting access once lets the scan see caches and logs. Without it, Twinkeep tells you it cannot look rather than reporting an empty result."
+        },
+        {
+          "q": "Does it touch my crash reports?",
+          "a": "No, and this is enforced deliberately. DiagnosticReports and CrashReporter are on a permanent block list, because the Stability tool reads those reports."
+        }
+      ],
+      "related": [
+        "disk-analysis",
+        "downloads-dust"
+      ]
+    },
+    {
+      "slug": "downloads-dust",
+      "name": "Downloads Dust",
+      "title": "Clean Out Your Downloads Folder on Mac | Twinkeep Downloads Dust",
+      "metaDescription": "Find old files still sitting in your Mac Downloads folder — installers, PDFs, archives you opened once. Filter by 30 or 90 days, review the list, and move what you choose to the Trash.",
+      "h1": "Downloads Dust: the folder everyone forgets",
+      "kicker": "Twinkeep feature guide",
+      "summary": "Downloads Dust lists what has been sitting in your Downloads folder longest, with sizes, so you can clear out installers and one-off files you downloaded once and never opened again.",
+      "hero": {
+        "src": "/apps/twinkeep/features/09-downloads-dust.png",
+        "alt": "Twinkeep Downloads Dust on macOS listing old files in the Downloads folder by size and age"
+      },
+      "whatFor": "<p>Downloads is where files go to be forgotten. Disk images for apps you installed a year ago, PDFs you opened once, archives you extracted and never deleted. It is quietly one of the largest folders on most Macs.</p><p><strong>Downloads Dust</strong> lists what has been there longest, with sizes, so the decision is easy. Nothing is selected by default — this is your download history, and Twinkeep does not presume to know what matters.</p>",
+      "steps": [
+        {
+          "title": "Open Utilities and choose Downloads Dust",
+          "body": "Scan reads only your Downloads folder. On the App Store build it has permission for that folder specifically; nothing else is touched."
+        },
+        {
+          "title": "Pick an age",
+          "body": "<em>Older than 30 days</em> or <em>older than 90 days</em>. Ninety is the gentler pass and catches the genuinely forgotten; thirty is more aggressive."
+        },
+        {
+          "title": "Sort by size",
+          "body": "Sort largest first to find the disk images and archives doing the real damage. Twinkeep measures folders whole, so an extracted archive is counted as one item at its true size."
+        },
+        {
+          "title": "Select what you want gone",
+          "body": "Nothing is pre-selected. Tick individual items, or use <em>Select all</em> once you have filtered to a set you are happy with."
+        },
+        {
+          "title": "Clean",
+          "body": "Selected files move to the Trash — recoverable from Finder until you empty it."
+        }
+      ],
+      "reference": "<h2>How age is judged</h2><p>By modification date, not download date, so a file you edited last week is treated as recent even if you downloaded it months ago.</p><h2>Folders are measured whole</h2><p>Extracted archives and app bundles are sized as complete folders, including hidden files, so a 2&nbsp;GB extracted installer shows as 2&nbsp;GB rather than as its visible contents.</p><h2>Nothing is selected for you</h2><p>Unlike Junk Sweep, where caches are regenerable, Downloads holds files that only exist here. Twinkeep lists and measures; the choice is entirely yours.</p>",
+      "faq": [
+        {
+          "q": "Is it safe to delete everything in Downloads?",
+          "a": "That is your call, which is why Twinkeep pre-selects nothing. Sort by size, look at what is actually there, and pick. Anything you remove goes to the Trash first."
+        },
+        {
+          "q": "Does it delete files I am still using?",
+          "a": "Age is judged by modification date, so a file you have opened or edited recently is not flagged as old. And nothing is removed unless you tick it."
+        },
+        {
+          "q": "Why does it show a folder rather than the files inside it?",
+          "a": "Extracted archives are treated as one item and sized whole, so you can remove an extracted installer in a single action rather than picking through its contents."
+        }
+      ],
+      "related": [
+        "junk-sweep",
+        "file-rules"
+      ]
+    },
+    {
+      "slug": "disk-analysis",
+      "name": "Disk Analysis",
+      "title": "See What Is Taking Up Space on Your Mac | Twinkeep Disk Analysis",
+      "metaDescription": "Find the folders using the most disk space on your Mac. Twinkeep walks your real home folders and Applications, rolls up media libraries instead of exploding into thousands of files.",
+      "h1": "Disk Analysis: find what is actually using your space",
+      "kicker": "Twinkeep feature guide",
+      "summary": "Disk Analysis walks your home folders and Applications and reports the biggest space consumers — with libraries collapsed and busy folders rolled up, so you get a readable answer instead of ten thousand files.",
+      "hero": {
+        "src": "/apps/twinkeep/features/06-disk-analysis.png",
+        "alt": "Twinkeep Disk Analysis on macOS showing the largest folders grouped by category"
+      },
+      "whatFor": "<p>\\u201cYour disk is almost full\\u201d is not an actionable message. The useful question is which folder is responsible, and most disk tools answer it badly — either by listing every file on your Mac, or by showing a treemap you have to decode.</p><p><strong>Disk Analysis is built to be read.</strong> It walks Desktop, Documents, Downloads, Movies, Music, Pictures, Library and Applications, and applies rules so the result stays legible: a Photos library reports as one item rather than every album inside it, and a folder full of similarly-sized things is rolled up rather than exploded.</p>",
+      "steps": [
+        {
+          "title": "Open Utilities and choose Disk Analysis",
+          "body": "On the App Store build Twinkeep asks for folder access first, because the sandbox cannot enumerate your home folders otherwise."
+        },
+        {
+          "title": "Scan",
+          "body": "Progress shows the folder being measured. A full pass over a large home folder takes a while — it is reading real sizes, not estimating."
+        },
+        {
+          "title": "Read the results largest first",
+          "body": "Each row shows size, category (Music, Photos, Videos, Documents, Developer, Library, Downloads) and why it is grouped that way — a media library kept whole, an app bundle, or a folder with no single dominant child."
+        },
+        {
+          "title": "Open anything in Finder",
+          "body": "Twinkeep does not delete from Disk Analysis. It tells you where the space went; you decide what to do, in Finder or in the app that owns the files."
+        },
+        {
+          "title": "Re-scan when you have made changes",
+          "body": "Results are cached so you can come back to them, with the time of the last scan shown. Re-scan to refresh."
+        }
+      ],
+      "reference": "<h2>How results stay readable</h2><ul><li><strong>Media libraries collapse</strong> — Music, Movies, Pictures, Photos libraries, Podcasts, Audiobooks and Books report as one row, not as every album or year inside.</li><li><strong>App and framework bundles</strong> are measured whole, as macOS treats them.</li><li><strong>Busy folders roll up</strong> — when a folder holds many items and none dominates, Twinkeep reports the folder rather than a wall of near-identical rows.</li><li><strong>Large individual files</strong> are surfaced on their own when they are big enough to matter.</li></ul><h2>What it does not cover</h2><p>This is a map of your home folder and Applications, not of the whole disk. System files and macOS purgeable space are deliberately excluded — that space belongs to macOS and no third-party app should claim to reclaim it.</p><h2>It is read-only</h2><p>Disk Analysis never moves or deletes anything. It answers where the space went; acting on that is up to you.</p>",
+      "faq": [
+        {
+          "q": "Why is the total smaller than what About This Mac reports?",
+          "a": "Twinkeep measures your home folders and Applications, not system files or purgeable space. macOS manages that space itself, and Twinkeep will not claim to reclaim something it does not control."
+        },
+        {
+          "q": "Why is my Photos library one row instead of every album?",
+          "a": "Because a list of ten thousand albums is not an answer. Media libraries are reported whole so you can see they are the problem, then manage them in the app that owns them."
+        },
+        {
+          "q": "Can I delete things directly from Disk Analysis?",
+          "a": "No, deliberately. It is a read-only map. Removing a large folder is a decision with consequences Twinkeep cannot judge, so it shows you where the space is and leaves the action to you."
+        },
+        {
+          "q": "Does it scan external drives?",
+          "a": "It covers your home folders and Applications. For duplicates on an external drive, point a scan at it from Scan folders instead."
+        }
+      ],
+      "related": [
+        "storage-pulse",
+        "junk-sweep"
+      ]
+    },
+    {
+      "slug": "storage-pulse",
+      "name": "Storage Pulse",
+      "title": "Check Mac Storage and Purgeable Space | Twinkeep Storage Pulse",
+      "metaDescription": "A plain read on your Mac's storage: total capacity, free space, and how much of it macOS is holding as purgeable. Read-only, with no misleading claims about reclaiming system space.",
+      "h1": "Storage Pulse: an honest read on your disk",
+      "kicker": "Twinkeep feature guide",
+      "summary": "Storage Pulse is a straight capacity snapshot — total, used, free, and how much macOS is holding as purgeable space it can release on its own.",
+      "hero": {
+        "src": "/apps/twinkeep/features/12-storage-pulse.png",
+        "alt": "Twinkeep Storage Pulse on macOS showing total capacity, used and free space"
+      },
+      "whatFor": "<p>Storage numbers on a Mac are confusing on purpose. Free space depends on who is asking: macOS reports one figure for urgent needs and a larger one that assumes it can purge caches and evict iCloud files first.</p><p><strong>Storage Pulse shows both</strong>, and names the difference as macOS-managed rather than presenting it as space Twinkeep could free. It is read-only. There is no button here, because there is nothing here that a third-party app should be pressing.</p>",
+      "steps": [
+        {
+          "title": "Open Utilities and choose Storage Pulse",
+          "body": "No permissions needed and nothing to configure — it reads volume statistics for the disk your home folder lives on."
+        },
+        {
+          "title": "Scan",
+          "body": "Instant. It queries the filesystem rather than walking it, so there is no waiting."
+        },
+        {
+          "title": "Read the four numbers",
+          "body": "Total capacity, used, free, and the portion macOS is holding as purgeable — space it will release itself when something actually needs it."
+        }
+      ],
+      "reference": "<h2>Why two different free-space numbers exist</h2><p>macOS reports available capacity two ways: for <em>important</em> usage, which is conservative, and for <em>opportunistic</em> usage, which assumes caches can be purged and iCloud files evicted. The gap between them is purgeable space.</p><h2>Purgeable space is not yours to reclaim</h2><p>Cleaner apps that claim to free purgeable space are, at best, forcing macOS to do something it would have done on demand. Twinkeep reports the figure and leaves it alone.</p><h2>Where to go next</h2><p>If free space is the problem, <a href=\"/apps/twinkeep/disk-analysis/\">Disk Analysis</a> tells you which folders are responsible, and <a href=\"/apps/twinkeep/junk-sweep/\">Junk Sweep</a> clears regenerable caches and build products.</p>",
+      "faq": [
+        {
+          "q": "What is purgeable space on a Mac?",
+          "a": "Space currently holding things macOS can discard if needed — caches, local snapshots, and iCloud files with copies in the cloud. It counts as used until macOS needs it, then it is released automatically."
+        },
+        {
+          "q": "Can Twinkeep free purgeable space?",
+          "a": "No, and it will not pretend to. That space is managed by macOS and released when something needs it. Storage Pulse reports the number rather than claiming to act on it."
+        },
+        {
+          "q": "Why does Storage Pulse have no clean button?",
+          "a": "Because there is nothing here it should press. It is a read-only snapshot. Junk Sweep and Downloads Dust are where Twinkeep actually reclaims space."
+        }
+      ],
+      "related": [
+        "disk-analysis",
+        "junk-sweep"
+      ]
+    },
+    {
+      "slug": "memory-relief",
+      "name": "Memory Relief",
+      "title": "See What Is Using RAM on Your Mac | Twinkeep Memory Relief",
+      "metaDescription": "See which apps are using the most memory on your Mac and quit the ones you choose. Twinkeep asks apps to quit politely, never force-quits, and counts only the apps that actually closed.",
+      "h1": "Memory Relief: see what is using your RAM",
+      "kicker": "Twinkeep feature guide",
+      "summary": "Memory Relief lists your running apps sorted by memory footprint and lets you quit the ones you choose. It asks apps to quit the way the Dock does — never force-quits — and reports only what actually closed.",
+      "hero": {
+        "src": "/apps/twinkeep/features/10-memory-relief.png",
+        "alt": "Twinkeep Memory Relief on macOS listing running apps sorted by memory use"
+      },
+      "whatFor": "<p>When a Mac feels heavy, the useful question is which app is responsible. Activity Monitor answers it, but buries it among hundreds of system processes you should not touch.</p><p><strong>Memory Relief</strong> shows the apps you actually launched, sorted by resident memory, and lets you tick the ones to close.</p><p>It is worth being blunt about what this does and does not do. Quitting an app frees the memory that app was using. It is not a magic trick, no third-party app can compact or reclaim macOS's memory, and Twinkeep does not claim otherwise.</p>",
+      "steps": [
+        {
+          "title": "Open Utilities and choose Memory Relief",
+          "body": "Scan lists your running apps by resident memory, largest first. Twinkeep excludes itself and background system processes."
+        },
+        {
+          "title": "Look at the top of the list",
+          "body": "Browsers with many tabs, design tools and simulators usually dominate. Sizes are approximate resident footprints — what the app currently holds in physical memory."
+        },
+        {
+          "title": "Tick what you want closed",
+          "body": "Nothing is selected for you. You are choosing to close your own applications, which is not a decision to automate."
+        },
+        {
+          "title": "Quit selected",
+          "body": "Twinkeep sends each app an ordinary quit request, exactly like choosing Quit from its menu. An app with unsaved changes will show its own save prompt and stay open — that is correct behaviour, not a failure."
+        },
+        {
+          "title": "Read the result honestly",
+          "body": "Twinkeep reports how many apps actually closed and how many are still running. Only confirmed closures count toward the memory figure."
+        }
+      ],
+      "reference": "<h2>Twinkeep never force-quits</h2><p>Quitting is a request an app can decline. Force-quitting loses unsaved work, so Twinkeep does not do it. If an app stays open because it is asking you about unsaved changes, that is the app protecting your work.</p><h2>Only confirmed closures are counted</h2><p>Twinkeep waits to see which apps actually exited before reporting anything freed. An app that put up a save dialog and stayed open is reported as still running, not counted as memory reclaimed.</p><h2>Thermal state is not memory pressure</h2><p>The thermal reading shown alongside the list is CPU heat, not memory pressure. It is included because a hot Mac and a slow Mac often feel identical, but they are different problems and Twinkeep labels them separately.</p>",
+      "faq": [
+        {
+          "q": "Does quitting apps actually speed up my Mac?",
+          "a": "It frees the memory those apps were holding, which helps if memory pressure was the problem. It is not a general-purpose speed-up, and any app claiming to free RAM by other means is overstating what is possible."
+        },
+        {
+          "q": "Will it close an app with unsaved work?",
+          "a": "No. Twinkeep sends a normal quit request, so the app shows its own save prompt and stays open until you answer. It never force-quits."
+        },
+        {
+          "q": "Why does it say an app is still running after I quit it?",
+          "a": "Because it is. Twinkeep verifies which apps actually exited rather than assuming the request succeeded, so the number it reports is the real one."
+        },
+        {
+          "q": "Can it free memory without closing anything?",
+          "a": "No, and neither can anything else. macOS manages memory itself. Twinkeep shows you what is using it and closes what you choose."
+        }
+      ],
+      "related": [
+        "stability",
+        "storage-pulse"
+      ]
+    },
+    {
+      "slug": "stability",
+      "name": "Stability",
+      "title": "Read Mac Crash Reports and Track CPU & Memory | Twinkeep Stability",
+      "metaDescription": "See which apps have been crashing or hanging on your Mac, in plain English, from the reports macOS already writes. Optionally record a local CPU and memory history to catch what happens before a freeze.",
+      "h1": "Stability: what crashed, and what was running",
+      "kicker": "Twinkeep feature guide",
+      "summary": "Stability reads the crash and hang reports macOS already writes, explains them in plain English, and can optionally record a local CPU and memory history so you have evidence about what was happening before a freeze.",
+      "hero": {
+        "src": "/apps/twinkeep/features/11-stability.png",
+        "alt": "Twinkeep Stability on macOS listing recent crash and hang reports with an optional monitor"
+      },
+      "whatFor": "<p>When a Mac freezes or an app disappears, macOS writes a diagnostic report. They are genuinely useful and almost nobody reads them, because they are dense text files buried in a Library folder.</p><p><strong>Stability surfaces them.</strong> Which app, what kind of failure, when, and what it means — without pretending to be more than a reader of reports your Mac already produced.</p><p>The optional monitor is the other half. Crash reports tell you what died; they do not tell you what was eating the CPU for the ten minutes beforehand. If you turn the monitor on, Twinkeep records that locally so you have something to look at afterwards.</p>",
+      "steps": [
+        {
+          "title": "Open Utilities and choose Stability",
+          "body": "Twinkeep reads the DiagnosticReports folder macOS writes to. On the App Store build it asks for access first, since the sandbox cannot read Library without permission."
+        },
+        {
+          "title": "Read the recent reports",
+          "body": "The last 30 days of crash, hang, spin and ips reports, newest first, showing the app and the failure type. Twinkeep summarises the exception and the top frames in plain language instead of leaving you with a stack trace."
+        },
+        {
+          "title": "Turn on the monitor, if you want history",
+          "body": "Off by default. Enabled, it samples every minute: top processes by CPU and memory, free memory, and thermal state. Everything stays on your Mac."
+        },
+        {
+          "title": "Leave it running for a few days",
+          "body": "A monitor that started this morning cannot tell you about last Tuesday. Coverage is shown honestly, including gaps for sleep, shutdown, or time it was switched off."
+        },
+        {
+          "title": "Check what was running before a freeze",
+          "body": "After an incident, look at the sample nearest the time: which processes were hot, how much memory was free, whether the Mac was thermally stressed."
+        }
+      ],
+      "reference": "<h2>Twinkeep does not prevent crashes</h2><p>No third-party app can. Stability is a reader and a recorder. Its value is evidence — knowing that one app accounts for eleven of your last twelve crashes is genuinely actionable.</p><h2>Gaps are shown, not hidden</h2><p>Coverage reports recorded time, wall-clock time, and the difference. Sleep, shutdown and time the monitor was off appear as gaps. Twinkeep does not interpolate data it does not have.</p><h2>Seven days, local only</h2><p>Samples are kept for seven days on a rolling window and stored on your Mac. Nothing is uploaded, and there is no account. Old samples are pruned automatically.</p><h2>Your crash reports are protected</h2><p>Junk Sweep will never offer DiagnosticReports or CrashReporter as cleanable, because these are the reports this tool depends on.</p>",
+      "faq": [
+        {
+          "q": "Why does my Mac keep freezing?",
+          "a": "Stability cannot diagnose it for you, but it gives you the evidence: which app crashed or hung, how often, and with the monitor on, what was consuming CPU and memory beforehand. A pattern across several reports usually points at one culprit."
+        },
+        {
+          "q": "Where does macOS store crash reports?",
+          "a": "In ~/Library/Logs/DiagnosticReports. Twinkeep reads that folder, covering .crash, .hang, .spin and .ips files from the last 30 days."
+        },
+        {
+          "q": "Does the monitor slow my Mac down?",
+          "a": "It samples once a minute and appends a line to a local file. The cost is negligible, and it is off unless you turn it on."
+        },
+        {
+          "q": "Is any of this sent anywhere?",
+          "a": "No. Crash reports are read from your own disk and monitor samples are written to your own disk. Twinkeep has no account, no telemetry, and no network component for this feature."
+        }
+      ],
+      "related": [
+        "memory-relief",
+        "junk-sweep"
+      ]
+    }
+  ]
+}
