@@ -13,7 +13,7 @@ const isCredentialSetupCoach = w.slug === 'n8n-credential-setup-coach';
 
 const related = workflows.filter((r) => r.slug !== w.slug).slice(0, 4);
 
-const title = `${w.name} | Automation Workflow Template`;
+const title = `${w.name} | n8n Workflow Template`;
 const description = w.shortDescription.length > 158
   ? w.shortDescription.slice(0, 155).replace(/\s+\S*$/, '') + '…'
   : w.shortDescription;
