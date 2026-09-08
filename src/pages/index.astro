@@ -3,6 +3,7 @@ import Base from '../layouts/Base.astro';
 import apis from '../data/apis.json';
 import workflows from '../data/workflows.json';
 import apps from '../data/apps.json';
+import featureData from '../data/app-features.json';
 
 const featuredApis = [
   'universal-data-format-converter',
@@ -15,6 +16,13 @@ const featuredApis = [
 
 const featuredWorkflows = workflows.filter((w) => w.gumroadUrl).slice(0, 6);
 
+// Mac apps lead the page, so the hero and the apps section both need the
+// live app's real details rather than just a name and a blurb.
+const liveApps = apps.filter((a) => !a.comingSoon);
+const soonApps = apps.filter((a) => a.comingSoon);
+const flagship = liveApps[0];
+const twinkeepFeatures = ((featureData as Record<string, { slug: string; name: string }[]>).twinkeep ?? []);
+
 const title = 'Precision Solutions Tech — Mac Apps, APIs & Automations';
 const description =
   'Native macOS apps, production REST APIs for data normalization and validation, and ready-to-run n8n automation workflows, built by senior engineers.';
@@ -23,27 +31,81 @@ const description =
 <Base title={title} description={description} path="/" active="home">
   <section class="hero-home">
     <div class="wrap">
-      <h1>Developer APIs and automations,<br />built by engineers who ship.</h1>
+      <h1>Native Mac apps,<br />built by engineers who ship.</h1>
       <p class="hero-sub">
-        Precision Solutions Tech publishes production-grade REST APIs and ready-to-run automation
-        workflows — data normalization, document processing, validation, and AI-powered
-        automation — plus native macOS apps. Every product lives on the marketplace where it works best.
+        Precision Solutions Tech builds local-first macOS utilities — starting with Twinkeep,
+        a duplicate photo, video and audio cleaner that quarantines rather than deletes. We also
+        publish production REST APIs and ready-to-run n8n automation workflows, on the marketplace
+        where each one works best.
       </p>
       <div class="cta-row hero-ctas">
-        <a class="btn btn-primary" href="/apis/">Browse APIs</a>
-        <a class="btn btn-secondary" href="/workflows/">Browse Automation Workflows</a>
-        <a class="btn btn-secondary" href="/apps/">macOS Apps</a>
+        <a class="btn btn-primary" href="/apps/twinkeep/">Get Twinkeep{flagship?.price ? ` — ${flagship.price}` : ''}</a>
+        <a class="btn btn-secondary" href="/apps/">All Mac apps</a>
+        <a class="btn btn-secondary" href="/apis/">Developer APIs</a>
       </div>
       <div class="trust-strip">
-        <span class="pill pill-success">Verified n8n creator</span>
+        <span class="pill pill-success">On the Mac App Store</span>
+        <span class="pill">One-time purchase, no subscription</span>
+        <span class="pill">Local-only — no account, no telemetry</span>
         <span class="pill">20 APIs on RapidAPI</span>
-        <span class="pill">12 automation workflow templates</span>
-        <span class="pill">Stateless &amp; privacy-first</span>
       </div>
     </div>
   </section>
 
-  <section class="section" id="apis">
+  <section class="section" id="apps">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">macOS Apps</span>
+        <h2>Local-first Mac utilities</h2>
+        <p>
+          Native SwiftUI apps that run entirely on your Mac — no account, no telemetry, nothing
+          uploaded. One-time purchase, never a subscription. Twinkeep is live on the Mac App Store
+          and direct; PrecisDesk is coming soon.
+        </p>
+        <a class="section-link" href="/apps/">Explore the Mac apps &rarr;</a>
+      </div>
+      <div class="card-grid">
+        {liveApps.map((a) => {
+          const icon = (a as { icon?: string }).icon;
+          return (
+            <a class="card app-home-card" href={`/apps/${a.slug}/`}>
+              {icon && <img class="app-home-icon" src={icon} alt="" width="48" height="48" decoding="async" />}
+              <h3>{a.name}</h3>
+              <p>{(a as { tagline?: string }).tagline || a.shortDescription}</p>
+              <span class="card-meta">
+                <span class="pill pill-accent">{a.os}</span>
+                {a.price && <span class="card-price">{a.price}</span>}
+                <span class="pill pill-success">Live</span>
+              </span>
+            </a>
+          );
+        })}
+        {soonApps.map((a) => (
+          <a class="card" href={`/apps/${a.slug}/`}>
+            <h3>{a.name}</h3>
+            <p>{a.shortDescription}</p>
+            <span class="card-meta">
+              <span class="pill pill-accent">{a.os}</span>
+              <span class="pill">Coming soon</span>
+            </span>
+          </a>
+        ))}
+      </div>
+
+      {twinkeepFeatures.length > 0 && (
+        <div class="home-feature-links">
+          <p class="home-feature-lead">Inside Twinkeep:</p>
+          <ul>
+            {twinkeepFeatures.map((f) => (
+              <li><a href={`/apps/twinkeep/${f.slug}/`}>{f.name}</a></li>
+            ))}
+          </ul>
+        </div>
+      )}
+    </div>
+  </section>
+
+  <section class="section section-alt" id="apis">
     <div class="wrap">
       <div class="section-head">
         <span class="eyebrow">Developer APIs</span>
@@ -67,7 +129,7 @@ const description =
     </div>
   </section>
 
-  <section class="section section-alt" id="workflows">
+  <section class="section" id="workflows">
     <div class="wrap">
       <div class="section-head">
         <span class="eyebrow">Automation Workflows</span>
@@ -94,37 +156,6 @@ const description =
     </div>
   </section>
 
-  <section class="section" id="apps">
-    <div class="wrap">
-      <div class="section-head">
-        <span class="eyebrow">macOS Apps</span>
-        <h2>Native Mac utilities</h2>
-        <p>
-          Local-first Mac apps for duplicate media cleanup, screenshots, window layouts, and
-          AirPrint — the same engineering bar as our APIs and workflows. Twinkeep is live on the
-          Mac App Store; PrecisDesk is coming soon.
-        </p>
-        <a class="section-link" href="/apps/">View all {apps.length} macOS apps &rarr;</a>
-      </div>
-      <div class="card-grid">
-        {apps.map((a) => (
-          <a class="card" href={`/apps/${a.slug}/`}>
-            <h3>{a.name}</h3>
-            <p>{a.shortDescription}</p>
-            <span class="card-meta">
-              <span class="pill pill-accent">{a.os}</span>
-              {a.comingSoon ? (
-                <span class="pill">Coming soon</span>
-              ) : (
-                <span class="pill pill-success">Live</span>
-              )}
-            </span>
-          </a>
-        ))}
-      </div>
-    </div>
-  </section>
-
   <section class="section section-alt" id="who">
     <div class="wrap">
       <div class="section-head">
@@ -133,7 +164,7 @@ const description =
         <p>
           We are a group of senior software engineer contractors. When we build something on a
           client project that solves a general problem, we productize it and publish it on the
-          right marketplace — APIs on RapidAPI, automations on n8n and Gumroad, apps for Mac.
+          right marketplace — apps for Mac, APIs on RapidAPI, automations on n8n and Gumroad.
           We are
           <a href="https://n8n.io/creators/precision-tech/" rel="noopener"> verified n8n creators</a>.
         </p>
@@ -144,6 +175,34 @@ const description =
 </Base>
 
 <style>
+  .home-feature-links {
+    margin-top: 22px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 8px 14px;
+  }
+  .home-feature-links .home-feature-lead {
+    margin: 0;
+    font-weight: 600;
+    color: var(--muted);
+  }
+  .home-feature-links ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 14px;
+    margin: 0;
+    padding: 0;
+  }
+  .home-feature-links a { font-size: 0.95rem; }
+  .app-home-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 11px;
+    box-shadow: 0 6px 16px rgba(15, 23, 42, 0.12);
+    margin-bottom: 10px;
+  }
   .hero-home {
     padding: 88px 0 56px;
     text-align: left;
