@@ -580,5 +580,557 @@
         "junk-sweep"
       ]
     }
+  ],
+  "precisdesk": [
+    {
+      "slug": "screenshots",
+      "name": "Screenshots",
+      "title": "Mac Screenshot App — Area, Window or Full Screen | PrecisDesk",
+      "metaDescription": "Take a screenshot of an area, a single window, or the whole screen on macOS, then annotate, copy or save it straight from the overlay.",
+      "h1": "Screenshots: capture an area, a window, or the whole screen",
+      "kicker": "PrecisDesk feature guide",
+      "summary": "Pick a region with the crosshair, click a single window, or grab an entire display. Every shot lands in a Quick Access overlay where you can annotate it, copy it, or send it somewhere — before it ever becomes a file you have to go looking for.",
+      "hero": {
+        "src": "/apps/precisdesk/features/01-screenshots.png",
+        "alt": "PrecisDesk Capture panel on macOS: area, fullscreen and window modes with save folder and hotkeys"
+      },
+      "whatFor": "<p>The built-in macOS screenshot tool takes the picture and then leaves you alone with it. You end up with a Desktop full of <code>Screenshot 2026-09-09 at 14.22.51.png</code> and no idea which is which.</p><p><strong>PrecisDesk</strong> puts the next step in front of you. The moment a capture lands, an overlay appears with the image in it: annotate, copy to the clipboard, open the editor, print it, or throw it away. Files go to a folder you choose, named by a template you control, and every one is listed in History so you can find it later.</p>",
+      "steps": [
+        {
+          "title": "Choose a capture mode",
+          "body": "Open <em>Capture</em> and pick <strong>Capture Area</strong>, <strong>Fullscreen</strong>, or <strong>Window</strong>. Area and Window show a selection overlay first, so you can see exactly what you are about to take."
+        },
+        {
+          "title": "Make the selection",
+          "body": "Drag a region, or move the pointer over a window and click it. Area and Window modes run a short countdown after you choose, which you can set or switch off."
+        },
+        {
+          "title": "Work with it in the overlay",
+          "body": "The Quick Access overlay appears with the capture in it. Annotate, copy, reveal in Finder, print, or delete — without hunting for the file first."
+        },
+        {
+          "title": "Set where captures are saved",
+          "body": "The Capture panel shows the current save folder. Point screenshots and recordings at one folder or keep them separate, and set a filename template so shots are named the way you want."
+        },
+        {
+          "title": "Give it a keyboard shortcut",
+          "body": "Every capture mode can be triggered by a global hotkey from Settings, so you never have to bring the app forward to take a shot."
+        }
+      ],
+      "reference": "<h2>What you can capture</h2><ul><li><strong>Area</strong> — drag any rectangle, on any display</li><li><strong>Window</strong> — click a window and get it cleanly, without the desktop behind it</li><li><strong>Fullscreen</strong> — a whole display, chosen from the display picker when you have several</li></ul><h2>After the shot</h2><ul><li>Annotate in the built-in editor — arrows, shapes, text, redaction</li><li>Copy to the clipboard as an image</li><li>Print through the standard macOS print panel</li><li>Reveal in Finder, or delete it and pretend it never happened</li></ul>",
+      "faq": [
+        {
+          "q": "Where do screenshots get saved?",
+          "a": "A folder you choose. PrecisDesk defaults to its own Captures folder, and you can point screenshots and recordings at the same folder or at different ones in Settings."
+        },
+        {
+          "q": "Can I rename captures automatically?",
+          "a": "Yes. Filename templates support the date, time, capture mode, pixel dimensions and a counter, so shots arrive already named the way you want them."
+        },
+        {
+          "q": "Does it need Screen Recording permission?",
+          "a": "Yes — macOS requires the Screen Recording permission for any app that captures the screen, including for still screenshots. PrecisDesk asks for it on first use and nothing is captured until you grant it."
+        }
+      ],
+      "related": [
+        "annotate",
+        "capture-history"
+      ]
+    },
+    {
+      "slug": "screen-recording",
+      "name": "Screen recording",
+      "title": "Mac Screen Recorder with Mic, System Audio and Keystrokes | PrecisDesk",
+      "metaDescription": "Record your Mac screen to MP4 with microphone and system audio, cursor highlights and on-screen keystrokes, then trim it without leaving the app.",
+      "h1": "Screen recording: record the screen, your voice, and what you press",
+      "kicker": "PrecisDesk feature guide",
+      "summary": "Record a display or a region to MP4, with your microphone and the audio coming out of your Mac. Turn on click highlights and on-screen keystrokes when you are recording a walkthrough, and hide PrecisDesk itself so it never appears in the video.",
+      "hero": {
+        "src": "/apps/precisdesk/features/02-screen-recording.png",
+        "alt": "PrecisDesk recording in progress: timer, pause and stop, microphone, system audio, click highlights and keystrokes"
+      },
+      "whatFor": "<p>Most screen recorders make you choose: either you get a recorder, or you get an editor, and the two do not know about each other. You record, you export, you open something else, you trim, you export again.</p><p><strong>PrecisDesk</strong> finishes the job in one place. When you stop recording, the clip opens in the editor with the timeline already loaded. Trim the dead air off the front, cut the middle out, add captions, place your camera — then save once.</p>",
+      "steps": [
+        {
+          "title": "Set up the recording",
+          "body": "Open <em>Capture</em> and choose what to record. Turn on <strong>Microphone</strong> and <strong>System audio</strong> if you want either in the file."
+        },
+        {
+          "title": "Turn on the walkthrough extras",
+          "body": "<strong>Show cursor</strong> keeps the pointer visible. <strong>Click highlights</strong> puts a ring around every click. <strong>Keystrokes</strong> draws the keys you press on screen — useful when you are demonstrating a shortcut."
+        },
+        {
+          "title": "Get PrecisDesk out of the shot",
+          "body": "Switch on <strong>Hide PrecisDesk while recording</strong> and the app's own window disappears for the duration, so your recording is of your work and not of the recorder."
+        },
+        {
+          "title": "Record",
+          "body": "A countdown runs — three seconds by default, adjustable or off — then the timer starts. Pause and resume as often as you like; the pauses are stitched out of the file, not left as frozen frames."
+        },
+        {
+          "title": "Stop, and land in the editor",
+          "body": "Stop and the clip opens in the editor straight away, ready to trim, caption, or place the webcam."
+        }
+      ],
+      "reference": "<h2>What goes into the file</h2><ul><li>H.264 MP4, or export as an animated GIF from the editor</li><li>Microphone and system audio, independently switchable</li><li>Cursor, click highlights and keystroke overlays</li><li>Webcam picture-in-picture, burned in as you record or placed afterwards</li></ul><h2>While you are recording</h2><ul><li>Pause and resume without splitting the file</li><li>Record one display, or a region of one</li><li>Hide the app so it never appears in the recording</li></ul>",
+      "faq": [
+        {
+          "q": "Can it record system audio?",
+          "a": "Yes, alongside or instead of the microphone. Both are switches you set before you start."
+        },
+        {
+          "q": "What happens to the pauses?",
+          "a": "They are removed. A pause does not leave a frozen section in the file — the timeline closes up, so a recording with three pauses in it plays as one continuous take."
+        },
+        {
+          "q": "Can I record just part of the screen?",
+          "a": "Yes. Record a whole display or a region of one, and if you have several monitors PrecisDesk asks which to use."
+        }
+      ],
+      "related": [
+        "clip-editor",
+        "captions"
+      ]
+    },
+    {
+      "slug": "clip-editor",
+      "name": "Clip editor",
+      "title": "Trim and Cut a Screen Recording on Mac | PrecisDesk",
+      "metaDescription": "Trim the ends off a screen recording, cut sections out of the middle, compare Edited against Original, and export MP4 or GIF.",
+      "h1": "Clip editor: trim the ends, cut out the middle",
+      "kicker": "PrecisDesk feature guide",
+      "summary": "Drag the blue handles to trim, or mark a section in the middle and remove it. The preview switches between Edited and Original so you can check what you actually cut before you commit, and nothing touches the source file until you save.",
+      "hero": {
+        "src": "/apps/precisdesk/features/03-clip-editor.png",
+        "alt": "PrecisDesk clip editor: trim handles, middle cuts, and an Edited versus Original preview toggle"
+      },
+      "whatFor": "<p>Almost every screen recording needs the same two edits: lose the first few seconds where you were reaching for the mouse, and lose the bit in the middle where something went wrong. That is not a video editing project. It should not require a video editor.</p><p>The <strong>PrecisDesk</strong> clip editor does exactly those two things well. Trim the ends, cut middles out, preview the result, save. The edit is non-destructive — your original recording is untouched until you export, and you can reset back to the full clip at any point.</p>",
+      "steps": [
+        {
+          "title": "Open a recording",
+          "body": "Recordings open in the editor when you stop recording, or from History at any time later."
+        },
+        {
+          "title": "Trim the ends",
+          "body": "Drag the blue handles, or park the playhead and use <strong>Start from here</strong> and <strong>End here</strong>. Blue is what you keep."
+        },
+        {
+          "title": "Cut out a middle",
+          "body": "Put the playhead where the bad part starts, click <strong>Start cut</strong>, move to where it ends, and cut till there. The removed range turns red on the timeline."
+        },
+        {
+          "title": "Check it before you commit",
+          "body": "Switch the preview between <strong>Edited</strong> and <strong>Original</strong>. Edited plays the version you are about to export, skipping everything you cut."
+        },
+        {
+          "title": "Save as a new file",
+          "body": "<strong>Save as…</strong> writes a new MP4 or an animated GIF. The recording you started from is left exactly as it was."
+        }
+      ],
+      "reference": "<h2>What the editor does</h2><ul><li>Trim from the start and the end</li><li>Remove any number of sections from the middle</li><li>Split markers on the timeline</li><li>Mute the audio track</li><li>Export MP4 (H.264) or animated GIF</li><li>Undo and redo, and a reset back to the untouched clip</li></ul><h2>Non-destructive by default</h2><p>Edits live alongside the recording, not inside it. Nothing is written over your original file, and <strong>Reset</strong> restores the full clip with every cut cleared.</p>",
+      "faq": [
+        {
+          "q": "Does editing overwrite my recording?",
+          "a": "No. Edits are non-destructive and Save as… writes a new file. Your original recording stays as it was."
+        },
+        {
+          "q": "Can I export a GIF?",
+          "a": "Yes — the Save as… menu offers MP4 or animated GIF."
+        },
+        {
+          "q": "Can I see what a cut will look like before saving?",
+          "a": "Yes. The Edited preview plays the clip exactly as it will export, with every cut applied, and you can flip back to Original to compare."
+        }
+      ],
+      "related": [
+        "screen-recording",
+        "captions"
+      ]
+    },
+    {
+      "slug": "webcam-pip",
+      "name": "Webcam picture-in-picture",
+      "title": "Webcam Picture-in-Picture for Mac Screen Recording | PrecisDesk",
+      "metaDescription": "Put your camera on a screen recording as a circle or rounded rectangle, and move it on the timeline afterwards so it never covers what matters.",
+      "h1": "Webcam picture-in-picture, placed after you record",
+      "kicker": "PrecisDesk feature guide",
+      "summary": "Record your camera alongside the screen and decide where it goes later. Move it between corners partway through, resize it, make it a circle, give it a border, or hide it entirely for the sections where nobody needs to see you.",
+      "hero": {
+        "src": "/apps/precisdesk/features/04-webcam-pip.png",
+        "alt": "PrecisDesk webcam picture-in-picture placed after recording, with position, size, shape and border controls"
+      },
+      "whatFor": "<p>Burned-in webcam overlays have one problem: the camera is nailed to a corner for the whole video, and sooner or later something important appears underneath it.</p><p><strong>PrecisDesk</strong> can record the camera to a separate track and composite it when you export. That means the position is a decision you make in the editor, with the video in front of you — and it can change partway through. Drag the camera off the thing it is covering, and it stays moved from that point onward.</p><p>If you would rather have it fixed, that works too: choose to burn it in while recording and it behaves like every other recorder.</p>",
+      "steps": [
+        {
+          "title": "Turn on Webcam PiP before recording",
+          "body": "In <em>Capture</em>, switch on <strong>Webcam PiP</strong>. Choose whether to burn the camera in as you record, or to place it in the editor afterwards."
+        },
+        {
+          "title": "Record as normal",
+          "body": "Placed-after mode keeps your screen recording clean and writes the camera to a companion track next to it."
+        },
+        {
+          "title": "Position it in the editor",
+          "body": "Open the recording and drag the camera anywhere on the video, or pick a corner. Size, margin and shape are all there — circle or rounded rectangle."
+        },
+        {
+          "title": "Move it partway through",
+          "body": "Park the playhead where the camera is in the way and move it. From that point on it stays where you put it, until the next change you make."
+        },
+        {
+          "title": "Style it, or hide it",
+          "body": "Add a border, set its colour and thickness, mirror the image, or switch <strong>Hide PiP</strong> on for a stretch where the camera should not appear at all."
+        }
+      ],
+      "reference": "<h2>Placement</h2><ul><li>Four corners, centre, or drag it anywhere</li><li>Small, medium or large, with an adjustable margin</li><li>Circle or rounded rectangle</li><li>Changes apply from the playhead onward, so the camera can move during the video</li></ul><h2>Look</h2><ul><li>Border with adjustable width, colour and style</li><li>Mirror the camera image</li><li>Opacity, and a background treatment behind the camera</li><li>Hide it entirely for any stretch of the timeline</li></ul>",
+      "faq": [
+        {
+          "q": "Do I have to decide where the camera goes before recording?",
+          "a": "No. Choose “place in editor after” and the camera is recorded to its own track, so you position it with the finished video in front of you."
+        },
+        {
+          "q": "Can the camera move during the video?",
+          "a": "Yes. Move it at any point on the timeline and it stays there from that moment on, so it can dodge whatever is underneath it."
+        },
+        {
+          "q": "Can I record without the camera on screen at all?",
+          "a": "Yes — Webcam PiP is off by default, and even with it on you can hide it for any part of the timeline."
+        }
+      ],
+      "related": [
+        "screen-recording",
+        "captions"
+      ]
+    },
+    {
+      "slug": "captions",
+      "name": "Captions and subtitles",
+      "title": "Automatic Captions for Mac Screen Recordings | PrecisDesk",
+      "metaDescription": "Generate captions from your recording's own audio on-device, edit and retime them, then burn them into the video or export an .srt file.",
+      "h1": "Captions: generated on your Mac, edited by you",
+      "kicker": "PrecisDesk feature guide",
+      "summary": "Turn the words in your recording into captions using on-device speech recognition — no upload, no account, no per-minute fee. Fix the wording, retime any line, and either burn them into the exported video or save a separate .srt.",
+      "hero": {
+        "src": "/apps/precisdesk/features/05-captions.png",
+        "alt": "PrecisDesk captions burned into the video preview, with the caption at the playhead open for editing"
+      },
+      "whatFor": "<p>Captions are the difference between a walkthrough people watch and one they scroll past — most video is watched muted. But captioning tools usually mean uploading your recording to somebody's server and paying per minute.</p><p><strong>PrecisDesk</strong> uses Apple's on-device Speech framework. The audio never leaves your Mac. You get a set of timed cues you can edit like text, and you choose whether they end up burned into the picture or in a sidecar <code>.srt</code> for platforms that prefer their own renderer.</p>",
+      "steps": [
+        {
+          "title": "Generate them",
+          "body": "Open a recording in the editor and use the captions <strong>Tools</strong> menu to generate captions from the audio. Recognition runs on your Mac."
+        },
+        {
+          "title": "Read them back",
+          "body": "The caption under the playhead appears in the preview and in the caption field, so you scrub and read at the same time."
+        },
+        {
+          "title": "Fix the wording",
+          "body": "Names and jargon are where every recogniser struggles. Edit the text of the cue under the playhead and update it."
+        },
+        {
+          "title": "Add or retime a line",
+          "body": "Park the playhead and add a caption where recognition missed one, or adjust an existing cue's timing."
+        },
+        {
+          "title": "Burn in, or export .srt",
+          "body": "Leave <strong>Burn in</strong> on and the captions become part of the exported video. Turn it off and export the cues as a standalone <code>.srt</code> file instead."
+        }
+      ],
+      "reference": "<h2>How it works</h2><ul><li>Apple's Speech framework, running on your Mac</li><li>Nothing is uploaded, and no account or subscription is involved</li><li>Requires the Speech Recognition permission, which macOS asks for the first time you use it</li></ul><h2>What you can do with the cues</h2><ul><li>Edit the text of any cue</li><li>Add cues by hand where recognition missed something</li><li>Import and export SubRip <code>.srt</code></li><li>Burn them into the exported MP4, or keep them separate</li></ul>",
+      "faq": [
+        {
+          "q": "Is the audio uploaded anywhere?",
+          "a": "No. Recognition uses Apple's on-device Speech framework. The audio stays on your Mac."
+        },
+        {
+          "q": "Can I export captions as a separate file?",
+          "a": "Yes — cues export as SubRip <code>.srt</code>, which YouTube, Vimeo and most players accept."
+        },
+        {
+          "q": "What if it mishears a word?",
+          "a": "Edit it. Every cue is editable text, and you can add cues that recognition missed or retime the ones it got."
+        }
+      ],
+      "related": [
+        "screen-recording",
+        "clip-editor"
+      ]
+    },
+    {
+      "slug": "window-snapping",
+      "name": "Window snapping",
+      "title": "Mac Window Manager — Halves, Thirds, Sixths and Shortcuts | PrecisDesk",
+      "metaDescription": "Move and resize Mac windows from the keyboard: halves, quarters, thirds, sixths, size cycling and a snap palette, without dragging anything.",
+      "h1": "Window snapping: put a window where you want it, from the keyboard",
+      "kicker": "PrecisDesk feature guide",
+      "summary": "Halves and quarters, thirds and sixths, size cycling and grid placement — each with a keyboard shortcut, and a visual palette when you would rather point at where the window should go.",
+      "hero": {
+        "src": "/apps/precisdesk/features/06-window-snapping.png",
+        "alt": "PrecisDesk Windows tab showing halves and quarters with their keyboard shortcuts"
+      },
+      "whatFor": "<p>Dragging a window to exactly two-thirds of the screen is a fiddly, repetitive job, and you do it a hundred times a week.</p><p><strong>PrecisDesk</strong> gives every arrangement a shortcut. The window you were last using goes where you say — left half, top-right quarter, centre third — without touching the mouse. Thirds and sixths are where it earns its keep: three windows side by side, or two-thirds plus a third, are the layouts a wide monitor is actually good for.</p><p>Prefer the mouse? Open the snap palette and click the position you want, or drag a window to a screen edge and drop it into a zone.</p>",
+      "steps": [
+        {
+          "title": "Pick the window",
+          "body": "PrecisDesk acts on the window you were last using. The Windows tab shows which one that is, so there is never any doubt about what is about to move."
+        },
+        {
+          "title": "Snap it",
+          "body": "Use the shortcut — <kbd>^⌥←</kbd> for the left half, <kbd>^⌥→</kbd> for the right, <kbd>^⌥↑</kbd> and <kbd>^⌥↓</kbd> for top and bottom, and the same pattern for quarters."
+        },
+        {
+          "title": "Reach for thirds on a wide screen",
+          "body": "Thirds and sixths put three windows side by side, or two-thirds of the screen next to a third. This is what a wide monitor is for."
+        },
+        {
+          "title": "Cycle sizes with one key",
+          "body": "Press the same shortcut again and the window cycles through related sizes, so one key covers several arrangements."
+        },
+        {
+          "title": "Use the palette when you would rather point",
+          "body": "<strong>Open Snap Palette</strong> shows every position as a target you can click. Drag-to-edge snapping works too, if that is the habit you already have."
+        }
+      ],
+      "reference": "<h2>Positions</h2><ul><li>Halves — left, right, top, bottom</li><li>Quarters — all four corners</li><li>Thirds and sixths — including two-thirds and five-sixths</li><li>Maximize, nearly full screen, centre</li><li>Grid placement, and moving a window to the next display</li></ul><h2>Ways to trigger it</h2><ul><li>Global keyboard shortcuts, all remappable</li><li>The on-screen snap palette</li><li>Drag a window to a screen edge or corner</li><li>The menu bar icon, without leaving the app you are in</li><li>URL commands like <code>precisdesk://snap/leftHalf</code></li></ul>",
+      "faq": [
+        {
+          "q": "Does it need Accessibility permission?",
+          "a": "Yes. Moving another app's windows requires the macOS Accessibility permission — that is the only way any window manager can do it. PrecisDesk asks once and you can revoke it in System Settings at any time."
+        },
+        {
+          "q": "Can I change the shortcuts?",
+          "a": "Yes, every one of them, in Settings. Conflicts with each other are flagged."
+        },
+        {
+          "q": "Can I stop it touching certain apps?",
+          "a": "Yes. Add any app to the ignored list and PrecisDesk leaves its windows alone."
+        }
+      ],
+      "related": [
+        "saved-layouts",
+        "window-switcher"
+      ]
+    },
+    {
+      "slug": "saved-layouts",
+      "name": "Saved layouts",
+      "title": "Restore Mac Window Layout After Unplugging a Monitor | PrecisDesk",
+      "metaDescription": "Unplug a monitor and macOS piles every window onto one screen. PrecisDesk remembers where they were for each set of displays and puts them back.",
+      "h1": "Put my windows back: layouts that survive a monitor being unplugged",
+      "kicker": "PrecisDesk feature guide",
+      "summary": "Undock your laptop and every window piles onto the built-in screen — and stays piled when you plug back in. PrecisDesk remembers the arrangement for each set of monitors you use, and restores it when that set comes back.",
+      "hero": {
+        "src": "/apps/precisdesk/features/07-saved-layouts.png",
+        "alt": "PrecisDesk Layouts page: put windows back when monitors change, and saved per-app layouts"
+      },
+      "whatFor": "<p>This is the one macOS still has no answer for. Unplug the monitor, all your windows crowd onto the screen you have left. Plug it back in, and they stay crowded. Everyone who docks a laptop rebuilds their layout by hand, several times a day, forever.</p><p><strong>PrecisDesk</strong> fingerprints the set of displays you are currently using and remembers where your windows sit on it. Change monitors and it recognises the new arrangement; come back to one it has seen before and it can put everything back where it was.</p><p>It is <strong>off by default</strong>, deliberately — it moves windows you did not ask it to move. Turn it on and it saves your current arrangement immediately.</p>",
+      "steps": [
+        {
+          "title": "Open the Layouts page",
+          "body": "In the Windows tab, switch to <strong>Layouts</strong>."
+        },
+        {
+          "title": "Turn on restore-on-change",
+          "body": "Switch on <em>Put windows back when my monitors change</em>. PrecisDesk saves your current arrangement straight away, so there is something to come back to."
+        },
+        {
+          "title": "Carry on working",
+          "body": "Every set of displays gets remembered separately — desk with two monitors, laptop on its own, the projector in the meeting room."
+        },
+        {
+          "title": "Plug and unplug",
+          "body": "When a display set you have used before comes back, your windows go back with it."
+        },
+        {
+          "title": "Or do it by hand",
+          "body": "<strong>Remember this arrangement</strong> and <strong>Put them back now</strong> work on demand, if you would rather it never moved anything automatically."
+        }
+      ],
+      "reference": "<h2>How it recognises a setup</h2><p>PrecisDesk fingerprints the displays that are attached — their arrangement and size — rather than the order macOS happens to report them in. Plugging the same monitors back into different ports still matches.</p><h2>Saved layouts, per app</h2><ul><li>Save where one app's windows sit and restore them later</li><li>Layouts are kept per display setup, so the desk and the laptop do not overwrite each other</li><li>Nothing moves until you turn it on or ask for it</li></ul>",
+      "faq": [
+        {
+          "q": "Does it move my windows without asking?",
+          "a": "Not unless you turn it on. Automatic restore ships switched off, precisely because it moves windows you did not ask it to move. The manual buttons are always there instead."
+        },
+        {
+          "q": "Does it handle more than one monitor setup?",
+          "a": "Yes. Each distinct set of displays is remembered separately, so docking at your desk and plugging into a projector do not overwrite each other."
+        },
+        {
+          "q": "Can macOS not already do this?",
+          "a": "No. This is the gap PrecisDesk was built to fill — macOS has never restored window positions across a display change."
+        }
+      ],
+      "related": [
+        "window-snapping",
+        "window-switcher"
+      ]
+    },
+    {
+      "slug": "window-switcher",
+      "name": "Window switcher",
+      "title": "Mac Window Switcher with Live Previews | PrecisDesk",
+      "metaDescription": "Switch between individual windows on macOS with live previews, grouped by app, with search and up to nine of your own shortcuts.",
+      "h1": "Switcher: jump to a window, not to an app",
+      "kicker": "PrecisDesk feature guide",
+      "summary": "Command-Tab switches apps. When you have nine windows open across three of them, that is not the question you are asking. The Switcher shows every window as a live preview, grouped by app, with search — and you can set up to nine shortcuts, each showing a different set of windows.",
+      "hero": {
+        "src": "/apps/precisdesk/features/08-window-switcher.png",
+        "alt": "PrecisDesk Switcher settings: thumbnails, grouping windows by app, search, and up to nine shortcuts"
+      },
+      "whatFor": "<p>The macOS app switcher takes you to an <em>app</em>. If that app has six windows open, you have arrived somewhere near the thing you wanted and now you are hunting.</p><p>The <strong>PrecisDesk</strong> Switcher works at the window level. Every open window appears as a thumbnail captured the moment you open it, so you are picking from what is actually there rather than from a row of identical icons. Windows stay grouped under their app, so quick switching lands on the right one instead of scattering them through the list.</p>",
+      "steps": [
+        {
+          "title": "Open it",
+          "body": "Press <kbd>⌥⇥</kbd>. The shortcut is yours to change in Settings."
+        },
+        {
+          "title": "Find the window",
+          "body": "Every window is a live preview. Start typing to filter by title or app when there are too many to scan."
+        },
+        {
+          "title": "Keep an app's windows together",
+          "body": "Grouping keeps each app's windows next to each other, so a fast switch lands on the window you meant rather than one three apps away."
+        },
+        {
+          "title": "Act on a window from the tile",
+          "body": "Window controls on the tiles let you close or tidy a window without switching to it first. Middle-click closes a preview."
+        },
+        {
+          "title": "Set up more shortcuts",
+          "body": "You can define up to nine Switcher shortcuts, each showing a different set of windows — one for everything, one for the current app, one for the current display."
+        }
+      ],
+      "reference": "<h2>What you can configure</h2><ul><li>Thumbnails or a compact list, with an automatic switch when there are a lot of windows</li><li>Keep an app's windows grouped together</li><li>Search while it is open</li><li>Auto-sized thumbnails</li><li>Window controls on the tiles, and middle-click to close</li><li>Up to nine shortcuts, each with its own set of windows</li></ul><h2>Permissions</h2><p>Previews are captured when the Switcher opens, which needs the Screen Recording permission. Without it the Switcher still lists your windows — it just cannot show you pictures of them.</p>",
+      "faq": [
+        {
+          "q": "How is this different from Command-Tab?",
+          "a": "Command-Tab switches applications. This switches windows, with a picture of each one, which is the question you are actually asking when an app has six windows open."
+        },
+        {
+          "q": "Can I have more than one Switcher shortcut?",
+          "a": "Yes, up to nine, each showing a different set of windows."
+        },
+        {
+          "q": "Why does it want Screen Recording permission?",
+          "a": "To show a picture of each window. Decline it and the Switcher still works as a list of window titles."
+        }
+      ],
+      "related": [
+        "window-snapping",
+        "saved-layouts"
+      ]
+    },
+    {
+      "slug": "annotate",
+      "name": "Annotate and redact",
+      "title": "Annotate, Blur and Redact Screenshots on Mac | PrecisDesk",
+      "metaDescription": "Mark up a screenshot with arrows, shapes, text and step counters, blur or pixelate anything private, and copy text out of the image with OCR.",
+      "h1": "Annotate: arrows, redaction, and text you can copy out of a picture",
+      "kicker": "PrecisDesk feature guide",
+      "summary": "Mark up a capture with arrows, boxes, freehand and text. Blur or pixelate anything that should not be shared. Then pull the text straight out of the image with on-device OCR, or lift an exact colour with the picker.",
+      "hero": {
+        "src": "/apps/precisdesk/features/09-annotate.png",
+        "alt": "PrecisDesk image editor with arrow, line, shape, freehand and text tools, plus OCR"
+      },
+      "whatFor": "<p>A screenshot is rarely finished when you take it. It needs an arrow pointing at the thing you are talking about, and it usually needs somebody's email address blurred out before it goes into a ticket.</p><p><strong>PrecisDesk</strong> opens straight into an editor with both. Annotation is non-destructive — projects save separately from the exported PNG, so you can come back and move the arrow tomorrow. Redaction is real: blur and pixelate rewrite the pixels on export, they are not a black box drawn on top that somebody can drag away.</p>",
+      "steps": [
+        {
+          "title": "Open a capture in the editor",
+          "body": "Annotate from the Quick Access overlay right after a capture, or from History later."
+        },
+        {
+          "title": "Point at something",
+          "body": "Arrow, line, rectangle, ellipse and freehand pencil, in a colour you pick. Step counters number a sequence for you."
+        },
+        {
+          "title": "Hide what should not be shared",
+          "body": "<strong>Blur</strong> and <strong>Pixelate</strong> over any region, and <strong>Spotlight</strong> to dim everything except the part that matters."
+        },
+        {
+          "title": "Add words",
+          "body": "Text and highlighter for callouts and emphasis."
+        },
+        {
+          "title": "Take something out of the image",
+          "body": "<strong>OCR</strong> copies the text out of the picture using on-device recognition, and the colour picker reads any pixel as hex or RGB."
+        }
+      ],
+      "reference": "<h2>Tools</h2><ul><li>Crop, arrow, line, rectangle, filled rectangle, ellipse</li><li>Freehand pencil, text, highlighter</li><li>Step counters for numbered sequences</li><li>Spotlight, blur and pixelate for redaction</li><li>Colour picker in hex or RGB</li><li>OCR over the whole image or a selected area</li></ul><h2>Non-destructive</h2><p>Annotations are kept as a project alongside the image, so you can reopen a marked-up capture and move, restyle or remove anything. Export writes a flat PNG with the redaction applied for real.</p>",
+      "faq": [
+        {
+          "q": "Is blurring safe to share?",
+          "a": "Yes. Blur and pixelate are applied to the exported image, not drawn as an overlay that could be removed. What comes out has the pixels rewritten."
+        },
+        {
+          "q": "Can I edit an annotation after saving?",
+          "a": "Yes. The annotation project is kept alongside the image, so you can reopen it and change anything."
+        },
+        {
+          "q": "Does OCR send my screenshot anywhere?",
+          "a": "No. Text recognition uses Apple's Vision framework on your Mac."
+        }
+      ],
+      "related": [
+        "screenshots",
+        "capture-history"
+      ]
+    },
+    {
+      "slug": "capture-history",
+      "name": "Capture history",
+      "title": "Find Every Screenshot and Recording You Made on Mac | PrecisDesk",
+      "metaDescription": "A local library of every capture with thumbnails, filters and bulk delete, plus a retention setting that clears old captures automatically.",
+      "h1": "History: every capture you have made, in one list",
+      "kicker": "PrecisDesk feature guide",
+      "summary": "Screenshots and recordings in one list with thumbnails, filterable by type. Reopen anything in the editor, reveal it in Finder, or select a batch and delete it. Set a retention period and old captures clear themselves.",
+      "hero": {
+        "src": "/apps/precisdesk/features/10-capture-history.png",
+        "alt": "PrecisDesk History: every screenshot and recording with thumbnails, filters and bulk delete"
+      },
+      "whatFor": "<p>The reason people lose screenshots is that a screenshot is a file, and files go to a folder, and the folder fills up. Six weeks later you know you took the shot and you have no idea what it was called.</p><p><strong>PrecisDesk</strong> keeps an index. Every capture is a row with a thumbnail, its size, and when you took it, filterable down to just stills or just recordings. Open one straight back into the editor, or select a run of them and clear them out at once. The index lives on your Mac; nothing about your captures is uploaded anywhere.</p>",
+      "steps": [
+        {
+          "title": "Open History",
+          "body": "It is the first item in the sidebar, and where the app opens by default."
+        },
+        {
+          "title": "Narrow it down",
+          "body": "Filter to <strong>All</strong>, <strong>Screenshots</strong> or <strong>Recordings</strong>."
+        },
+        {
+          "title": "Pick up where you left off",
+          "body": "Click any row to reopen it — screenshots in the image editor, recordings in the clip editor with your trims still in place."
+        },
+        {
+          "title": "Clear a batch",
+          "body": "<strong>Select All</strong> or tick individual rows and delete the lot. Deleting from History removes the files too."
+        },
+        {
+          "title": "Let it clean up after itself",
+          "body": "Set a retention period in Settings and captures older than that are cleared automatically."
+        }
+      ],
+      "reference": "<h2>What each row shows</h2><ul><li>A thumbnail of the capture</li><li>Screenshot or recording, with pixel dimensions</li><li>Duration for recordings</li><li>When it was taken</li></ul><h2>Housekeeping</h2><ul><li>Retention period you set, applied automatically</li><li>Bulk selection and delete</li><li>Reveal the underlying file in Finder at any time</li><li>Rows whose files you deleted elsewhere are dropped from the index</li></ul>",
+      "faq": [
+        {
+          "q": "Is my capture history uploaded anywhere?",
+          "a": "No. The index is a local file on your Mac, and so are the captures. PrecisDesk has no account system and no servers."
+        },
+        {
+          "q": "Does deleting from History delete the file?",
+          "a": "Yes. Removing a capture from History removes the file it points at."
+        },
+        {
+          "q": "Can I make it clear old captures automatically?",
+          "a": "Yes. Set a retention period in Settings and anything older is cleared for you."
+        }
+      ],
+      "related": [
+        "screenshots",
+        "screen-recording"
+      ]
+    }
   ]
 }
