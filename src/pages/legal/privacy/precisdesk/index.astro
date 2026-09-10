@@ -1,0 +1,246 @@
+---
+import Base from '../../../../layouts/Base.astro';
+
+const SITE = 'https://precisionsolutionstech.com';
+const title = 'PrecisDesk Privacy Policy | Precision Solutions Tech';
+const description =
+  'How PrecisDesk handles screenshots, screen recordings, microphone and camera input, and on-device text and speech recognition. Everything stays on your Mac.';
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` },
+      { '@type': 'ListItem', position: 2, name: 'Privacy Policy', item: `${SITE}/legal/privacy/` },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: 'PrecisDesk',
+        item: `${SITE}/legal/privacy/precisdesk/`,
+      },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: 'PrecisDesk Privacy Policy',
+    url: `${SITE}/legal/privacy/precisdesk/`,
+    description,
+    dateModified: '2026-09-09',
+    isPartOf: { '@type': 'WebSite', name: 'Precision Solutions Tech', url: `${SITE}/` },
+  },
+];
+---
+
+<Base
+  title={title}
+  description={description}
+  path="/legal/privacy/precisdesk/"
+  jsonLd={jsonLd}
+>
+  <div class="wrap">
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li><a href="/legal/privacy/">Privacy Policy</a></li>
+        <li>PrecisDesk</li>
+      </ol>
+    </nav>
+
+    <article class="prose">
+      <h1>PrecisDesk Privacy Policy</h1>
+      <p class="meta">Last updated: September 9, 2026</p>
+      <p class="lead">
+        This Privacy Policy describes how <strong>PrecisDesk</strong> (“we”, “us”) handles
+        information when you use the PrecisDesk macOS application (the “App”), published by
+        <strong>Precision Solutions Tech</strong>, operated by <strong>SG TECHNOLOGY LLC</strong>.
+      </p>
+
+      <h2 id="summary">Short version</h2>
+      <p>
+        PrecisDesk runs <strong>on your Mac</strong>. Your screenshots, screen recordings, audio,
+        camera video, and recognised text are processed locally and are never sent to us. We operate
+        no account system and no media servers. We cannot see anything you capture.
+      </p>
+
+      <h2 id="local">What the App processes locally</h2>
+      <p>Depending on which features you use, the App processes on your device:</p>
+      <ul>
+        <li>
+          <strong>Screen captures and recordings</strong> — images and video of the screens,
+          windows, or regions you choose to capture, written to a folder you choose
+        </li>
+        <li>
+          <strong>Microphone audio and system audio</strong> — only while you are recording, and
+          only if you enable those inputs
+        </li>
+        <li>
+          <strong>Camera video</strong> — only if you enable webcam picture-in-picture
+        </li>
+        <li>
+          <strong>Recognised text</strong> — text recognition (OCR) runs on-device using Apple’s
+          Vision framework; images are not uploaded
+        </li>
+        <li>
+          <strong>Speech recognition</strong> — if you use automatic captions, speech recognition
+          runs on-device using Apple’s Speech framework
+        </li>
+        <li>
+          <strong>Capture history</strong> — a local index of captures you have made (file paths,
+          timestamps, type, size), with a retention period you control
+        </li>
+        <li>
+          <strong>Window information</strong> — titles, owning applications, and positions of open
+          windows, used to list and arrange them
+        </li>
+        <li>
+          <strong>Printing</strong> — the printer you choose and the document you print, handled by
+          macOS
+        </li>
+        <li>
+          <strong>Your settings</strong> — capture folders, filename templates, hotkeys, and window
+          rules, stored in local preferences
+        </li>
+      </ul>
+      <p>
+        This processing stays on your device unless you independently copy, print, or share the
+        result.
+      </p>
+
+      <h2 id="consent">Other people’s information, and consent</h2>
+      <p>
+        A screen recording, a microphone recording, or a camera capture may contain other people’s
+        voices, faces, messages, or personal data. When that happens, <strong>you</strong> decide
+        what is captured and what happens to it afterwards — we never see it and have no control
+        over it. Under data protection laws such as the GDPR and UK GDPR, that generally makes you
+        the controller of that information, not us.
+      </p>
+      <p>
+        It is your responsibility to obtain any consent the law requires from everyone who may be
+        recorded or captured, to tell them what you are doing where that is required, and to handle
+        the result lawfully. Recording-consent rules are strict in many places and differ between
+        jurisdictions. See the Disclaimer and the EULA supplied with the App.
+      </p>
+
+      <h2 id="permissions">macOS permissions the App may request, and why</h2>
+      <ul>
+        <li><strong>Screen Recording</strong> — required to take screenshots or record the screen</li>
+        <li><strong>Microphone</strong> — only to include your voice in a recording</li>
+        <li><strong>Camera</strong> — only for webcam picture-in-picture</li>
+        <li><strong>Speech Recognition</strong> — only for on-device automatic captions</li>
+        <li>
+          <strong>Accessibility</strong> — to move, resize, and arrange windows belonging to other
+          applications
+        </li>
+      </ul>
+      <p>
+        You may grant or revoke any of these in System Settings. Features that depend on a
+        permission you decline simply do not run.
+      </p>
+
+      <h2 id="printing">Printing</h2>
+      <p>
+        Printing goes through the standard macOS print system to a printer you select.
+        <strong>Nothing you print is sent to us.</strong>
+      </p>
+
+      <h2 id="login-items">Login Items</h2>
+      <p>
+        If you enable “Launch at login”, the App registers itself as a macOS Login Item so it can
+        start with your session. You can turn this off in the App’s settings, or under System
+        Settings → General → Login Items.
+      </p>
+
+      <h2 id="network">Network access</h2>
+      <ul>
+        <li>
+          <strong>Mac App Store builds</strong> contain no update mechanism of their own and are
+          sandboxed without outbound network access; updates come from Apple.
+        </li>
+        <li>
+          <strong>Direct (non–App Store) builds</strong> check for updates once per day by
+          requesting an update feed from <code>precisionsolutionstech.com</code>. Like any web
+          request, this discloses your IP address, approximate time, and standard request headers to
+          that server. It does not include your captures, files, or personal information. You can
+          stop these checks by quitting the App.
+        </li>
+        <li>
+          The App does not require internet access for capture, recording, editing, text
+          recognition, window management, or printing.
+        </li>
+      </ul>
+
+      <h2 id="purchases">What we receive if you buy or contact us</h2>
+      <p>
+        If you purchase a licence or contact support through a storefront (for example the Mac App
+        Store, Gumroad, or Stripe) or by email:
+      </p>
+      <ul>
+        <li>
+          The storefront’s privacy policy governs checkout and payment data. We do not receive your
+          full payment card number.
+        </li>
+        <li>
+          We may receive your name, email address, purchase status, and the content of your support
+          message, as needed to fulfil the purchase or reply to you.
+        </li>
+      </ul>
+
+      <h2 id="analytics">Analytics, tracking, and advertising</h2>
+      <p>
+        The App contains <strong>no analytics SDKs, no advertising SDKs, and no third-party
+        trackers</strong>. We do not profile you, and we do not sell or share personal information.
+        If analytics are ever added, this policy will be updated before that change ships, and any
+        collection would be opt-in.
+      </p>
+
+      <h2 id="retention">Data retention</h2>
+      <p>
+        Captures, recordings, exports, and history remain on your Mac until you delete them, until
+        the retention period you set removes them, or until you uninstall the App. Purchase and
+        support records held by us or a storefront are retained as needed for accounting, fraud
+        prevention, and customer support.
+      </p>
+
+      <h2 id="choices">Your rights and choices</h2>
+      <ul>
+        <li>Capture only what you intend to capture, and review it before sharing</li>
+        <li>Leave microphone, system audio, and camera inputs off (they are off by default)</li>
+        <li>Set the capture retention period, or delete captures individually</li>
+        <li>Decline or revoke any macOS permission in System Settings</li>
+        <li>Uninstall the App to stop all local processing</li>
+      </ul>
+      <p>
+        Because we do not collect your personal information, there is generally nothing for us to
+        export or delete on request. If you have contacted support or made a purchase, you may ask
+        us about the records associated with that.
+      </p>
+
+      <h2 id="children">Children’s privacy</h2>
+      <p>
+        The App is not directed to children under 13 (or the minimum age in your jurisdiction).
+      </p>
+
+      <h2 id="changes">Changes</h2>
+      <p>
+        We may update this policy. The “Last updated” date will change when we do. Continued use
+        after an update means you accept the revised policy for subsequent use.
+      </p>
+
+      <h2 id="contact">Contact</h2>
+      <p>
+        Privacy questions:
+        <a href="mailto:support@precisionsolutionstech.com">support@precisionsolutionstech.com</a>
+        ·
+        <a href="mailto:hello@precisionsolutionstech.com">hello@precisionsolutionstech.com</a>
+      </p>
+      <p>
+        Company-wide policy:
+        <a href="/legal/privacy/">Precision Solutions Tech Privacy Policy</a>
+        · Company:
+        <a href="/about/">About us</a>
+      </p>
+    </article>
+  </div>
+</Base>
