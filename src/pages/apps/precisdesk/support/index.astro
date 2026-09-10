@@ -1,0 +1,136 @@
+---
+import Base from '../../../../layouts/Base.astro';
+
+const SITE = 'https://precisionsolutionstech.com';
+const title = 'PrecisDesk Support | Precision Solutions Tech';
+const description =
+  'Support for PrecisDesk: how to reach us, macOS permissions, where captures are saved, and answers to the questions people ask most.';
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Apps', item: `${SITE}/apps/` },
+      { '@type': 'ListItem', position: 2, name: 'PrecisDesk', item: `${SITE}/apps/precisdesk/` },
+      { '@type': 'ListItem', position: 3, name: 'Support', item: `${SITE}/apps/precisdesk/support/` },
+    ],
+  },
+];
+---
+
+<Base
+  title={title}
+  description={description}
+  path="/apps/precisdesk/support/"
+  jsonLd={jsonLd}
+  active="apps"
+>
+  <div class="wrap">
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li><a href="/apps/">Apps</a></li>
+        <li><a href="/apps/precisdesk/">PrecisDesk</a></li>
+        <li>Support</li>
+      </ol>
+    </nav>
+
+    <article class="prose">
+      <h1>PrecisDesk Support</h1>
+      <p class="lead">
+        Something not working, or a question the app does not answer? Email
+        <a href="mailto:support@precisionsolutionstech.com">support@precisionsolutionstech.com</a>
+        and tell us your macOS version, which feature is misbehaving, and what you expected to
+        happen. We read every message.
+      </p>
+
+      <h2 id="requirements">Requirements</h2>
+      <ul>
+        <li>macOS 14 (Sonoma) or later</li>
+        <li>Apple Silicon or Intel — PrecisDesk is native on both</li>
+      </ul>
+
+      <h2 id="permissions">Permissions</h2>
+      <p>
+        Most “it isn’t working” reports come down to a macOS permission. PrecisDesk only asks for
+        one when you first use the feature that needs it, and features whose permission you decline
+        simply do not run.
+      </p>
+      <ul>
+        <li>
+          <strong>Screen Recording</strong> — required for screenshots, screen recording, and window
+          previews in the Switcher. macOS requires this even for still screenshots.
+        </li>
+        <li>
+          <strong>Accessibility</strong> — required to move and resize other apps’ windows. Capture
+          and recording work without it; window management does not.
+        </li>
+        <li><strong>Microphone</strong> — only to record your voice.</li>
+        <li><strong>Camera</strong> — only for webcam picture-in-picture.</li>
+        <li><strong>Speech Recognition</strong> — only for automatic captions, which run on-device.</li>
+      </ul>
+      <p>
+        Grant or revoke any of these in <strong>System Settings → Privacy &amp; Security</strong>.
+        After changing Screen Recording, quit PrecisDesk completely (⌘Q) and reopen it — macOS only
+        applies the change to a fresh launch.
+      </p>
+
+      <h2 id="captures">Where your captures go</h2>
+      <p>
+        PrecisDesk saves to a folder you choose, and lists everything in <strong>History</strong>
+        with thumbnails so you never have to go hunting in Finder. You can point screenshots and
+        recordings at the same folder or at different ones, set a filename template, and set a
+        retention period that clears old captures automatically.
+      </p>
+
+      <h2 id="troubleshooting">Common questions</h2>
+      <h3>Window snapping does nothing</h3>
+      <p>
+        Check Accessibility permission first. If it is granted, look at the top of the Windows tab —
+        PrecisDesk acts on the window you were last using, and it tells you which one that is. If it
+        says no window is chosen, click a window in another app and try again.
+      </p>
+      <h3>My windows did not come back after unplugging a monitor</h3>
+      <p>
+        That feature ships <strong>switched off</strong>, because it moves windows you did not ask
+        it to move. Turn on <em>Put windows back when my monitors change</em> on the Layouts page.
+        It saves your current arrangement the moment you enable it, so there is something to
+        restore.
+      </p>
+      <h3>Captions got a word wrong</h3>
+      <p>
+        Every caption is editable text — fix the cue under the playhead and update it. You can also
+        add cues recognition missed, retime them, and export the lot as an <code>.srt</code> file.
+      </p>
+      <h3>The webcam is covering something important</h3>
+      <p>
+        If you recorded with “place in editor after”, move it. Park the playhead where it is in the
+        way and drag the camera somewhere else — it stays there from that point onward, so it can
+        move during the video. You can also hide it for a stretch entirely.
+      </p>
+
+      <h2 id="privacy">Privacy</h2>
+      <p>
+        PrecisDesk runs on your Mac. Screenshots, recordings, audio, camera video, text recognition
+        and speech recognition are all processed locally and never sent to us. There is no account
+        system, and no analytics or advertising SDKs. Full detail is in the
+        <a href="/legal/privacy/precisdesk/">PrecisDesk Privacy Policy</a>.
+      </p>
+
+      <h2 id="contact">Contact</h2>
+      <p>
+        <a href="mailto:support@precisionsolutionstech.com">support@precisionsolutionstech.com</a>
+        ·
+        <a href="mailto:hello@precisionsolutionstech.com">hello@precisionsolutionstech.com</a>
+      </p>
+      <p>
+        <a href="/apps/precisdesk/">PrecisDesk overview</a>
+        ·
+        <a href="/legal/privacy/precisdesk/">Privacy Policy</a>
+        ·
+        <a href="/about/">About us</a>
+      </p>
+    </article>
+  </div>
+</Base>
