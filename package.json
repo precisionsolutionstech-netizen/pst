@@ -9,7 +9,8 @@
     "preview": "astro preview",
     "indexnow": "node scripts/indexnow.mjs",
     "indexnow:sitemap": "node scripts/indexnow.mjs --sitemap",
-    "gen:code-samples": "node scripts/gen-code-samples.mjs"
+    "gen:code-samples": "node scripts/gen-code-samples.mjs",
+    "gen:lastmod": "node scripts/gen-lastmod.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.4.1",
