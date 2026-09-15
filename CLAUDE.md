@@ -19,6 +19,11 @@ staging gate. Consequences, treat these as hard rules:
 - Dev server: `npm run dev`
 - Build: `npm run build` (runs `scripts/gen-code-samples.mjs`, then `astro build`)
 - Regenerate API snippets + OpenAPI specs only: `npm run gen:code-samples`
+- Regenerate sitemap `<lastmod>` dates: `npm run gen:lastmod` (commit the result)
+
+After publishing new pages, run `npm run gen:lastmod`, commit, deploy, and then
+`npm run indexnow` — in that order. IndexNow reads the *live* sitemap, so running it
+before the deploy submits the old one.
 
 `gen-code-samples.mjs` parses `public/apis/*.playground.js` for each API's host,
 path, method and example body, then writes `src/data/api-code-samples.json` and

@@ -37,7 +37,12 @@ Pages live in `src/pages/`; the shared layout (nav, footer, meta, Open Graph, JS
   `TechArticle`/`FAQPage`/`SoftwareApplication` on API pages; `Product` with `Offer` on paid
   workflow pages.
 - `sitemap-index.xml` is generated at build time by `@astrojs/sitemap`; `public/robots.txt`
-  references it.
+  references it. Every URL carries a per-page `<lastmod>` from
+  `src/data/page-lastmod.json`, regenerated with `npm run gen:lastmod` and committed.
+  Run it after publishing or materially rewriting pages — a stale map is better than
+  a blanket build date, which is the thing that teaches Google to ignore `lastmod`.
+  It deliberately does not run during `npm run build`: CI clones are shallow, so the
+  git history it reads would collapse every page onto the build date.
 - [IndexNow](https://www.bing.com/indexnow/getstarted) notifies Bing (and other
   participating engines) when URLs are added or updated. The key file lives at
   `public/7d2bed5630ab4c21adbf32797b64a578.txt` (served from the site root). After

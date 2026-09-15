@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" xmlns:dc="http://purl.org/dc/elements/1.1/">
   <channel>
     <title>Typekeep Updates</title>
-    <link>https://precisionsolutionstech.com/apps/typekeep/</link>
+    <link>https://precisionsolutionstech.com/apps/twinkeep/</link>
     <description>Direct-download builds for Typekeep (site + Gumroad).</description>
     <language>en</language>
   </channel>
