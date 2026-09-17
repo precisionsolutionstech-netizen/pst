@@ -124,7 +124,9 @@
         "q": "What is the difference between the Mac App Store and the direct version?",
         "a": "The same app at the same $9.99 price. The direct build is notarized and comes with a 7-day trial plus a license key; the Mac App Store build is a paid app that is licensed the moment you buy it."
       }
-    ]
+    ],
+    "ctaTitle": "Ready to reclaim the space?",
+    "ctaBody": "One-time purchase. Local on your Mac. Quarantine before anything is gone for good."
   },
   {
     "slug": "precisdesk",
@@ -245,6 +247,8 @@
       }
     ],
     "appStoreUrl": "https://apps.apple.com/us/app/precisdesk/id6810492077?mt=12",
-    "appStoreHasTrial": false
+    "appStoreHasTrial": false,
+    "ctaTitle": "Ready to take the shot?",
+    "ctaBody": "One-time purchase on the Mac App Store. Everything runs on your Mac — nothing you capture is uploaded."
   }
 ]
