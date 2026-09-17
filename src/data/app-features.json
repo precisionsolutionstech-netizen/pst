@@ -199,7 +199,7 @@
       "steps": [
         {
           "title": "Open Quarantine",
-          "body": "The sidebar badge shows how many files are being held and how much space they represent. Filter by <em>All</em>, <em>Duplicates</em>, or <em>Rules</em> to see what put each file here."
+          "body": "The sidebar badge shows how many files are being held and how much space they represent. Filter by <em>All</em>, <em>Duplicates</em>, <em>Rules</em>, or <em>Compressed</em> to see what put each file here."
         },
         {
           "title": "Pick a view that suits the job",
@@ -214,15 +214,19 @@
           "body": "<em>Restore</em> returns a file to its original path. <em>Keep this instead</em> goes further — it restores this file and quarantines the one Twinkeep kept, swapping the decision."
         },
         {
+          "title": "Keep them somewhere you can reach",
+          "body": "Quarantined files sit in Twinkeep’s own folder by default. <em>Settings → Quarantine folder</em> points them at a folder of your own instead — an external drive, a cloud folder, anywhere — and <em>Move to Folder…</em> parks just the ones you select. They stay listed in Quarantine either way, and Restore still puts them back where they came from."
+        },
+        {
           "title": "Empty when you are sure",
           "body": "<em>Empty permanently</em> is the only action in Twinkeep that cannot be undone, so it always asks first. Until then, quarantined files stay on your disk."
         }
       ],
-      "reference": "<h2>What ends up here</h2><ul><li><strong>Exact duplicates</strong> cleared automatically after a scan</li><li><strong>Photos you rejected</strong> in Review</li><li><strong>Files a rule quarantined</strong> — for example old installers</li></ul><p>The <em>Source</em> column tells you which, so a file filed by automation is never confused with one you chose yourself.</p><h2>Restore is exact, not approximate</h2><p>Twinkeep records each file's original path when it quarantines it. Restoring recreates that location, including the folder, rather than dropping the file somewhere generic. If the original folder is gone, Twinkeep recreates it.</p><h2>It is not a backup</h2><p>Quarantine protects you from Twinkeep's decisions, not from disk failure. It lives on the same drive as your files. Keep a real backup — Time Machine or otherwise — before any cleanup tool touches anything.</p>",
+      "reference": "<h2>What ends up here</h2><ul><li><strong>Exact duplicates</strong> cleared automatically after a scan</li><li><strong>Photos you rejected</strong> in Review</li><li><strong>Files a rule quarantined</strong> — for example old installers</li></ul><p>The <em>Source</em> column tells you which, so a file filed by automation is never confused with one you chose yourself.</p><h2>Restore is exact, not approximate</h2><p>Twinkeep records each file's original path when it quarantines it. Restoring recreates that location, including the folder, rather than dropping the file somewhere generic. If the original folder is gone, Twinkeep recreates it.</p><h2>Where the files are kept</h2><p>Out of your way by default: quarantined files live in Twinkeep's own folder, so a holding area full of duplicates never clutters the folders you work in. If you would rather have them to hand, point Quarantine at a folder of your own in Settings, or move a selection to any folder from the Quarantine screen. Files kept in a folder of yours get their real names rather than an internal one, and scans skip whatever folder is holding them, so quarantined copies never turn up again as fresh duplicates.</p><h2>It is not a backup</h2><p>Quarantine protects you from Twinkeep's decisions, not from disk failure. It lives on the same drive as your files. Keep a real backup — Time Machine or otherwise — before any cleanup tool touches anything.</p>",
       "faq": [
         {
           "q": "Where do quarantined files actually live?",
-          "a": "Inside Twinkeep's own application container on your Mac. They are not in the Trash, so emptying the Trash does not touch them, and they never leave your machine."
+          "a": "By default, inside Twinkeep's own folder on your Mac. They are not in the Trash, so emptying the Trash does not touch them. You can also point Quarantine at a folder of your own in Settings, or move individual files to any folder you like — they stay listed in Quarantine, and either way they never leave your machine."
         },
         {
           "q": "Does quarantine free up disk space?",
@@ -231,6 +235,10 @@
         {
           "q": "What does \\u201cKeep this instead\\u201d do?",
           "a": "It swaps the decision: the quarantined file is restored to its original location and the file Twinkeep had kept is quarantined in its place. Useful when you disagree with the keeper it chose."
+        },
+        {
+          "q": "What if I delete a quarantined file myself?",
+          "a": "Twinkeep notices. The row stays, marked Missing, and offers Remove instead of Restore \u2014 there is no file left to put back. Its size stops counting toward what Quarantine is holding, and one click clears every row like it. Twinkeep never removes those rows on its own: a row vanishing by itself would be exactly the behaviour Quarantine exists to avoid."
         },
         {
           "q": "Can I get a file back after emptying Quarantine?",
