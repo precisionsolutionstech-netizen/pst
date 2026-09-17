@@ -26,6 +26,11 @@
         "caption": "Exact duplicates: keep one twin, quarantine the rest."
       },
       {
+        "src": "/apps/twinkeep/gallery/13-compress.png",
+        "alt": "Twinkeep Compress on macOS: photos and a video queued, with the four choices for what happens to each original",
+        "caption": "Compress photos and video \u2014 and know exactly what happens to the original."
+      },
+      {
         "src": "/apps/twinkeep/gallery/03-review-lookalikes.png",
         "alt": "Twinkeep Review comparing two near-duplicate photos side by side",
         "caption": "Face-to-face compare: both twins full size, with the differences called out."
