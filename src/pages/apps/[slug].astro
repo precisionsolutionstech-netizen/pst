@@ -26,6 +26,12 @@ const featureList = (a as { featureList?: string[] }).featureList ?? [];
 const faqs = (a as { faqs?: { q: string; a: string }[] }).faqs ?? [];
 const metaTitle = (a as { metaTitle?: string }).metaTitle;
 const trialUrl = (a as { trialDownloadUrl?: string }).trialDownloadUrl;
+// Only claim a notarized direct build where one is actually purchasable or
+// downloadable. PrecisDesk is App Store only; saying otherwise sends buyers
+// looking for a build that does not exist.
+const hasDirect = Boolean(a.purchaseUrl || trialUrl);
+const ctaTitle = (a as { ctaTitle?: string }).ctaTitle;
+const ctaBody = (a as { ctaBody?: string }).ctaBody;
 
 const title = metaTitle || `${a.name} | macOS App | Precision Solutions Tech`;
 const description = a.shortDescription.length > 158
@@ -227,7 +233,7 @@ const jsonLd = [
               </p>
 
               {trustPoints.length > 0 && (
-                <ul class="app-trust" aria-label="Why Twinkeep">
+                <ul class="app-trust" aria-label={`Why ${a.name}`}>
                   {trustPoints.map((t) => <li>{t}</li>)}
                 </ul>
               )}
@@ -235,7 +241,11 @@ const jsonLd = [
               {a.os && (
                 <p class="app-reqs">
                   Requires {a.os} · Apple Silicon or Intel
-                  {appStoreUrl ? ' · Mac App Store or notarized direct build' : ' · notarized direct build'}
+                  {appStoreUrl && hasDirect
+                    ? ' · Mac App Store or notarized direct build'
+                    : appStoreUrl
+                      ? ' · Mac App Store'
+                      : ' · notarized direct build'}
                 </p>
               )}
             </div>
@@ -342,8 +352,8 @@ const jsonLd = [
         <section class="app-bottom-cta" aria-label={`Get ${a.name}`}>
           <div class="app-bottom-cta-inner">
             <div>
-              <h2>Ready to reclaim the space?</h2>
-              <p>One-time purchase. Local on your Mac. Quarantine before anything is gone for good.</p>
+              <h2>{ctaTitle || `Ready to get ${a.name}?`}</h2>
+              <p>{ctaBody || 'One-time purchase. Runs locally on your Mac. No account, no subscription.'}</p>
             </div>
             <div class="app-cta-row">
               {appStoreUrl && (
