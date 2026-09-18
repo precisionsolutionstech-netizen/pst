@@ -7,15 +7,15 @@
         <language>en</language>
         <item>
             <title>1.2.0</title>
-            <pubDate>Thu, 17 Sep 2026 00:16:00 -0400</pubDate>
-            <sparkle:version>9</sparkle:version>
+            <pubDate>Thu, 17 Sep 2026 00:18:47 -0400</pubDate>
+            <sparkle:version>10</sparkle:version>
             <sparkle:shortVersionString>1.2.0</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
             <sparkle:releaseNotesLink>https://precisionsolutionstech.com/apps/twinkeep/releases/Twinkeep-1.2.0.html</sparkle:releaseNotesLink>
-            <enclosure url="https://precisionsolutionstech.com/apps/twinkeep/releases/Twinkeep-1.2.0.zip" length="4832847" type="application/octet-stream" sparkle:edSignature="MKoPdGeOm28pnoEOZpFw7bA0+/Y8WREDwdqNb9mn7cNL4JMG0VIlNPMyHA8OPP3mvIRGfPrp8bA0BEhG29naAA=="/>
+            <enclosure url="https://precisionsolutionstech.com/apps/twinkeep/releases/Twinkeep-1.2.0.zip" length="4832959" type="application/octet-stream" sparkle:edSignature="C4E5UToL2qZQqsskD4+M+ETvJLyVV+R5+H4a1sEy8v8Z6HRObi9yLK0KIgQtVYkGkdPFeCTOaolDwn7VIFK1Ag=="/>
             <sparkle:deltas>
-                <enclosure url="https://precisionsolutionstech.com/apps/twinkeep/releases/Twinkeep9-8.delta" sparkle:deltaFrom="8" length="1034746" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977840" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="atw1ggqVX+m+DLax+qKaNHvqNsOx5/V8vlKoexvYU5sJAuYdKmpGWTODDUdZQSlGjsrBLs3B5/NP+5rBffJdAA=="/>
-                <enclosure url="https://precisionsolutionstech.com/apps/twinkeep/releases/Twinkeep9-6.delta" sparkle:deltaFrom="6" length="1400238" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977840" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="m5Td+1WHFzgJovIRLGmYDGnWQIyiR2XwJpgC9KvxY1Wy0C1GnBRIOopz+k71riw+QVR+OX7a8m6abOj7dL41DA=="/>
+                <enclosure url="https://precisionsolutionstech.com/apps/twinkeep/releases/Twinkeep10-8.delta" sparkle:deltaFrom="8" length="1032086" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977840" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="aN8HesmdIRw2GlhgLKsYvKksTgCZx5koXLTlIiHNynns10qW80rnoMOCS35HuJE0XQXkV9dr6zpir9J2kzq7DA=="/>
+                <enclosure url="https://precisionsolutionstech.com/apps/twinkeep/releases/Twinkeep10-6.delta" sparkle:deltaFrom="6" length="1398918" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977840" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="c6j31lcWourzJeUtYeKaeV11T0A/EdkIUQs1Nkqk+Z5cBdEkpHFytidTBwU0+EnlPe/7ws5J26AXY3t7NwbxCw=="/>
             </sparkle:deltas>
         </item>
         <item>
@@ -29,15 +29,6 @@
             <sparkle:deltas>
                 <enclosure url="https://precisionsolutionstech.com/apps/twinkeep/releases/Twinkeep8-6.delta" sparkle:deltaFrom="6" length="960814" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977840" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="0UCqL/JUIMyZ4BulVHiVyQc75V4p1NJJ5KooP8nLLVTCI8UDuiTesAROb1573G2wmEG6CAnkfdNKBpXdyVTHBg=="/>
             </sparkle:deltas>
-        </item>
-        <item>
-            <title>1.0.0</title>
-            <pubDate>Wed, 02 Sep 2026 23:26:00 -0400</pubDate>
-            <sparkle:version>6</sparkle:version>
-            <sparkle:shortVersionString>1.0.0</sparkle:shortVersionString>
-            <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
-            <sparkle:releaseNotesLink>https://precisionsolutionstech.com/apps/twinkeep/releases/Twinkeep-1.0.0.html</sparkle:releaseNotesLink>
-            <enclosure url="https://precisionsolutionstech.com/apps/twinkeep/releases/Twinkeep-1.0.0.zip" length="4120061" type="application/octet-stream" sparkle:edSignature="CzKbw/7Td+kzfTWSD93R0NWL/vEoyb8hJdlmPFSlgzsShB1aRFN+Ua/L4t2jtI+PsMwxGahNIZLcP7cUZ1VXDg=="/>
         </item>
     </channel>
 </rss>
