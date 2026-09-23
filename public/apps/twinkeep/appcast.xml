@@ -6,6 +6,20 @@
         <description>Direct-download builds for Twinkeep (site + Gumroad).</description>
         <language>en</language>
         <item>
+            <title>1.2.1</title>
+            <pubDate>Tue, 22 Sep 2026 23:35:18 -0400</pubDate>
+            <sparkle:version>11</sparkle:version>
+            <sparkle:shortVersionString>1.2.1</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
+            <sparkle:releaseNotesLink>https://precisionsolutionstech.com/apps/twinkeep/releases/Twinkeep-1.2.1.html</sparkle:releaseNotesLink>
+            <enclosure url="https://precisionsolutionstech.com/apps/twinkeep/releases/Twinkeep-1.2.1.zip" length="4833191" type="application/octet-stream" sparkle:edSignature="OOUrvotdcOoqlyelbetjrYT/kB+oM9aE0OzxXV73kUatFeGtIbiOXUG+p1AQ7xa4AlmAlSi8anw2DrLkSlthDQ=="/>
+            <sparkle:deltas>
+                <enclosure url="https://precisionsolutionstech.com/apps/twinkeep/releases/Twinkeep11-10.delta" sparkle:deltaFrom="10" length="236206" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977840" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="VU5lQux/66smw7sKLDGAtztgTc9dFa8elNuzMbgSGsYKSI06W5xUARWdJrCy1o2A4mRtr2gCVUC/0jZkheVCAw=="/>
+                <enclosure url="https://precisionsolutionstech.com/apps/twinkeep/releases/Twinkeep11-8.delta" sparkle:deltaFrom="8" length="1030366" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977840" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="VWqYbNKlYRZrGmXEocBQrmh4bXfEo13q5wPz4Dm5HcSXrm1jTxIPD9aGaIc+n2j/cjORMD0i/VBUHrE7Sfw6Dw=="/>
+                <enclosure url="https://precisionsolutionstech.com/apps/twinkeep/releases/Twinkeep11-6.delta" sparkle:deltaFrom="6" length="1401338" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977840" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="l+S7Ey/FHtGlQ1vVxr23acm5lIKQTqk//yxN43i9nz1fv03Qk5iZVN9v+EeNntjLNqqDPw5XxUQHUzFn84okAQ=="/>
+            </sparkle:deltas>
+        </item>
+        <item>
             <title>1.2.0</title>
             <pubDate>Thu, 17 Sep 2026 00:18:47 -0400</pubDate>
             <sparkle:version>10</sparkle:version>
