@@ -1,9 +1,18 @@
-<?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" xmlns:dc="http://purl.org/dc/elements/1.1/">
-  <channel>
-    <title>PrecisDesk Updates</title>
-    <link>https://precisionsolutionstech.com/apps/precisdesk/</link>
-    <description>Direct-download builds for PrecisDesk (site + Gumroad).</description>
-    <language>en</language>
-  </channel>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+    <channel>
+        <title>PrecisDesk Updates</title>
+        <link>https://precisionsolutionstech.com/apps/precisdesk/</link>
+        <description>Direct-download builds for PrecisDesk (site + Gumroad).</description>
+        <language>en</language>
+        <item>
+            <title>1.0.0</title>
+            <pubDate>Tue, 22 Sep 2026 23:12:17 -0400</pubDate>
+            <sparkle:version>2</sparkle:version>
+            <sparkle:shortVersionString>1.0.0</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <sparkle:releaseNotesLink>https://precisionsolutionstech.com/apps/precisdesk/releases/PrecisDesk-1.0.0.html</sparkle:releaseNotesLink>
+            <enclosure url="https://precisionsolutionstech.com/apps/precisdesk/releases/PrecisDesk-1.0.0.zip" length="6586119" type="application/octet-stream" sparkle:edSignature="HVTawgSAvnZkE/8q0ajw+ZDxSoA9z7COLeBxR+i0RJAbQA/BDpBb8/e7qbhgQ5CATCHrZEvPWG8IMA43sSQ1Dg=="/>
+        </item>
+    </channel>
 </rss>
