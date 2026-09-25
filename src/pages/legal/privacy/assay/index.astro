@@ -1,0 +1,185 @@
+---
+import Base from '../../../../layouts/Base.astro';
+
+const SITE = 'https://precisionsolutionstech.com';
+const title = 'Assay Privacy Policy | Precision Solutions Tech';
+const description =
+  'How Assay handles the files you open, convert and preview. Everything is processed on your Mac; the App Store version has no network access, no account and no analytics.';
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` },
+      { '@type': 'ListItem', position: 2, name: 'Privacy Policy', item: `${SITE}/legal/privacy/` },
+      { '@type': 'ListItem', position: 3, name: 'Assay', item: `${SITE}/legal/privacy/assay/` },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: 'Assay Privacy Policy',
+    url: `${SITE}/legal/privacy/assay/`,
+    description,
+    dateModified: '2026-09-25',
+    isPartOf: { '@type': 'WebSite', name: 'Precision Solutions Tech', url: `${SITE}/` },
+  },
+];
+---
+
+<Base
+  title={title}
+  description={description}
+  path="/legal/privacy/assay/"
+  jsonLd={jsonLd}
+>
+  <div class="wrap">
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li><a href="/legal/privacy/">Privacy Policy</a></li>
+        <li>Assay</li>
+      </ol>
+    </nav>
+
+    <article class="prose">
+      <h1>Assay Privacy Policy</h1>
+      <p class="meta">Last updated: September 25, 2026</p>
+      <p class="lead">
+        This Privacy Policy describes how <strong>Assay</strong> (“we”, “us”) handles information when
+        you use the Assay macOS application and its Finder and Quick Look extensions (the “App”),
+        published by <strong>Precision Solutions Tech</strong>, operated by
+        <strong>SG TECHNOLOGY LLC</strong>.
+      </p>
+
+      <h2 id="summary">Short version</h2>
+      <p>
+        Assay runs <strong>on your Mac</strong>. The files you open, view, edit, convert and preview are
+        processed locally and are never sent to us. The Mac App Store version of Assay has no network
+        access at all. We operate no account system and no servers the App talks to, and we cannot see
+        your files.
+      </p>
+
+      <h2 id="local">What the App processes locally</h2>
+      <ul>
+        <li>
+          <strong>Files you open</strong> — only files you choose: through the Open panel, by dropping
+          them on the window or the Dock icon, with Open With, or from the Finder menu. macOS’s App
+          Sandbox limits Assay to those files.
+        </li>
+        <li>
+          <strong>Files that belong with them</strong> — when you open a dBASE table or an SQLite
+          database, Assay also reads the companion file macOS lets it read beside it (a memo
+          <code>.fpt</code>/<code>.dbt</code> file, or a database’s <code>-wal</code> and
+          <code>-shm</code> files), because the data you opened is partly stored there.
+        </li>
+        <li>
+          <strong>Conversions and edits</strong> — written only where you choose, in the Save panel or
+          when you save a file in place. Some conversions use temporary copies in Assay’s own sandboxed
+          temporary folder, which are deleted when the conversion finishes.
+        </li>
+        <li>
+          <strong>Quick Look previews</strong> — the Quick Look extension reads the one file Finder asks
+          it to preview and produces the preview on your Mac. It has no network access and keeps
+          nothing.
+        </li>
+        <li>
+          <strong>The Finder menu</strong> — when you choose Open in Assay or Convert with Assay…, the
+          extension records which file and which action in a container shared only by Assay and its
+          extension, so the App knows what you asked for. The note is removed as soon as the App reads
+          it, and expires after a minute if it is not.
+        </li>
+        <li>
+          <strong>Recent files and settings</strong> — a list of recently opened files (as macOS
+          security bookmarks, so they can be reopened), the viewer you prefer for each kind of file, and
+          whether the inspector is showing, stored in local preferences.
+        </li>
+      </ul>
+
+      <h2 id="network">Network access</h2>
+      <p>
+        The Mac App Store version of Assay does not have permission to use the network. It sends
+        nothing and fetches nothing. Web pages, Markdown documents and emails are shown with anything
+        they link to on the web left out: remote images are not loaded, which also stops tracking pixels
+        in email from reporting that you opened a message.
+      </p>
+
+      <h2 id="purchases">Purchases</h2>
+      <p>
+        Assay is free to download. <strong>Assay Unlock</strong> is an in-app purchase made through the
+        Mac App Store. Apple handles the payment under
+        <a href="https://www.apple.com/legal/privacy/">Apple’s Privacy Policy</a>. The App asks macOS
+        whether your Apple ID owns the purchase; it does not see your Apple ID, your payment details or
+        your identity, and we receive only the sales and payout reports Apple provides to developers,
+        which do not identify you personally.
+      </p>
+
+      <h2 id="support">If you contact us</h2>
+      <p>
+        If you email support, we receive your email address and whatever you include in your message,
+        and use them only to reply. Please do not send files that contain other people’s personal data
+        unless it is needed to solve the problem.
+      </p>
+
+      <h2 id="analytics">Analytics, tracking, and advertising</h2>
+      <p>
+        The App contains <strong>no analytics SDKs, no advertising SDKs, and no third-party
+        trackers</strong>. We do not profile you, and we do not sell or share personal information. If
+        this ever changes, this policy will be updated before that change ships, and any collection
+        would be opt-in.
+      </p>
+
+      <h2 id="files-you-hold">Other people’s information in your files</h2>
+      <p>
+        Files you open with Assay — spreadsheets, databases, email, contacts, calendars — may contain
+        other people’s personal data. That data stays on your Mac and under your control; we never see
+        it. You are responsible for handling it lawfully, including anything you convert or share.
+      </p>
+
+      <h2 id="retention">Data retention</h2>
+      <p>
+        Your files, conversions and edits remain wherever you saved them until you delete them.
+        Temporary copies are deleted when the work that needed them finishes. Recent files and settings
+        remain until you clear them (File → Open Recent → Clear Menu) or uninstall the App. Support
+        emails are kept as long as needed to help you.
+      </p>
+
+      <h2 id="choices">Your rights and choices</h2>
+      <ul>
+        <li>Open only the files you choose to; Assay cannot reach any others</li>
+        <li>Turn the Finder and Quick Look extensions on or off in System Settings</li>
+        <li>Clear the recent files list at any time</li>
+        <li>Uninstall the App to remove it and its settings</li>
+      </ul>
+      <p>
+        Because we do not collect your personal information, there is generally nothing for us to export
+        or delete on request. If you have contacted support, you may ask us about the messages we hold.
+      </p>
+
+      <h2 id="children">Children’s privacy</h2>
+      <p>The App is not directed to children under 13 (or the minimum age in your jurisdiction).</p>
+
+      <h2 id="changes">Changes</h2>
+      <p>
+        We may update this policy. The “Last updated” date will change when we do. Continued use after
+        an update means you accept the revised policy for subsequent use.
+      </p>
+
+      <h2 id="contact">Contact</h2>
+      <p>
+        Privacy questions:
+        <a href="mailto:support@precisionsolutionstech.com">support@precisionsolutionstech.com</a>
+        ·
+        <a href="mailto:hello@precisionsolutionstech.com">hello@precisionsolutionstech.com</a>
+      </p>
+      <p>
+        <a href="/apps/assay/support/">Assay Support</a>
+        · Company-wide policy:
+        <a href="/legal/privacy/">Precision Solutions Tech Privacy Policy</a>
+        · Company:
+        <a href="/about/">About us</a>
+      </p>
+    </article>
+  </div>
+</Base>

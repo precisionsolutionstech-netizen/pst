@@ -69,6 +69,8 @@ set(
   '/apps/precisdesk/support/',
   dateOf(`${PAGES}/apps/precisdesk/support/index.astro`),
 );
+set('/legal/privacy/assay/', dateOf(`${PAGES}/legal/privacy/assay/index.astro`));
+set('/apps/assay/support/', dateOf(`${PAGES}/apps/assay/support/index.astro`));
 
 /* ------------------------------ index pages ----------------------------- */
 
