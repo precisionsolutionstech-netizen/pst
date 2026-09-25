@@ -1,0 +1,157 @@
+---
+import Base from '../../../../layouts/Base.astro';
+
+const SITE = 'https://precisionsolutionstech.com';
+const title = 'Assay Support | Precision Solutions Tech';
+const description =
+  'Support for Assay, the Mac app that opens any file and converts it with a check of what was kept: requirements, Assay Unlock, the Finder menu and Quick Look previews, and answers to common questions.';
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` },
+      { '@type': 'ListItem', position: 2, name: 'Apps', item: `${SITE}/apps/` },
+      { '@type': 'ListItem', position: 3, name: 'Assay', item: `${SITE}/apps/assay/` },
+      { '@type': 'ListItem', position: 4, name: 'Support', item: `${SITE}/apps/assay/support/` },
+    ],
+  },
+];
+---
+
+<Base
+  title={title}
+  description={description}
+  path="/apps/assay/support/"
+  jsonLd={jsonLd}
+  active="apps"
+>
+  <div class="wrap">
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li><a href="/apps/">Apps</a></li>
+        <li><a href="/apps/assay/">Assay</a></li>
+        <li>Support</li>
+      </ol>
+    </nav>
+
+    <article class="prose">
+      <h1>Assay Support</h1>
+      <p class="lead">
+        Something not working, or a question the app does not answer? Email
+        <a href="mailto:support@precisionsolutionstech.com">support@precisionsolutionstech.com</a>
+        and tell us your macOS version, the kind of file (its extension is enough — you do not need to
+        send the file), and what you expected to happen. We read every message.
+      </p>
+
+      <h2 id="requirements">Requirements</h2>
+      <ul>
+        <li>macOS 14 (Sonoma) or later</li>
+        <li>Apple Silicon or Intel — Assay is native on both</li>
+      </ul>
+
+      <h2 id="unlock">Free, and Assay Unlock</h2>
+      <p>
+        Assay is free to download, and viewing is free for good: every file opens, every viewer
+        works, and the inspector shows exactly what a conversion would keep and what it would lose.
+      </p>
+      <p>
+        <strong>Assay Unlock</strong> is a one-time in-app purchase that adds converting, editing and
+        saving, and trimming and exporting sound and video. It is not a subscription. Buy it from the
+        sheet that appears when you press Convert or Edit, or from <strong>Assay → Unlock
+        Assay…</strong>.
+      </p>
+      <h3>I bought it, but Assay is asking again</h3>
+      <p>
+        Choose <strong>Assay → Restore Purchase</strong>, or Restore Purchase on the unlock sheet. The
+        purchase belongs to your Apple ID, so it works on every Mac signed in to the App Store with
+        that Apple ID. If you used Ask to Buy, Assay unlocks by itself once the purchase is approved.
+      </p>
+      <h3>Refunds</h3>
+      <p>
+        Purchases are made through the Mac App Store, so refunds are handled by Apple at
+        <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>.
+      </p>
+
+      <h2 id="finder">The Finder menu and Quick Look previews</h2>
+      <p>
+        Assay adds <strong>Open in Assay</strong> and <strong>Convert with Assay…</strong> to
+        Finder’s right-click menu, and space-bar previews for files macOS cannot show on its own — dBASE
+        tables, SQLite databases, Outlook <code>.msg</code> messages, TOML, JSON Lines and more.
+      </p>
+      <p>
+        macOS asks you to switch extensions on yourself. Choose <strong>Assay → Turn On Finder Menu and
+        Previews…</strong>. That opens the place in System Settings where extensions are switched on —
+        <strong>General → Login Items &amp; Extensions</strong> on macOS 15 and later,
+        <strong>Privacy &amp; Security → Extensions</strong> on macOS 14 — where you turn on Assay
+        under <em>Finder</em> and <em>Quick Look</em>. If the
+        menu still does not appear, relaunch Finder (hold ⌥, right-click Finder in the Dock, choose
+        Relaunch).
+      </p>
+      <p>
+        <strong>Convert with Assay…</strong> opens the file in Assay with what the conversion would
+        keep and lose already showing. Without Assay Unlock you can read that report; converting asks
+        for the unlock.
+      </p>
+
+      <h2 id="troubleshooting">Common questions</h2>
+      <h3>Assay says my file was “named wrongly”</h3>
+      <p>
+        Assay identifies files by their contents, not their extension. A spreadsheet saved as
+        <code>.csv</code> that is really an Excel workbook, or a <code>.doc</code> that is really a web
+        page, is reported as what it actually is.
+      </p>
+      <h3>Why does a conversion say something will be lost?</h3>
+      <p>
+        Every conversion is checked: Assay writes the result, reads it back, and compares it with the
+        original. When a format cannot hold something — leading zeros in a spreadsheet opened by Excel,
+        a table wider than Word allows, transparency in a JPEG — Assay says so, counts it, and tells you
+        which format would keep it. “Nothing lost” is only said when the result was read back and
+        matched.
+      </p>
+      <h3>Why can’t I convert a PDF to Word?</h3>
+      <p>
+        A PDF is a drawing of pages: text and pictures placed at positions, with no paragraphs, headings
+        or reliable fonts to rebuild a document from. A Word file made from one would not look like the
+        original, so Assay does not offer it. It converts a PDF to its words as Plain Text, or to
+        pictures of its pages as PNG, JPEG or TIFF, which look exactly like it.
+      </p>
+      <h3>A dBASE table’s memo fields are empty</h3>
+      <p>
+        dBASE keeps memo text in a separate <code>.fpt</code> or <code>.dbt</code> file with the same
+        name, beside the table. Make sure that file is in the same folder as the <code>.dbf</code>, then
+        open the table again.
+      </p>
+      <h3>An email shows “remote images not loaded”</h3>
+      <p>
+        Assay never goes on the network. Images an email links to on the web are left out, which also
+        stops tracking pixels from telling the sender you opened it.
+      </p>
+      <h3>Can Assay convert a whole folder?</h3>
+      <p>Assay works on one file at a time.</p>
+
+      <h2 id="privacy">Privacy</h2>
+      <p>
+        Assay runs entirely on your Mac. Your files are opened, converted and previewed locally and are
+        never sent to us — the App Store version has no network access at all. There is no account and
+        no analytics. Full detail is in the <a href="/legal/privacy/assay/">Assay Privacy Policy</a>.
+      </p>
+
+      <h2 id="contact">Contact</h2>
+      <p>
+        <a href="mailto:support@precisionsolutionstech.com">support@precisionsolutionstech.com</a>
+        ·
+        <a href="mailto:hello@precisionsolutionstech.com">hello@precisionsolutionstech.com</a>
+      </p>
+      <p>
+        <a href="/apps/assay/">Assay overview</a>
+        ·
+        <a href="/legal/privacy/assay/">Privacy Policy</a>
+        ·
+        <a href="/about/">About us</a>
+      </p>
+    </article>
+  </div>
+</Base>

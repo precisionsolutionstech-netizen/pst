@@ -32,6 +32,7 @@ const trialUrl = (a as { trialDownloadUrl?: string }).trialDownloadUrl;
 const hasDirect = Boolean(a.purchaseUrl || trialUrl);
 const ctaTitle = (a as { ctaTitle?: string }).ctaTitle;
 const ctaBody = (a as { ctaBody?: string }).ctaBody;
+const comingSoonNote = (a as { comingSoonNote?: string }).comingSoonNote;
 
 const title = metaTitle || `${a.name} | macOS App | Precision Solutions Tech`;
 const description = a.shortDescription.length > 158
@@ -253,12 +254,18 @@ const jsonLd = [
 
           {a.comingSoon && (
             <div class="app-cta">
-              <div class="app-cta-row">
-                <a class="btn btn-secondary" href="https://solutionsprecision.gumroad.com/" rel="noopener">
-                  Coming soon — visit our Gumroad store
-                </a>
-              </div>
-              {a.os && <p class="app-reqs">Requires {a.os}</p>}
+              {/* Where it will be released, when the app says: an App Store app
+                  has nothing to link to until it is live. */}
+              {comingSoonNote ? (
+                <p class="app-coming-soon">{comingSoonNote}</p>
+              ) : (
+                <div class="app-cta-row">
+                  <a class="btn btn-secondary" href="https://solutionsprecision.gumroad.com/" rel="noopener">
+                    Coming soon — visit our Gumroad store
+                  </a>
+                </div>
+              )}
+              {a.os && <p class="app-reqs">Requires {a.os}{comingSoonNote ? ' · Apple Silicon or Intel' : ''}</p>}
             </div>
           )}
         </div>
@@ -277,15 +284,19 @@ const jsonLd = [
                 data-shot-main
               />
             </figure>
-            <button type="button" class="shot-nav shot-nav-prev" aria-label="Previous screenshot" data-shot-prev>
-              ‹
-            </button>
-            <button type="button" class="shot-nav shot-nav-next" aria-label="Next screenshot" data-shot-next>
-              ›
-            </button>
+            {screenshots.length > 1 && (
+              <>
+                <button type="button" class="shot-nav shot-nav-prev" aria-label="Previous screenshot" data-shot-prev>
+                  ‹
+                </button>
+                <button type="button" class="shot-nav shot-nav-next" aria-label="Next screenshot" data-shot-next>
+                  ›
+                </button>
+              </>
+            )}
           </div>
           <p class="shot-caption" data-shot-caption>{screenshots[0].caption || screenshots[0].alt}</p>
-          <div class="shot-dots" role="tablist" aria-label="Screenshot slides">
+          {screenshots.length > 1 && <div class="shot-dots" role="tablist" aria-label="Screenshot slides">
             {screenshots.map((s, i) => (
               <button
                 type="button"
@@ -299,7 +310,7 @@ const jsonLd = [
                 data-shot-cap={s.caption || s.alt}
               />
             ))}
-          </div>
+          </div>}
         </section>
       )}
 
@@ -447,6 +458,15 @@ const jsonLd = [
     .feature-guide-list a { border-color: rgba(255,255,255,.14); }
   }
 
+  .app-coming-soon {
+    display: inline-block;
+    margin: 0;
+    padding: 10px 16px;
+    border-radius: 12px;
+    border: 1px dashed var(--muted);
+    font-weight: 600;
+    color: var(--ink);
+  }
   .app-hero {
     padding: 20px 0 8px;
     max-width: 820px;
