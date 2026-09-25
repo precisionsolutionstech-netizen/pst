@@ -124,10 +124,24 @@ const jsonLd = [
         name, beside the table. Make sure that file is in the same folder as the <code>.dbf</code>, then
         open the table again.
       </p>
-      <h3>An email shows “remote images not loaded”</h3>
+      <h3>An email or web page shows “not loaded”</h3>
       <p>
-        Assay never goes on the network. Images an email links to on the web are left out, which also
-        stops tracking pixels from telling the sender you opened it.
+        Assay holds back anything a file uses from the web until you ask for it, which also stops
+        tracking pixels from telling the sender you opened an email. Choose <em>Load Remote Images</em>
+        or <em>Load Remote Content</em> above it to load it for that file.
+      </p>
+      <h3>A page’s pictures show as missing</h3>
+      <p>
+        macOS lets Assay read only the file you opened, not the folder around it. Choose the
+        <em>Allow…</em> button above the page and pick its folder; Assay remembers it. Assay › Forget
+        Folders Allowed for Pictures takes every folder back.
+      </p>
+      <h3>Converting a web page</h3>
+      <p>
+        Assay converts a page as your browser shows it: its stylesheets, fonts and pictures. PDF is the
+        page exactly as printed; Word carries the fonts, colours, alignment and pictures; HTML becomes one
+        self-contained file. If the page uses things from the web you have not loaded, Assay asks whether
+        to load them into the converted file.
       </p>
       <h3>Can Assay convert a whole folder?</h3>
       <p>Assay works on one file at a time.</p>
@@ -135,8 +149,8 @@ const jsonLd = [
       <h2 id="privacy">Privacy</h2>
       <p>
         Assay runs entirely on your Mac. Your files are opened, converted and previewed locally and are
-        never sent to us — the App Store version has no network access at all. There is no account and
-        no analytics. Full detail is in the <a href="/legal/privacy/assay/">Assay Privacy Policy</a>.
+        never sent to us. Assay goes on the internet only to load a file’s remote content when you ask
+        it to, and never to us. There is no account and no analytics. Full detail is in the <a href="/legal/privacy/assay/">Assay Privacy Policy</a>.
       </p>
 
       <h2 id="contact">Contact</h2>

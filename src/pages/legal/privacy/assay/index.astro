@@ -4,7 +4,7 @@ import Base from '../../../../layouts/Base.astro';
 const SITE = 'https://precisionsolutionstech.com';
 const title = 'Assay Privacy Policy | Precision Solutions Tech';
 const description =
-  'How Assay handles the files you open, convert and preview. Everything is processed on your Mac; the App Store version has no network access, no account and no analytics.';
+  'How Assay handles the files you open, convert and preview. Everything is processed on your Mac; Assay connects to the internet only when you ask it to load a file’s remote content, and has no account and no analytics.';
 
 const jsonLd = [
   {
@@ -56,9 +56,10 @@ const jsonLd = [
       <h2 id="summary">Short version</h2>
       <p>
         Assay runs <strong>on your Mac</strong>. The files you open, view, edit, convert and preview are
-        processed locally and are never sent to us. The Mac App Store version of Assay has no network
-        access at all. We operate no account system and no servers the App talks to, and we cannot see
-        your files.
+        processed locally and are never sent to us. Assay connects to the internet only when you ask it
+        to load the pictures, stylesheets or fonts a web page, Markdown file or email uses from the web —
+        and then only to those sites, never to us. We operate no account system and no servers the App
+        talks to, and we cannot see your files.
       </p>
 
       <h2 id="local">What the App processes locally</h2>
@@ -72,7 +73,10 @@ const jsonLd = [
           <strong>Files that belong with them</strong> — when you open a dBASE table or an SQLite
           database, Assay also reads the companion file macOS lets it read beside it (a memo
           <code>.fpt</code>/<code>.dbt</code> file, or a database’s <code>-wal</code> and
-          <code>-shm</code> files), because the data you opened is partly stored there.
+          <code>-shm</code> files), because the data you opened is partly stored there. When a web page
+          or Markdown file uses pictures, stylesheets or fonts from its own folder, Assay reads them only
+          after you allow that folder, and remembers the folders you allowed (as macOS security
+          bookmarks) until you choose Assay › Forget Folders Allowed for Pictures.
         </li>
         <li>
           <strong>Conversions and edits</strong> — written only where you choose, in the Save panel or
@@ -99,10 +103,23 @@ const jsonLd = [
 
       <h2 id="network">Network access</h2>
       <p>
-        The Mac App Store version of Assay does not have permission to use the network. It sends
-        nothing and fetches nothing. Web pages, Markdown documents and emails are shown with anything
-        they link to on the web left out: remote images are not loaded, which also stops tracking pixels
-        in email from reporting that you opened a message.
+        Assay has permission to use the network because macOS’s web view, which draws web pages,
+        Markdown and email, needs it even to show a file on your Mac. Assay itself sends nothing about
+        you or your files anywhere, and has no servers of ours to talk to.
+      </p>
+      <p>
+        <strong>Remote content is blocked until you ask for it, one file at a time.</strong> When a web
+        page, Markdown file or email uses pictures, stylesheets or fonts from the web, Assay shows how
+        many and loads none of them. If you choose <em>Load Remote Content</em> (or <em>Load and
+        Convert</em> when converting), Assay fetches them from the sites that host them, which can then
+        see that the file was opened and from what internet address — the same as opening it in a
+        browser. Holding them back by default also stops tracking pixels in email from reporting that
+        you opened a message. Scripts in pages and emails never run, and the web views keep no cookies
+        or other website data between files.
+      </p>
+      <p>
+        When you convert a page after loading its remote content, what was fetched is put into the
+        converted file on your Mac. Nothing is uploaded.
       </p>
 
       <h2 id="purchases">Purchases</h2>
