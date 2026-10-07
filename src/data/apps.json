@@ -148,16 +148,19 @@
     ],
     "price": "$9.99",
     "purchaseUrl": "https://solutionsprecision.gumroad.com/l/precisdesk",
-    "trialDownloadUrl": "/apps/precisdesk/releases/PrecisDesk-1.0.0.zip",
+    "trialDownloadUrl": "/apps/precisdesk/releases/PrecisDesk-1.1.0.zip",
     "comingSoon": false,
     "os": "macOS 14+",
-    "contentHtml": "<h2>What PrecisDesk is</h2>\n<p><strong>PrecisDesk</strong> (PREH-sis-desk) is a screen capture, screen recording and window manager for the Mac, in one native app. Take a shot, record a walkthrough, or put every window where it belongs — without learning three separate tools.</p>\n<p>Everything runs on your Mac. Nothing you capture is uploaded, there is no account, and there are no analytics or advertising SDKs.</p>\n\n<h2>Who it’s for</h2>\n<p>Mac users who live in screenshots, demos and multi-monitor layouts — support and QA teams, founders recording walkthroughs, and anyone who docks a laptop and rebuilds their windows twice a day.</p>\n\n<h2>Capture</h2>\n<ul>\n<li>Capture an <strong>area</strong>, a single <strong>window</strong>, or a whole <strong>screen</strong></li>\n<li><strong>Quick Access overlay</strong> after every capture — annotate, copy, print, reveal or delete</li>\n<li>Save folders you choose and <strong>filename templates</strong> you control</li>\n<li><strong>History</strong> of every capture, filterable, with a retention period</li>\n</ul>\n\n<h2>Annotate and redact</h2>\n<ul>\n<li>Crop, arrows, lines, shapes, freehand, text, highlighter and step counters</li>\n<li><strong>Spotlight, blur and pixelate</strong> — redaction applied to the exported image, not drawn on top</li>\n<li>On-device <strong>OCR</strong> (Apple Vision) to copy text out of any capture</li>\n<li>Colour picker in hex or RGB</li>\n<li>Non-destructive projects, plus PNG export</li>\n</ul>\n\n<h2>Screen recording</h2>\n<ul>\n<li>Record a display or a region to <strong>MP4</strong>, or export an animated <strong>GIF</strong></li>\n<li>Microphone and system audio, independently switchable</li>\n<li>Cursor, <strong>click highlights</strong> and on-screen <strong>keystrokes</strong> for walkthroughs</li>\n<li>Pause and resume — pauses are stitched out, not frozen into the file</li>\n<li>Hide PrecisDesk while recording so the app never appears in the video</li>\n</ul>\n\n<h2>Webcam picture-in-picture</h2>\n<ul>\n<li>Burn the camera in as you record, <em>or</em> place it afterwards in the editor</li>\n<li>Any corner or anywhere you drag it, in a circle or a rounded rectangle, with a border</li>\n<li>Move it partway through so it never covers what matters, or hide it for a stretch</li>\n</ul>\n\n<h2>Captions</h2>\n<ul>\n<li>Generate captions from the recording’s own audio, <strong>on-device</strong> (Apple Speech)</li>\n<li>Edit the wording and retime any line</li>\n<li>Burn them into the video, or export a separate <code>.srt</code></li>\n</ul>\n\n<h2>Clip editor</h2>\n<ul>\n<li>Trim the ends, cut sections out of the middle, split and mute</li>\n<li>Compare <strong>Edited</strong> against <strong>Original</strong> before you commit</li>\n<li>Non-destructive — your source recording is never overwritten</li>\n</ul>\n\n<h2>Windows</h2>\n<ul>\n<li>Halves, quarters, <strong>thirds and sixths</strong>, maximize, centre and grid placement</li>\n<li>Keyboard shortcuts for everything, plus an on-screen <strong>snap palette</strong> and drag-to-edge zones</li>\n<li><strong>Put my windows back</strong> — remembers your arrangement per set of monitors and restores it when a display is unplugged and plugged back in</li>\n<li>Saved per-app layouts, size cycling, ignored apps, and gaps between tiled windows</li>\n<li><strong>Switcher</strong> with live window previews, grouped by app, with search and up to nine of your own shortcuts</li>\n<li>URL commands such as <code>precisdesk://snap/leftHalf</code></li>\n</ul>\n\n<h2>Privacy and permissions</h2>\n<p>PrecisDesk asks for Screen Recording, and — only if you use those features — Microphone, Camera, Speech Recognition, and Accessibility for moving other apps’ windows. You can decline or revoke any of them; features that depend on a permission you decline simply do not run.</p>\n\n<h2>Requirements</h2>\n<ul>\n<li>macOS 14 or later</li>\n<li>Apple Silicon or Intel, native</li>\n</ul>",
+    "contentHtml": "<h2>What PrecisDesk is</h2>\n<p><strong>PrecisDesk</strong> (PREH-sis-desk) is a screen capture, screen recording and window manager for the Mac, in one native app. Take a shot, record a walkthrough, or put every window where it belongs — without learning three separate tools.</p>\n<p>Everything runs on your Mac. Nothing you capture is uploaded, there is no account, and there are no analytics or advertising SDKs.</p>\n\n<h2>New in 1.1</h2>\n<ul>\n<li><strong>Pin to Screen</strong> — keep any screenshot floating above every window while you work. Drag it, scroll to resize, double-click to close.</li>\n<li><strong>Copy from the editor</strong> — ⌘C puts the image, annotations and redactions included, on the clipboard</li>\n<li><strong>Capture Previous Area</strong> — grab the same spot again without re-selecting, for before-and-after shots</li>\n<li>Undo and redo with ⌘Z and ⇧⌘Z, a clearer crop with handles and shape presets, and the Switcher switches the moment you let go of ⌥</li>\n</ul>\n\n<h2>Who it’s for</h2>\n<p>Mac users who live in screenshots, demos and multi-monitor layouts — support and QA teams, founders recording walkthroughs, and anyone who docks a laptop and rebuilds their windows twice a day.</p>\n\n<h2>Capture</h2>\n<ul>\n<li>Capture an <strong>area</strong>, a single <strong>window</strong>, or a whole <strong>screen</strong></li>\n<li><strong>Quick Access overlay</strong> after every capture — annotate, copy, pin, print, reveal or delete</li>\n<li><strong>Pin to Screen</strong> keeps a capture floating above every window</li>\n<li><strong>Capture Previous Area</strong> repeats your last selection in one step</li>\n<li>Save folders you choose and <strong>filename templates</strong> you control</li>\n<li><strong>History</strong> of every capture, filterable, with a retention period</li>\n</ul>\n\n<h2>Annotate and redact</h2>\n<ul>\n<li>Crop with handles and 1:1, 4:3 and 16:9 presets; arrows, lines, shapes, freehand, text, highlighter and step counters</li>\n<li>Undo and redo with ⌘Z and ⇧⌘Z, and ⌘C to copy the edited image</li>\n<li><strong>Spotlight, blur and pixelate</strong> — redaction applied to the exported image, not drawn on top</li>\n<li>On-device <strong>OCR</strong> (Apple Vision) to copy text out of any capture</li>\n<li>Colour picker in hex or RGB</li>\n<li>Non-destructive projects, plus PNG export</li>\n</ul>\n\n<h2>Screen recording</h2>\n<ul>\n<li>Record a display or a region to <strong>MP4</strong>, or export an animated <strong>GIF</strong></li>\n<li>Microphone and system audio, independently switchable</li>\n<li>Cursor, <strong>click highlights</strong> and on-screen <strong>keystrokes</strong> for walkthroughs</li>\n<li>Pause and resume — pauses are stitched out, not frozen into the file</li>\n<li>Hide PrecisDesk while recording so the app never appears in the video</li>\n</ul>\n\n<h2>Webcam picture-in-picture</h2>\n<ul>\n<li>Burn the camera in as you record, <em>or</em> place it afterwards in the editor</li>\n<li>Any corner or anywhere you drag it, in a circle or a rounded rectangle, with a border</li>\n<li>Move it partway through so it never covers what matters, or hide it for a stretch</li>\n</ul>\n\n<h2>Captions</h2>\n<ul>\n<li>Generate captions from the recording’s own audio, <strong>on-device</strong> (Apple Speech)</li>\n<li>Edit the wording and retime any line</li>\n<li>Burn them into the video, or export a separate <code>.srt</code></li>\n</ul>\n\n<h2>Clip editor</h2>\n<ul>\n<li>Trim the ends, cut sections out of the middle, split and mute</li>\n<li>Compare <strong>Edited</strong> against <strong>Original</strong> before you commit</li>\n<li>Non-destructive — your source recording is never overwritten</li>\n</ul>\n\n<h2>Windows</h2>\n<ul>\n<li>Halves, quarters, <strong>thirds and sixths</strong>, maximize, centre and grid placement</li>\n<li>Keyboard shortcuts for everything, plus an on-screen <strong>snap palette</strong> and drag-to-edge zones</li>\n<li><strong>Put my windows back</strong> — remembers your arrangement per set of monitors and restores it when a display is unplugged and plugged back in</li>\n<li>Saved per-app layouts, size cycling, ignored apps, and gaps between tiled windows</li>\n<li><strong>Switcher</strong> with live window previews, grouped by app, with search and up to nine of your own shortcuts — let go of ⌥ to switch</li>\n<li>URL commands such as <code>precisdesk://snap/leftHalf</code></li>\n</ul>\n\n<h2>Privacy and permissions</h2>\n<p>PrecisDesk asks for Screen Recording, and — only if you use those features — Microphone, Camera, Speech Recognition, and Accessibility for moving other apps’ windows. You can decline or revoke any of them; features that depend on a permission you decline simply do not run.</p>\n\n<h2>Requirements</h2>\n<ul>\n<li>macOS 14 or later</li>\n<li>Apple Silicon or Intel, native</li>\n</ul>",
     "metaTitle": "PrecisDesk — Mac Screenshot, Screen Recorder & Window Manager",
     "featureList": [
       "Capture an area, a window, or a whole screen",
+      "Pin screenshots above every window",
+      "Capture the previous area again in one step",
       "Annotate with arrows, shapes, text, highlighter and step counters",
       "Blur, pixelate and spotlight for redaction",
       "On-device OCR to copy text out of any capture",
+      "Undo, redo and copy edited images straight to the clipboard",
       "Screen recording with pause and resume, exporting MP4 or GIF",
       "Microphone, system audio, click highlights and on-screen keystrokes",
       "Webcam picture-in-picture you can reposition after recording",
@@ -170,7 +173,7 @@
     "pitch": "Take the shot, record the walkthrough, and put every window where it belongs — without stitching three apps together. Everything runs on your Mac.",
     "icon": "/apps/precisdesk/icon/AppIcon-256.png",
     "ogImage": "/apps/precisdesk/features/01-screenshots.png",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "trustPoints": [
       "Runs entirely on your Mac — nothing you capture is uploaded",
       "No account, no subscription, no analytics or advertising SDKs",
@@ -236,7 +239,7 @@
       },
       {
         "q": "Why does it need Accessibility permission?",
-        "a": "Moving and resizing another app’s windows requires the macOS Accessibility permission. Decline it and the capture and recording features still work — only window management needs it."
+        "a": "Moving and resizing another app’s windows, and bringing one forward from the Switcher, requires the macOS Accessibility permission. Decline it and the capture and recording features still work — only window management needs it."
       },
       {
         "q": "Can it put my windows back after I unplug a monitor?",
@@ -244,7 +247,7 @@
       },
       {
         "q": "What does it cost?",
-        "a": "$9.99, once. PrecisDesk is a one-time purchase on the Mac App Store — no account and no subscription."
+        "a": "$9.99, once — on the Mac App Store or directly through Gumroad. No account and no subscription."
       },
       {
         "q": "What does it run on?",
@@ -252,13 +255,13 @@
       },
       {
         "q": "Where can I buy PrecisDesk?",
-        "a": "On the Mac App Store. Unlike Twinkeep, there is no direct or Gumroad build of PrecisDesk yet."
+        "a": "On the Mac App Store, or directly through Gumroad with a free 7-day trial you can download from this page. Both are the same app; the direct build updates itself."
       }
     ],
     "appStoreUrl": "https://apps.apple.com/us/app/precisdesk/id6810492077?mt=12",
     "appStoreHasTrial": false,
     "ctaTitle": "Ready to take the shot?",
-    "ctaBody": "One-time purchase on the Mac App Store. Everything runs on your Mac — nothing you capture is uploaded."
+    "ctaBody": "One-time purchase on the Mac App Store or Gumroad. Everything runs on your Mac — nothing you capture is uploaded."
   },
   {
     "slug": "assay",

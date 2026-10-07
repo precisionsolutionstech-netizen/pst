@@ -63,8 +63,9 @@ const jsonLd = [
           previews in the Switcher. macOS requires this even for still screenshots.
         </li>
         <li>
-          <strong>Accessibility</strong> — required to move and resize other apps’ windows. Capture
-          and recording work without it; window management does not.
+          <strong>Accessibility</strong> — required to move and resize other apps’ windows and to
+          bring a window forward from the Switcher. Capture and recording work without it; window
+          management does not.
         </li>
         <li><strong>Microphone</strong> — only to record your voice.</li>
         <li><strong>Camera</strong> — only for webcam picture-in-picture.</li>
@@ -90,6 +91,26 @@ const jsonLd = [
         Check Accessibility permission first. If it is granted, look at the top of the Windows tab —
         PrecisDesk acts on the window you were last using, and it tells you which one that is. If it
         says no window is chosen, click a window in another app and try again.
+      </p>
+      <h3>PrecisDesk isn’t in the Accessibility list</h3>
+      <p>
+        Open PrecisDesk’s <strong>Settings → Permissions</strong> and click
+        <em>Open Accessibility settings</em>. If PrecisDesk still isn’t listed in System Settings, click
+        <strong>+</strong> under the list and choose PrecisDesk from Applications — or use
+        <em>Show PrecisDesk in Finder</em> in the same Settings tab and drag the app into the list.
+        Then switch it on.
+      </p>
+      <h3>The Switcher closes when I let go of ⌥</h3>
+      <p>
+        That is the default since 1.1: hold ⌥, tap ⇥ to move through windows, and let go to switch —
+        the way ⌘⇥ works. If you would rather it stayed open until you click or press Return, set
+        <strong>Activation</strong> to <em>Keep open</em> on the Switcher page of the Windows tab.
+        Opened from the button or the menu, it always stays open.
+      </p>
+      <h3>How do I close a pinned screenshot?</h3>
+      <p>
+        Double-click it, press Esc while it’s selected, or hover and click the × in its corner.
+        Drag a pin to move it and scroll over it to resize it. Right-click for Copy.
       </p>
       <h3>My windows did not come back after unplugging a monitor</h3>
       <p>
