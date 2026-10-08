@@ -75,6 +75,11 @@
   ],
   "medium": [
     {
+      "title": "We Paid For It. So Why Don’t We Own It?",
+      "url": "https://medium.com/@precision.solutions.tech/we-paid-for-it-so-why-dont-we-own-it-c62c637f7a32",
+      "blurb": "Why so many Mac apps that never touch a server still charge rent, a simple test for when a subscription is fair, and why we sell <a href=\"/apps/twinkeep/\">Twinkeep</a> and <a href=\"/apps/precisdesk/\">PrecisDesk</a> for a single payment."
+    },
+    {
       "title": "How to Make Vibe Coding Actually Work",
       "url": "https://medium.com/@precision.solutions.tech/how-to-make-vibe-coding-actually-work-e842e5ae8176",
       "blurb": "Use APIs for the hard parts, vibe code the glue. Why AI-generated code fails on complex problems and how to make it reliable."
