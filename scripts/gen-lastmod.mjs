@@ -71,6 +71,10 @@ set(
 );
 set('/legal/privacy/assay/', dateOf(`${PAGES}/legal/privacy/assay/index.astro`));
 set('/apps/assay/support/', dateOf(`${PAGES}/apps/assay/support/index.astro`));
+set('/ios-apps/', dateOf(`${PAGES}/ios-apps/index.astro`));
+set('/ios-apps/twinkeep/', dateOf(`${PAGES}/ios-apps/twinkeep/index.astro`));
+set('/ios-apps/twinkeep/support/', dateOf(`${PAGES}/ios-apps/twinkeep/support/index.astro`));
+set('/legal/privacy/twinkeep-ios/', dateOf(`${PAGES}/legal/privacy/twinkeep-ios/index.astro`));
 
 /* ------------------------------ index pages ----------------------------- */
 
