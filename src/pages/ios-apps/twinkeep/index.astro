@@ -1,0 +1,137 @@
+---
+import Base from '../../../layouts/Base.astro';
+
+const SITE = 'https://precisionsolutionstech.com';
+const title = 'Twinkeep for iPhone & iPad — Duplicate Photo Cleaner, Pay Once';
+const description =
+  'Twinkeep finds duplicate and lookalike photos, keeps the sharpest shot, and shrinks 4K videos — on your iPhone, with nothing uploaded. Free to scan, $9.99 once to clean.';
+
+const shots = [
+  { src: '/ios-apps/twinkeep/01-home.jpg', alt: 'Twinkeep home screen showing 134 MB of duplicates you could get back' },
+  { src: '/ios-apps/twinkeep/03-group.jpg', alt: 'A group of lookalike photos with the sharpest marked Keep and the shaky one marked Remove' },
+  { src: '/ios-apps/twinkeep/07-beforeafter.jpg', alt: 'A 4K video and its 1080p copy side by side, 42.5 MB smaller' },
+  { src: '/ios-apps/twinkeep/08-live.jpg', alt: 'A Live Photo with Still, Live, Loop, Bounce and Exposure options' },
+];
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareApplication',
+    name: 'Twinkeep – Duplicate Cleaner',
+    operatingSystem: 'iOS 17.0 or later',
+    applicationCategory: 'UtilitiesApplication',
+    description,
+    url: `${SITE}/ios-apps/twinkeep/`,
+    image: `${SITE}/ios-apps/twinkeep/icon-256.png`,
+    publisher: { '@type': 'Organization', name: 'Precision Solutions Tech' },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` },
+      { '@type': 'ListItem', position: 2, name: 'iOS Apps', item: `${SITE}/ios-apps/` },
+      { '@type': 'ListItem', position: 3, name: 'Twinkeep', item: `${SITE}/ios-apps/twinkeep/` },
+    ],
+  },
+];
+---
+
+<Base title={title} description={description} path="/ios-apps/twinkeep/" active="ios-apps" jsonLd={jsonLd}>
+  <div class="wrap">
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li><a href="/ios-apps/">iOS Apps</a></li>
+        <li>Twinkeep</li>
+      </ol>
+    </nav>
+
+    <header class="hero-ios">
+      <img src="/ios-apps/twinkeep/icon-256.png" alt="Twinkeep app icon" width="96" height="96" class="ios-icon" />
+      <div>
+        <h1>Twinkeep for iPhone &amp; iPad</h1>
+        <p class="lead">Keep one twin. Clean up the rest — for one payment, not a subscription.</p>
+        <p class="status">
+          <span class="pill pill-success">Free to scan · $9.99 once</span>
+          <span class="pill">Coming soon to the App Store</span>
+        </p>
+      </div>
+    </header>
+
+    <div class="shots">
+      {shots.map((s) => <img src={s.src} alt={s.alt} loading="lazy" decoding="async" width="506" height="1100" />)}
+    </div>
+
+    <article class="prose">
+      <p>
+        The same shot saved four times — once from the camera, once from a chat, twice from an
+        edit. Twinkeep finds the duplicates in your photo library, shows you exactly what it found,
+        and lets you decide. Scanning is free. Cleaning is <strong>$9.99, once</strong>.
+      </p>
+
+      <h2 id="duplicates">Find every duplicate</h2>
+      <ul>
+        <li><strong>Exact copies</strong> — the same file saved more than once, found by content whatever it’s called</li>
+        <li><strong>Lookalikes</strong> — re-saved, re-sized and edited copies of the same picture</li>
+        <li><strong>Series</strong> — bursts and quick retakes, with the sharpest shot suggested</li>
+        <li>Compare two photos side by side and zoom both together, or swipe through a group</li>
+      </ul>
+
+      <h2 id="space">Get real space back</h2>
+      <ul>
+        <li><strong>Large videos</strong> — shrink 4K clips to 1080p, 720p or 480p</li>
+        <li><strong>Live Photos</strong> — keep just the photo, or pick a different moment as the photo</li>
+        <li><strong>Screenshots</strong> — clear old ones by month</li>
+        <li><strong>Possibly blurry</strong> — find shaky and pocket shots</li>
+        <li><strong>Before &amp; after</strong> — play the original and the smaller copy together before deciding</li>
+      </ul>
+
+      <h2 id="safe">Nothing disappears behind your back</h2>
+      <p>
+        Removed items go to a Twinkeep Quarantine album first, so you can restore anything. When you
+        empty it, iOS asks you to confirm, and Recently Deleted keeps everything for another 30 days.
+      </p>
+
+      <h2 id="private">Private by design</h2>
+      <p>
+        Everything happens on your iPhone or iPad. No account, no upload, no tracking, no ads. Read
+        the <a href="/legal/privacy/twinkeep-ios/">privacy policy</a>.
+      </p>
+
+      <h2 id="requirements">Requirements</h2>
+      <ul>
+        <li>iPhone or iPad with iOS / iPadOS 17 or later</li>
+        <li>Family Sharing: one purchase covers your family</li>
+      </ul>
+
+      <h2 id="mac">On a Mac?</h2>
+      <p>
+        <a href="/apps/twinkeep/">Twinkeep for Mac</a> is a separate app, on the
+        <a href="https://apps.apple.com/us/app/twinkeep/id6804921120?mt=12" rel="noopener">Mac App Store</a>
+        or direct with a free trial via
+        <a href="https://solutionsprecision.gumroad.com/l/qruoy" rel="noopener">Gumroad</a>.
+      </p>
+
+      <p>
+        <a href="/ios-apps/twinkeep/support/">Support</a>
+        ·
+        <a href="/legal/privacy/twinkeep-ios/">Privacy Policy</a>
+      </p>
+    </article>
+  </div>
+</Base>
+
+<style>
+  .hero-ios { display: flex; gap: 20px; align-items: center; margin: 8px 0 24px; }
+  .hero-ios h1 { margin: 0 0 6px; }
+  .hero-ios .lead { margin: 0 0 10px; }
+  .hero-ios .status { display: flex; gap: 8px; flex-wrap: wrap; margin: 0; }
+  .ios-icon { width: 96px; height: 96px; border-radius: 22px; box-shadow: 0 8px 22px rgba(15, 23, 42, 0.18); flex-shrink: 0; }
+  .shots { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin: 0 0 32px; }
+  .shots img { width: 100%; height: auto; border-radius: 16px; box-shadow: 0 8px 22px rgba(15, 23, 42, 0.12); }
+  @media (max-width: 720px) {
+    .hero-ios { flex-direction: column; align-items: flex-start; }
+    .shots { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>

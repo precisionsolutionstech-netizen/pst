@@ -1,0 +1,80 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const SITE = 'https://precisionsolutionstech.com';
+const title = 'iOS Apps — iPhone & iPad Utilities | Precision Solutions Tech';
+const description =
+  'Apps for iPhone and iPad from Precision Solutions Tech. Twinkeep finds duplicate photos and shrinks big videos, on your device, for one payment.';
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'iOS Apps',
+    numberOfItems: 1,
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, url: `${SITE}/ios-apps/twinkeep/`, name: 'Twinkeep for iPhone & iPad' },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` },
+      { '@type': 'ListItem', position: 2, name: 'iOS Apps', item: `${SITE}/ios-apps/` },
+    ],
+  },
+];
+---
+
+<Base title={title} description={description} path="/ios-apps/" active="ios-apps" jsonLd={jsonLd}>
+  <div class="wrap">
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li>iOS Apps</li>
+      </ol>
+    </nav>
+
+    <header class="prose" style="margin-bottom: 8px;">
+      <h1>iOS Apps</h1>
+      <p class="lead">
+        Apps for iPhone and iPad, built the same way as our <a href="/apps/">Mac apps</a>: native,
+        local-first, and paid for once. No account, no tracking, no subscription.
+      </p>
+    </header>
+
+    <section class="section" style="padding: 32px 0 8px;">
+      <div class="card-grid">
+        <a class="card app-card" href="/ios-apps/twinkeep/">
+          <img class="app-card-icon" src="/ios-apps/twinkeep/icon-256.png" alt="" width="48" height="48" decoding="async" />
+          <h3>Twinkeep for iPhone &amp; iPad</h3>
+          <p>Find duplicate photos, keep the best shot, and shrink big videos — all on your device.</p>
+          <span class="card-meta">
+            <span class="pill pill-accent">iOS 17+</span>
+            <span class="pill pill-success">Free to scan · $9.99 once</span>
+            <span class="pill">Coming soon to the App Store</span>
+          </span>
+        </a>
+      </div>
+    </section>
+
+    <section class="section prose" style="padding: 24px 0 32px;">
+      <h2>How these apps are built</h2>
+      <p>
+        Every app here is native iOS, written in Swift and SwiftUI. Your photos and files are
+        processed on your iPhone or iPad and never uploaded to us. Anything destructive is
+        reversible by default, and iOS always asks before anything is deleted.
+      </p>
+    </section>
+  </div>
+</Base>
+
+<style>
+  .app-card-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 11px;
+    box-shadow: 0 6px 16px rgba(15, 23, 42, 0.12);
+  }
+</style>
