@@ -1,0 +1,109 @@
+---
+import Base from '../../../../layouts/Base.astro';
+
+const SITE = 'https://precisionsolutionstech.com';
+const title = 'Twinkeep for iPhone & iPad Support | Precision Solutions Tech';
+const description =
+  'Support for Twinkeep on iPhone and iPad: contact, Photos access, restoring purchases, Quarantine and Recently Deleted, and common questions.';
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'iOS Apps', item: `${SITE}/ios-apps/` },
+      { '@type': 'ListItem', position: 2, name: 'Twinkeep', item: `${SITE}/ios-apps/twinkeep/` },
+      { '@type': 'ListItem', position: 3, name: 'Support', item: `${SITE}/ios-apps/twinkeep/support/` },
+    ],
+  },
+];
+---
+
+<Base title={title} description={description} path="/ios-apps/twinkeep/support/" jsonLd={jsonLd} active="ios-apps">
+  <div class="wrap">
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li><a href="/ios-apps/">iOS Apps</a></li>
+        <li><a href="/ios-apps/twinkeep/">Twinkeep</a></li>
+        <li>Support</li>
+      </ol>
+    </nav>
+
+    <article class="prose">
+      <h1>Twinkeep for iPhone &amp; iPad Support</h1>
+      <p class="lead">
+        Something not working, or a question the app does not answer? Email
+        <a href="mailto:support@precisionsolutionstech.com">support@precisionsolutionstech.com</a>
+        and tell us your device, iOS version, and what you expected to happen. We read every message.
+      </p>
+
+      <h2 id="requirements">Requirements</h2>
+      <ul>
+        <li>iPhone or iPad with iOS / iPadOS 17 or later</li>
+      </ul>
+
+      <h2 id="photos-access">Photos access</h2>
+      <p>
+        Twinkeep needs access to your Photos library to find duplicates. Choose
+        <strong>Full Access</strong> to check your whole library. With <strong>Limited Access</strong>,
+        Twinkeep only sees the photos you picked. Change it any time in
+        <strong>Settings → Twinkeep → Photos</strong>.
+      </p>
+
+      <h2 id="purchase">Purchase and restore</h2>
+      <p>
+        Scanning and reviewing are free. A one-time purchase of <strong>$9.99</strong> unlocks
+        cleaning: quarantining, deleting, and compressing. It is not a subscription.
+      </p>
+      <p>
+        On a new device or after reinstalling, open <strong>Settings</strong> (the gear on Home) and
+        tap <strong>Restore Purchase</strong>. Purchases are tied to your Apple Account and shared with
+        your family through Family Sharing. Refunds are handled by Apple at
+        <a href="https://reportaproblem.apple.com" rel="noopener">reportaproblem.apple.com</a>.
+      </p>
+
+      <h2 id="quarantine">Quarantine and Recently Deleted</h2>
+      <p>
+        Items you remove go to an album called <strong>Twinkeep Quarantine</strong> in your Photos
+        library first. Restore them in Twinkeep’s Quarantine tab. When you empty Quarantine, iOS asks
+        you to confirm and moves the items to <strong>Recently Deleted</strong> in the Photos app,
+        where you can still recover them for 30 days.
+      </p>
+
+      <h2 id="questions">Common questions</h2>
+      <h3>Why does compressing a video take a while?</h3>
+      <p>
+        Twinkeep re-encodes the video on your device. Long 4K clips take longer; keep Twinkeep open
+        while it works. On iOS 26 and later, it can keep going in the background.
+      </p>
+      <h3>Where is the original after I compress a video?</h3>
+      <p>
+        In Quarantine by default, until you decide. Open <strong>Clean Up → Before &amp; After</strong>
+        to play the original and the new copy together, then delete the original or undo.
+      </p>
+      <h3>Will deleting here delete from my other devices?</h3>
+      <p>
+        If you use iCloud Photos, yes — deletions sync to every device signed in to the same Apple
+        Account. Recently Deleted still keeps them for 30 days.
+      </p>
+      <h3>Does Twinkeep upload my photos?</h3>
+      <p>
+        No. Everything runs on your device. See the
+        <a href="/legal/privacy/twinkeep-ios/">privacy policy</a>.
+      </p>
+
+      <h2 id="contact">Contact</h2>
+      <p>
+        <a href="mailto:support@precisionsolutionstech.com">support@precisionsolutionstech.com</a>
+      </p>
+      <p>
+        <a href="/ios-apps/twinkeep/">Twinkeep for iPhone &amp; iPad</a>
+        ·
+        <a href="/legal/privacy/twinkeep-ios/">Privacy Policy</a>
+        ·
+        <a href="/about/">About us</a>
+      </p>
+    </article>
+  </div>
+</Base>

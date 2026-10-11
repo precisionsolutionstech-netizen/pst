@@ -11,7 +11,7 @@ export interface Props {
   ogImage?: string;
   /** Extra JSON-LD objects to inject (already-built plain objects). */
   jsonLd?: object[];
-  /** Which top nav item is active: "apis" | "workflows" | "apps" | "blog" | "about" | "home" */
+  /** Which top nav item is active: "apis" | "workflows" | "apps" | "ios-apps" | "blog" | "about" | "home" */
   active?: string;
 }
 
@@ -116,6 +116,7 @@ const allLd = [...globalLd, ...jsonLd];
         <nav class="site-nav" aria-label="Main">
           <a href="/" aria-current={active === 'home' ? 'page' : undefined}>Home</a>
           <a href="/apps/" aria-current={active === 'apps' ? 'page' : undefined}>Mac Apps</a>
+          <a href="/ios-apps/" aria-current={active === 'ios-apps' ? 'page' : undefined}>iOS Apps</a>
           <a href="/apis/" aria-current={active === 'apis' ? 'page' : undefined}>APIs</a>
           <a href="/workflows/" aria-current={active === 'workflows' ? 'page' : undefined}>Workflows</a>
           <a href="/blog/" aria-current={active === 'blog' ? 'page' : undefined}>Blog</a>

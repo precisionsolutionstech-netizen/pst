@@ -1,0 +1,180 @@
+---
+import Base from '../../../../layouts/Base.astro';
+
+const SITE = 'https://precisionsolutionstech.com';
+const title = 'Twinkeep for iPhone & iPad Privacy Policy | Precision Solutions Tech';
+const description =
+  'How Twinkeep for iPhone and iPad handles your Photos library. Duplicate detection runs on your device; your photos and videos are never uploaded.';
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` },
+      { '@type': 'ListItem', position: 2, name: 'Privacy Policy', item: `${SITE}/legal/privacy/` },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: 'Twinkeep for iPhone & iPad',
+        item: `${SITE}/legal/privacy/twinkeep-ios/`,
+      },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: 'Twinkeep for iPhone & iPad Privacy Policy',
+    url: `${SITE}/legal/privacy/twinkeep-ios/`,
+    description,
+    dateModified: '2026-10-11',
+    isPartOf: { '@type': 'WebSite', name: 'Precision Solutions Tech', url: `${SITE}/` },
+  },
+];
+---
+
+<Base
+  title={title}
+  description={description}
+  path="/legal/privacy/twinkeep-ios/"
+  jsonLd={jsonLd}
+>
+  <div class="wrap">
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li><a href="/legal/privacy/">Privacy Policy</a></li>
+        <li>Twinkeep for iPhone &amp; iPad</li>
+      </ol>
+    </nav>
+
+    <article class="prose">
+      <h1>Twinkeep for iPhone &amp; iPad Privacy Policy</h1>
+      <p class="meta">Last updated: October 11, 2026</p>
+      <p class="lead">
+        This Privacy Policy describes how <strong>Twinkeep</strong> (“we”, “us”) handles
+        information when you use the Twinkeep app for iPhone and iPad (the “App”), published by
+        <strong>Precision Solutions Tech</strong>, operated by <strong>SG TECHNOLOGY LLC</strong>.
+        For the Mac app, see the <a href="/legal/privacy/">company privacy policy</a>.
+      </p>
+
+      <h2 id="summary">Short version</h2>
+      <p>
+        Twinkeep works <strong>on your device</strong>. It reads your Photos library to find
+        duplicates and does not upload your photos, videos, or anything about them to us. We
+        operate no account system and no servers that receive your data. We cannot see your
+        library.
+      </p>
+
+      <h2 id="local">What the App processes on your device</h2>
+      <p>With your permission, the App processes on your iPhone or iPad:</p>
+      <ul>
+        <li>
+          <strong>Photo and video metadata</strong> — dates, sizes, dimensions, media type, and
+          original file names
+        </li>
+        <li>
+          <strong>Content fingerprints</strong> — hashes and similarity scores computed locally to
+          detect duplicates, cached on your device so later scans are faster
+        </li>
+        <li>
+          <strong>Thumbnails and previews</strong> — requested from the Photos library for display
+        </li>
+        <li>
+          <strong>Clean-up records</strong> — which items you quarantined, and which smaller copies
+          the App made of which originals, so you can compare and restore them
+        </li>
+        <li><strong>Your settings</strong> — stored in the App’s local preferences</li>
+        <li>
+          <strong>Widget totals</strong> — counts and sizes only (no photos, no identifiers), shared
+          with the App’s own Home Screen widget on the same device
+        </li>
+      </ul>
+      <p>This processing stays on your device unless you independently share a photo or video.</p>
+
+      <h2 id="changes-to-library">Changes to your library</h2>
+      <p>
+        The App only changes your Photos library when you ask it to. Items you remove are first
+        added to an album named “Twinkeep Quarantine” in your library. When you delete items, iOS
+        asks you to confirm, and they move to the Photos app’s Recently Deleted album.
+      </p>
+
+      <h2 id="icloud">iCloud Photos</h2>
+      <p>
+        If you use iCloud Photos and turn on “Check originals stored in iCloud”, iOS may download
+        originals from iCloud to your device so they can be checked. That download is between your
+        device and Apple; nothing passes through us. If you use iCloud Photos, changes you make —
+        including deletions — sync to your other devices signed in to the same Apple Account.
+      </p>
+
+      <h2 id="permissions">Permissions the App may request, and why</h2>
+      <ul>
+        <li><strong>Photos</strong> — required to find duplicates and to quarantine, delete, or save smaller copies at your request</li>
+        <li><strong>Notifications</strong> — only if you turn on “Notify when a scan or clean-up finishes”</li>
+      </ul>
+      <p>
+        You can change either in <strong>Settings → Twinkeep</strong>. Choosing Limited Access to
+        Photos means Twinkeep only sees the photos you selected.
+      </p>
+
+      <h2 id="purchases">Purchases</h2>
+      <p>
+        Scanning is free. The one-time unlock is sold through Apple’s App Store. Apple handles
+        payment; we do not receive your payment details or Apple Account information. The App checks
+        your purchase with Apple on your device.
+      </p>
+
+      <h2 id="analytics">Analytics, tracking, and advertising</h2>
+      <p>
+        The App contains <strong>no analytics SDKs, no advertising SDKs, and no third-party
+        trackers</strong>. We do not profile you, and we do not sell or share personal information.
+        If that ever changes, this policy will be updated before the change ships.
+      </p>
+
+      <h2 id="network">Network access</h2>
+      <p>
+        Scanning, quarantine, restore, compression, and deletion do not need internet access. The
+        App uses the network only through Apple’s systems: App Store purchases, and iCloud downloads
+        if you turn that option on.
+      </p>
+
+      <h2 id="retention">Data retention</h2>
+      <p>
+        Fingerprints, scan results, and clean-up records stay on your device until you delete the
+        App. The “Twinkeep Quarantine” album lives in your Photos library until you empty or delete
+        it. If you contact support, we keep your message as long as needed to help you.
+      </p>
+
+      <h2 id="choices">Your rights and choices</h2>
+      <ul>
+        <li>Choose Full Access, Limited Access, or no access to Photos at any time</li>
+        <li>Restore anything from Quarantine, or forget clean-up records, in the App</li>
+        <li>Delete the App to remove all of its local data</li>
+      </ul>
+      <p>
+        Because we do not collect your personal information, there is generally nothing for us to
+        export or delete on request. If you have contacted support, you may ask us about that
+        correspondence.
+      </p>
+
+      <h2 id="children">Children’s privacy</h2>
+      <p>The App is not directed to children under 13 (or the minimum age in your jurisdiction).</p>
+
+      <h2 id="changes">Changes</h2>
+      <p>We may update this policy. The “Last updated” date will change when we do.</p>
+
+      <h2 id="contact">Contact</h2>
+      <p>
+        Privacy questions:
+        <a href="mailto:support@precisionsolutionstech.com">support@precisionsolutionstech.com</a>
+      </p>
+      <p>
+        <a href="/ios-apps/twinkeep/">Twinkeep for iPhone &amp; iPad</a>
+        ·
+        <a href="/ios-apps/twinkeep/support/">Support</a>
+        ·
+        <a href="/legal/privacy/">Company privacy policy</a>
+      </p>
+    </article>
+  </div>
+</Base>
