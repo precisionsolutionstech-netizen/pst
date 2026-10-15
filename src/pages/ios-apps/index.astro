@@ -4,16 +4,17 @@ import Base from '../../layouts/Base.astro';
 const SITE = 'https://precisionsolutionstech.com';
 const title = 'iOS Apps — iPhone & iPad Utilities | Precision Solutions Tech';
 const description =
-  'Apps for iPhone and iPad from Precision Solutions Tech. Twinkeep finds duplicate photos and shrinks big videos, on your device, for one payment.';
+  'Apps for iPhone and iPad from Precision Solutions Tech. Twinkeep finds duplicate photos and shrinks big videos; TrailSift sorts your trail camera SD cards. On your device, paid for once.';
 
 const jsonLd = [
   {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
     name: 'iOS Apps',
-    numberOfItems: 1,
+    numberOfItems: 2,
     itemListElement: [
       { '@type': 'ListItem', position: 1, url: `${SITE}/ios-apps/twinkeep/`, name: 'Twinkeep for iPhone & iPad' },
+      { '@type': 'ListItem', position: 2, url: `${SITE}/ios-apps/trailsift/`, name: 'TrailSift for iPhone & iPad' },
     ],
   },
   {
@@ -53,6 +54,16 @@ const jsonLd = [
           <span class="card-meta">
             <span class="pill pill-accent">iOS 17+</span>
             <span class="pill pill-success">Free to scan · $9.99 once</span>
+            <span class="pill">Coming soon to the App Store</span>
+          </span>
+        </a>
+        <a class="card app-card" href="/ios-apps/trailsift/">
+          <img class="app-card-icon" src="/ios-apps/trailsift/icon-256.png" alt="" width="48" height="48" decoding="async" />
+          <h3>TrailSift for iPhone &amp; iPad</h3>
+          <p>SD card in, deer out: hides the empty trail camera frames, names the animals and tracks your bucks, offline.</p>
+          <span class="card-meta">
+            <span class="pill pill-accent">iOS 17+</span>
+            <span class="pill pill-success">First card free · one-time unlock</span>
             <span class="pill">Coming soon to the App Store</span>
           </span>
         </a>

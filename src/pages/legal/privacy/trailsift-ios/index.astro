@@ -1,0 +1,168 @@
+---
+import Base from '../../../../layouts/Base.astro';
+
+const SITE = 'https://precisionsolutionstech.com';
+const title = 'TrailSift for iPhone & iPad Privacy Policy | Precision Solutions Tech';
+const description =
+  'How TrailSift for iPhone and iPad handles your trail camera photos. Detection runs on your device; your photos are never uploaded. Optional wind and weather use Apple Weather.';
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` },
+      { '@type': 'ListItem', position: 2, name: 'Privacy Policy', item: `${SITE}/legal/privacy/` },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: 'TrailSift for iPhone & iPad',
+        item: `${SITE}/legal/privacy/trailsift-ios/`,
+      },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: 'TrailSift for iPhone & iPad Privacy Policy',
+    url: `${SITE}/legal/privacy/trailsift-ios/`,
+    description,
+    dateModified: '2026-10-14',
+    isPartOf: { '@type': 'WebSite', name: 'Precision Solutions Tech', url: `${SITE}/` },
+  },
+];
+---
+
+<Base
+  title={title}
+  description={description}
+  path="/legal/privacy/trailsift-ios/"
+  jsonLd={jsonLd}
+>
+  <div class="wrap">
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li><a href="/legal/privacy/">Privacy Policy</a></li>
+        <li>TrailSift for iPhone &amp; iPad</li>
+      </ol>
+    </nav>
+
+    <article class="prose">
+      <h1>TrailSift for iPhone &amp; iPad Privacy Policy</h1>
+      <p class="meta">Last updated: October 14, 2026</p>
+      <p class="lead">
+        This Privacy Policy describes how <strong>TrailSift</strong> (“we”, “us”) handles information
+        when you use the TrailSift app for iPhone and iPad (the “App”), published by
+        <strong>Precision Solutions Tech</strong>, operated by <strong>SG TECHNOLOGY LLC</strong>.
+      </p>
+
+      <h2 id="summary">Short version</h2>
+      <p>
+        TrailSift works <strong>on your device, with no signal needed</strong>. It reads the memory
+        cards you open, looks for animals with on-device models, and keeps the photos you choose in the
+        App. Nothing is uploaded to us. We operate no account system and no servers that receive your
+        data. The only optional network feature is wind and weather for your sightings, from Apple
+        Weather (see below).
+      </p>
+
+      <h2 id="local">What the App processes on your device</h2>
+      <ul>
+        <li>
+          Photos and videos on memory cards or folders you open, and the information inside them
+          (capture time, camera model, the date and temperature stamp printed on the photo)
+        </li>
+        <li>Results of on-device detection, species identification, and photo sharpness</li>
+        <li>The cameras, tags, buck names, and notes you add</li>
+        <li>Your settings, and the location (country and US state) you set for each camera</li>
+        <li>GPS coordinates some cameras write into their photos, used only to find the camera’s location</li>
+      </ul>
+      <p>
+        All of this stays on your device. Photos you import are stored in the App’s storage and are
+        included in your device backups (iCloud Backup or computer backup) like other app data.
+      </p>
+
+      <h2 id="location">Location</h2>
+      <p>
+        Each camera has a location (a country, and a state in the US) that tells TrailSift which
+        animals can live there, and optionally a spot (rounded to about 1 km) used for wind and weather.
+        If you tap “Use my current location”, the App asks iOS for your position once, turns it into a
+        country and state using a map stored inside the App, and saves the country, state and rounded
+        spot with the camera. Your exact position is not stored. A camera’s spot can also come from GPS
+        written into its photos or a pin you place on a map, and can be cleared at any time. The App
+        does not track your location in the background. You can pick a location from a list instead,
+        or turn off location access in iOS Settings.
+      </p>
+
+      <h2 id="weather">Wind and weather (optional)</h2>
+      <p>
+        If “Wind &amp; weather for sightings” is on (Settings), then whenever your device has a
+        connection the App asks Apple Weather (WeatherKit) for the historical weather at each camera’s
+        spot for the times of your sightings. Apple receives the camera’s spot rounded to about 1 km
+        and the date range. Your photos are not sent. To look up a camera’s time zone, the App also asks
+        Apple’s geocoder about that rounded spot. Turn the setting off to stop all of this; scanning and
+        everything else keep working.
+      </p>
+
+      <h2 id="photos-app">Photos app</h2>
+      <p>
+        If you choose “Save to Photos”, the App asks for permission to add items to your Photos library
+        and, if you allow full access, creates albums named after your cameras. The App does not read
+        the rest of your Photos library.
+      </p>
+
+      <h2 id="purchases">Purchases</h2>
+      <p>
+        The one-time unlock is sold through Apple’s App Store. Apple handles payment; we do not receive
+        your payment details or Apple Account information. The App checks your purchase with Apple on
+        your device.
+      </p>
+
+      <h2 id="analytics">Analytics, tracking, and advertising</h2>
+      <p>
+        The App contains <strong>no analytics SDKs, no advertising SDKs, and no third-party
+        trackers</strong>. We do not profile you, and we do not sell or share personal information. If
+        that ever changes, this policy will be updated before the change ships.
+      </p>
+
+      <h2 id="network">Network access</h2>
+      <p>
+        Scanning, importing, tagging, insights, and clearing cards do not need internet access. The App
+        uses the network only through Apple’s systems: App Store purchases, and, if you leave it on,
+        Apple Weather and Apple’s geocoder for wind and weather.
+      </p>
+
+      <h2 id="people">Photos of people</h2>
+      <p>
+        Trail cameras sometimes photograph people. TrailSift labels them so you can find them; it does
+        not identify who they are. You are responsible for how you keep and share such photos.
+      </p>
+
+      <h2 id="retention">Data retention</h2>
+      <p>
+        Your library stays on your device until you delete photos, use “Erase all TrailSift data” in
+        Settings, or delete the App. If you contact support, we keep your message as long as needed to
+        help you.
+      </p>
+
+      <h2 id="children">Children’s privacy</h2>
+      <p>The App is not directed to children under 13 (or the minimum age in your jurisdiction).</p>
+
+      <h2 id="changes">Changes</h2>
+      <p>We may update this policy. The “Last updated” date will change when we do.</p>
+
+      <h2 id="contact">Contact</h2>
+      <p>
+        Privacy questions:
+        <a href="mailto:support@precisionsolutionstech.com">support@precisionsolutionstech.com</a>
+      </p>
+      <p>
+        <a href="/ios-apps/trailsift/">TrailSift for iPhone &amp; iPad</a>
+        ·
+        <a href="/ios-apps/trailsift/support/">Support</a>
+        ·
+        <a href="/legal/privacy/">Company privacy policy</a>
+      </p>
+    </article>
+  </div>
+</Base>
