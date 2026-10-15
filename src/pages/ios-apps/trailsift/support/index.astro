@@ -1,0 +1,139 @@
+---
+import Base from '../../../../layouts/Base.astro';
+
+const SITE = 'https://precisionsolutionstech.com';
+const title = 'TrailSift for iPhone & iPad Support | Precision Solutions Tech';
+const description =
+  'Support for TrailSift on iPhone and iPad: opening an SD card, card readers, clearing the card, the lens check, wind and weather, restoring purchases, and common questions.';
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'iOS Apps', item: `${SITE}/ios-apps/` },
+      { '@type': 'ListItem', position: 2, name: 'TrailSift', item: `${SITE}/ios-apps/trailsift/` },
+      { '@type': 'ListItem', position: 3, name: 'Support', item: `${SITE}/ios-apps/trailsift/support/` },
+    ],
+  },
+];
+---
+
+<Base title={title} description={description} path="/ios-apps/trailsift/support/" jsonLd={jsonLd} active="ios-apps">
+  <div class="wrap">
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li><a href="/ios-apps/">iOS Apps</a></li>
+        <li><a href="/ios-apps/trailsift/">TrailSift</a></li>
+        <li>Support</li>
+      </ol>
+    </nav>
+
+    <article class="prose">
+      <h1>TrailSift for iPhone &amp; iPad Support</h1>
+      <p class="lead">
+        Something not working, or a question the app does not answer? Email
+        <a href="mailto:support@precisionsolutionstech.com">support@precisionsolutionstech.com</a>
+        and tell us your device, iOS version, your trail camera model, and what you expected to happen.
+        We read every message.
+      </p>
+
+      <h2 id="requirements">Requirements</h2>
+      <ul>
+        <li>iPhone or iPad with iOS / iPadOS 17 or later</li>
+        <li>An SD card reader that fits your device: Lightning or USB-C</li>
+      </ul>
+
+      <h2 id="open-card">Opening a card</h2>
+      <p>
+        Plug the reader with the card into your iPhone or iPad, open TrailSift and tap
+        <strong>Open SD Card</strong>. In the Files window, pick the card (it often shows as
+        <strong>NO NAME</strong> or <strong>Untitled</strong>) and tap <strong>Open</strong>. Any folder
+        works too: one you copied to iCloud Drive, On My iPhone, or a USB stick.
+      </p>
+      <p>
+        No card handy? Tap <strong>Try the sample card</strong> to see a full scan on real trail camera
+        photos.
+      </p>
+
+      <h2 id="scan">Scanning</h2>
+      <p>
+        Keep TrailSift open while it scans; the screen stays on. If the scan is interrupted, open the
+        same card again and it picks up where it left off. <strong>Strict</strong>, <strong>Balanced</strong>
+        and <strong>Keep more</strong> change how sure TrailSift must be before it keeps a frame. Check
+        the <strong>Empty</strong> tab before importing if you want to see what was set aside.
+      </p>
+
+      <h2 id="clear-card">Clearing the card</h2>
+      <p>
+        After an import, TrailSift copies every keeper and checks each copy byte for byte. Only if
+        every copy checks out does it offer to clear the card, and only when you confirm. If it says
+        the card is locked, slide the small lock switch on the side of the SD card up and try again.
+      </p>
+
+      <h2 id="lens-check">“Blurry photos: check the lens”</h2>
+      <p>
+        TrailSift compares each card with that camera’s usual sharpness, day and night separately.
+        When the photos turn blurry partway through, it tells you when it started. Usually it’s fog or
+        condensation on the lens, a spider web, a twig or grass in front of the camera, or the camera
+        was bumped. Once it’s fixed, tap <strong>Lens is clean now</strong> on the camera’s page. A
+        camera’s very first card can’t be judged yet, because there is nothing to compare it with.
+      </p>
+
+      <h2 id="weather">Wind and weather</h2>
+      <p>
+        Wind and weather come from Apple Weather and need a signal and a spot for the camera. Set the
+        spot on the camera’s page (<strong>Cards → Cameras</strong>), from the GPS some cameras write
+        into their photos, or with <strong>Use my current location</strong> while you stand at the
+        camera. Weather history goes back to August 2021. Turn it off any time in Settings.
+      </p>
+
+      <h2 id="purchase">Purchase and restore</h2>
+      <p>
+        Your first card is free, with every feature. After that, a one-time purchase in the app
+        unlocks unlimited cards. It is not a subscription.
+      </p>
+      <p>
+        On a new device or after reinstalling, open <strong>Settings</strong> and tap
+        <strong>Restore purchase</strong>. Purchases are tied to your Apple Account. Refunds are handled
+        by Apple at <a href="https://reportaproblem.apple.com" rel="noopener">reportaproblem.apple.com</a>.
+      </p>
+
+      <h2 id="questions">Common questions</h2>
+      <h3>Why does a video say it can’t be played?</h3>
+      <p>
+        Some cameras record AVI video, which iPhone can’t decode. TrailSift keeps those files and flags
+        them so nothing is lost; share them to a computer to watch.
+      </p>
+      <h3>The animal name is wrong. Can I fix it?</h3>
+      <p>
+        Yes. Open the photo, tap <strong>Tag</strong> and pick the right animal. Your choice always wins
+        over TrailSift’s guess. Check that the camera’s location is right, too: it decides which animals
+        are possible.
+      </p>
+      <h3>Where are my photos kept?</h3>
+      <p>
+        In TrailSift on your device, included in your iPhone or iPad backups. Save them to the Photos
+        app (one album per camera) or share them any time.
+      </p>
+      <h3>Does TrailSift upload my photos?</h3>
+      <p>
+        No. Everything runs on your device. See the
+        <a href="/legal/privacy/trailsift-ios/">privacy policy</a>.
+      </p>
+
+      <h2 id="contact">Contact</h2>
+      <p>
+        <a href="mailto:support@precisionsolutionstech.com">support@precisionsolutionstech.com</a>
+      </p>
+      <p>
+        <a href="/ios-apps/trailsift/">TrailSift for iPhone &amp; iPad</a>
+        ·
+        <a href="/legal/privacy/trailsift-ios/">Privacy Policy</a>
+        ·
+        <a href="/about/">About us</a>
+      </p>
+    </article>
+  </div>
+</Base>

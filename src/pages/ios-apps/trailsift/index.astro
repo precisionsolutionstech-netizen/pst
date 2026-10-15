@@ -1,0 +1,150 @@
+---
+import Base from '../../../layouts/Base.astro';
+
+const SITE = 'https://precisionsolutionstech.com';
+const title = 'TrailSift for iPhone & iPad — Trail Camera SD Card Sorter';
+const description =
+  'TrailSift goes through your trail camera SD card on your iPhone: hides the empty frames, names the animals, tracks your bucks and shows when they move. Offline, no account. First card free.';
+
+const shots = [
+  { src: '/ios-apps/trailsift/01-review.jpg', alt: 'A scanned card: 9 of 32 frames empty, with deer, hog, bear, coyote and fox found' },
+  { src: '/ios-apps/trailsift/03-photo.jpg', alt: 'A night photo of a running deer with the detection box around it' },
+  { src: '/ios-apps/trailsift/04-buck.jpg', alt: 'A named buck on the hit list: sightings, first and last seen, most active hours' },
+  { src: '/ios-apps/trailsift/05-insights.jpg', alt: 'Insights: best times of day for deer visits and visits by hour' },
+];
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareApplication',
+    name: 'TrailSift',
+    operatingSystem: 'iOS 17.0 or later',
+    applicationCategory: 'UtilitiesApplication',
+    description,
+    url: `${SITE}/ios-apps/trailsift/`,
+    image: `${SITE}/ios-apps/trailsift/icon-256.png`,
+    publisher: { '@type': 'Organization', name: 'Precision Solutions Tech' },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` },
+      { '@type': 'ListItem', position: 2, name: 'iOS Apps', item: `${SITE}/ios-apps/` },
+      { '@type': 'ListItem', position: 3, name: 'TrailSift', item: `${SITE}/ios-apps/trailsift/` },
+    ],
+  },
+];
+---
+
+<Base title={title} description={description} path="/ios-apps/trailsift/" active="ios-apps" jsonLd={jsonLd}>
+  <div class="wrap">
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li><a href="/ios-apps/">iOS Apps</a></li>
+        <li>TrailSift</li>
+      </ol>
+    </nav>
+
+    <header class="hero-ios">
+      <img src="/ios-apps/trailsift/icon-256.png" alt="TrailSift app icon" width="96" height="96" class="ios-icon" />
+      <div>
+        <h1>TrailSift for iPhone &amp; iPad</h1>
+        <p class="lead">SD card in, deer out. Your trail camera photos, sorted on your phone in the field.</p>
+        <p class="status">
+          <span class="pill pill-success">First card free · one-time unlock</span>
+          <span class="pill">Coming soon to the App Store</span>
+        </p>
+      </div>
+    </header>
+
+    <div class="shots">
+      {shots.map((s) => <img src={s.src} alt={s.alt} loading="lazy" decoding="async" width="506" height="1100" />)}
+    </div>
+
+    <article class="prose">
+      <p>
+        Pull the card from your trail camera, plug it into your iPhone or iPad with a card reader,
+        and TrailSift goes through every photo for you. Empty frames from wind, sun and swaying
+        grass get set aside. Deer, hogs, turkeys, bears, coyotes and more get named and grouped into
+        visits. It all runs on your device, with no signal and no account.
+      </p>
+
+      <h2 id="sort">Find the animals, skip the empties</h2>
+      <ul>
+        <li>On-device AI looks at every photo and video on the card</li>
+        <li>Strict, Balanced or Keep more, and you can check the empty frames before anything is hidden</li>
+        <li>Ignores things that trip the camera all day, like a stump or a patch of glare</li>
+        <li>Bursts count as one visit, shown by their sharpest photo</li>
+        <li>Time-lapse and food-plot cards are searched for distant deer</li>
+      </ul>
+
+      <h2 id="bucks">Know your bucks</h2>
+      <ul>
+        <li>Name bucks and build a hit list: sightings, cameras and the hours they move</li>
+        <li>“Is this Big 8?” suggests photos that may show a buck you named. You always decide</li>
+        <li>Highlight reels of your best sightings</li>
+      </ul>
+
+      <h2 id="pattern">Pattern your deer</h2>
+      <ul>
+        <li>Best hours, a day-by-hour heatmap, moon phase and temperature</li>
+        <li>Wind for each sighting and the wind your deer come in on (Apple Weather; needs a signal and a camera location)</li>
+        <li>Herd survey: an estimate of deer, does per buck and fawns per doe</li>
+      </ul>
+
+      <h2 id="cameras">Keep your cameras working</h2>
+      <ul>
+        <li>Lens check warns when a camera’s photos turn blurry, so you know to clear fog, a web or a twig</li>
+        <li>Enhance brightens grainy night shots; the original is never changed</li>
+      </ul>
+
+      <h2 id="safe">Safe with your photos</h2>
+      <p>
+        Keepers are copied and checked byte for byte before anything else happens. TrailSift offers to
+        clear the card only after a verified import, and only when you confirm. A trespass report PDF
+        lists times, photos and a fingerprint of each original file.
+      </p>
+
+      <h2 id="private">Private by design</h2>
+      <p>
+        Your photos never leave your device. No account, no cloud, no tracking, no ads. Read the
+        <a href="/legal/privacy/trailsift-ios/">privacy policy</a>.
+      </p>
+
+      <h2 id="requirements">Requirements</h2>
+      <ul>
+        <li>iPhone or iPad with iOS / iPadOS 17 or later</li>
+        <li>An SD card reader for your device (Lightning or USB-C)</li>
+        <li>JPEG photos and MP4/MOV videos; AVI files are kept and flagged, since iPhone can’t play them</li>
+      </ul>
+
+      <h2 id="pricing">Pricing</h2>
+      <p>
+        Your first card is free, with every feature. After that, unlimited cards with a one-time
+        purchase in the app. No subscription.
+      </p>
+
+      <p>
+        <a href="/ios-apps/trailsift/support/">Support</a>
+        ·
+        <a href="/legal/privacy/trailsift-ios/">Privacy Policy</a>
+      </p>
+    </article>
+  </div>
+</Base>
+
+<style>
+  .hero-ios { display: flex; gap: 20px; align-items: center; margin: 8px 0 24px; }
+  .hero-ios h1 { margin: 0 0 6px; }
+  .hero-ios .lead { margin: 0 0 10px; }
+  .hero-ios .status { display: flex; gap: 8px; flex-wrap: wrap; margin: 0; }
+  .ios-icon { width: 96px; height: 96px; border-radius: 22px; box-shadow: 0 8px 22px rgba(15, 23, 42, 0.18); flex-shrink: 0; }
+  .shots { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin: 0 0 32px; }
+  .shots img { width: 100%; height: auto; border-radius: 16px; box-shadow: 0 8px 22px rgba(15, 23, 42, 0.12); }
+  @media (max-width: 720px) {
+    .hero-ios { flex-direction: column; align-items: flex-start; }
+    .shots { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>
