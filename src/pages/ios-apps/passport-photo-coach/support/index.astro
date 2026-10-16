@@ -1,0 +1,138 @@
+---
+import Base from '../../../../layouts/Base.astro';
+
+const SITE = 'https://precisionsolutionstech.com';
+const title = 'Passport Photo Coach Support | Precision Solutions Tech';
+const description =
+  'Support for Passport Photo Coach on iPhone: taking a photo that passes, glasses, babies, printing at a drugstore or at home, digital uploads, tips, and common questions.';
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'iOS Apps', item: `${SITE}/ios-apps/` },
+      { '@type': 'ListItem', position: 2, name: 'Passport Photo Coach', item: `${SITE}/ios-apps/passport-photo-coach/` },
+      { '@type': 'ListItem', position: 3, name: 'Support', item: `${SITE}/ios-apps/passport-photo-coach/support/` },
+    ],
+  },
+];
+---
+
+<Base title={title} description={description} path="/ios-apps/passport-photo-coach/support/" jsonLd={jsonLd} active="ios-apps">
+  <div class="wrap">
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li><a href="/ios-apps/">iOS Apps</a></li>
+        <li><a href="/ios-apps/passport-photo-coach/">Passport Photo Coach</a></li>
+        <li>Support</li>
+      </ol>
+    </nav>
+
+    <article class="prose">
+      <h1>Passport Photo Coach Support</h1>
+      <p class="lead">
+        Something not working, or a question the app doesn’t answer? Email
+        <a href="mailto:support@precisionsolutionstech.com">support@precisionsolutionstech.com</a>
+        and tell us your iPhone model, iOS version, which document you chose, and what you expected to
+        happen. We read every message.
+      </p>
+
+      <h2 id="requirements">Requirements</h2>
+      <ul>
+        <li>iPhone with iOS 17 or later</li>
+      </ul>
+
+      <h2 id="good-photo">Taking a photo that passes</h2>
+      <ul>
+        <li>Stand about 4 ft (1.2 m) in front of a plain, light-coloured wall</li>
+        <li>Face a window or a lamp so light falls evenly on your face</li>
+        <li>Take off hats, caps and headphones. Religious or medical head coverings are allowed (some documents ask for a signed statement)</li>
+        <li>Follow the spoken or on-screen prompts until the oval turns green</li>
+      </ul>
+      <p>
+        The sharpest result comes from the back camera: choose <strong>Someone’s helping me</strong>, or
+        <strong>Phone on a stand</strong> to be talked into position and photographed automatically.
+      </p>
+
+      <h2 id="glasses">Glasses</h2>
+      <p>
+        Many documents, including US passports and visas, don’t allow glasses. Keep yours on while you
+        line up. When everything else is right, the app asks out loud for them to come off, counts down,
+        takes the photo, and tells you when to put them back on. For headshots and badges, glasses are
+        fine.
+      </p>
+
+      <h2 id="baby">Babies and young children</h2>
+      <p>
+        Turn on <strong>It’s for a baby or young child</strong>. Lay the baby on a plain white sheet and
+        hold the phone directly above, or seat them in a car seat covered with a white sheet. Keep hands
+        and toys out of the photo. The app takes the photo the moment they’re still and framed, so try a
+        few.
+      </p>
+
+      <h2 id="store-print">Printing at a drugstore</h2>
+      <p>
+        Tap <strong>Print at CVS, Walgreens or Walmart</strong>. The app saves a 4 × 6 image with your
+        photos and cut marks to Photos. Upload it to any store’s photo service and order one 4 × 6
+        glossy print, usually for same-day pickup. Don’t crop, zoom or “enhance” it, or the size will be
+        wrong. Then cut on the marks.
+      </p>
+
+      <h2 id="home-print">Printing at home</h2>
+      <p>
+        Choose your paper (4 × 6, 5 × 7, Letter or A4) and tap <strong>Print on my printer</strong>.
+        Use glossy photo paper, and if your printer offers “scale to fit”, turn it off so the photo
+        prints at its exact size.
+      </p>
+
+      <h2 id="digital">Online applications</h2>
+      <p>
+        <strong>Save the digital photo</strong> makes a JPEG at the size and file size the upload asks
+        for, for example 600 × 600 pixels and under 240 KB for the DV Lottery and US visa.
+      </p>
+
+      <h2 id="tips">Tips</h2>
+      <p>
+        Everything in the app is free. Tips are optional and unlock nothing. Tips paid in the app are
+        handled by Apple; refunds at
+        <a href="https://reportaproblem.apple.com" rel="noopener">reportaproblem.apple.com</a>.
+      </p>
+
+      <h2 id="questions">Common questions</h2>
+      <h3>Will my photo be accepted?</h3>
+      <p>
+        The app checks your photo against each document’s published rules, but the checks are automatic
+        and the agency always decides. The review screen links to the official rules for your document.
+      </p>
+      <h3>The checklist says “Couldn’t check this automatically”.</h3>
+      <p>
+        That item couldn’t be measured in your photo. Look at it yourself, or retake the photo in better
+        light.
+      </p>
+      <h3>My document isn’t listed.</h3>
+      <p>
+        Email us with the country and document and a link to its photo rules. We add documents people
+        ask for.
+      </p>
+      <h3>Does the app upload my photo?</h3>
+      <p>
+        No. Everything runs on your iPhone. See the
+        <a href="/legal/privacy/passport-photo-coach-ios/">privacy policy</a>.
+      </p>
+
+      <h2 id="contact">Contact</h2>
+      <p>
+        <a href="mailto:support@precisionsolutionstech.com">support@precisionsolutionstech.com</a>
+      </p>
+      <p>
+        <a href="/ios-apps/passport-photo-coach/">Passport Photo Coach</a>
+        ·
+        <a href="/legal/privacy/passport-photo-coach-ios/">Privacy Policy</a>
+        ·
+        <a href="/about/">About us</a>
+      </p>
+    </article>
+  </div>
+</Base>

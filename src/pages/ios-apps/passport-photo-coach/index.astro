@@ -1,0 +1,148 @@
+---
+import Base from '../../../layouts/Base.astro';
+
+const SITE = 'https://precisionsolutionstech.com';
+const title = 'Passport Photo Coach for iPhone — Free Passport, Visa & ID Photos';
+const description =
+  'Passport Photo Coach talks you into the right pose, light and distance, then crops to the official rules for passports, visas, DV Lottery, ID cards and headshots. Print for under $1. Free, on your iPhone.';
+
+const shots: { src: string; alt: string }[] = [];
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareApplication',
+    name: 'Passport Photo Coach',
+    operatingSystem: 'iOS 17.0 or later',
+    applicationCategory: 'PhotographyApplication',
+    description,
+    url: `${SITE}/ios-apps/passport-photo-coach/`,
+    image: `${SITE}/ios-apps/passport-photo-coach/icon-256.png`,
+    offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+    publisher: { '@type': 'Organization', name: 'Precision Solutions Tech' },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` },
+      { '@type': 'ListItem', position: 2, name: 'iOS Apps', item: `${SITE}/ios-apps/` },
+      { '@type': 'ListItem', position: 3, name: 'Passport Photo Coach', item: `${SITE}/ios-apps/passport-photo-coach/` },
+    ],
+  },
+];
+---
+
+<Base title={title} description={description} path="/ios-apps/passport-photo-coach/" active="ios-apps" jsonLd={jsonLd}>
+  <div class="wrap">
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li><a href="/ios-apps/">iOS Apps</a></li>
+        <li>Passport Photo Coach</li>
+      </ol>
+    </nav>
+
+    <header class="hero-ios">
+      <img src="/ios-apps/passport-photo-coach/icon-256.png" alt="Passport Photo Coach app icon" width="96" height="96" class="ios-icon" />
+      <div>
+        <h1>Passport Photo Coach</h1>
+        <p class="lead">A passport photo that matches the rules, printed for under $1. Coached live, on your iPhone.</p>
+        <p class="status">
+          <span class="pill pill-success">Free · no watermark · no account</span>
+          <span class="pill">Coming soon to the App Store</span>
+        </p>
+      </div>
+    </header>
+
+    {shots.length > 0 && (
+      <div class="shots">
+        {shots.map((s) => <img src={s.src} alt={s.alt} loading="lazy" decoding="async" width="506" height="1100" />)}
+      </div>
+    )}
+
+    <article class="prose">
+      <p>
+        A passport photo at the drugstore costs about $17. Passport Photo Coach makes one that matches
+        the published rules, and you print it for under $1. Other apps let you take any photo and
+        tell you afterwards that it won’t do. This one coaches you before the shutter.
+      </p>
+
+      <h2 id="coach">A coach, not just a cropper</h2>
+      <ul>
+        <li>Move left, right, closer or back, and raise or lower the phone</li>
+        <li>Keep your head straight, face the camera, lift or lower your chin</li>
+        <li>Too dark, too bright, or a shadow on one side</li>
+        <li>Busy background, or the wrong colour for your document</li>
+        <li>Take off your hat, and your glasses where they aren’t allowed</li>
+      </ul>
+
+      <h2 id="hands-free">Spoken prompts, hands-free</h2>
+      <p>
+        Prop the phone up and it talks you into position, counts down and takes the photo by itself.
+        Wear strong glasses? Keep them on while you line up. It asks you to take them off only at the
+        very end, then talks you through the shot and tells you when to put them back on.
+      </p>
+
+      <h2 id="documents">The right rules for your photo</h2>
+      <ul>
+        <li><strong>Passports:</strong> United States, Canada, United Kingdom, EU, Australia, Japan</li>
+        <li><strong>Visas and immigration:</strong> US visa, Green Card, DV Lottery (600 × 600, under 240 KB), Canada visa and PR, Schengen, China, India visa and OCI</li>
+        <li><strong>School and ID cards:</strong> student ID, exam and application uploads</li>
+        <li><strong>Work and headshots:</strong> LinkedIn headshot, company badge, résumé photo, profile picture</li>
+        <li><strong>Babies and young children:</strong> a gentler mode that shoots the moment they’re still and framed</li>
+      </ul>
+
+      <h2 id="print">Print it for under $1</h2>
+      <ul>
+        <li><strong>Store print:</strong> the app saves a 4 × 6 print with cut marks. Order one 4 × 6 photo print at any drugstore or photo lab for same-day pickup</li>
+        <li><strong>Your own printer:</strong> exact size on 4 × 6, 5 × 7, Letter or A4</li>
+        <li><strong>Online applications:</strong> a digital file sized for the upload</li>
+      </ul>
+
+      <h2 id="private">Private by design</h2>
+      <p>
+        Everything happens on your iPhone. Your photo is never uploaded. No account, no tracking, no
+        ads. Read the <a href="/legal/privacy/passport-photo-coach-ios/">privacy policy</a>.
+      </p>
+
+      <h2 id="requirements">Requirements</h2>
+      <ul>
+        <li>iPhone with iOS 17 or later</li>
+      </ul>
+
+      <h2 id="pricing">Pricing</h2>
+      <p>
+        Free, with every feature. If it saved you a trip, you can leave an optional tip in the app,
+        or <a href="https://buymeacoffee.com/precisiontech" rel="noopener">buy us a coffee</a>. Tips
+        don’t unlock anything.
+      </p>
+
+      <p class="fine">
+        The checks are automatic and can miss things. Each agency decides whether to accept a photo.
+        Not affiliated with any government agency or store.
+      </p>
+
+      <p>
+        <a href="/ios-apps/passport-photo-coach/support/">Support</a>
+        ·
+        <a href="/legal/privacy/passport-photo-coach-ios/">Privacy Policy</a>
+      </p>
+    </article>
+  </div>
+</Base>
+
+<style>
+  .hero-ios { display: flex; gap: 20px; align-items: center; margin: 8px 0 24px; }
+  .hero-ios h1 { margin: 0 0 6px; }
+  .hero-ios .lead { margin: 0 0 10px; }
+  .hero-ios .status { display: flex; gap: 8px; flex-wrap: wrap; margin: 0; }
+  .ios-icon { width: 96px; height: 96px; border-radius: 22px; box-shadow: 0 8px 22px rgba(15, 23, 42, 0.18); flex-shrink: 0; }
+  .shots { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin: 0 0 32px; }
+  .shots img { width: 100%; height: auto; border-radius: 16px; box-shadow: 0 8px 22px rgba(15, 23, 42, 0.12); }
+  .fine { font-size: 0.9em; opacity: 0.8; }
+  @media (max-width: 720px) {
+    .hero-ios { flex-direction: column; align-items: flex-start; }
+    .shots { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>

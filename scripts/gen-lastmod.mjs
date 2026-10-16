@@ -78,6 +78,9 @@ set('/legal/privacy/twinkeep-ios/', dateOf(`${PAGES}/legal/privacy/twinkeep-ios/
 set('/ios-apps/trailsift/', dateOf(`${PAGES}/ios-apps/trailsift/index.astro`));
 set('/ios-apps/trailsift/support/', dateOf(`${PAGES}/ios-apps/trailsift/support/index.astro`));
 set('/legal/privacy/trailsift-ios/', dateOf(`${PAGES}/legal/privacy/trailsift-ios/index.astro`));
+set('/ios-apps/passport-photo-coach/', dateOf(`${PAGES}/ios-apps/passport-photo-coach/index.astro`));
+set('/ios-apps/passport-photo-coach/support/', dateOf(`${PAGES}/ios-apps/passport-photo-coach/support/index.astro`));
+set('/legal/privacy/passport-photo-coach-ios/', dateOf(`${PAGES}/legal/privacy/passport-photo-coach-ios/index.astro`));
 
 /* ------------------------------ index pages ----------------------------- */
 

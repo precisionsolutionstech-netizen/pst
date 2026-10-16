@@ -1,0 +1,147 @@
+---
+import Base from '../../../../layouts/Base.astro';
+
+const SITE = 'https://precisionsolutionstech.com';
+const title = 'Passport Photo Coach Privacy Policy | Precision Solutions Tech';
+const description =
+  'How Passport Photo Coach for iPhone handles your photos. Everything is processed on your device; nothing is uploaded or collected.';
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` },
+      { '@type': 'ListItem', position: 2, name: 'Privacy Policy', item: `${SITE}/legal/privacy/` },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: 'Passport Photo Coach',
+        item: `${SITE}/legal/privacy/passport-photo-coach-ios/`,
+      },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: 'Passport Photo Coach Privacy Policy',
+    url: `${SITE}/legal/privacy/passport-photo-coach-ios/`,
+    description,
+    dateModified: '2026-10-15',
+    isPartOf: { '@type': 'WebSite', name: 'Precision Solutions Tech', url: `${SITE}/` },
+  },
+];
+---
+
+<Base
+  title={title}
+  description={description}
+  path="/legal/privacy/passport-photo-coach-ios/"
+  jsonLd={jsonLd}
+>
+  <div class="wrap">
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li><a href="/legal/privacy/">Privacy Policy</a></li>
+        <li>Passport Photo Coach</li>
+      </ol>
+    </nav>
+
+    <article class="prose">
+      <h1>Passport Photo Coach Privacy Policy</h1>
+      <p class="meta">Last updated: October 15, 2026</p>
+      <p class="lead">
+        This Privacy Policy describes how <strong>Passport Photo Coach</strong> (“we”, “us”) handles
+        information when you use the Passport Photo Coach app for iPhone (the “App”), published by
+        <strong>Precision Solutions Tech</strong>, operated by <strong>SG TECHNOLOGY LLC</strong>.
+      </p>
+
+      <h2 id="summary">Short version</h2>
+      <p>
+        Passport Photo Coach works <strong>entirely on your device</strong>. Your camera, your photos
+        and everything the App measures about them stay on your iPhone. We collect no data, operate no
+        account system, and run no servers that receive anything from the App. The App makes no network
+        requests of its own.
+      </p>
+
+      <h2 id="camera">Camera</h2>
+      <p>
+        When you take a photo, the App uses the camera to coach you: it measures your face position,
+        head tilt, lighting, background and accessories (such as glasses or a hat) in the live picture,
+        on your device. Live frames are analysed and discarded; they are not stored or sent anywhere.
+        Only the photo you take is kept, and only while you use it in the App.
+      </p>
+
+      <h2 id="photos">Photos you choose</h2>
+      <p>
+        If you tap “Use a photo I already have”, iOS lets you pick a photo; the App receives only the
+        photo you pick and cannot see the rest of your library. If you save a photo or print sheet, the
+        App asks for permission to <em>add</em> items to your Photos library. It does not read your
+        library.
+      </p>
+
+      <h2 id="processing">What the App processes on your device</h2>
+      <ul>
+        <li>Face position and landmarks, head pose, eye and mouth openness, and lighting, to coach and crop</li>
+        <li>A person outline, to measure the top of your head and, if you choose, whiten the background</li>
+        <li>Whether glasses or a hat appear in the photo, using Apple’s on-device image recognition</li>
+        <li>Your settings: the document you chose and whether the photo is for a baby</li>
+      </ul>
+      <p>
+        None of this is used to identify you, and none of it leaves your device. Spoken prompts use
+        Apple’s on-device speech.
+      </p>
+
+      <h2 id="children">Photos of children</h2>
+      <p>
+        You can use the App to take ID photos of babies and children. Those photos are handled exactly
+        like any other: processed on your device and never uploaded or collected by us. The App is not
+        directed to children and asks no one for personal information.
+      </p>
+
+      <h2 id="sharing">Sharing and printing</h2>
+      <p>
+        When you share a photo (AirDrop, Messages, Mail, Files) or print it, iOS sends it where you
+        choose. When you open a store’s photo website from the App, Safari opens that website, and the
+        store’s own privacy policy applies to anything you upload there.
+      </p>
+
+      <h2 id="purchases">Tips</h2>
+      <p>
+        Optional tips in the App are processed by Apple through the App Store; we do not receive your
+        payment details or Apple Account information. On the US App Store the App also links to our Buy
+        Me a Coffee page, which opens in Safari; Buy Me a Coffee’s privacy policy applies there.
+      </p>
+
+      <h2 id="analytics">Analytics, tracking, and advertising</h2>
+      <p>
+        The App contains <strong>no analytics SDKs, no advertising SDKs, and no third-party
+        trackers</strong>. We do not profile you, and we do not sell or share personal information. If
+        that ever changes, this policy will be updated before the change ships.
+      </p>
+
+      <h2 id="retention">Data retention</h2>
+      <p>
+        We hold no data from the App. Photos you save to Photos or Files are yours to keep or delete.
+        If you contact support, we keep your message as long as needed to help you.
+      </p>
+
+      <h2 id="changes">Changes</h2>
+      <p>We may update this policy. The “Last updated” date will change when we do.</p>
+
+      <h2 id="contact">Contact</h2>
+      <p>
+        Privacy questions:
+        <a href="mailto:support@precisionsolutionstech.com">support@precisionsolutionstech.com</a>
+      </p>
+      <p>
+        <a href="/ios-apps/passport-photo-coach/">Passport Photo Coach</a>
+        ·
+        <a href="/ios-apps/passport-photo-coach/support/">Support</a>
+        ·
+        <a href="/legal/privacy/">Company privacy policy</a>
+      </p>
+    </article>
+  </div>
+</Base>
