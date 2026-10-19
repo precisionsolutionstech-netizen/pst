@@ -1,0 +1,147 @@
+---
+import Base from '../../../layouts/Base.astro';
+
+const SITE = 'https://precisionsolutionstech.com';
+const title = 'Flipside for iPhone — Selfies with the Back Camera, Coached';
+const description =
+  'Flipside lets you take selfies with your iPhone’s better back camera. A voice tells you where to hold it (“Phone left”, “Good”), then it takes the photo. Group shots, jumps, a self-timer on a stand. Free.';
+
+const shots: { src: string; alt: string }[] = [];
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareApplication',
+    name: 'Flipside',
+    operatingSystem: 'iOS 18.0 or later',
+    applicationCategory: 'PhotographyApplication',
+    description,
+    url: `${SITE}/ios-apps/flipside/`,
+    image: `${SITE}/ios-apps/flipside/icon-256.png`,
+    offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+    publisher: { '@type': 'Organization', name: 'Precision Solutions Tech' },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` },
+      { '@type': 'ListItem', position: 2, name: 'iOS Apps', item: `${SITE}/ios-apps/` },
+      { '@type': 'ListItem', position: 3, name: 'Flipside', item: `${SITE}/ios-apps/flipside/` },
+    ],
+  },
+];
+---
+
+<Base title={title} description={description} path="/ios-apps/flipside/" active="ios-apps" jsonLd={jsonLd}>
+  <div class="wrap">
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li><a href="/ios-apps/">iOS Apps</a></li>
+        <li>Flipside</li>
+      </ol>
+    </nav>
+
+    <header class="hero-ios">
+      <img src="/ios-apps/flipside/icon-256.png" alt="Flipside app icon" width="96" height="96" class="ios-icon" />
+      <div>
+        <h1>Flipside</h1>
+        <p class="lead">Selfies with your iPhone’s best camera. Turn the phone around and a voice tells you where to hold it.</p>
+        <p class="status">
+          <span class="pill pill-success">Free · no account · no ads</span>
+          <span class="pill">Coming soon to the App Store</span>
+        </p>
+      </div>
+    </header>
+
+    {shots.length > 0 && (
+      <div class="shots">
+        {shots.map((s) => <img src={s.src} alt={s.alt} loading="lazy" decoding="async" width="506" height="1100" />)}
+      </div>
+    )}
+
+    <article class="prose">
+      <p>
+        The camera on the back of your iPhone is the good one: a bigger sensor, an ultra-wide lens and
+        a real flash. Flipside lets you take selfies with it. You can’t see the screen with the phone
+        turned around, so Flipside talks you into the shot and takes the photo when it’s right.
+      </p>
+
+      <h2 id="coach">Short words, one thing at a time</h2>
+      <ul>
+        <li>Phone in your hand: “Phone left”, “Phone right”, “Phone up”, “Phone down”, “Phone closer”</li>
+        <li>Phone on a stand: “Step left”, “Step right”, “Step closer”, “Step back”</li>
+        <li>“Good.” the moment you’ve got it, so you know to stop moving</li>
+        <li>Soft ticks that speed up as you get closer, like a parking sensor</li>
+        <li>Groups: “I see 5 of you”, so nobody gets cut out by accident</li>
+      </ul>
+      <p>
+        Prefer no directions? Choose <strong>Just snap</strong>: Flipside counts 3, 2, 1, takes a few
+        photos and suggests the best one.
+      </p>
+
+      <h2 id="shots">The right settings for every shot</h2>
+      <ul>
+        <li>Just me, Us two, Group, Me + the view, Me + my pet, or “Pick for me”</li>
+        <li>Lens, sideways or upright, flash or soft light, how many frames: chosen for you</li>
+        <li><strong>Far away</strong>: prop the phone up, walk back, and it counts your steps in your AirPods</li>
+        <li><strong>Jumps</strong>: “Jump in 10 seconds… 3, 2, 1, Jump!” and it keeps the highest moment.
+          Or make <em>everyone at their peak</em>, a <em>motion sequence</em> or a <em>jump loop</em>.</li>
+      </ul>
+
+      <h2 id="hands-free">Hands-free</h2>
+      <ul>
+        <li>On a stand, a self-timer gives you time to get in the shot (3, 5 or 10 seconds)</li>
+        <li>Raise your palm, or say “cheese” (on your phone, nothing recorded)</li>
+        <li>The volume buttons take the photo too</li>
+      </ul>
+
+      <h2 id="after">After the shot</h2>
+      <ul>
+        <li>A quick burst every time; Flipside suggests the one with everyone’s eyes open</li>
+        <li>Blinked? In group shots it can swap in your open eyes from another frame</li>
+        <li>Touch-ups, background blur, Live Photos, and sizes for posting (square, 4:5, 9:16, round)</li>
+      </ul>
+
+      <h2 id="private">Private by design</h2>
+      <p>
+        Everything happens on your iPhone. No account, no uploads, no tracking, no ads. Flipside never
+        asks for your location. Read the <a href="/legal/privacy/flipside-ios/">privacy policy</a>.
+      </p>
+
+      <h2 id="requirements">Requirements</h2>
+      <ul>
+        <li>iPhone with iOS 18 or later</li>
+      </ul>
+
+      <h2 id="pricing">Pricing</h2>
+      <p>Free, with every feature.</p>
+
+      <p class="fine">
+        You’re in charge: Flipside can’t see what’s behind you. Look before you take a step.
+      </p>
+
+      <p>
+        <a href="/ios-apps/flipside/support/">Support</a>
+        ·
+        <a href="/legal/privacy/flipside-ios/">Privacy Policy</a>
+      </p>
+    </article>
+  </div>
+</Base>
+
+<style>
+  .hero-ios { display: flex; gap: 20px; align-items: center; margin: 8px 0 24px; }
+  .hero-ios h1 { margin: 0 0 6px; }
+  .hero-ios .lead { margin: 0 0 10px; }
+  .hero-ios .status { display: flex; gap: 8px; flex-wrap: wrap; margin: 0; }
+  .ios-icon { width: 96px; height: 96px; border-radius: 22px; box-shadow: 0 8px 22px rgba(15, 23, 42, 0.18); flex-shrink: 0; }
+  .shots { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin: 0 0 32px; }
+  .shots img { width: 100%; height: auto; border-radius: 16px; box-shadow: 0 8px 22px rgba(15, 23, 42, 0.12); }
+  .fine { font-size: 0.9em; opacity: 0.8; }
+  @media (max-width: 720px) {
+    .hero-ios { flex-direction: column; align-items: flex-start; }
+    .shots { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>

@@ -81,6 +81,9 @@ set('/legal/privacy/trailsift-ios/', dateOf(`${PAGES}/legal/privacy/trailsift-io
 set('/ios-apps/passport-photo-coach/', dateOf(`${PAGES}/ios-apps/passport-photo-coach/index.astro`));
 set('/ios-apps/passport-photo-coach/support/', dateOf(`${PAGES}/ios-apps/passport-photo-coach/support/index.astro`));
 set('/legal/privacy/passport-photo-coach-ios/', dateOf(`${PAGES}/legal/privacy/passport-photo-coach-ios/index.astro`));
+set('/ios-apps/flipside/', dateOf(`${PAGES}/ios-apps/flipside/index.astro`));
+set('/ios-apps/flipside/support/', dateOf(`${PAGES}/ios-apps/flipside/support/index.astro`));
+set('/legal/privacy/flipside-ios/', dateOf(`${PAGES}/legal/privacy/flipside-ios/index.astro`));
 
 /* ------------------------------ index pages ----------------------------- */
 

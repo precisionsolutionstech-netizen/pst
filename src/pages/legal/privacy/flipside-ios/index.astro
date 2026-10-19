@@ -1,0 +1,142 @@
+---
+import Base from '../../../../layouts/Base.astro';
+
+const SITE = 'https://precisionsolutionstech.com';
+const title = 'Flipside Privacy Policy | Precision Solutions Tech';
+const description =
+  'How Flipside for iPhone handles your photos, camera, microphone and motion. Everything is processed on your device; nothing is uploaded or collected.';
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` },
+      { '@type': 'ListItem', position: 2, name: 'Privacy Policy', item: `${SITE}/legal/privacy/` },
+      { '@type': 'ListItem', position: 3, name: 'Flipside', item: `${SITE}/legal/privacy/flipside-ios/` },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: 'Flipside Privacy Policy',
+    url: `${SITE}/legal/privacy/flipside-ios/`,
+    description,
+    dateModified: '2026-10-18',
+    isPartOf: { '@type': 'WebSite', name: 'Precision Solutions Tech', url: `${SITE}/` },
+  },
+];
+---
+
+<Base title={title} description={description} path="/legal/privacy/flipside-ios/" jsonLd={jsonLd}>
+  <div class="wrap">
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li><a href="/legal/privacy/">Privacy Policy</a></li>
+        <li>Flipside</li>
+      </ol>
+    </nav>
+
+    <article class="prose">
+      <h1>Flipside Privacy Policy</h1>
+      <p class="meta">Last updated: October 18, 2026</p>
+      <p class="lead">
+        This Privacy Policy describes how <strong>Flipside</strong> (“we”, “us”) handles information
+        when you use the Flipside app for iPhone (the “App”), published by
+        <strong>Precision Solutions Tech</strong>, operated by <strong>SG TECHNOLOGY LLC</strong>.
+      </p>
+
+      <h2 id="summary">Short version</h2>
+      <p>
+        Flipside works <strong>entirely on your device</strong>. Your camera, your photos, your voice
+        and everything the App measures stay on your iPhone. We collect no data, operate no account
+        system, and run no servers that receive anything from the App. The App makes no network
+        requests of its own, and it never asks for your location.
+      </p>
+
+      <h2 id="camera">Camera</h2>
+      <p>
+        The App uses the camera to coach you into the shot: it finds faces, people, hands (for the
+        raised-palm shutter) and pets, and measures framing and light in the live picture, on your
+        device. Live frames are analysed and discarded; they are not stored or sent anywhere. Only the
+        photos you take are kept, and only while you use them in the App, until you save or share them.
+      </p>
+
+      <h2 id="microphone">Microphone and speech recognition (optional)</h2>
+      <p>
+        Only if you turn on “Say cheese”, the App listens for words like “cheese” or “take it” while the
+        camera screen is open. Recognition runs <strong>on your iPhone only</strong>: the App requires
+        on-device recognition and does not use it on iPhones that can’t do that, so your voice is never
+        sent to Apple or to us. Nothing is recorded or kept.
+      </p>
+
+      <h2 id="motion">Motion</h2>
+      <p>
+        The App reads the motion sensor while the camera is open, to tell a phone in your hand from one
+        on a stand and to take the photo at the steadiest moment. These readings are used on the spot
+        and not stored.
+      </p>
+
+      <h2 id="photos">Photos</h2>
+      <p>
+        When you save a photo, the App asks for permission to <em>add</em> items to your Photos
+        library. It cannot see or read your library. Saved and shared photos are newly encoded by the
+        App and carry no location information.
+      </p>
+
+      <h2 id="processing">What the App processes on your device</h2>
+      <ul>
+        <li>Faces, bodies, hands and pets, head pose and eye openness, to coach, choose the best photo and fix blinks</li>
+        <li>A person outline, for background blur and jump combos</li>
+        <li>Scene type and light, to choose camera settings</li>
+        <li>Your settings: voice output, timer, shooting style, hands-free options</li>
+      </ul>
+      <p>
+        None of this is used to identify you, and none of it leaves your device. Spoken directions use
+        Apple’s on-device speech.
+      </p>
+
+      <h2 id="children">Children</h2>
+      <p>
+        The App is not directed to children and asks no one for personal information. Photos of
+        anyone, of any age, are handled the same way: on your device, never collected by us.
+      </p>
+
+      <h2 id="sharing">Sharing</h2>
+      <p>
+        When you share a photo or video (AirDrop, Messages, Mail, social apps), iOS sends it where you
+        choose, and that service’s own privacy policy applies.
+      </p>
+
+      <h2 id="analytics">Analytics, tracking, and advertising</h2>
+      <p>
+        The App contains <strong>no analytics SDKs, no advertising SDKs, and no third-party
+        trackers</strong>. We do not profile you, and we do not sell or share personal information. If
+        that ever changes, this policy will be updated before the change ships.
+      </p>
+
+      <h2 id="retention">Data retention</h2>
+      <p>
+        We hold no data from the App. Photos you save are yours to keep or delete. If you contact
+        support, we keep your message as long as needed to help you.
+      </p>
+
+      <h2 id="changes">Changes</h2>
+      <p>We may update this policy. The “Last updated” date will change when we do.</p>
+
+      <h2 id="contact">Contact</h2>
+      <p>
+        Privacy questions:
+        <a href="mailto:support@precisionsolutionstech.com">support@precisionsolutionstech.com</a>
+      </p>
+      <p>
+        <a href="/ios-apps/flipside/">Flipside</a>
+        ·
+        <a href="/ios-apps/flipside/support/">Support</a>
+        ·
+        <a href="/legal/privacy/">Company privacy policy</a>
+      </p>
+    </article>
+  </div>
+</Base>

@@ -1,0 +1,133 @@
+---
+import Base from '../../../../layouts/Base.astro';
+
+const SITE = 'https://precisionsolutionstech.com';
+const title = 'Flipside Support | Precision Solutions Tech';
+const description =
+  'Support for Flipside on iPhone: what the coach’s words mean, the self-timer on a stand, jumps, Just snap, saying “cheese”, permissions, and common questions.';
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'iOS Apps', item: `${SITE}/ios-apps/` },
+      { '@type': 'ListItem', position: 2, name: 'Flipside', item: `${SITE}/ios-apps/flipside/` },
+      { '@type': 'ListItem', position: 3, name: 'Support', item: `${SITE}/ios-apps/flipside/support/` },
+    ],
+  },
+];
+---
+
+<Base title={title} description={description} path="/ios-apps/flipside/support/" jsonLd={jsonLd} active="ios-apps">
+  <div class="wrap">
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li><a href="/ios-apps/">iOS Apps</a></li>
+        <li><a href="/ios-apps/flipside/">Flipside</a></li>
+        <li>Support</li>
+      </ol>
+    </nav>
+
+    <article class="prose">
+      <h1>Flipside Support</h1>
+      <p class="lead">
+        Something not working, or a question the app doesn’t answer? Email
+        <a href="mailto:support@precisionsolutionstech.com">support@precisionsolutionstech.com</a>
+        and tell us your iPhone model, iOS version, which shot you chose, and what you expected to
+        happen. We read every message.
+      </p>
+
+      <h2 id="start">Getting started</h2>
+      <ol>
+        <li>Pick a shot on the Home screen, or tap <strong>Pick for me</strong>.</li>
+        <li>Turn the phone around so the back camera faces you.</li>
+        <li>Listen, and move slowly. When everything’s right, Flipside takes the photo.</li>
+        <li>Turn the phone back to see it, then save the ones you like.</li>
+      </ol>
+
+      <h2 id="words">What the words mean</h2>
+      <ul>
+        <li><strong>“Phone left”, “Phone up”…</strong>: move the phone that way (your left, as you hold it).</li>
+        <li><strong>“Step left”, “Step back”…</strong>: the phone is on a stand, so move yourself.</li>
+        <li><strong>“Good.”</strong>: that part’s done. Stop moving.</li>
+        <li><strong>“Good enough. Taking a few.”</strong>: lining up was taking a while, so Flipside takes a few photos anyway.</li>
+      </ul>
+
+      <h2 id="stand">On a stand: the self-timer</h2>
+      <p>
+        Lean the phone on something or use a tripod. Flipside notices it’s not in your hand. Once
+        you’re lined up it says “Good.” and gives you time to get in the shot: “Photo in 10 seconds”,
+        with the light blinking every second. Change the timer (3, 5 or 10 seconds) under
+        <strong>Voice &amp; hands-free</strong>. On a stand Flipside always talks out loud, because you
+        can’t feel a vibration from over there.
+      </p>
+
+      <h2 id="jumps">Jumps</h2>
+      <p>
+        Choose Solo jump or Group jump, prop the phone up and step back. Flipside counts down to
+        “Jump!” and catches the jump from the live camera, about 15 frames a second. Afterwards pick
+        any of the Jump Combos: the best moment, everyone at their peak, a motion sequence, or a
+        jump loop video.
+      </p>
+
+      <h2 id="snap">Just snap</h2>
+      <p>
+        At the top of the Home screen, choose <strong>Just snap</strong> for no directions. Flipside
+        only speaks up if it can’t see you, counts 3, 2, 1 and takes 8 photos a moment apart. It
+        marks its suggested best; tick as many as you like to save.
+      </p>
+
+      <h2 id="hands-free">Hands-free</h2>
+      <ul>
+        <li><strong>Raise your palm</strong> to the camera for a moment: 3, 2, 1, photo.</li>
+        <li><strong>Say “cheese”</strong> (or “take it”, “snap”): turn it on under Voice &amp; hands-free. It needs the microphone and speech recognition, and works on your iPhone only.</li>
+        <li>Either <strong>volume button</strong> takes the photo.</li>
+      </ul>
+
+      <h2 id="permissions">Permissions</h2>
+      <p>
+        Only the camera is needed. Photos (add only) is asked for when you first save; the microphone
+        and speech recognition only if you turn on “Say cheese”. If one is off, Flipside shows a
+        message with a button to its page in Settings. You can also see every permission under
+        <strong>About</strong> (the ⓘ button on Home).
+      </p>
+
+      <h2 id="questions">Common questions</h2>
+      <h3>It doesn’t react when I say “cheese”.</h3>
+      <p>
+        Check that “Say cheese” is on under Voice &amp; hands-free, and that the camera screen shows
+        “Listening”. The badge shows the last words it heard. Some older iPhones can’t recognise speech
+        on the device; Flipside then says “Say cheese” isn’t available rather than sending your voice
+        anywhere.
+      </p>
+      <h3>Why the back camera?</h3>
+      <p>
+        It takes noticeably better photos than the front one, especially in low light, wide groups and
+        views. You can still switch to the front camera on the camera screen.
+      </p>
+      <h3>Does Flipside upload my photos?</h3>
+      <p>
+        No. Everything runs on your iPhone. See the <a href="/legal/privacy/flipside-ios/">privacy policy</a>.
+      </p>
+      <h3>Is it safe to step back while it’s talking?</h3>
+      <p>
+        Flipside can’t see what’s behind you. Look before you take a step, every time. When stepping
+        back near a view or from far away it says “Check behind. Step back.”
+      </p>
+
+      <h2 id="contact">Contact</h2>
+      <p>
+        <a href="mailto:support@precisionsolutionstech.com">support@precisionsolutionstech.com</a>
+      </p>
+      <p>
+        <a href="/ios-apps/flipside/">Flipside</a>
+        ·
+        <a href="/legal/privacy/flipside-ios/">Privacy Policy</a>
+        ·
+        <a href="/about/">About us</a>
+      </p>
+    </article>
+  </div>
+</Base>
