@@ -2,24 +2,85 @@
 import Base from '../../../layouts/Base.astro';
 
 const SITE = 'https://precisionsolutionstech.com';
-const title = 'Flipside for iPhone — Selfies with the Back Camera, Coached';
+const PATH = '/ios-apps/flipside/';
+const IMG = '/ios-apps/flipside';
+const title = 'Flipside: Jump Shots & Group Photos With No Photographer | iPhone';
 const description =
-  'Flipside lets you take selfies with your iPhone’s better back camera. A voice tells you where to hold it (“Phone left”, “Good”), then it takes the photo. Group shots, jumps, a self-timer on a stand. Free.';
+  'Take a jump shot or a group photo with everyone in it, even when nobody’s around to hold the camera. Prop up your iPhone and Flipside counts you in and keeps the top of the jump. Free.';
 
-const shots: { src: string; alt: string }[] = [];
+const shot = (name: string, alt: string) => ({
+  src: `${IMG}/${name}.jpg`,
+  srcset: `${IMG}/${name}.jpg 506w, ${IMG}/${name}@2x.jpg 1012w`,
+  alt,
+});
+
+const jumpShot = shot('04-jump', 'Flipside’s Group jump result: three friends caught at the top of the jump in the snow, with Jump Combos below: Best moment and Everyone at their peak');
+const groupShot = shot('03-group', 'Flipside coaching a group photo: it counts 4 people and says “Squeeze in” so nobody is cut off');
+const coachShot = shot('02-coach', 'A couple’s selfie with the back camera, Flipside saying “Phone left”');
+const gallery = [
+  shot('01-home', 'Flipside home screen: Pick for me, or choose Just me, Us two, Group, Me + the view, Me + my pet, Far away, Solo jump or Group jump'),
+  shot('05-pick', 'After the shot: Flipside suggests photo 5 of 8, with touch up and background blur switches'),
+  shot('06-handsfree', 'Voice and hands-free settings: out loud, headphones only or vibrate; raise your palm or say “cheese”; a 3, 5 or 10 second stand timer'),
+];
+
+const faq: { q: string; a: string }[] = [
+  {
+    q: 'What is a jump shot?',
+    a: 'A jump shot (or jumping photo) is a picture of someone caught in mid-air at the top of a jump. Travellers love them on summits, beaches and road trips. The portrait photographer Philippe Halsman made them famous and called it “jumpology”.',
+  },
+  {
+    q: 'How do I take a jump shot of myself when I’m alone?',
+    a: 'Open Flipside, choose Solo jump and lean your iPhone against a rock, a bag or a tripod with the back camera facing you. Walk back until it says “Good.”, then it counts “Jump in 10 seconds… 3, 2, 1, Jump!”, catches 18 frames of the jump and keeps the highest one.',
+  },
+  {
+    q: 'How do I get everyone in the air at the same time in a group jump photo?',
+    a: 'You don’t have to. Nobody peaks at exactly the same moment, so Flipside’s Everyone at their peak takes each person from their own highest frame and puts them in one photo. Nobody gets caught on the way down.',
+  },
+  {
+    q: 'How do I take a group photo with everyone in it when there’s nobody to take it?',
+    a: 'Prop your iPhone up, choose Group and step into the shot. Flipside counts heads out loud (“I see 5 of you”) and tells you to squeeze in or step back until everyone fits, then gives you a self-timer to get ready.',
+  },
+  {
+    q: 'Do I need a tripod?',
+    a: 'No. Anything that holds the phone still works: a rock, a fence post, a backpack, a car roof. A small phone tripod makes it easier to get the height right.',
+  },
+  {
+    q: 'Is Flipside free?',
+    a: 'Yes. Every feature is free, with no account, no ads and no in-app purchases.',
+  },
+];
 
 const jsonLd = [
   {
     '@context': 'https://schema.org',
     '@type': 'SoftwareApplication',
     name: 'Flipside',
+    alternateName: 'Flipside: Back Camera Selfies',
     operatingSystem: 'iOS 18.0 or later',
     applicationCategory: 'PhotographyApplication',
     description,
-    url: `${SITE}/ios-apps/flipside/`,
-    image: `${SITE}/ios-apps/flipside/icon-256.png`,
+    url: `${SITE}${PATH}`,
+    image: `${SITE}${IMG}/icon-256.png`,
+    screenshot: [jumpShot, groupShot, coachShot, ...gallery].map((s) => `${SITE}${s.src}`),
+    featureList: [
+      'Solo jump shots on a self-timer',
+      'Group jump photos with everyone at their peak',
+      'Motion sequence and jump loop from one jump',
+      'Group photos with a spoken head count',
+      'Selfies with the back camera, coached by voice',
+      'Hands-free: raise your palm or say “cheese”',
+    ],
     offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
     publisher: { '@type': 'Organization', name: 'Precision Solutions Tech' },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faq.map(({ q, a }) => ({
+      '@type': 'Question',
+      name: q,
+      acceptedAnswer: { '@type': 'Answer', text: a },
+    })),
   },
   {
     '@context': 'https://schema.org',
@@ -27,13 +88,13 @@ const jsonLd = [
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` },
       { '@type': 'ListItem', position: 2, name: 'iOS Apps', item: `${SITE}/ios-apps/` },
-      { '@type': 'ListItem', position: 3, name: 'Flipside', item: `${SITE}/ios-apps/flipside/` },
+      { '@type': 'ListItem', position: 3, name: 'Flipside', item: `${SITE}${PATH}` },
     ],
   },
 ];
 ---
 
-<Base title={title} description={description} path="/ios-apps/flipside/" active="ios-apps" jsonLd={jsonLd}>
+<Base title={title} description={description} path={PATH} active="ios-apps" ogImage={`${IMG}/og-1200x630.jpg`} jsonLd={jsonLd}>
   <div class="wrap">
     <nav class="breadcrumbs" aria-label="Breadcrumb">
       <ol>
@@ -43,71 +104,161 @@ const jsonLd = [
       </ol>
     </nav>
 
-    <header class="hero-ios">
-      <img src="/ios-apps/flipside/icon-256.png" alt="Flipside app icon" width="96" height="96" class="ios-icon" />
-      <div>
-        <h1>Flipside</h1>
-        <p class="lead">Selfies with your iPhone’s best camera. Turn the phone around and a voice tells you where to hold it.</p>
+    <header class="fs-hero">
+      <div class="fs-hero-text">
+        <p class="fs-app">
+          <img src={`${IMG}/icon-256.png`} alt="Flipside app icon" width="56" height="56" class="ios-icon" />
+          <span>Flipside <span class="fs-app-sub">for iPhone</span></span>
+        </p>
+        <h1>Jump shots and group photos, with nobody behind the camera</h1>
+        <p class="lead">
+          Prop your iPhone on a rock, step back, and jump. Flipside talks you into the frame, counts
+          you down, and keeps the moment you were highest in the air. Everyone in the photo. Nobody left
+          out holding the phone.
+        </p>
         <p class="status">
           <span class="pill pill-success">Free · no account · no ads</span>
           <span class="pill">Coming soon to the App Store</span>
         </p>
       </div>
+      <img class="fs-phone fs-hero-phone" src={jumpShot.src} srcset={jumpShot.srcset} sizes="(max-width: 720px) 70vw, 300px" alt={jumpShot.alt} width="506" height="1100" fetchpriority="high" decoding="async" />
     </header>
 
-    {shots.length > 0 && (
-      <div class="shots">
-        {shots.map((s) => <img src={s.src} alt={s.alt} loading="lazy" decoding="async" width="506" height="1100" />)}
+    <section class="fs-story">
+      <div>
+        <h2>You made it to the top. There’s nobody around.</h2>
+        <p>
+          Ever been out hiking on your own, reached the summit, and wanted <em>that</em> photo: arms out,
+          feet off the ground, the whole valley behind you? You set the timer, run, jump too early, walk
+          back, check, and do it all again. A jump lasts about half a second. A self-timer is a guess.
+        </p>
+        <p>
+          Or you’re out with friends at the end of a great day, and you want one picture with
+          <em>everyone</em> in it. Somebody always ends up holding the phone, or you all squeeze into an
+          arm’s-length selfie and someone gets cut off at the edge.
+        </p>
+        <p><strong>Flipside walks you through it.</strong> Lean the phone on anything, and it does the rest.</p>
       </div>
-    )}
+    </section>
 
     <article class="prose">
+      <h2 id="solo-jump">How to take a jump shot by yourself</h2>
+      <ol class="fs-steps">
+        <li><strong>Choose Solo jump</strong> and lean your iPhone on a rock, a backpack or a small tripod, back camera facing you.</li>
+        <li><strong>Walk back.</strong> Flipside talks you into the frame in your own left and right, and counts your steps: “3 steps left”, “2 steps closer”. Then “Good.”</li>
+        <li><strong>Get ready.</strong> “Jump in 10 seconds… 3, 2, 1, Jump!” No running back to the phone. Prefer a cue? Raise your palm or say “cheese”, and it counts 3, 2, 1, Jump! from there.</li>
+        <li><strong>Jump.</strong> Flipside grabs 18 frames from the live camera across the whole jump, take-off to landing, and picks the one where you’re highest.</li>
+        <li><strong>Go again.</strong> “Again! Even higher!” “Now a star jump!” “Now a silly jump!”</li>
+      </ol>
       <p>
-        The camera on the back of your iPhone is the good one: a bigger sensor, an ultra-wide lens and
-        a real flash. Flipside lets you take selfies with it. You can’t see the screen with the phone
-        turned around, so Flipside talks you into the shot and takes the photo when it’s right.
+        Every frame is kept for you to look through, so if you like the one on the way up better, tick it
+        and save that too.
       </p>
+    </article>
 
-      <h2 id="coach">Short words, one thing at a time</h2>
-      <ul>
-        <li>Phone in your hand: “Phone left”, “Phone right”, “Phone up”, “Phone down”, “Phone closer”</li>
-        <li>Phone on a stand: “Step left”, “Step right”, “Step closer”, “Step back”</li>
-        <li>“Good.” the moment you’ve got it, so you know to stop moving</li>
-        <li>Soft ticks that speed up as you get closer, like a parking sensor</li>
-        <li>Groups: “I see 5 of you”, so nobody gets cut out by accident</li>
+    <section class="fs-jump" id="group-jump">
+      <div class="prose">
+        <h2>Group jump: everyone at the top, in one photo</h2>
+        <p>
+          The hard part of a group jump photo isn’t getting everyone to jump. It’s that nobody hits the top
+          at the same moment, so in every single frame somebody is still on the way up or already coming
+          down. Flipside fixes that. After one jump, pick any of these <strong>Jump Combos</strong>, all made
+          from the same burst:
+        </p>
+      </div>
+      <ul class="fs-combos">
+        <li><strong>Best moment</strong><span>The single highest frame.</span></li>
+        <li><strong>Everyone at their peak</strong><span>Each person taken from <em>their own</em> highest
+          frame and put into one photo. Nobody caught on the way down.</span></li>
+        <li><strong>Motion sequence</strong><span>Take-off to landing in one picture, every stage of the
+          jump laid over the same background.</span></li>
+        <li><strong>Jump loop</strong><span>A short video of the jump that plays back and forth, ready to post.</span></li>
       </ul>
-      <p>
-        Prefer no directions? Choose <strong>Just snap</strong>: Flipside counts 3, 2, 1, takes a few
-        photos and suggests the best one.
-      </p>
+      <div class="prose">
+        <p>
+          Group jump uses the ultra-wide lens, sideways, so the whole group and the view fit. Before
+          “Jump!” it counts heads out loud, “Got all 5 of you.”, so nobody finds out later they were out of
+          the frame. Solo jumps get Jump Combos too: the motion sequence and the loop are made for them.
+        </p>
+      </div>
+    </section>
 
-      <h2 id="shots">The right settings for every shot</h2>
+    <section class="fs-split fs-split-rev" id="group-photo">
+      <img class="fs-phone" src={groupShot.src} srcset={groupShot.srcset} sizes="(max-width: 720px) 70vw, 300px" alt={groupShot.alt} width="506" height="1100" loading="lazy" decoding="async" />
+      <div class="prose">
+        <h2>A group photo with everyone in it</h2>
+        <p>
+          The person who takes the group photo is never in it. With Flipside, nobody has to be. Prop the
+          phone up, choose <strong>Group</strong>, and step in with everyone else.
+        </p>
+        <ul>
+          <li>“I see 5 of you.” It counts out loud as people join, so you know everyone’s in.</li>
+          <li>“Squeeze in”, “Check behind. Step back.”: short directions until nobody’s cut off at the edge.</li>
+          <li>A 3, 5 or 10 second timer once you’re lined up, with the last five counted out loud.</li>
+          <li>A quick burst every time. Flipside suggests the one with everyone’s eyes open, and if
+            someone blinked it can swap in their open eyes from another frame.</li>
+        </ul>
+        <p>Holding it at arm’s length instead? Flipside coaches that too: “Phone left”, “Phone closer”.</p>
+      </div>
+    </section>
+
+    <section class="fs-split" id="back-camera">
+      <img class="fs-phone" src={coachShot.src} srcset={coachShot.srcset} sizes="(max-width: 720px) 70vw, 300px" alt={coachShot.alt} width="506" height="1100" loading="lazy" decoding="async" />
+      <div class="prose">
+        <h2>Selfies with your iPhone’s best camera</h2>
+        <p>
+          The camera on the back of your iPhone is the good one: a bigger sensor, an ultra-wide lens and a
+          real flash. Flipside lets you take selfies with it. You can’t see the screen with the phone turned
+          around, so it talks you into the shot and takes the photo when it’s right.
+        </p>
+        <ul>
+          <li>Phone in your hand: “Phone left”, “Phone up”, “Phone closer”</li>
+          <li>Phone on a stand: “Step left”, “Step back”</li>
+          <li>“Good.” the moment you’ve got it, so you know to stop moving</li>
+          <li>Soft ticks that speed up as you get closer, like a parking sensor</li>
+        </ul>
+        <p>
+          Prefer no directions? Choose <strong>Just snap</strong>: Flipside counts 3, 2, 1, takes a few
+          photos and suggests the best one.
+        </p>
+      </div>
+    </section>
+
+    <article class="prose">
+      <h2 id="shots">Pick the shot, Flipside does the rest</h2>
       <ul>
-        <li>Just me, Us two, Group, Me + the view, Me + my pet, or “Pick for me”</li>
+        <li>Just me, Us two, Group, Me + the view, Me + my pet, Far away, Solo jump, Group jump</li>
+        <li>Or <strong>Pick for me</strong>: it sees who’s in front of it and chooses</li>
         <li>Lens, sideways or upright, flash or soft light, how many frames: chosen for you</li>
         <li><strong>Far away</strong>: prop the phone up, walk back, and it counts your steps in your AirPods</li>
-        <li><strong>Jumps</strong>: “Jump in 10 seconds… 3, 2, 1, Jump!” and it keeps the highest moment.
-          Or make <em>everyone at their peak</em>, a <em>motion sequence</em> or a <em>jump loop</em>.</li>
       </ul>
 
       <h2 id="hands-free">Hands-free</h2>
       <ul>
         <li>On a stand, a self-timer gives you time to get in the shot (3, 5 or 10 seconds)</li>
-        <li>Raise your palm, or say “cheese” (on your phone, nothing recorded)</li>
-        <li>The volume buttons take the photo too</li>
+        <li>Raise your palm, or say “cheese” (recognised on your iPhone, nothing recorded)</li>
+        <li>Either volume button takes the photo</li>
+        <li>On a stand it always talks out loud, even on silent: you can’t see the screen from over there</li>
       </ul>
 
       <h2 id="after">After the shot</h2>
       <ul>
-        <li>A quick burst every time; Flipside suggests the one with everyone’s eyes open</li>
-        <li>Blinked? In group shots it can swap in your open eyes from another frame</li>
-        <li>Touch-ups, background blur, Live Photos, and sizes for posting (square, 4:5, 9:16, round)</li>
+        <li>Flipside suggests the best frame; tick as many as you like to keep</li>
+        <li>Touch-ups, background blur, Live Photos, night shots on a stand</li>
+        <li>Sizes for posting, framed around the people: square, 4:5, 9:16 and round</li>
       </ul>
+    </article>
 
+    <div class="shots" aria-label="More Flipside screenshots">
+      {gallery.map((s) => <img src={s.src} srcset={s.srcset} sizes="(max-width: 720px) 45vw, 240px" alt={s.alt} loading="lazy" decoding="async" width="506" height="1100" />)}
+    </div>
+
+    <article class="prose">
       <h2 id="private">Private by design</h2>
       <p>
         Everything happens on your iPhone. No account, no uploads, no tracking, no ads. Flipside never
-        asks for your location. Read the <a href="/legal/privacy/flipside-ios/">privacy policy</a>.
+        asks for your location, and the photos it saves or shares carry no location data. Read the
+        <a href="/legal/privacy/flipside-ios/">privacy policy</a>.
       </p>
 
       <h2 id="requirements">Requirements</h2>
@@ -118,8 +269,19 @@ const jsonLd = [
       <h2 id="pricing">Pricing</h2>
       <p>Free, with every feature.</p>
 
+      <h2 id="faq">Questions</h2>
+      <div class="fs-faq">
+        {faq.map(({ q, a }) => (
+          <details>
+            <summary>{q}</summary>
+            <p>{a}</p>
+          </details>
+        ))}
+      </div>
+
       <p class="fine">
-        You’re in charge: Flipside can’t see what’s behind you. Look before you take a step.
+        You’re in charge: Flipside can’t see what’s behind you. Look before you step back, and pick
+        somewhere safe to jump.
       </p>
 
       <p>
@@ -132,16 +294,50 @@ const jsonLd = [
 </Base>
 
 <style>
-  .hero-ios { display: flex; gap: 20px; align-items: center; margin: 8px 0 24px; }
-  .hero-ios h1 { margin: 0 0 6px; }
-  .hero-ios .lead { margin: 0 0 10px; }
-  .hero-ios .status { display: flex; gap: 8px; flex-wrap: wrap; margin: 0; }
-  .ios-icon { width: 96px; height: 96px; border-radius: 22px; box-shadow: 0 8px 22px rgba(15, 23, 42, 0.18); flex-shrink: 0; }
-  .shots { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin: 0 0 32px; }
+  .fs-hero { display: grid; grid-template-columns: 1fr 300px; gap: 48px; align-items: center; margin: 8px 0 40px; }
+  .fs-hero h1 { font-size: clamp(2rem, 4.2vw, 2.9rem); line-height: 1.12; margin: 0 0 16px; letter-spacing: -0.02em; }
+  .fs-hero .lead { font-size: 1.15rem; margin: 0 0 18px; color: var(--ink-soft); }
+  .fs-hero .status { display: flex; gap: 8px; flex-wrap: wrap; margin: 0; }
+  .fs-app { display: flex; align-items: center; gap: 12px; margin: 0 0 18px; font-weight: 700; font-size: 1.15rem; }
+  .fs-app-sub { font-weight: 500; color: var(--muted); }
+  .ios-icon { width: 56px; height: 56px; border-radius: 13px; box-shadow: 0 6px 16px rgba(15, 23, 42, 0.18); flex-shrink: 0; }
+  .fs-phone { width: 100%; max-width: 300px; height: auto; border-radius: 22px; box-shadow: 0 14px 36px rgba(234, 108, 32, 0.22), 0 4px 12px rgba(15, 23, 42, 0.1); }
+
+  .fs-story { background: linear-gradient(135deg, #fff7ed, #ffedd5); border: 1px solid #fed7aa; border-radius: 20px; padding: 32px 36px; margin: 0 0 40px; }
+  .fs-story h2 { margin-top: 0; }
+  .fs-story p { max-width: 720px; font-size: 1.05rem; }
+  .fs-story p:last-child { margin-bottom: 0; }
+
+  .fs-steps { padding-left: 1.4em; }
+  .fs-steps li { margin-bottom: 10px; }
+
+  .fs-split { display: grid; grid-template-columns: 300px 1fr; gap: 48px; align-items: center; margin: 48px 0; }
+  .fs-split-rev { grid-template-columns: 1fr 300px; }
+  .fs-split-rev .fs-phone { order: 2; }
+  .fs-split .prose h2 { margin-top: 0; }
+  .fs-jump { margin: 48px 0; }
+  .fs-jump .prose h2 { margin-top: 0; }
+  .fs-combos { list-style: none; padding: 0; margin: 20px 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+  .fs-combos li { background: var(--bg-soft); border: 1px solid var(--border); border-top: 3px solid #f97316; border-radius: var(--radius); padding: 16px; display: flex; flex-direction: column; gap: 6px; }
+  .fs-combos span { color: var(--ink-soft); font-size: 0.93rem; line-height: 1.5; }
+
+  .shots { display: grid; grid-template-columns: repeat(3, minmax(0, 240px)); justify-content: center; gap: 20px; margin: 32px 0 40px; }
   .shots img { width: 100%; height: auto; border-radius: 16px; box-shadow: 0 8px 22px rgba(15, 23, 42, 0.12); }
-  .fine { font-size: 0.9em; opacity: 0.8; }
+
+  .fs-faq details { border-bottom: 1px solid var(--border); padding: 12px 0; }
+  .fs-faq summary { cursor: pointer; font-weight: 600; }
+  .fs-faq details p { margin: 8px 0 0; color: var(--ink-soft); }
+  .fine { font-size: 0.9em; opacity: 0.8; margin-top: 28px; }
+
   @media (max-width: 720px) {
-    .hero-ios { flex-direction: column; align-items: flex-start; }
+    .fs-hero, .fs-split, .fs-split-rev { grid-template-columns: 1fr; gap: 24px; }
+    .fs-split-rev .fs-phone { order: 0; }
+    .fs-phone { max-width: 70vw; justify-self: center; }
+    .fs-story { padding: 22px 20px; }
     .shots { grid-template-columns: repeat(2, 1fr); }
+    .fs-combos { grid-template-columns: 1fr; }
+  }
+  @media (min-width: 721px) and (max-width: 960px) {
+    .fs-combos { grid-template-columns: repeat(2, 1fr); }
   }
 </style>
