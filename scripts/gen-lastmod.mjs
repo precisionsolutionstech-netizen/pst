@@ -85,6 +85,7 @@ set('/legal/privacy/passport-photo-coach-ios/', dateOf(`${PAGES}/legal/privacy/p
 set('/ios-apps/flipside/', dateOf(`${PAGES}/ios-apps/flipside/index.astro`));
 set('/ios-apps/flipside/support/', dateOf(`${PAGES}/ios-apps/flipside/support/index.astro`));
 set('/legal/privacy/flipside-ios/', dateOf(`${PAGES}/legal/privacy/flipside-ios/index.astro`));
+set('/legal/privacy/flipside-android/', dateOf(`${PAGES}/legal/privacy/flipside-android/index.astro`));
 
 /* ------------------------------ index pages ----------------------------- */
 

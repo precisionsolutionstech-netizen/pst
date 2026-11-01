@@ -1,0 +1,171 @@
+---
+import Base from '../../../../layouts/Base.astro';
+
+const SITE = 'https://precisionsolutionstech.com';
+const title = 'Flipside for Android Privacy Policy | Precision Solutions Tech';
+const description =
+  'How Flipside for Android handles your camera, photos, microphone and motion. Everything runs on your device; the app has no internet permission and collects nothing.';
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` },
+      { '@type': 'ListItem', position: 2, name: 'Privacy Policy', item: `${SITE}/legal/privacy/` },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: 'Flipside for Android',
+        item: `${SITE}/legal/privacy/flipside-android/`,
+      },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: 'Flipside for Android Privacy Policy',
+    url: `${SITE}/legal/privacy/flipside-android/`,
+    description,
+    dateModified: '2026-11-01',
+    isPartOf: { '@type': 'WebSite', name: 'Precision Solutions Tech', url: `${SITE}/` },
+  },
+];
+---
+
+<Base
+  title={title}
+  description={description}
+  path="/legal/privacy/flipside-android/"
+  jsonLd={jsonLd}
+>
+  <div class="wrap">
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li><a href="/legal/privacy/">Privacy Policy</a></li>
+        <li>Flipside for Android</li>
+      </ol>
+    </nav>
+
+    <article class="prose">
+      <h1>Flipside for Android Privacy Policy</h1>
+      <p class="meta">Last updated: November 1, 2026</p>
+      <p class="lead">
+        This Privacy Policy describes how <strong>Flipside</strong> (“we”, “us”) handles information
+        when you use the Flipside app for Android (the “App”), published by
+        <strong>Precision Solutions Tech</strong>, operated by <strong>SG TECHNOLOGY LLC</strong>.
+      </p>
+
+      <h2 id="summary">Short version</h2>
+      <p>
+        Flipside works <strong>entirely on your device</strong>. Your camera, your photos, your voice
+        and everything the App measures stay on your phone. We collect no data, operate no account
+        system, and run no servers that receive anything from the App. The App does not have
+        Android’s internet permission, so it cannot send anything over the network, and it never asks
+        for your location.
+      </p>
+
+      <h2 id="camera">Camera</h2>
+      <p>
+        The App uses the camera to coach you into the shot: it finds faces, people, hands (for the
+        raised-palm shutter) and pets, and measures framing and light in the live picture, on your
+        device. Live frames are analysed and discarded; they are not stored or sent anywhere. For jump
+        shots the App keeps the last few seconds of the live picture in memory so it can pick the
+        frames where you are in the air; the rest are thrown away. Only the photos you take are kept,
+        and only while you use them in the App, until you save or share them.
+      </p>
+
+      <h2 id="microphone">Microphone and speech recognition (optional)</h2>
+      <p>
+        Only if you turn on “Say cheese”, the App asks for the microphone and listens for words like
+        “cheese” or “take it” while the camera screen is open. Recognition uses
+        <strong>Android’s on-device speech recognizer only</strong> (Android 13 and later). If your
+        phone has no on-device recognizer, the App tells you “Say cheese” is unavailable rather than
+        using an online service, so your voice is never sent to Google or to us. Nothing is recorded
+        or kept.
+      </p>
+
+      <h2 id="motion">Motion</h2>
+      <p>
+        The App reads the motion sensors while the camera is open, to tell a phone in your hand from
+        one on a stand, to keep scenic shots level, and to take the photo at the steadiest moment.
+        These readings are used on the spot and not stored.
+      </p>
+
+      <h2 id="photos">Photos and videos</h2>
+      <p>
+        When you save, the App adds the photo to your phone’s Pictures folder (and a jump loop video
+        to Movies), in a Flipside folder. This needs no storage permission, and the App does not read
+        the rest of your gallery. The App has no location permission, so saved and shared photos carry
+        no location information.
+      </p>
+
+      <h2 id="learning">What the App learns about your phone</h2>
+      <p>
+        Android phones differ in how long the camera takes to fire and how long the voice takes to
+        start, so the App measures these on your phone and remembers them, along with how soon after
+        “Jump!” people tend to jump. What it keeps is a short list of timings in seconds, such as
+        “this camera fires 0.5 seconds after it is asked”. It contains no pictures and nothing about who
+        you are. It is stored in the App’s private storage, is left out of device backups, and is
+        removed when you clear the App’s storage or uninstall it.
+      </p>
+
+      <h2 id="processing">What the App processes on your device</h2>
+      <ul>
+        <li>Faces, bodies, hands and pets, head pose and eye openness, to coach, choose the best photo and fix blinks</li>
+        <li>A person outline, for background blur and jump combos</li>
+        <li>Scene type and light, to choose camera settings</li>
+        <li>The camera and voice timings described above</li>
+        <li>Your settings: voice output, timer, shooting style, hands-free options</li>
+      </ul>
+      <p>
+        This uses Google’s ML Kit and MediaPipe models, which are built into the App and run on your
+        phone; because the App has no internet permission, they cannot send anything either. None of
+        this is used to identify you, and none of it leaves your device. Spoken directions use your
+        phone’s own text-to-speech.
+      </p>
+
+      <h2 id="children">Children</h2>
+      <p>
+        The App is not directed to children under 13 (or the minimum age in your jurisdiction) and
+        asks no one for personal information. Photos of anyone, of any age, are handled the same way:
+        on your device, never collected by us.
+      </p>
+
+      <h2 id="sharing">Sharing</h2>
+      <p>
+        When you share a photo or video, Android’s share sheet sends it to the app you choose
+        (Messages, email, social apps), and that service’s own privacy policy applies.
+      </p>
+
+      <h2 id="analytics">Analytics, tracking, and advertising</h2>
+      <p>
+        The App contains <strong>no analytics SDKs, no advertising SDKs, and no third-party
+        trackers</strong>. We do not profile you, and we do not sell or share personal information. If
+        that ever changes, this policy will be updated before the change ships.
+      </p>
+
+      <h2 id="retention">Data retention</h2>
+      <p>
+        We hold no data from the App. Photos you save are yours to keep or delete. Your settings and the
+        timings the App has learned stay on your phone until you clear the App’s storage or uninstall
+        it. If you contact support, we keep your message as long as needed to help you.
+      </p>
+
+      <h2 id="changes">Changes</h2>
+      <p>We may update this policy. The “Last updated” date will change when we do.</p>
+
+      <h2 id="contact">Contact</h2>
+      <p>
+        Privacy questions:
+        <a href="mailto:support@precisionsolutionstech.com">support@precisionsolutionstech.com</a>
+      </p>
+      <p>
+        <a href="/legal/privacy/flipside-ios/">Flipside for iPhone privacy policy</a>
+        ·
+        <a href="/legal/privacy/">Company privacy policy</a>
+      </p>
+    </article>
+  </div>
+</Base>
