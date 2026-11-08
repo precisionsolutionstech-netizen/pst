@@ -46,7 +46,10 @@ const imageUrl = ogImage
     : `${SITE}/og-default.jpg`;
 
 const publisher = { '@type': 'Organization', name: 'Precision Solutions Tech', url: `${SITE}/` };
-const priceValue = a.price ? a.price.replace('$', '') : undefined;
+// "Free" (Assay: free download, paid unlock in-app) is a $0 offer.
+const priceValue = a.price
+  ? a.price === 'Free' ? '0' : a.price.replace('$', '')
+  : undefined;
 
 // Twinkeep is sold through two channels at the same price; both must be
 // represented or the App Store link is the only purchase path search engines

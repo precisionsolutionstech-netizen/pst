@@ -28,7 +28,7 @@
       {
         "src": "/apps/twinkeep/gallery/13-compress.png",
         "alt": "Twinkeep Compress on macOS: photos and a video queued, with the four choices for what happens to each original",
-        "caption": "Compress photos and video \u2014 and know exactly what happens to the original."
+        "caption": "Compress photos and video — and know exactly what happens to the original."
       },
       {
         "src": "/apps/twinkeep/gallery/03-review-lookalikes.png",
@@ -273,9 +273,18 @@
       "Productivity",
       "macOS"
     ],
-    "comingSoon": true,
-    "comingSoonNote": "Coming soon to the Mac App Store — free to download and view any file.",
+    "price": "Free",
+    "comingSoon": false,
     "os": "macOS 14+",
+    "appStoreUrl": "https://apps.apple.com/us/app/assay-file-viewer-converter/id6819941898?mt=12",
+    "appStoreHasTrial": false,
+    "version": "1.0.0",
+    "trustPoints": [
+      "Free to view any file",
+      "Runs entirely on your Mac — nothing is uploaded",
+      "No account, no subscription",
+      "Assay Unlock: $19.99 once"
+    ],
     "contentHtml": "<h2>What Assay is</h2>\n<p><strong>Assay</strong> opens any file on your Mac, tells you what it really is, and converts it to what you need — then checks the result. It reads the formats macOS leaves you stuck with: dBASE tables, SQLite databases, Outlook <code>.msg</code> messages, mailboxes, old spreadsheets from SYLK and DIF to Lotus 1-2-3, TOML, JSON Lines, 7-Zip archives and more.</p>\n<h2>A conversion you can check</h2>\n<p>Every conversion is written, read back with the destination’s own reader, and compared with the original. When a format cannot hold something — leading zeros in a ZIP code column, a line break in a cell, transparency in a JPEG, a table wider than Word allows — Assay says so, counts it, and tells you which format would keep it. “Nothing lost” is only said when the result was read back and matched.</p>\n<h2>What it does</h2>\n<ul>\n<li><strong>Identifies files by their contents</strong>, not their name, and says when the extension is lying.</li>\n<li><strong>Shows every file the way it wants to be read</strong> — tables, trees, documents, messages, archives, pictures, 3D models, sound and video, and the raw bytes.</li>\n<li><strong>Converts between tables, trees and documents</strong> — CSV, Excel, SQLite, JSON, YAML, TOML, XML, property lists, HTML, Markdown, RTF and Word — keeping headings, lists, links, pictures, types and key order where the destination can hold them.</li>\n<li><strong>Edits in place</strong>, changing only the bytes you changed: a cell in a CSV keeps every other line exactly as it was.</li>\n<li><strong>Works from Finder</strong> — space-bar previews for formats macOS cannot show, and Open in Assay and Convert with Assay… on the right-click menu.</li>\n</ul>\n<h2>Private by design</h2>\n<p>Assay runs entirely on your Mac. Your files are never uploaded, there is no account, and there are no analytics. Anything a web page, Markdown file or email uses from the web stays blocked until you choose to load it, one file at a time — so tracking pixels stay quiet.</p>",
     "metaTitle": "Assay — Open Any File on Your Mac and Convert It Without Surprises",
     "pitch": "Assay opens the files macOS can’t, shows you what they really are, and converts them with a report of exactly what was kept — checked by reading the result back, not guessed.",
@@ -290,12 +299,8 @@
     ],
     "faqs": [
       {
-        "q": "When will Assay be available?",
-        "a": "Assay is in final testing and will be released on the Mac App Store. This page will link to it as soon as it is live."
-      },
-      {
-        "q": "What will it cost?",
-        "a": "Assay is free to download, and viewing any file stays free. Converting, editing and exporting are a one-time in-app purchase — not a subscription."
+        "q": "What does it cost?",
+        "a": "Assay is free to download on the Mac App Store, and viewing any file stays free. Converting, editing and exporting are unlocked by Assay Unlock, a one-time $19.99 in-app purchase — not a subscription."
       },
       {
         "q": "Does Assay upload my files?",
@@ -305,6 +310,8 @@
         "q": "Can it convert a PDF to Word?",
         "a": "No, deliberately. A PDF is a drawing of pages, and a Word file rebuilt from one would not look like the original. Assay converts a PDF to its words as plain text, or to pictures of its pages that look exactly like it."
       }
-    ]
+    ],
+    "ctaTitle": "Open the file you’re stuck on",
+    "ctaBody": "Free on the Mac App Store. Viewing is free for good; Assay Unlock adds converting and editing for $19.99 once. Everything runs on your Mac."
   }
 ]
