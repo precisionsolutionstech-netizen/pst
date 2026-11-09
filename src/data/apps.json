@@ -295,6 +295,21 @@
         "src": "/apps/assay/screenshots/01-table.png",
         "alt": "Assay showing a CSV of quarterly sales as a table, with each column’s type and the cost of converting it to HTML",
         "caption": "Every file shown as what it is — and what converting it would change, before you convert"
+      },
+      {
+        "src": "/apps/assay/screenshots/02-what-it-costs.png",
+        "alt": "Assay’s inspector listing what converting a CSV to a dBASE table would lose: values cut to fit 8-character fields, empty notes, and a shortened table name",
+        "caption": "Before you convert, Assay lists what the destination format will cut, change or rename — and which format would keep it"
+      },
+      {
+        "src": "/apps/assay/screenshots/03-log.png",
+        "alt": "Assay showing a Tomcat log filtered to warnings and errors, with a stack trace expanded and “Nothing is lost converting to HTML”",
+        "caption": "Log files read as entries you can filter and search, with stack traces folded under each error"
+      },
+      {
+        "src": "/apps/assay/screenshots/04-formats.png",
+        "alt": "Assay’s What Converts to What window showing the Excel 97-2004 format and every format it converts to",
+        "caption": "What Converts to What: every format Assay opens and saves, and exactly where each one can go"
       }
     ],
     "faqs": [
