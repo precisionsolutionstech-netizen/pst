@@ -772,3 +772,14 @@ a.card:hover {
 }
 .app-faq-item[open] > summary::after { content: '−'; }
 .app-faq-item > p { margin: 0 0 16px; max-width: 68ch; }
+.product-body .content-shot { margin: 22px 0 28px; }
+.product-body .content-shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: 0 18px 50px rgba(15, 23, 42, 0.12);
+  background: #fff;
+}
+.product-body .content-shot figcaption { margin-top: 10px; color: var(--muted); font-size: 0.9rem; }
