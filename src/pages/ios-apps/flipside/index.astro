@@ -4,6 +4,7 @@ import Base from '../../../layouts/Base.astro';
 const SITE = 'https://precisionsolutionstech.com';
 const PATH = '/ios-apps/flipside/';
 const IMG = '/ios-apps/flipside';
+const PLAY = 'https://play.google.com/store/apps/details?id=app.flipside.android';
 const title = 'Flipside: Jump Shots & Group Photos With No Photographer | iPhone';
 const description =
   'Take a jump shot or a group photo with everyone in it, even when nobody’s around to hold the camera. Prop up your iPhone and Flipside counts you in and keeps the top of the jump. Free.';
@@ -45,6 +46,10 @@ const faq: { q: string; a: string }[] = [
     a: 'No. Anything that holds the phone still works: a rock, a fence post, a backpack, a car roof. A small phone tripod makes it easier to get the height right.',
   },
   {
+    q: 'Is Flipside on Android?',
+    a: 'Yes. Flipside for Android is free on Google Play, for phones running Android 10 or later. It has the same voice coaching, jump shots and group photos. Live Photos are iPhone only, and “say cheese” needs Android 13 or later.',
+  },
+  {
     q: 'Is Flipside free?',
     a: 'Yes. Every feature is free, with no account, no ads and no in-app purchases.',
   },
@@ -56,10 +61,11 @@ const jsonLd = [
     '@type': 'SoftwareApplication',
     name: 'Flipside',
     alternateName: 'Flipside: Back Camera Selfies',
-    operatingSystem: 'iOS 18.0 or later',
+    operatingSystem: 'iOS 18.0 or later, Android 10 or later',
     applicationCategory: 'PhotographyApplication',
     description,
     url: `${SITE}${PATH}`,
+    installUrl: PLAY,
     image: `${SITE}${IMG}/icon-256.png`,
     screenshot: [jumpShot, groupShot, coachShot, ...gallery].map((s) => `${SITE}${s.src}`),
     featureList: [
@@ -108,7 +114,7 @@ const jsonLd = [
       <div class="fs-hero-text">
         <p class="fs-app">
           <img src={`${IMG}/icon-256.png`} alt="Flipside app icon" width="56" height="56" class="ios-icon" />
-          <span>Flipside <span class="fs-app-sub">for iPhone</span></span>
+          <span>Flipside <span class="fs-app-sub">for iPhone and Android</span></span>
         </p>
         <h1>Jump shots and group photos, with nobody behind the camera</h1>
         <p class="lead">
@@ -119,6 +125,7 @@ const jsonLd = [
         <p class="status">
           <span class="pill pill-success">Free · no account · no ads</span>
           <span class="pill">Coming soon to the App Store</span>
+          <a class="pill pill-accent" href={PLAY}>Get it on Google Play</a>
         </p>
       </div>
       <img class="fs-phone fs-hero-phone" src={jumpShot.src} srcset={jumpShot.srcset} sizes="(max-width: 720px) 70vw, 300px" alt={jumpShot.alt} width="506" height="1100" fetchpriority="high" decoding="async" />
@@ -264,6 +271,7 @@ const jsonLd = [
       <h2 id="requirements">Requirements</h2>
       <ul>
         <li>iPhone with iOS 18 or later</li>
+        <li>Android phone with Android 10 or later, from <a href={PLAY}>Google Play</a></li>
       </ul>
 
       <h2 id="pricing">Pricing</h2>
@@ -287,7 +295,9 @@ const jsonLd = [
       <p>
         <a href="/ios-apps/flipside/support/">Support</a>
         ·
-        <a href="/legal/privacy/flipside-ios/">Privacy Policy</a>
+        <a href="/legal/privacy/flipside-ios/">Privacy Policy (iPhone)</a>
+        ·
+        <a href="/legal/privacy/flipside-android/">Privacy Policy (Android)</a>
       </p>
     </article>
   </div>
