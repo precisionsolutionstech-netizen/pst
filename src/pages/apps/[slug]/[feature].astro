@@ -135,8 +135,9 @@ const jsonLd = [
       <section class="feature-bottom">
         <h2>Try it on your own files</h2>
         <p>
-          {app.name} is a one-time {app.price} purchase — no subscription, no account, and
-          nothing leaves your Mac. Requires {app.os}.
+          {app.price === 'Free'
+            ? `${app.name} is free on the Mac App Store — no subscription, no account, and nothing leaves your Mac. Requires ${app.os}.`
+            : `${app.name} is a one-time ${app.price} purchase — no subscription, no account, and nothing leaves your Mac. Requires ${app.os}.`}
         </p>
         <div class="feature-cta-row">
           {app.appStoreUrl && (
