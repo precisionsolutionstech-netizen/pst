@@ -238,7 +238,7 @@
         },
         {
           "q": "What if I delete a quarantined file myself?",
-          "a": "Twinkeep notices. The row stays, marked Missing, and offers Remove instead of Restore \u2014 there is no file left to put back. Its size stops counting toward what Quarantine is holding, and one click clears every row like it. Twinkeep never removes those rows on its own: a row vanishing by itself would be exactly the behaviour Quarantine exists to avoid."
+          "a": "Twinkeep notices. The row stays, marked Missing, and offers Remove instead of Restore — there is no file left to put back. Its size stops counting toward what Quarantine is holding, and one click clears every row like it. Twinkeep never removes those rows on its own: a row vanishing by itself would be exactly the behaviour Quarantine exists to avoid."
         },
         {
           "q": "Can I get a file back after emptying Quarantine?",
@@ -1138,6 +1138,200 @@
       "related": [
         "screenshots",
         "screen-recording"
+      ]
+    }
+  ],
+  "assay": [
+    {
+      "slug": "open-winmail-dat-on-mac",
+      "name": "Open winmail.dat on a Mac",
+      "title": "How to Open winmail.dat on a Mac — Free | Assay",
+      "metaDescription": "Got a winmail.dat attachment from an Outlook user? Open it on your Mac for free with Assay: read the email and save the attachments hidden inside. Nothing is uploaded.",
+      "h1": "How to open a winmail.dat file on a Mac",
+      "kicker": "Assay guide",
+      "summary": "A winmail.dat is not a broken file. It is how Outlook packs an email's formatting and attachments, and Apple Mail cannot unpack it. Assay opens it for free: you see the message and save every attachment inside.",
+      "whatFor": "<p>When someone sends email from Outlook with “Rich Text” formatting, Outlook wraps the attachments and the formatting into one file called <code>winmail.dat</code> (its format is called TNEF). Outlook unpacks it on the other end. Apple Mail and most other mail apps do not, so the PDF or spreadsheet you were sent shows up as a file nobody can open.</p><p>Assay reads the file by its contents, shows the email — who sent it, the subject and the message — and lists every attachment inside so you can save them. It runs on your Mac: the email and its attachments are never uploaded to a website.</p><p>Opening winmail.dat is <strong>free</strong> in Assay. No purchase, no account.</p>",
+      "steps": [
+        {
+          "title": "Get Assay",
+          "body": "Download Assay from the Mac App Store. It is free."
+        },
+        {
+          "title": "Save the winmail.dat from Mail",
+          "body": "In Apple Mail, drag the <code>winmail.dat</code> attachment to your Desktop, or Control-click it and choose <em>Save Attachment…</em>."
+        },
+        {
+          "title": "Open it in Assay",
+          "body": "Drag the file onto Assay's window, or choose <em>File › Open…</em> (<kbd>⌘O</kbd>). Assay recognises it from its contents even when it is just called <code>.dat</code>."
+        },
+        {
+          "title": "Read the message and save the attachments",
+          "body": "Assay shows the email with its sender and subject, and lists the attachments underneath. Save one, or click <em>Save All…</em> to save every attachment into a folder."
+        }
+      ],
+      "reference": "<h2>Why you get winmail.dat files</h2><p>The sender's Outlook is set to send in Rich Text Format, or the message went through an Exchange server that converted it. The sender can stop it by sending in HTML or plain text, but you usually cannot wait for that — the file you need is already in your inbox.</p><h2>What Assay shows</h2><ul><li>The subject, sender, recipients and date</li><li>The message body — plain text, HTML, or the formatted text Outlook compresses inside</li><li>Every attachment, with its real name</li></ul>",
+      "faq": [
+        {
+          "q": "Is it safe to open winmail.dat?",
+          "a": "The file itself is just a container for the email and its attachments. Assay reads it without running anything inside it, and nothing is uploaded. Treat the attachments the way you would treat any email attachment from that sender."
+        },
+        {
+          "q": "Does Assay cost anything to open winmail.dat?",
+          "a": "No. Opening winmail.dat files and saving their attachments is free in Assay. Assay Unlock, a one-time purchase, is only needed for converting other kinds of files and editing."
+        },
+        {
+          "q": "The file is called ATT00001.dat, not winmail.dat. Will it work?",
+          "a": "Yes. Assay identifies the file by its contents, not its name, so a winmail.dat by any other name opens the same way."
+        }
+      ],
+      "related": [
+        "convert-heic-to-jpg-on-mac",
+        "remove-location-from-photos-mac"
+      ]
+    },
+    {
+      "slug": "convert-heic-to-jpg-on-mac",
+      "name": "Convert HEIC to JPG on a Mac",
+      "title": "Convert HEIC to JPG on a Mac — Free, No Upload | Assay",
+      "metaDescription": "Convert iPhone HEIC photos to JPG on your Mac for free with Assay. Choose the quality, see the file size before you save, and keep or remove the location. Nothing is uploaded.",
+      "h1": "How to convert HEIC to JPG on a Mac, for free",
+      "kicker": "Assay guide",
+      "summary": "iPhones save photos as HEIC, and plenty of websites, forms and Windows PCs still want JPG. Assay converts HEIC to JPG — or PNG, WebP, TIFF and more — for free, shows you the size before you save, and never uploads your photos.",
+      "whatFor": "<p>HEIC is Apple's photo format. It keeps photos small, but a lot of upload forms, older software and Windows computers will not take it. Online converters work, but they mean uploading your photos to someone else's server.</p><p>Assay converts on your Mac. Pick JPEG, choose the quality, and the action bar shows how big the JPG will be before you save it. You decide whether the camera details and the location go with it.</p><p>Converting pictures is <strong>free</strong> in Assay, with no limit.</p>",
+      "steps": [
+        {
+          "title": "Get Assay",
+          "body": "Download Assay from the Mac App Store. It is free."
+        },
+        {
+          "title": "Open the HEIC photo",
+          "body": "Drag it onto Assay's window or choose <em>File › Open…</em> (<kbd>⌘O</kbd>)."
+        },
+        {
+          "title": "Choose JPEG",
+          "body": "In the bar at the bottom of the window, pick <strong>JPEG</strong> from the format pop-up. Choose the quality, and whether to remove the location and camera details. The predicted file size is shown next to it."
+        },
+        {
+          "title": "Convert",
+          "body": "Click <em>Convert…</em> and choose where to save. Assay reads the JPG back and checks it against the original."
+        },
+        {
+          "title": "Many photos at once",
+          "body": "For a whole folder, choose <em>File › Convert Many Files…</em> (<kbd>⇧⌘B</kbd>), add the folder, and pick JPEG. Assay converts and checks them all before anything is saved; saving a batch is part of Assay Unlock."
+        }
+      ],
+      "reference": "<h2>HEIC or JPG?</h2><p>A JPG of the same photo is usually larger than the HEIC — often twice the size at high quality — because JPEG is an older, less efficient format. If the JPG has to fit somewhere, use <em>Make Smaller</em> (<kbd>⌥⌘E</kbd>) instead: it has presets for email, Messages and WhatsApp, the web, and Discord and Slack.</p><p>PNG keeps every pixel exactly but makes a photo several times larger. It is the right choice for screenshots and drawings, rarely for photos.</p>",
+      "faq": [
+        {
+          "q": "Is converting HEIC to JPG really free?",
+          "a": "Yes. Converting any picture to another picture format is free in Assay, with no limit and no watermark."
+        },
+        {
+          "q": "Does it keep the photo's location?",
+          "a": "Only if you want it to. Before converting, choose whether to keep or remove the location and camera details."
+        },
+        {
+          "q": "Why not just use Preview?",
+          "a": "Preview can export a JPG one photo at a time. Assay also shows the size before saving, checks the result against the original, converts whole folders, writes WebP, and opens dozens of formats Preview cannot."
+        }
+      ],
+      "related": [
+        "remove-location-from-photos-mac",
+        "open-winmail-dat-on-mac"
+      ]
+    },
+    {
+      "slug": "excel-leading-zeros-csv",
+      "name": "Stop Excel removing leading zeros",
+      "title": "Stop Excel Removing Leading Zeros from a CSV on a Mac | Assay",
+      "metaDescription": "Excel strips leading zeros from ZIP codes and IDs, rounds long numbers and turns text into dates when you open a CSV. See exactly what it would change, free, and convert safely with Assay.",
+      "h1": "Why Excel removes leading zeros from your CSV — and how to stop it",
+      "kicker": "Assay guide",
+      "summary": "Open a CSV in Excel and 02134 becomes 2134, a 16-digit account number ends in zeros, and “3-4” becomes 4 March. The CSV was fine; opening it is what changes it. Assay shows you every value Excel would change, for free, and converts the file so Excel cannot.",
+      "whatFor": "<p>A CSV file stores everything as plain text. When Excel (or Numbers) opens one, it guesses what each value is: anything that looks like a number loses its leading zeros, numbers longer than 15 digits are rounded, and values like <code>3-4</code> or <code>MAR1</code> become dates. Save the file and the damage is permanent.</p><p>Open the CSV in Assay first. The inspector's <strong>If you open this in Excel</strong> section counts exactly which values would change, in which columns, with examples — free, before anything is touched.</p><p>Then convert it to an Excel Workbook (<code>.xlsx</code>). Assay stores every value exactly as it is, as text where it needs to be, so Excel opens it without changing anything.</p>",
+      "steps": [
+        {
+          "title": "Get Assay",
+          "body": "Download Assay from the Mac App Store. It is free."
+        },
+        {
+          "title": "Open the CSV",
+          "body": "Drag it onto Assay's window or choose <em>File › Open…</em> (<kbd>⌘O</kbd>). The table opens as it really is, leading zeros included."
+        },
+        {
+          "title": "See what Excel would change",
+          "body": "Choose <em>View › Show Info</em> (<kbd>⌘I</kbd>). The <em>If you open this in Excel</em> section lists the values that would lose leading zeros, be rounded, become dates or run as formulas."
+        },
+        {
+          "title": "Convert to an Excel Workbook",
+          "body": "Click <em>Convert to Excel Workbook</em> in that section, or pick <strong>Excel Workbook</strong> in the bar at the bottom, then <em>Convert…</em>. Assay checks the .xlsx against the CSV before it says nothing was lost."
+        }
+      ],
+      "reference": "<h2>What Excel changes when it opens a CSV</h2><ul><li><strong>Leading zeros</strong> — ZIP and postal codes, product codes, phone numbers, employee IDs</li><li><strong>Long numbers</strong> — anything over 15 digits, like card or account numbers, is rounded</li><li><strong>Things that look like dates</strong> — gene names, part numbers, scores like 3-4</li><li><strong>Formulas</strong> — a cell starting with = runs when the file opens</li></ul><p>Seeing the risks is free in Assay. Converting to .xlsx is part of Assay Unlock, a one-time purchase with no subscription.</p>",
+      "faq": [
+        {
+          "q": "Can't I just use Excel's import wizard?",
+          "a": "You can, column by column, every time — and one missed column loses the zeros. A converted .xlsx keeps them for whoever opens it next, without a wizard."
+        },
+        {
+          "q": "Does Assay change my CSV?",
+          "a": "No. The CSV is never modified. The workbook is a new file."
+        },
+        {
+          "q": "Does this work with TSV and other tables?",
+          "a": "Yes. The Excel check covers CSV and TSV, and Assay converts between CSV, TSV, Excel, SQLite, JSON and many older spreadsheet formats."
+        }
+      ],
+      "related": [
+        "convert-heic-to-jpg-on-mac",
+        "open-winmail-dat-on-mac"
+      ]
+    },
+    {
+      "slug": "remove-location-from-photos-mac",
+      "name": "Remove location from photos",
+      "title": "Remove Location and GPS from Photos on a Mac — Free | Assay",
+      "metaDescription": "Remove GPS location, camera and other hidden details from photos, PDFs and Office files on your Mac before you share them. Free in Assay; photos keep every pixel exactly.",
+      "h1": "How to remove the location from a photo on a Mac",
+      "kicker": "Assay guide",
+      "summary": "Most phone photos record exactly where they were taken. Send one, post it, or attach it to a listing and that location goes with it. Assay shows what a photo gives away and removes it — free — without recompressing the picture.",
+      "whatFor": "<p>Photos carry hidden details: GPS coordinates, the time, the camera or phone, and sometimes the owner's name. PDFs and Word, Excel and PowerPoint files carry the author, company and edit dates.</p><p>Open the file in Assay and the <strong>Hidden details</strong> section of its info panel (<kbd>⌘I</kbd>) lists what is in it. A photo with a location gets a <em>Remove Location</em> button. Remove only the location, or everything, then save a clean copy — or change the file itself.</p><p>For photos, Assay copies the picture data across untouched, so a JPEG is not recompressed, and it compares the pixels afterwards to prove nothing in the picture changed. It is <strong>free</strong>.</p>",
+      "steps": [
+        {
+          "title": "Get Assay",
+          "body": "Download Assay from the Mac App Store. It is free."
+        },
+        {
+          "title": "Open the photo",
+          "body": "Drag it onto Assay's window or choose <em>File › Open…</em> (<kbd>⌘O</kbd>). If it has a location, a <em>Remove Location</em> button appears in the bar at the bottom."
+        },
+        {
+          "title": "Choose what to remove",
+          "body": "Click <em>Remove Location</em>, or choose <em>File › Remove Location and Details…</em> (<kbd>⌥⌘L</kbd>). Pick <strong>Location only</strong> to keep the date and camera, or <strong>Location and all other details</strong>."
+        },
+        {
+          "title": "Save",
+          "body": "Click <em>Save Copy…</em> for a clean copy, or <em>Remove from This File…</em> to change the original. Assay lists what was removed and what, if anything, is left."
+        }
+      ],
+      "reference": "<h2>What a photo can give away</h2><ul><li><strong>Location</strong> — GPS latitude, longitude and altitude, often accurate to a few metres</li><li><strong>Time</strong> — when it was taken, to the second</li><li><strong>Camera</strong> — make, model, lens and serial number</li><li><strong>People</strong> — the owner or artist name some cameras write</li></ul><p>Making a photo smaller with Assay's <em>Make Smaller</em> removes the location by default as well.</p>",
+      "faq": [
+        {
+          "q": "Does removing the location reduce the photo's quality?",
+          "a": "No. Assay copies the picture data without re-encoding it and checks afterwards that every pixel is the same."
+        },
+        {
+          "q": "Can I remove the location from many photos at once?",
+          "a": "Yes, while converting them: in the Batch window (File › Convert Many Files…), pick a picture format such as JPEG and turn on “Remove location and camera details”. Saving a batch is part of Assay Unlock; one photo at a time is free."
+        },
+        {
+          "q": "What about PDFs and Word files?",
+          "a": "Assay removes the author, company, title and dates from PDFs and from Word, Excel and PowerPoint files. Comments and tracked changes inside a document are not touched, and Assay says so."
+        }
+      ],
+      "related": [
+        "convert-heic-to-jpg-on-mac",
+        "open-winmail-dat-on-mac"
       ]
     }
   ]
