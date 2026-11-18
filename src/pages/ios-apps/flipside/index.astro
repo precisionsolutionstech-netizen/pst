@@ -4,6 +4,7 @@ import Base from '../../../layouts/Base.astro';
 const SITE = 'https://precisionsolutionstech.com';
 const PATH = '/ios-apps/flipside/';
 const IMG = '/ios-apps/flipside';
+const APP_STORE = 'https://apps.apple.com/us/app/flipside-back-camera-selfies/id6824331658';
 const PLAY = 'https://play.google.com/store/apps/details?id=app.flipside.android';
 const title = 'Flipside: Jump Shots & Group Photos With No Photographer | iPhone';
 const description =
@@ -51,7 +52,7 @@ const faq: { q: string; a: string }[] = [
   },
   {
     q: 'Is Flipside free?',
-    a: 'Yes. Every feature is free, with no account, no ads and no in-app purchases.',
+    a: 'Yes. Flipside is free on the App Store and Google Play. Every feature is free, with no account, no ads and no in-app purchases.',
   },
 ];
 
@@ -65,7 +66,8 @@ const jsonLd = [
     applicationCategory: 'PhotographyApplication',
     description,
     url: `${SITE}${PATH}`,
-    installUrl: PLAY,
+    installUrl: APP_STORE,
+    downloadUrl: [APP_STORE, PLAY],
     image: `${SITE}${IMG}/icon-256.png`,
     screenshot: [jumpShot, groupShot, coachShot, ...gallery].map((s) => `${SITE}${s.src}`),
     featureList: [
@@ -124,8 +126,8 @@ const jsonLd = [
         </p>
         <p class="status">
           <span class="pill pill-success">Free · no account · no ads</span>
-          <span class="pill">Coming soon to the App Store</span>
-          <a class="pill pill-accent" href={PLAY}>Get it on Google Play</a>
+          <a class="pill pill-accent" href={APP_STORE} rel="noopener">Download on the App Store</a>
+          <a class="pill pill-accent" href={PLAY} rel="noopener">Get it on Google Play</a>
         </p>
       </div>
       <img class="fs-phone fs-hero-phone" src={jumpShot.src} srcset={jumpShot.srcset} sizes="(max-width: 720px) 70vw, 300px" alt={jumpShot.alt} width="506" height="1100" fetchpriority="high" decoding="async" />
@@ -270,7 +272,7 @@ const jsonLd = [
 
       <h2 id="requirements">Requirements</h2>
       <ul>
-        <li>iPhone with iOS 18 or later</li>
+        <li>iPhone with iOS 18 or later, from the <a href={APP_STORE} rel="noopener">App Store</a></li>
         <li>Android phone with Android 10 or later, from <a href={PLAY}>Google Play</a></li>
       </ul>
 
