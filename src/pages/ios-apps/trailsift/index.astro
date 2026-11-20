@@ -2,6 +2,7 @@
 import Base from '../../../layouts/Base.astro';
 
 const SITE = 'https://precisionsolutionstech.com';
+const PLAY = 'https://play.google.com/store/apps/details?id=app.trailsift.android';
 const title = 'TrailSift for iPhone & iPad — Trail Camera SD Card Sorter';
 const description =
   'TrailSift goes through your trail camera SD card on your iPhone: hides the empty frames, names the animals, tracks your bucks and shows when they move. Offline, no account. First card free.';
@@ -18,7 +19,7 @@ const jsonLd = [
     '@context': 'https://schema.org',
     '@type': 'SoftwareApplication',
     name: 'TrailSift',
-    operatingSystem: 'iOS 17.0 or later',
+    operatingSystem: 'iOS 17.0 or later, Android 10 or later',
     applicationCategory: 'UtilitiesApplication',
     description,
     url: `${SITE}/ios-apps/trailsift/`,
@@ -55,6 +56,7 @@ const jsonLd = [
         <p class="status">
           <span class="pill pill-success">First card free · one-time unlock</span>
           <span class="pill">Coming soon to the App Store</span>
+          <a class="pill pill-accent" href={PLAY} rel="noopener">Get it on Google Play</a>
         </p>
       </div>
     </header>
@@ -120,6 +122,14 @@ const jsonLd = [
         <li>JPEG photos and MP4/MOV videos; AVI files are kept and flagged, since iPhone can’t play them</li>
       </ul>
 
+      <h2 id="android">On Android</h2>
+      <p>
+        TrailSift for Android is on <a href={PLAY} rel="noopener">Google Play</a>, for phones running
+        Android 10 or later with a USB-C SD card reader. It sorts cards the same way and has the same pricing: first card
+        free, then a one-time unlock. Wind and weather aren’t on Android yet. Read the
+        <a href="/legal/privacy/trailsift-android/">Android privacy policy</a>.
+      </p>
+
       <h2 id="pricing">Pricing</h2>
       <p>
         Your first card is free, with every feature. After that, unlimited cards with a one-time
@@ -129,7 +139,9 @@ const jsonLd = [
       <p>
         <a href="/ios-apps/trailsift/support/">Support</a>
         ·
-        <a href="/legal/privacy/trailsift-ios/">Privacy Policy</a>
+        <a href="/legal/privacy/trailsift-ios/">Privacy Policy (iOS)</a>
+        ·
+        <a href="/legal/privacy/trailsift-android/">Privacy Policy (Android)</a>
       </p>
     </article>
   </div>
